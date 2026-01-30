@@ -44,3 +44,27 @@ else
 	fmod_studio_system_set_parameter_by_name("MusicVolume", global.MusicVolume, true)
 fmod_studio_system_set_parameter_by_name("MasterVolume", global.MasterVolume, true)
 fmod_studio_system_set_parameter_by_name("unfocusMute", !window_has_focus() && global.unfocus_mute, false)
+
+for (var i = 0; i < array_length(backgroundhearts); i++) 
+{
+	var q = backgroundhearts[i]
+	q.y -= 0.5
+	q.image_index += q.image_speed
+	var _delete = q.y < SCREEN_HEIGHT / 2 - 32
+	if _delete
+		q.image_alpha -= 0.01
+	else {
+		q.image_alpha = approach(q.image_alpha, 1, 0.05)
+	}
+	if !active
+	{
+		_delete = true
+		q.image_alpha -= 0.1
+	}
+	if _delete && q.image_alpha <= 0
+	{
+		q = undefined
+		array_delete(backgroundhearts, i, 1)
+		i--
+	}
+}

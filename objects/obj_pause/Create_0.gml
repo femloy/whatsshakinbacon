@@ -164,10 +164,10 @@ var _exitlevel =
 		}
 	}
 } }
-_resume.offsetX = SCREEN_WIDTH
-_option.offsetX = SCREEN_WIDTH
-_restart.offsetX = SCREEN_WIDTH
-_exitlevel.offsetX = SCREEN_WIDTH
+_resume.offsetX = -SCREEN_WIDTH
+_option.offsetX = -SCREEN_WIDTH
+_restart.offsetX = -SCREEN_WIDTH
+_exitlevel.offsetX = -SCREEN_WIDTH
 
 _resume.icon = new addPause_icon(0)
 _option.icon = new addPause_icon(1)
@@ -189,3 +189,21 @@ secrets = []
 array_push(secrets, {x: 54, y: 136, index: 0, secret: false, scale: 1})
 array_push(secrets, {x: 94, y: 54, index: 1, secret: false, scale: 1})
 array_push(secrets, {x: 151, y: 115, index: 2, secret: false, scale: 1})
+
+backgroundhearts = []
+create_background_heart = function(_x, _y)
+{
+	var q = 
+	{
+		x: _x,
+		y: _y,
+		sprite_index: spr_pause_heart_fly,
+		image_index: 0,
+		image_speed: 0.04,
+		image_alpha: 0,
+	}
+	if active
+		array_push(backgroundhearts, q)
+	return q
+}
+treasureAlpha = 0
