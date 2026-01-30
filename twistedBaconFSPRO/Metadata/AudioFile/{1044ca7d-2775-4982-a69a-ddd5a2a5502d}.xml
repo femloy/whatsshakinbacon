@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{1044ca7d-2775-4982-a69a-ddd5a2a5502d}">
+		<property name="assetPath">
+			<value>superjumpcancel.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2946875000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84540fbd-e4d8-4110-a957-766ec400895e}</destination>
+		</relationship>
+	</object>
+</objects>

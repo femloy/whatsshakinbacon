@@ -1,0 +1,1 @@
+create_particleStatic(spr_butter_splat, x, y, image_xscale)

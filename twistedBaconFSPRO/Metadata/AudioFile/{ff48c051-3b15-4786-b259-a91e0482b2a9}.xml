@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ff48c051-3b15-4786-b259-a91e0482b2a9}">
+		<property name="assetPath">
+			<value>S rank.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>43.232653061224489</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84540fbd-e4d8-4110-a957-766ec400895e}</destination>
+		</relationship>
+	</object>
+</objects>

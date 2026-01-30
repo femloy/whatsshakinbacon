@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{a6df037f-a185-4f52-96d8-9f8c5364728e}">
+		<property name="assetPath">
+			<value>vinyl-crackle-real-69409.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>29.231999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84540fbd-e4d8-4110-a957-766ec400895e}</destination>
+		</relationship>
+	</object>
+</objects>

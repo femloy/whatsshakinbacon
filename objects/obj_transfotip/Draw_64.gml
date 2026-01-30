@@ -1,0 +1,6 @@
+draw_set_alpha(alpha)
+draw_set_font(font)
+draw_set_color(c_white)
+draw_set_halign(fa_center)
+draw_text_oyh(SCREEN_WIDTH / 2, textY, text)
+draw_set_alpha(1)

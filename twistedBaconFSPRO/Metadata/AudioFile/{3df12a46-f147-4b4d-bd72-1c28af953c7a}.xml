@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3df12a46-f147-4b4d-bd72-1c28af953c7a}">
+		<property name="assetPath">
+			<value>sfx/slipnslide2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.2626666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84540fbd-e4d8-4110-a957-766ec400895e}</destination>
+		</relationship>
+	</object>
+</objects>

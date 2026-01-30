@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f4b3dc03-4b12-4b37-b451-f9b3127ff332}">
+		<property name="assetPath">
+			<value>TVswitchback.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.91333333333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84540fbd-e4d8-4110-a957-766ec400895e}</destination>
+		</relationship>
+	</object>
+</objects>

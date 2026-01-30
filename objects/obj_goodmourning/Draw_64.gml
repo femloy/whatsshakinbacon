@@ -1,0 +1,1 @@
+draw_sprite(sprite_index, image_index, SCREEN_WIDTH / 2, pos)

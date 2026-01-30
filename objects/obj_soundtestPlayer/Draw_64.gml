@@ -1,0 +1,8 @@
+draw_set_font(global.npcfont)
+draw_set_alpha(0.5)
+draw_set_colour(c_black)
+draw_rectangle(64, 64, SCREEN_WIDTH - 64, 68 * 3, false)
+draw_set_colour(c_white)
+draw_set_halign(fa_center)
+draw_set_alpha(1)
+draw_text_oyh(SCREEN_WIDTH / 2, 128 - 32, songs[currentSong].text)

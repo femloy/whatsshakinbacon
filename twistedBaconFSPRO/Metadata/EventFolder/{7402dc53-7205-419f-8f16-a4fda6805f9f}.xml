@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{7402dc53-7205-419f-8f16-a4fda6805f9f}">
+		<property name="name">
+			<value>Cabbit</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a05e868d-d255-4520-bce7-9b4ec9a01ce8}</destination>
+		</relationship>
+	</object>
+</objects>

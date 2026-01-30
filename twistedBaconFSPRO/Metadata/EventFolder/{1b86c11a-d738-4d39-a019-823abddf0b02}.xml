@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{1b86c11a-d738-4d39-a019-823abddf0b02}">
+		<property name="name">
+			<value>Monolith</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a05e868d-d255-4520-bce7-9b4ec9a01ce8}</destination>
+		</relationship>
+	</object>
+</objects>

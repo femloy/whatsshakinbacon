@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{6fd7bf93-060f-491a-ae0b-ece80bf758ff}">
+		<property name="name">
+			<value>flitzani</value>
+		</property>
+		<relationship name="folder">
+			<destination>{dc862b64-5681-4d52-af65-de018769eb1c}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1b09ee0a-cc8a-42c0-b9cb-0d7e6e6ff52e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1b09ee0a-cc8a-42c0-b9cb-0d7e6e6ff52e}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
