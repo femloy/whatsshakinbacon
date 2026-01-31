@@ -29,6 +29,7 @@ function scr_player_superjumpprep()
 			verticalMovespeed = -14
 			vsp = verticalMovespeed
 			FMODevent_oneshot("event:/Sfx/Player/superjumprelease", x, y)
+			create_particleStatic(spr_explosioneffect, x, y, 1)
 		}
 	}
 	else

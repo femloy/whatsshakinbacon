@@ -26,7 +26,7 @@ function scr_player_grab(){
 	}
 	var move = key_right + key_left
 	if movespeed < 10
-		movespeed = approach(movespeed, 10, 1)
+		movespeed = approach(movespeed, 10, 0.5)
 	buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
 	if buffers.afterimageBlur == 0
 	{
@@ -104,7 +104,7 @@ function scr_player_grab(){
 	{
 		movespeed = 0
 		hsp = 0
-		vsp = -6
+		vsp = -4
 		state = states.jump
 		sprite_index = spr_player_grabbump
 		create_particleStatic(spr_hurteffect, x, y, 1)

@@ -7,7 +7,7 @@ function scr_player_normal()
 	{
 		if ( floor(image_index) == 3 || floor(image_index) == 8 ) && buffers.step <= 0
 		{
-			buffers.step = 12
+			buffers.step = 5
 			FMODevent_oneshot("event:/Sfx/Player/step", x, y)
 			create_particleStatic(spr_cloudeffect, x, y + 42, 1, 1)
 		}
@@ -21,7 +21,7 @@ function scr_player_normal()
 			sprite_index = sprites.move
 		}
 		if sprite_index != spr_player_littledanceydance
-			image_speed = movespeed / 15
+			image_speed = (movespeed / 6) * 0.35
 		xscale = move
 		if !place_meeting(x + xscale, y, obj_solid)
 			movespeed = approach(movespeed, 6, 0.5)
@@ -44,14 +44,11 @@ function scr_player_normal()
 	else {
 		if sprite_index != sprites.idle && sprite_index != spr_player_idleanim1 && sprite_index != spr_player_idleanim2 && sprite_index != spr_player_idleanim3 && sprite_index != spr_player_idleanim4 && sprite_index != spr_player_idleanim5 && sprite_index != spr_player_land && sprite_index != spr_player_machslideend && sprite_index != spr_player_littledanceydance && sprite_index != spr_player_statue && sprite_index != spr_player_statuestart
 		{
-			image_speed = movespeed / 15
-			if movespeed == 0
-			{
-				image_index = 0
-				sprite_index = sprites.idle
-				image_speed = 0.35
-				buffers.idle = 150
-			}
+			image_index = 0
+			sprite_index = sprites.idle
+			image_speed = 0.35
+			buffers.idle = 150
+			movespeed = 0
 		}
 		
 		/*if sprite_index == sprites.idle && palIndex == 4
@@ -100,8 +97,10 @@ function scr_player_normal()
 		buffers.notes = 10
 		breakdancespeed = 0.25
 		if sprite_index == spr_player_littledanceydance
+		{
 			sprite_index = sprites.idle
-		image_speed = 0.35
+			image_speed = 0.35
+		}
 	}
     if buffers.breakdanceheld > 10
     {

@@ -3,7 +3,7 @@ function scr_player_mach2()
 	get_input()
 	hsp = movespeed * xscale
 	var move = key_right + key_left
-	var _accel = sprite_index == spr_player_mach1 ? 0.025 : 0.1
+	var _accel = 0.1
 	if character == characters.milton
 		_accel = 0.065
 	if grounded 
@@ -61,10 +61,10 @@ function scr_player_mach2()
 		image_index = 0
 		sprite_index = spr_player_rollgetup
 	}
-	if sprite_index == spr_player_mach2
-		image_speed = movespeed / 18
+	if sprite_index != spr_player_longjumpend && sprite_index != spr_player_longjump && sprite_index != spr_player_rollgetup
+		image_speed = movespeed / 15
 	else {
-		image_speed = 0.45
+		image_speed = 0.4
 	}
 	if jumpstop == false && !key_jump && vsp < grav
 	{

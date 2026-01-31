@@ -130,7 +130,7 @@ function scr_player_hauling()
 			if sprite_index == spr_player_swingading
 				sprite_index = spr_player_swingadingend
 			else
-				sprite_index = choose(spr_player_finisher1, spr_player_finisher2)
+				sprite_index = choose(spr_player_finisher1, spr_player_finisher2, spr_player_finisher3, spr_player_finisher4)
 		}
 		image_index = 0
 		exit;

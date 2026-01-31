@@ -5,7 +5,7 @@ function scr_player_mach3()
 	if sprite_index == spr_player_superjumpcancel
 		image_speed = lerp(image_speed, 0.5, 0.15)
 	else
-		image_speed = sprite_index == sprites.crazyrun ? 0.6 : 0.35
+		image_speed = sprite_index == sprites.crazyrun ? 0.75 : 0.4
 	if !instance_exists(chargeeffect)
 		chargeeffect = instance_create(x, y, obj_chargeeffect)
 	if !instance_exists(speedlineseffect) && movespeed > 13
@@ -60,7 +60,7 @@ function scr_player_mach3()
 		buffers.step--
 		if buffers.step <= 0
 		{
-			buffers.step = 5
+			buffers.step = 10
 			create_particleStatic(spr_flamecloud, x, y, 1, 1)
 		}
 	}
@@ -82,7 +82,7 @@ function scr_player_mach3()
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
 		image_index = 0
 		sprite_index = sprites.mach3jump
-		vsp = -10
+		vsp = -11
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/jump", x, y)
 	}
@@ -124,6 +124,7 @@ function scr_player_mach3()
 		FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 		state = states.hitwall
 		shake_camera(10, 30)
+		create_particleStatic(spr_hurteffect, x, y, 1)
 		sprite_index = spr_player_mach3hitwall
 		image_index = 0
 		vsp = -6

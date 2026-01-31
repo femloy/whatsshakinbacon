@@ -3,7 +3,7 @@ switch state
 	case states.normal:
 		if camera.target.state == states.mach2 || camera.target.state == states.mach3 || camera.target.state == states.tumble
 		{
-			var far = (camera.target.movespeed * 10) * camera.target.xscale
+			var far = ((camera.target.movespeed / 4) * 50) * camera.target.xscale
 			var chargeSpd = 0.3
 			if (far > 0 && xOffset < 0) || (far < 0 && xOffset > 0)
 				chargeSpd = 8
@@ -23,7 +23,7 @@ switch state
 				xOffset = approach(xOffset, far, chargeSpd)
 			}
 			else {
-				xOffset = approach(xOffset, 0, 8)
+				xOffset = approach(xOffset, 0, 6)
 			}
 		}
 

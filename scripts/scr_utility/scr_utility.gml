@@ -200,7 +200,7 @@ function scr_transfotip(_text, _font = global.creditsfont) {
 function timeString(_variable)
 {
 	var _ms = string_digits(frac(_variable))
-	_ms = string_char_at(_ms, 2)
+	_ms = string_format(_ms, 1, 3);
 	
 	var _realSecond = floor(_variable)
 	

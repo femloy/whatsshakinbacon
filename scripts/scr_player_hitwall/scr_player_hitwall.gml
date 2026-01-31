@@ -3,7 +3,7 @@ function scr_player_hitwall()
 	image_speed = 0.35
 	hsp = movespeed * xscale
 	if grounded
-		movespeed = 0
+		movespeed = approach(movespeed, 0, 1)
 	if sprite_index = spr_player_wallsplat
 	{
 		movespeed = 0
