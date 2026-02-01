@@ -45,6 +45,8 @@ if hitstun.is == false
 				sprite_index = spr_scared
 				scared = 120
 				state = states.stun
+				if chance(5 / 50)
+					FMODevent_oneshot("event:/Sfx/General/Enemy/scream", x, y)
 			}
 			break
 		case states.grab:

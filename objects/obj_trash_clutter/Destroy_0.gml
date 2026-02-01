@@ -36,5 +36,6 @@ if ds_list_find_index(global.saveroom, id) == -1
 	}
 	create_particleStatic(spr_bangeffect, x + 16, y + 16, 1, 1)
 	FMODevent_oneshot("event:/Sfx/General/Level/breakblock", x, y)
+	FMODevent_oneshot("event:/Sfx/General/Beaker Backyard/trash", x, y)
 	push_achievement(achievements.waybackFodder)
 }

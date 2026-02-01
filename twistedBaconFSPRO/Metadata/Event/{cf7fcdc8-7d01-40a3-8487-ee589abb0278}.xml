@@ -34,9 +34,6 @@
 		<relationship name="banks">
 			<destination>{1fad9061-0bdc-4a75-99a3-1ff914dc0e63}</destination>
 		</relationship>
-		<relationship name="defaultEvent">
-			<destination>{6fe99dbd-a047-4ce2-8afd-5b67594fb5a4}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixer" id="{75312256-7628-4be8-a58f-e78ec918649c}">
 		<relationship name="masterBus">
@@ -90,7 +87,7 @@
 	</object>
 	<object class="MultiSound" id="{00b715e8-7fcc-4e55-8c15-165714490929}">
 		<relationship name="sounds">
-			<destination>{2e5cf3f6-5173-477f-86de-3cf8bce38784}</destination>
+			<destination>{4732bad4-4f50-4a50-9d7b-88bb48c9c2a8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{6057558f-8f58-462e-99b0-9adc18cf4602}">
@@ -105,22 +102,25 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{20e74952-0b90-4e5e-bbe1-bfb08371cb12}" />
-	<object class="SingleSound" id="{2e5cf3f6-5173-477f-86de-3cf8bce38784}">
+	<object class="SingleSound" id="{4732bad4-4f50-4a50-9d7b-88bb48c9c2a8}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<relationship name="modulators">
-			<destination>{78fc1d73-eef0-400e-9f6e-28b69466e301}</destination>
+			<destination>{e7b9762a-9faa-43bb-9e91-2db9ec143d3d}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{a8dc2140-ca49-4d8b-b637-8d6e48fef615}</destination>
+			<destination>{dd53e76a-ae1d-4398-a25c-801d815d4124}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{c8b87b25-f5ae-4fc1-b1d0-ca1dfaecf3ac}" />
 	<object class="MixerBusFader" id="{d90e5004-4587-4421-bfd2-a969dc8d8235}" />
-	<object class="RandomizerModulator" id="{78fc1d73-eef0-400e-9f6e-28b69466e301}">
+	<object class="RandomizerModulator" id="{e7b9762a-9faa-43bb-9e91-2db9ec143d3d}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>13.5</value>
+			<value>15.5</value>
 		</property>
 	</object>
 </objects>

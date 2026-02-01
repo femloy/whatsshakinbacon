@@ -34,9 +34,6 @@
 		<relationship name="banks">
 			<destination>{a2c9aa1b-61a4-47a4-8730-63c99cc6c5fc}</destination>
 		</relationship>
-		<relationship name="defaultEvent">
-			<destination>{88c3a7a9-6bd3-43f8-8b53-bb1961e942f5}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixer" id="{e5b5c844-542a-4fcb-8200-7622606d509e}">
 		<relationship name="masterBus">
@@ -79,7 +76,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{5691d5fb-0407-4807-878a-e5e881984e46}">
 		<property name="volume">
-			<value>-18.5</value>
+			<value>-17.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d3d2abd1-d5f1-41ac-b0a8-4a136998db22}</destination>
@@ -100,6 +97,9 @@
 	<object class="SingleSound" id="{c0b90fa0-97b2-404c-be66-911a0e88f7d1}">
 		<property name="length">
 			<value>29.231999999999999</value>
+		</property>
+		<property name="volume">
+			<value>0.5</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{32ab3167-4339-4e2d-b31a-9ea25b7f995a}</destination>
