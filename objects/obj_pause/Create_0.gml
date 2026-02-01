@@ -52,6 +52,7 @@ function doPause()
 	fmod_studio_event_instance_start(vinylSND)
 	fmod_studio_event_instance_set_paused(vinylSND, false)
 	fmod_studio_system_set_parameter_by_name("musicfade", 0, false)
+	FMODevent_oneshot("event:/Sfx/General/Cutscene/recordstop")
 	graphBack.alpha = 0
 	selected = 0
 	switch playeractiveState

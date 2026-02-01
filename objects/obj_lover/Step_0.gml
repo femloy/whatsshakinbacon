@@ -54,8 +54,8 @@ else
 			
 		if fly
 		{
-			vspeed = approach(vspeed, -14, 0.2)
-			hspeed = approach(hspeed, -4, 0.5)
+			vspeed = approach(vspeed, -14, 0.1)
+			hspeed = approach(hspeed, -4, 0.1)
 		}
 		else
 			hspeed = approach(hspeed, 0, 0.5)

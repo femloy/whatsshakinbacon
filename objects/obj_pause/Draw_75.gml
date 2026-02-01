@@ -51,7 +51,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 	{
 		var q = secrets[i]
 		var _XX = q.x
-		var _YY = q.y + wave(-5, 5, 5, i * 360)
+		var _YY = q.y
 		if !q.secret
 		{
 			_XX = q.x + irandom_range(-1, 1)

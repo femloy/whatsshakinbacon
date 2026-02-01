@@ -76,6 +76,7 @@ function scr_player_grab(){
 		sprite_index = spr_player_grabcancel
 		state = states.jump
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
+		FMODevent_oneshot("event:/Sfx/Player/grabcancel", x, y)
 		exit;
 	}
 	if jumpBuffer && coyote_time

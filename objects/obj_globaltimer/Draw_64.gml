@@ -11,7 +11,6 @@ if global.option_timer_type == 1
 
 if (global.option_timer_type == 2 || global.option_timer_type == 1) && global.level != noone
 	array_push(_str, timeString(global.level_timer))
-
 var i = array_length(_str) - 1
 var yy = 1
 
@@ -26,3 +25,4 @@ while (i >= 0)
 	yy++
 	i--
 }
+//draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 100, string_format(global.save_timer, 0, 3))

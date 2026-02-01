@@ -201,6 +201,7 @@ function timeString(_variable)
 {
 	_variable = string_format(_variable, 1, 3);
 	var _ms = string_digits(frac(_variable))
+	_ms = string_copy(_ms, 2, 3)
 	
 	var _realSecond = floor(_variable)
 	
