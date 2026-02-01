@@ -55,6 +55,12 @@ if _secret
 	_escapeShake1 = 0
 	_escapeShake2 = 0
 }
+if !global.option_screenshake
+{
+	_escapeShake1 = 0
+	_escapeShake2 = 0
+	cameraShake = 0
+}
 camera_set_view_pos(view_camera[0], 
 _realX + irandom_range(cameraShake, -cameraShake) + _escapeShake1,
 _realY + irandom_range(cameraShake, -cameraShake) + _escapeShake2)

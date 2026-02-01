@@ -3,6 +3,7 @@
   "pause_restart":"RESTART",
   "pause_options":"OPTIONS",
   "pause_exit":"EXIT LEVEL",
+  "pause_tasks":"FEATS",
 
   "option_audio": "AUDIO",
   "option_audio_master": "MASTER",
@@ -21,9 +22,18 @@
   "option_video_resolution": "RESOLUTION",
   "option_video_vsync": "VSYNC",
   "option_video_filtering": "TEXTURE FILTERING",
-  "option_video_hide_hud": "HIDE HUD",
+  "option_video_hide_hud": "SHOW HUD",
 
   "option_game": "GAME",
+  "option_rumble": "RUMBLE",
+  "option_screen_shake": "SCREEN SHAKE",
+  "option_language": "LANGUAGE",
+  "option_timer": "TIMER",
+  "option_timer_type": "TIMER TYPE",
+  "option_timer_type_per_level": "PER LEVEL",
+  "option_timer_type_per_save": "PER SAVE",
+  "option_timer_type_both": "BOTH",
+  "option_speedrun_timer": "SPEEDRUN TIMER",
 
   "option_controls": "CONTROLS",
   "option_controls_keyboard": "KEYBOARD",

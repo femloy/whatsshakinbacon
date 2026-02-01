@@ -8,6 +8,9 @@ waybackyard = {
 	fodder: 33
 }
 
+achievementBuffer = []
+canExecute = true
+
 reset_level_stats = function()
 {
 	waybackyard = {
@@ -31,5 +34,5 @@ add_achievement = function(_achievement, _name, _description, _sprite, _index, _
 }
 
 
-add_achievement(achievements.waybackFodder, "Community Service", "cleaning up all the garbage in Waybackyard", spr_achievement_wayback, 0, "waybackFodder")
-add_achievement(achievements.waybackTourist, "Extreme Tourism", "reaching the temple in under 1:15 in Waybackyard", spr_achievement_wayback, 2, "waybackTourist")
+add_achievement(achievements.waybackFodder, "Community Service", "Clean up all the garbage in Waybackyard", spr_achievement_wayback, 0, "waybackFodder")
+add_achievement(achievements.waybackTourist, "Extreme Tourism", "Reach the temple in under 1:15 in Waybackyard", spr_achievement_wayback, 2, "waybackTourist")

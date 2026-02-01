@@ -1,4 +1,4 @@
-if !instance_exists(obj_option)
+if !instance_exists(obj_option) && !instance_exists(obj_feats)
 getMenu_input()
 
 var _nopauseRooms = 
@@ -9,7 +9,8 @@ instance_exists(obj_fadeout)||
 instance_exists(obj_rank)||
 instance_exists(obj_technicaldifficulty)||
 instance_exists(obj_titlecard)||
-obj_shell.isOpen
+obj_shell.isOpen || 
+room == credits_room
 if !active
 {
 	graphBack.alpha = approach(graphBack.alpha, 0, 0.1)
@@ -18,14 +19,14 @@ if !active && key_start2 && !_nopauseRooms
 { 
 	doPause()
 }
-else if active && !instance_exists(obj_option) && buffer == 0
+else if active && !instance_exists(obj_option) && !instance_exists(obj_feats) && buffer == 0
 {
 	graphBack.alpha = approach(graphBack.alpha, 0.4, 0.01)
 	var move = key_down2 - key_up2
 	if move != 0
 	{
 		selected += move
-		FMODevent_oneshot("event:/Sfx/UI/Pause/step")
+		FMODevent_oneshot("event:/Sfx/UI/Pause/lettermove")
 	}
 	selected = clamp(selected, 0, array_length(options) - 1)
 	if key_slap2 || key_start2

@@ -46,7 +46,7 @@ addBackground([1], 1)
 addBackground([2, 10], 2)
 addBackground([3], 3)
 addBackground([4, 5, 6, 7, 8, 9], 4) // 6, 7
-BGX = wave(-32, 32, 5, 0)
+BGX = 0
 BGY = 0
 depth = obj_pause.depth - 1
 screamSnd = FMODcreate_event("event:/Sfx/UI/Pause/slider")
@@ -169,7 +169,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "Inputs_Player1_lef
 
 #region Audio
 
-	var AUDIO = create_menu(option.audio, option.left, 48, function()
+	var AUDIO = create_menu(option.audio, option.left, 40, function()
 	{
 		goto_menu(option.main)
 		ini_open(working_directory + "options.ini")
@@ -247,12 +247,12 @@ add_option_key = function(_id, _iconIndex, _function, _key = "Inputs_Player1_lef
 
 #region Video
 
-	var VIDEO = create_menu(option.video, option.left, 48, function()
+	var VIDEO = create_menu(option.video, option.left, 40, function()
 	{
 		goto_menu(option.main)
 		ini_open(working_directory + "options.ini")
 		
-		ini_write_real("Visual", "showHud", global.hide_hud)
+		ini_write_real("Visual", "showHud", global.option_hud)
 		ini_write_real("General", "Vsync", global.vsync)
 		ini_write_real("General", "Windowsize", global.windowSize)
 		ini_write_real("General", "texFilter", global.texFilter)
@@ -265,7 +265,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "Inputs_Player1_lef
 		goto_menu(option.main)
 		ini_open(working_directory + "options.ini")
 		
-		ini_write_real("Visual", "showHud", global.hide_hud)
+		ini_write_real("Visual", "showHud", global.option_hud)
 		ini_write_real("General", "Vsync", global.vsync)
 		ini_write_real("General", "Windowsize", global.windowSize)
 		ini_write_real("General", "texFilter", global.texFilter)
@@ -314,28 +314,93 @@ add_option_key = function(_id, _iconIndex, _function, _key = "Inputs_Player1_lef
 		var m = menus[currentmenu]
 		var opt = m.options
 		var q = opt[selected]
-		global.hide_hud = q.val
-		q.val = global.hide_hud
-	}, global.hide_hud, 1)
+		global.option_hud = q.val
+		q.val = global.option_hud
+	}, global.option_hud, 1)
 
 #endregion
 
 #region Game
 
-	var GAME = create_menu(option.game, option.left, 48, function()
+	var GAME = create_menu(option.game, option.left, 40, function()
 	{
 		goto_menu(option.main)
+		ini_open(working_directory + "options.ini")
+		
+		ini_write_real("General", "speedrunTimer", global.option_speedrun_timer)
+		ini_write_real("General", "timerType", global.option_timer_type)
+		ini_write_real("General", "timer", global.option_timer)
+		ini_write_real("General", "screenshake", global.option_screenshake)
+		ini_write_real("General", "rumble", global.option_rumble)
+		
+		ini_close()
 	})
 
 	add_option_press(GAME, "option_back", function()
 	{
 		goto_menu(option.main)
+		
+		ini_open(working_directory + "options.ini")
+		
+		ini_write_real("General", "speedrunTimer", global.option_speedrun_timer)
+		ini_write_real("General", "timerType", global.option_timer_type)
+		ini_write_real("General", "timer", global.option_timer)
+		ini_write_real("General", "screenshake", global.option_screenshake)
+		ini_write_real("General", "rumble", global.option_rumble)
+		
+		ini_close()
+		
 	})
+
+	add_option_ext(GAME, option.multi, "option_rumble", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_rumble = q.val
+		q.val = global.option_rumble
+	}, global.option_rumble, 1)
+
+	add_option_ext(GAME, option.multi, "option_screen_shake", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_screenshake = q.val
+		q.val = global.option_screenshake
+	}, global.option_screenshake, 1)
+
+	add_option_ext(GAME, option.multi, "option_timer", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_timer = q.val
+		q.val = global.option_timer
+	}, global.option_timer, 1)
+
+	add_option_ext(GAME, option.multi, "option_timer_type", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_timer_type = q.val
+		q.val = global.option_timer_type
+	}, global.option_timer_type, 2, [lang_get_phrase("option_timer_type_per_save"), lang_get_phrase("option_timer_type_per_level"), lang_get_phrase("option_timer_type_both")])
+
+	add_option_ext(GAME, option.multi, "option_speedrun_timer", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_speedrun_timer = q.val
+		q.val = global.option_speedrun_timer
+	}, global.option_speedrun_timer, 1)
 
 
 #endregion
 
-var controlsMain = create_menu(option.controlsMain, option.left, 48, function()
+var controlsMain = create_menu(option.controlsMain, option.left, 40, function()
 	{
 		goto_menu(option.main)
 	})
@@ -359,7 +424,7 @@ var controlsMain = create_menu(option.controlsMain, option.left, 48, function()
 		_s.depth = depth - 1
 	})
 
-var controlsKeyMain = create_menu(option.controlsKeyMain, option.left, 48, function()
+var controlsKeyMain = create_menu(option.controlsKeyMain, option.left, 40, function()
 	{
 		goto_menu(option.controlsMain)
 		
@@ -402,7 +467,7 @@ var controlsKeyMain = create_menu(option.controlsKeyMain, option.left, 48, funct
 		q.val = global.dirGround
 	}, global.dirGround, 1)
 
-var controlsPadMain = create_menu(option.controlsPadMain, option.left, 48, function()
+var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, function()
 	{
 		goto_menu(option.controlsMain)
 	})
@@ -420,7 +485,7 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 48, funct
 		goto_menu(option.controlsPadDeadzones)
 	})
 
-var controlsKey = create_menu(option.controlsKey, option.keys, 64, function()
+var controlsKey = create_menu(option.controlsKey, option.keys, 40, function()
 	{
 		var q = json_stringify(global.inputMap, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
@@ -478,7 +543,7 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 64, function()
 		}, "Inputs_Player1_menu_clearKey")
 
 
-var controlsPad = create_menu(option.controlsPad, option.keys, 55, function()
+var controlsPad = create_menu(option.controlsPad, option.keys, 40, function()
 	{
 		goto_menu(option.controlsPadMain)
 	})
@@ -530,7 +595,7 @@ var controlsPad = create_menu(option.controlsPad, option.keys, 55, function()
 	add_option_key(controlsPad, "MENU CLEAR", function(){
 		}, "Inputs_Player1_menu_clearPad")
 
-var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 55, function()
+var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, function()
 	{
 		goto_menu(option.controlsPadMain)
 		ini_open(working_directory + "options.ini")
@@ -589,7 +654,7 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 55, functi
 		q.val = global.gamepadDeadzones.press * 100
 	}, global.gamepadDeadzones.press * 100, 100)
 
-	var windowMode = create_menu(option.videoWindowMode, option.left, 48, function()
+	var windowMode = create_menu(option.videoWindowMode, option.left, 40, function()
 	{
 		goto_menu(option.video)
 	})

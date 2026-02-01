@@ -43,7 +43,7 @@ switch m.anchor
 		}
 	break
 	case option.left:
-		var xx = SCREEN_WIDTH / 5
+		var xx = SCREEN_WIDTH / 6
 		var yy = SCREEN_HEIGHT / 2 - (m.ypad * _length) / 2
 		for (var i = 0; i < _length; i++)
 		{
@@ -105,7 +105,7 @@ switch m.anchor
 						var xx = SCREEN_WIDTH / 2 - 16
 						var yy = 16 + (m.ypad) - keyscroll 
 						draw_set_color(_col)
-						keyscroll = lerp(keyscroll, 48 * (selected - 1), 0.02) 
+						keyscroll = lerp(keyscroll, 40 * (selected - 1), 0.02) 
 						if !is_string(q.iconIndex)
 							draw_sprite_ext(spr_controlicons, q.iconIndex, xx, yy + m.ypad * i, 1, 1, 0, _col, 1)
 						else {

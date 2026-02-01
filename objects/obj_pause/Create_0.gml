@@ -123,6 +123,11 @@ var _option =
 	FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
 	instance_create(0, 0, obj_option)
 	} }
+var _tasks =
+{ option: "pause_tasks", func: function() { 
+	FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
+	instance_create(0, 0, obj_feats)
+	} }
 var _exitlevel =
 { option: "pause_exit", func: function() 
 {
@@ -167,15 +172,18 @@ var _exitlevel =
 _resume.offsetX = -SCREEN_WIDTH
 _option.offsetX = -SCREEN_WIDTH
 _restart.offsetX = -SCREEN_WIDTH
+_tasks.offsetX = -SCREEN_WIDTH
 _exitlevel.offsetX = -SCREEN_WIDTH
 
 _resume.icon = new addPause_icon(0)
 _option.icon = new addPause_icon(1)
 _restart.icon = new addPause_icon(2)
+_tasks.icon = new addPause_icon(8)
 _exitlevel.icon = new addPause_icon(3)
 array_push(options, _resume)
 array_push(options, _option)
 array_push(options, _restart)
+array_push(options, _tasks)
 array_push(options, _exitlevel)
 
 timeUniform = shader_get_uniform(shd_wave, "time");

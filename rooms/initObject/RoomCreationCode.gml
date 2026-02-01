@@ -34,12 +34,17 @@ switch global.Fullscreen
 		break
 }
 global.vsync = ini_read_real("General", "Vsync", false)
-global.hide_hud = ini_read_real("Visual", "showHud", false)
+global.option_hud = ini_read_real("Visual", "showHud", false)
 global.unfocus_mute = ini_read_real("General", "UnfocusMute", true)
 global.dirSuper = ini_read_real("General", "dirSuper", true)
 global.dirGround = ini_read_real("General", "dirGround", true)
 global.windowSize = ini_read_real("General", "Windowsize", 1)
 global.texFilter = ini_read_real("General", "texFilter", false)
+global.option_rumble = ini_read_real("General", "rumble", true)
+global.option_screenshake = ini_read_real("General", "screenshake", true)
+global.option_timer = ini_read_real("General", "timer", true)
+global.option_timer_type = ini_read_real("General", "timerType", 0)
+global.option_speedrun_timer = ini_read_real("General", "speedrunTimer", false)
 display_reset(0, global.vsync)
 gpu_set_tex_filter(global.texFilter)
 var res = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]]

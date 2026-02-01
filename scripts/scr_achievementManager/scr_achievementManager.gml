@@ -27,18 +27,50 @@ function unlock_achievemnt(_achievement)
 	
 	if !_unlocked
 	{
-		show_debug_message($"{_achievement} unlocked")
-		ini_open(global.saveFile)
-		ini_write_real("Achievements", q.name, true)
-		ini_close()
-		repeat (10)
+		array_push(obj_achievementController.achievementBuffer, [_achievement, function(_achievement)
 		{
-			instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect)
-		}
-		with instance_create(SCREEN_WIDTH - 120, SCREEN_HEIGHT + 200, obj_feat)
+			var q = ds_map_find_value(global.achievements, _achievement)
+			ini_open(global.saveFile)
+			ini_write_real("Achievements", q.name, true)
+			ini_close()
+			repeat (10)
+			{
+				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect)
+			}
+			with instance_create(SCREEN_WIDTH - 120, SCREEN_HEIGHT + 200, obj_feat)
+			{
+				achievementSpr = q.achievementSprite
+				achievementIndex = q.achievementIndex
+			}
+		}])
+	}
+}
+
+function unlock_palette(_saveName, _index = 0, _pattern = spr_playerPat_threads)
+{
+	var _unlocked = false
+	ini_open(global.saveFile)
+	_unlocked = ini_read_real("Palette", _saveName, false)
+	ini_close()
+	
+	if !_unlocked
+	{
+		array_push(obj_achievementController.achievementBuffer, [[_saveName, _pattern, _index], function(_palStuff)
 		{
-			achievementSpr = q.achievementSprite
-			achievementIndex = q.achievementIndex
-		}
+			ini_open(global.saveFile)
+			ini_write_real("Palette", _palStuff[0], true)
+			ini_close()
+			repeat (10)
+			{
+				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect)
+			}
+			with instance_create(SCREEN_WIDTH - 120, SCREEN_HEIGHT + 200, obj_palette_unlock)
+			{
+				spr_palette = spr_playerPal
+				patColors = spr_playerPatColors
+				spr_pattern = _palStuff[1]
+				paletteIndex = _palStuff[2]
+			}
+		}])
 	}
 }

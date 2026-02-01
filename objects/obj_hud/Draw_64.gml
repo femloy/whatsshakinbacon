@@ -1,4 +1,4 @@
-if global.hide_hud
+if !global.option_hud
 	exit;
 
 if (!ds_list_empty(collectVis))

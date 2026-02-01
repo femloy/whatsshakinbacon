@@ -25,6 +25,7 @@ switch scene
 			exit;
 		if key_start2
 		{
+			FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
 			instance_create(x, y, obj_option)
 			exit;
 		}

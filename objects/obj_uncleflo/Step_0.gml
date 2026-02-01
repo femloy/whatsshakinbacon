@@ -1,16 +1,6 @@
 if global.escape.active
 {
 	text = "[wave]BRO YOU GOTTA LEAVE BRO!"
-	if place_meeting(x, y, obj_player)
-	{
-		instance_destroy()
-		surface_free(surf)
-		with instance_create(x, y, obj_baddiedead)
-		{
-			image_speed = 0
-			sprite_index = spr_flodead
-		}
-	}
 }
 if distance_to_object(obj_player) < 16
 {

@@ -16,8 +16,9 @@ showRankText = false
 rankIndex = 0
 
 tutorial = global.level == "tutorial"
-if tutorial && global.level_timer < 60
+if tutorial && global.level_timer < 120
 {
+	unlock_palette("mintwears", 10)
 	ini_open(global.saveFile)
 	
 	if ini_read_real("General", "Lap", false) == false

@@ -1,4 +1,4 @@
-if global.hide_hud
+if !global.option_hud
 	exit;
 var _xx = SCREEN_WIDTH / 2 + wave(-3, 3, 3, 0)
 var _yy = textY

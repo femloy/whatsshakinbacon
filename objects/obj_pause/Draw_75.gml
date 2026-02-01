@@ -1,4 +1,4 @@
-if !instance_exists(obj_option)
+if !instance_exists(obj_option) && !instance_exists(obj_feats)
 {
 	if active
 	{

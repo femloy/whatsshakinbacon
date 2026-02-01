@@ -1,11 +1,15 @@
-if global.hide_hud || instance_exists(obj_titlecard) || room == Mainmenu || room == rm_intro
+if !global.option_hud || !global.option_timer || instance_exists(obj_titlecard) || room == Mainmenu || room == rm_intro || room == credits_room
 	exit;
 draw_set_font(global.smallfont)
 draw_set_color(c_white)
 draw_set_halign(fa_left)
 var _time = global.save_timer
 var _str = [timeString(_time)]
-if global.level != noone
+
+if global.option_timer_type == 1
+	_str = []
+
+if (global.option_timer_type == 2 || global.option_timer_type == 1) && global.level != noone
 	array_push(_str, timeString(global.level_timer))
 
 var i = array_length(_str) - 1
