@@ -8,7 +8,7 @@ if (!ds_list_empty(collectVis))
 		var q = ds_list_find_value(collectVis, i)
 		with q
 		{
-			draw_sprite_ext(sprite_index, 4, x, y, 1, 1, 0, c_white, 1)
+			draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, 1)
 		}
 	}
 }
@@ -119,7 +119,7 @@ with combometer
 		x = SCREEN_WIDTH - 149 + wave(-5, 5, 2, 0)
 		vsp += 0.5
 		y += vsp
-		if y > 234
+		if y > 210
 			state = 1
 	}
 	else if state == 1
@@ -129,9 +129,9 @@ with combometer
 			x = SCREEN_WIDTH - 149 + wave(-5, 5, 2, 0) + irandom_range(-2, 2)
 			vsp += 0.3
 			y += vsp
-			if y > 224
+			if y > 200
 			{
-				y = 224
+				y = 200
 				vsp = -2
 			}
 		}
@@ -140,15 +140,15 @@ with combometer
 			x = SCREEN_WIDTH - 149 + wave(-5, 5, 1, 0) + irandom_range(-5, 5)
 			vsp += 0.3
 			y += vsp
-			if y > 224
+			if y > 200
 			{
-				y = 224
+				y = 200
 				vsp = -4
 			}
 		}
 		else {
 			x = SCREEN_WIDTH - 149 + wave(-5, 5, 2, 0)
-			y = lerp(y, 224, 0.1)
+			y = lerp(y, 200, 0.1)
 		}
 		if global.combo.amt == 0
 			state = -1

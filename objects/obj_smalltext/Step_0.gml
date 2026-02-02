@@ -6,7 +6,5 @@ if stay
 else {
 	if image_alpha <= 0
 		instance_destroy()
-	image_alpha-= 0.1
-	image_xscale-= 0.1
-	image_yscale+= 0.2
+	image_alpha-= 0.05
 }
