@@ -157,6 +157,7 @@ with combometer
 	// Lights
 	for (var i = 0; i < array_length(lights); i++)
 	{
+		var _yOffset = (i + 1) % 2 == 0 ? -5 : 5
 		var q = lights[i]
 		var _lights = array_length(lights) * _perc
 		
@@ -173,12 +174,12 @@ with combometer
 		if q.sprite == spr_comboLights
 		{
 			q.x = x - 72 + (45 * i)
-			q.y = y - 5 + sin(current_time / 215 - (i * 60.5))
+			q.y = y - 5 + wave(_yOffset, -_yOffset, 5, 0)
 		}
 		if q.sprite == spr_comboLightsOff
 		{
 			q.x = x - 72 + (45 * i) + irandom_range(-1, 1)
-			q.y = y - 5 + irandom_range(-1, 1)
+			q.y = y - 5 + irandom_range(-1, 1) + wave(_yOffset, -_yOffset, 5, 0)
 		}
 		q.index += 0.1
 		pal_swap_set(spr_comboPalette, global.combo.dropped, false)
