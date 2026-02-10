@@ -19,7 +19,7 @@
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"a4893175-ee13-4303-8f58-ecf7f72b621b","blendMode":0,"displayName":"default","isLocked":false,"name":"a4893175-ee13-4303-8f58-ecf7f72b621b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a4893175-ee13-4303-8f58-ecf7f72b621b","blendMode":0,"displayName":"default","isLocked":false,"name":"a4893175-ee13-4303-8f58-ecf7f72b621b","opacity":20.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Sprite452",
   "nineSlice":null,

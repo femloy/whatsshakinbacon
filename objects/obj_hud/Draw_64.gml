@@ -35,7 +35,7 @@ with kettle
 		
 		for (var i = 0; i < array_length(colorarray); i++)
 		{
-			colorarray[i] = irandom_range(0, 2)
+			colorarray[i] = irandom_range(0, 1)
 		}
 		lastcollect = global.collect
 	}
