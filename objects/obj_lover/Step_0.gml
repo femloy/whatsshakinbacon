@@ -6,58 +6,63 @@ if active == false
 	{
 		image_index = 0
 		sprite_index = asset_get_index($"spr_lover{lover}_shoot")
-		active = true
 		ds_list_add(global.saveroom, id)
 		FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", x, y)
-	}
-	
-	/*
-	if place_meeting(x, y, obj_player)
-	{
-		global.secretCount++
-		ds_list_add(global.saveroom, id)
-		active = true
-		sprite_index = asset_get_index($"spr_lover{lover}_trans")
-		alarm[0] = 1
-		create_smalltext(100)
-		ds_list_add(global.saveroom, id)
-		FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", x, y)
-		FMODevent_oneshot("event:/Sfx/General/Level/Doodles/iloveyou", x, y)
-		tv_anim(spr_tv_happy, 60 * 3)
-		with obj_player 
+		var _proj = instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_loverproj)
+		with _proj 
 		{
-			if irandom(100) <= 25
-				fmod_studio_event_instance_start(soundsLaugh)
+			sprite_index = asset_get_index($"spr_lover{other.lover}_proj")
 		}
-		scr_transfotip(lang_get_phrase("secret_get"))
+		show_debug_message("disgusting little thing created")
+		alarm[0] = 100
+		active = true
+		with obj_player
+		{
+			flash = true
+			repeat(3)
+				instance_create(x + irandom_range(-70, 70), y + irandom_range(-70, 70), obj_notes).sprite_index = spr_heart_part
+			switch room
+			{
+				case mangrove_secret1:
+					var _dialog = instance_create(x, y - 32, obj_smallDialog)
+					with _dialog
+					{
+						target = obj_player
+						addDialog(dialogChars.mildred, "The worst she can say is no.. right?")
+						draw_set_font(global.npcfont)
+						draw_set_halign(fa_center)
+						global.textSize = 0.5
+						draw_text_oyh(x, y, dialogStuff[currentDialog].text, 800)
+						global.textSize = 1
+						var _stringArr = ds_map_find_value(global.textCache, dialogStuff[currentDialog].text)[0]
+						var _stringArrLength = array_length(_stringArr)
+						textLength = _stringArrLength
+						textLetter = 0
+						active = true
+						alarm[0] = 45
+					}
+					break
+			}
+		}
 	}
-	*/
 }
 else
 {
 	if sprite_index == asset_get_index($"spr_lover{lover}_shoot")
 	{
-		if !fly
-		{
-			var _proj = instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_loverproj)
-			with _proj
-			{
-				sprite_index = asset_get_index($"spr_lover{other.lover}_proj")
-			}
-			show_debug_message("disgusting little thing created")
-			
-			fly = true
-		}
 		
 		if animation_end()
 			image_index = image_number - 1
-			
 		if fly
 		{
 			vspeed = approach(vspeed, -14, 0.1)
 			hspeed = approach(hspeed, -4, 0.1)
 		}
 		else
+		{
 			hspeed = approach(hspeed, 0, 0.5)
+			x = lerp(x, obj_player.x - 100, 0.1)
+			y = lerp(y, obj_player.y - 100, 0.15)
+		}
 	}
 }
