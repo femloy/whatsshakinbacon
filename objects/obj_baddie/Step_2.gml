@@ -31,7 +31,9 @@ if escape && spawnerId == -4
 		other.spawnerId = self
 	}
 	instance_deactivate_object(self)
+	exit;
 }
+
 with obj_player
 {
 	if place_meeting(x, y + (vsp * 2), other) && y < other.y && vsp > 0 && !other.invincable

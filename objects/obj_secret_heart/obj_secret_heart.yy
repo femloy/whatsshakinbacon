@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dudle_idle",
-    "path":"sprites/spr_dudle_idle/spr_dudle_idle.yy",
+    "name":"spr_loveportal_idle",
+    "path":"sprites/spr_loveportal_idle/spr_loveportal_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -102,7 +102,7 @@ switch scene
 		break
 	case 1:
 		hudAlpha = approach(hudAlpha, 0, 0.1)
-		for (var i = 0; i < array_length(saveFiles); i++)
+		/*for (var i = 0; i < array_length(saveFiles); i++)
 		{
 			var q = saveFiles[i]
 			if selectedFile != q.file
@@ -114,7 +114,7 @@ switch scene
 			else
 				q.movie.scale = approach(q.movie.scale, 2.5, 0.001)
 			
-		}
+		}*/
 		break
 	case 3:
 		getMenu_input()

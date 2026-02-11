@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Making Levels",
-    "path":"folders/Making Levels.yy",
+    "path":"folders/Objects/Level Structure/Making Levels.yy",
   },
   "parentObjectId":null,
   "persistent":false,

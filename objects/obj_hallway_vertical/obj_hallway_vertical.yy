@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Warps",
-    "path":"folders/Making Levels/Warps.yy",
+    "path":"folders/Objects/Level Structure/Making Levels/Warps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

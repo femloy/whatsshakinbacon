@@ -28,7 +28,7 @@ with kettle
 	draw_set_font(global.kettleFont)
 	draw_set_halign(fa_left)
 	
-	var _xx = kx + 16 - (string_width(global.collect) / 2)
+	var _xx = kx + 16 - (string_width(global.collect) / 2) - 4
 	if lastcollect != global.collect
 	{
 		colorarray = array_create(string_length(global.collect), 0)
@@ -41,7 +41,7 @@ with kettle
 	}
 	for (var i = 0; i < string_length(global.collect); i++)
 	{
-		var _yOffset = (i + 1) % 2 == 0 ? -5 : 0
+		var _yOffset = (i + 1) % 2 == 0 ? -7 : 0
 		shader_set(shd_pal_swapper)
 		pal_swap_set(pal_kettlefont, colorarray[i], false)
 		draw_text(floor(_xx), floor(ky + 12 - offset + _yOffset), string_char_at(global.collect, i + 1))

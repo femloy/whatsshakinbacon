@@ -68,7 +68,7 @@
 	<object class="GroupTrack" id="{ae790dec-fd04-4eff-ac3b-da8b0ab8f64c}">
 		<relationship name="modules">
 			<destination>{33ac9e98-7bff-4591-8852-f46148d71a81}</destination>
-			<destination>{42837db4-afad-4a0e-a4d2-37460d42b684}</destination>
+			<destination>{8309ddb1-84c4-4a26-9ffd-1a70db9db560}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{640dc705-97d3-4194-b17a-b7635ed8dd88}</destination>
@@ -82,7 +82,7 @@
 	<object class="ParameterProxy" id="{220dc9f5-3563-4fb3-810a-3f36831e5375}">
 		<relationship name="modules">
 			<destination>{33ac9e98-7bff-4591-8852-f46148d71a81}</destination>
-			<destination>{42837db4-afad-4a0e-a4d2-37460d42b684}</destination>
+			<destination>{8309ddb1-84c4-4a26-9ffd-1a70db9db560}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{5ad23578-572a-4709-bc1a-eb6af4508ac3}</destination>
@@ -119,15 +119,12 @@
 			<destination>{0aee8fe4-7ad3-4f24-9528-4a4fc5955794}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{42837db4-afad-4a0e-a4d2-37460d42b684}">
-		<property name="volume">
-			<value>-7</value>
-		</property>
+	<object class="SingleSound" id="{8309ddb1-84c4-4a26-9ffd-1a70db9db560}">
 		<relationship name="modulators">
-			<destination>{41b1aa79-02ef-45d2-b146-6509e6903e27}</destination>
+			<destination>{405a91ff-b3b7-4a74-87e9-ee058c6a0b1b}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{90b75b1d-2a29-426a-8712-f829830389da}</destination>
+			<destination>{9e419cb6-4cfc-4615-8190-8230e15777c2}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{640dc705-97d3-4194-b17a-b7635ed8dd88}">
@@ -160,7 +157,7 @@
 			<value>11.5</value>
 		</property>
 	</object>
-	<object class="RandomizerModulator" id="{41b1aa79-02ef-45d2-b146-6509e6903e27}">
+	<object class="RandomizerModulator" id="{405a91ff-b3b7-4a74-87e9-ee058c6a0b1b}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>

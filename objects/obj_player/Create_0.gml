@@ -140,6 +140,7 @@ if !variable_global_exists("saveroom")
 	global.prankenemy_cankill = true
 	global.detective = false
 	global.tauntcount = 0
+	global.waybackIntro = false
 }
 
 spr_palette = spr_playerPal
