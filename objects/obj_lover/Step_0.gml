@@ -55,8 +55,8 @@ else
 			image_index = image_number - 1
 		if fly
 		{
-			vspeed = approach(vspeed, -14, 0.1)
-			hspeed = approach(hspeed, -4, 0.1)
+			vspeed = approach(vspeed, -14, 1)
+			hspeed = approach(hspeed, -4, 1)
 		}
 		else
 		{
