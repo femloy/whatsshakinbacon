@@ -35,6 +35,8 @@ combometer.arrowx = combometer.x
 combometer.vsp = 0
 combometer.state = -1
 combometer.lights = []
+combometer.shake = 0
+combometer.combo = 0
 repeat (4)
 	array_push(combometer.lights, {on: true, sprite: spr_comboLights, x: 0, y: 0, index: 0})
 

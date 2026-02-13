@@ -45,6 +45,7 @@ switch scene
 			ini_write_real("General", "created", true)
 			ini_close()
 			TVsprite = spr_mainmenu_tv
+			TVindex = selectedFile + 1
 			exit;
 		}
 		var move = key_right2 + key_left2
@@ -74,7 +75,7 @@ switch scene
 		{
 			var q = saveFiles[i]
 			q.faceAlpha = approach(q.faceAlpha, (selectedFile == q.file) && q.created ? 1 : 0, 0.1)
-			q.movie.x = lerp(q.movie.x, selectedFile == q.file ? q.movie.saveX + 80 : q.movie.saveX, 0.35)
+			q.movie.x = lerp(q.movie.x, selectedFile == q.file ? q.movie.saveX + 80 : q.movie.saveX, 0.25)
 			q.movie.y = lerp(q.movie.y, selectedFile == q.file ? q.movie.saveY - 5 : q.movie.saveY, 0.25)
 		}
 		
@@ -101,20 +102,20 @@ switch scene
 		}
 		break
 	case 1:
-		hudAlpha = approach(hudAlpha, 0, 0.1)
-		/*for (var i = 0; i < array_length(saveFiles); i++)
+		hudAlpha = approach(hudAlpha, 0, 0.15)
+		for (var i = 0; i < array_length(saveFiles); i++)
 		{
 			var q = saveFiles[i]
 			if selectedFile != q.file
 			{
-				q.movie.alpha = approach(q.movie.alpha, 0, 0.01)
+				q.movie.alpha = approach(q.movie.alpha, 0, 0.05)
 				q.movie.x = q.movie.saveX + irandom_range(-1, 1)
 				q.movie.y = q.movie.saveY + irandom_range(-1, 1)
 			}
 			else
 				q.movie.scale = approach(q.movie.scale, 2.5, 0.001)
 			
-		}*/
+		}
 		break
 	case 3:
 		getMenu_input()

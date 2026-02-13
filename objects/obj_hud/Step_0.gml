@@ -144,3 +144,4 @@ if (!ds_list_empty(collectVis))
 global.Arank = global.Srank / 2
 global.Brank = global.Arank / 2
 global.Crank = global.Brank / 2
+alarm[0] = 60

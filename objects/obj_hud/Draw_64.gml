@@ -35,13 +35,13 @@ with kettle
 		
 		for (var i = 0; i < array_length(colorarray); i++)
 		{
-			colorarray[i] = irandom_range(0, 1)
+			colorarray[i] = random_range(0, 1)
 		}
 		lastcollect = global.collect
 	}
 	for (var i = 0; i < string_length(global.collect); i++)
 	{
-		var _yOffset = (i + 1) % 2 == 0 ? -7 : 0
+		var _yOffset = (i + 1) % 2 == 0 ? -4 : 0
 		shader_set(shd_pal_swapper)
 		pal_swap_set(pal_kettlefont, colorarray[i], false)
 		draw_text(floor(_xx), floor(ky + 12 - offset + _yOffset), string_char_at(global.collect, i + 1))
@@ -194,8 +194,22 @@ with combometer
 	
 	draw_sprite(spr_combo_meter, 0, x, y - other.tv.offset)
 	draw_set_font(global.comboFont)
-	draw_set_halign(fa_right)
-	draw_text(x - 4, y + 32 - other.tv.offset, global.combo.amt)
+	draw_set_halign(fa_left)
+	if combo != global.combo.amt
+	{
+		combo = global.combo.amt
+		shake = 6
+	}
+	var _xx = x - 9 - string_width(combo)
+	var _yy = y + 32 - other.tv.offset
+	shake = approach(shake, 0, 6 / 10)
+	for (var i = 0; i < string_length(combo); i++)
+	{
+		var _str = string_char_at(combo, i + 1)
+		draw_text(_xx + random_range(shake, -shake), _yy + random_range(shake, -shake), _str)
+		_xx += string_width(_str)
+		_yy += 2
+	}
 } 
 
 with tv

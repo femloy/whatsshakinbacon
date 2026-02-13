@@ -1,5 +1,5 @@
-#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2 && !global.dirGround))
-#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump && !global.dirGround))
+#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2)
+#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump)
 
 function hurt_player(_obj = noone)
 {
@@ -46,6 +46,7 @@ function hurt_player(_obj = noone)
 		{
 			create_particleDebri(spr_baddie_gibs, irandom_range(0, sprite_get_number(spr_baddie_gibs)), x, y, 1, -5)
 			create_particleDebri(spr_slapstar, irandom_range(0, sprite_get_number(spr_slapstar)), x, y, 1, -5)
+			create_particleDebri(asset_get_index($"spr_collect{irandom_range(1, 5)}"), 0, x, y, 1, -5)
 		}
 		create_particleStatic(spr_hurteffect, x, y, 1)
 	}	
