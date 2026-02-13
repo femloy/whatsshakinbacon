@@ -57,6 +57,9 @@ enum states
 	coconutshoot,
 	coconutjump,
 	noclip,
+	gunk,
+	gunkMove,
+	gunkIntro
 }
 
 enum characters
@@ -251,6 +254,8 @@ squashY = 1
 freefalling = 0
 swingdingendcooldown = 20
 soundtestroom = room
+
+gunkHard = 60
 
 get_input()
 alarm[1] = irandom_range(5, 15)

@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "path":"folders/Objects/Debug/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Player",
-    "path":"folders/Objects/Effects/Player.yy",
+    "path":"folders/Objects/Debug/Effects/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

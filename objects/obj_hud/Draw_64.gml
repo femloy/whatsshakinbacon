@@ -65,7 +65,7 @@ with kettle
 		previousRank = rankindex
 		rankScale = 2
 	}
-	var rankX = x + sin(current_time * 0.001) * 2
+	var rankX = x + sin(current_time * 0.001) * 2 - 16
 	var rankY = y + cos(current_time * 0.001) * 2 - offset
 	draw_sprite_ext(spr_hudRanks, rankindex, rankX + 160, rankY, rankScale, rankScale, 0, c_white, 1)
 	var perc = 0
@@ -178,7 +178,7 @@ with combometer
 		}
 		if q.sprite == spr_comboLightsOff
 		{
-			q.x = x - 72 + (45 * i) + irandom_range(-1, 1)
+			q.x = x - 72 + (45 * i)
 			q.y = y - 5 + irandom_range(-1, 1) + wave(_yOffset, -_yOffset, 5, 0)
 		}
 		q.index += 0.1

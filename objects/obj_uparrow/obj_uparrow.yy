@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Technical",
-    "path":"folders/Objects/Effects/Technical.yy",
+    "path":"folders/Objects/Debug/Effects/Technical.yy",
   },
   "parentObjectId":null,
   "persistent":false,

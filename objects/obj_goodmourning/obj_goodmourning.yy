@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Escape Sequence",
-    "path":"folders/Objects/Effects/Escape Sequence.yy",
+    "path":"folders/Objects/Debug/Effects/Escape Sequence.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -9,13 +9,9 @@ else if animation_end() && sprite_index == spr_stickcollect_billlargestack_end
 	image_index = image_number - 1
 }
 var _transfoPass = [
-	states.skateboardintro, 
-	states.skateboard, 
-	states.skateboardaim, 
-	states.skateboardhitwall, 
-	states.skateboardramp, 
-	states.skateboardwall, 
-	states.skateboardmove
+	states.gunkIntro,
+	states.gunkMove,
+	states.gunk
 	]
 if array_contains(_transfoPass, obj_player.state)
 	canGive = false

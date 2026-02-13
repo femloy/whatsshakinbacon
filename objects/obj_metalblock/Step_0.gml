@@ -2,7 +2,7 @@ with obj_player
 { 
 	var _block = other
 	if state == states.mach3 || state == states.buzzsaw || state == states.hammerattack || 
-	(state == states.groundpound && freefallsmash >= 10)
+	(state == states.groundpound && freefallsmash >= 10) || (state == states.gunkMove && gunkHard >= 60)
 	{
 		var _y = y
 		var _x = x + (hsp * 5)

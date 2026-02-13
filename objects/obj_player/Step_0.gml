@@ -250,6 +250,15 @@ if hitstun.is == false
 		case states.coconutshoot:
 			scr_player_coconut_shoot()
 			break
+		case states.gunk:
+			scr_player_gunk()
+			break
+		case states.gunkIntro:
+			scr_player_gunkIntro()
+			break
+		case states.gunkMove:
+			scr_player_gunkMove()
+			break
 		case states.noclip:
 			get_input()
 			var spd = key_attack ? 20 : 10

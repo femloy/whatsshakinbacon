@@ -42,6 +42,7 @@ function scr_collide_destructibles()
 			state == states.skateboardmove ||
 			state == states.skateboardwall ||
 			state == states.skateboardramp ||
+			state == states.gunkMove ||
 			state == states.slip
 			{
 				if place_meeting(x + hsp * 2, y + vsp * 2, other)

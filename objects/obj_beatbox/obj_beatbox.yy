@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Boombox",
-    "path":"folders/Objects/Effects/Boombox.yy",
+    "path":"folders/Objects/Debug/Effects/Boombox.yy",
   },
   "parentObjectId":null,
   "persistent":false,
