@@ -11,6 +11,7 @@ kettle.offset = 0
 kettle.shake = 0
 kettle.lastcollect = -4
 kettle.colorarray = []
+kettle.badnum = []
 depth = -500
 
 collectVis = ds_list_create()
@@ -59,3 +60,4 @@ hudVisible = function()
 
 global.Srank = 22000
 idle = 60 * 2
+alarm[0] = 60

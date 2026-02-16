@@ -7,6 +7,7 @@ global.smallfont = font_add_sprite_ext(spr_smallfont, "abcdefghijklmnopqrstuvwxy
 global.npcfont = font_add_sprite_ext(spr_npcfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!¡,.:0123456789'?¿-áäãàâæéèêëíîïóöõôúùûüÿŸÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇç", true, 2)
 global.smallnumberfnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", 1, 0)
 global.ransomfont = font_add_sprite_ext(spr_ransomfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 1, 0)
+global.badnumfont = font_add_sprite_ext(spr_badfont, "0123456789-", 1, 0)
 global.username = "guest"
 room_goto(rm_intro)
 randomize()

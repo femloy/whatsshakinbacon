@@ -41,7 +41,7 @@ with kettle
 	}
 	for (var i = 0; i < string_length(global.collect); i++)
 	{
-		var _yOffset = (i + 1) % 2 == 0 ? -4 : 0
+		var _yOffset = (i + 1) % 2 == 0 ? -5 : 0
 		shader_set(shd_pal_swapper)
 		pal_swap_set(pal_kettlefont, colorarray[i], false)
 		draw_text(floor(_xx), floor(ky + 12 - offset + _yOffset), string_char_at(global.collect, i + 1))
@@ -62,11 +62,15 @@ with kettle
 		rankindex = 1
 	if previousRank != rankindex
 	{
+		if rankindex > previousRank
+			fmod_studio_event_instance_set_parameter_by_name(FMODevent_oneshot("event:/Sfx/UI/rankup"), "state", rankindex - 1)
+		else if rankindex < previousRank
+			fmod_studio_event_instance_set_parameter_by_name(FMODevent_oneshot("event:/Sfx/UI/rankdown"), "state", rankindex - 1)
 		previousRank = rankindex
 		rankScale = 2
 	}
-	var rankX = x + sin(current_time * 0.001) * 2 - 16
-	var rankY = y + cos(current_time * 0.001) * 2 - offset
+	var rankX = x - 16
+	var rankY = y - offset
 	draw_sprite_ext(spr_hudRanks, rankindex, rankX + 160, rankY, rankScale, rankScale, 0, c_white, 1)
 	var perc = 0
 	switch rankindex
@@ -99,6 +103,23 @@ with kettle
 		offset = approach(offset, 300, 50)
 	else {
 		offset = approach(offset, 0, 50)
+	}
+	for (var i = 0; i < array_length(badnum); i++)
+	{
+		draw_set_font(global.badnumfont)
+		draw_set_colour(c_red)
+		draw_set_alpha(badnum[i].alpha)
+		draw_set_halign(fa_center)
+		draw_text(badnum[i].x, badnum[i].y, badnum[i].text)
+		draw_set_alpha(1)
+		draw_set_colour(c_white)
+		badnum[i].y -= 1 / 2
+		badnum[i].alpha -= 1 / 60
+		if badnum[i].alpha <= 0
+		{
+			array_delete(badnum, i, 1)
+			i--
+		}
 	}
 }
 with combometer
@@ -189,7 +210,7 @@ with combometer
 	var _startPos = lights[3].x + 15
 	var _endPos = lights[0].x - 5
 	var _lights = (array_length(lights) * _perc) / array_length(lights)
-	arrowx = lerp(arrowx, _endPos + ((_startPos - _endPos) * _lights), 0.1)
+	arrowx = lerp(arrowx, _endPos + ((_startPos - _endPos) * _lights), 0.25)
 	draw_sprite(spr_combo_arrow, 0, arrowx, y - 34 - other.tv.offset)
 	
 	draw_sprite(spr_combo_meter, 0, x, y - other.tv.offset)

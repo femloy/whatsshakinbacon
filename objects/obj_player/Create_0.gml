@@ -259,3 +259,8 @@ gunkHard = 60
 
 get_input()
 alarm[1] = irandom_range(5, 15)
+
+blend = c_white
+blendAmount = 0
+blendSpeed = 0.35 / 17
+poison = 0

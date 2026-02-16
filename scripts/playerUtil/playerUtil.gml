@@ -1,5 +1,5 @@
-#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2)
-#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump)
+#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2))
+#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
 
 function hurt_player(_obj = noone)
 {
@@ -27,6 +27,8 @@ function hurt_player(_obj = noone)
 			global.collect = 0
 		global.combo.timer -= 25
 		global.combo.timer = clamp(global.combo.timer, 0, 60)
+		with obj_hud
+			array_push(kettle.badnum, {x: kettle.x + 90, y: kettle.y, alpha: 1, text: "-100"})
 		i_frame = 100
 		var sameFace = true
 		var facing = xscale
@@ -128,6 +130,7 @@ function generalReset()
 	obj_player.yscaleMulti = 1
 	obj_player.hitstun.is = false
 	obj_player.supertaunt = 0
+	obj_player.poison = 0
 	obj_player.canSupertaunt = false
 	
 	with obj_hud

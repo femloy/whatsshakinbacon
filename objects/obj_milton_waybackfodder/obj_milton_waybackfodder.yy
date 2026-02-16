@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Wayback",
-    "path":"folders/Objects/Debug/Effects/Level/Miltons/Wayback.yy",
+    "path":"folders/Objects/Effects/Level/Miltons/Wayback.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -34,6 +34,7 @@ with other
 		if global.level == "tutorial"
 		{
 			load_textures([_group])
+			generalReset()
 			if !instance_exists(obj_fadeout)
 				instance_create(x, y , obj_fadeout)
 		}

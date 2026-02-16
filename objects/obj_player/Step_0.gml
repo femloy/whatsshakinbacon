@@ -91,11 +91,22 @@ if hitstun.is == false
 		image_alpha = round(wave(0, 1, 0.1, 0))
 	else
 		image_alpha = 1
-	if state == states.walkfront && sprite_index == spr_player_walkfront
-		image_blend = make_colour_hsv(0, 0, image_index / image_number * 255);
-	else {
-		image_blend = make_colour_hsv(0, 0, 255);
+	
+	
+	image_blend = merge_colour(blend, c_black, blendAmount)
+	blendAmount = approach(blendAmount, 0, blendSpeed)
+	poison = approach(poison, 0, 60 / (60 * 3))
+	if poison == 0
+	{
+		if blend = #a3ed99
+		{
+			blend = c_white
+			flash = true
+		}
 	}
+	if poison > 0 && alarm[2] <= 0
+		alarm[2] = 30
+	
 	if flash = true && alarm[0] <= 0
 		alarm[0] = 5
 	if y < -500 || y > room_height + 500 && state != -4 && !instance_exists(obj_fadeout)

@@ -19,7 +19,7 @@ function create_particleStatic(_sprite, _x, _y, _xscale, _depth = 1)
 	return par;
 }
 
-function create_particleDebri(_sprite, _index, _x, _y, _xscale, _depth = 1, _angle = random_range(0, 360), _vsp = random_range(-3, 3), _hsp = random_range(5, -5))
+function create_particleDebri(_sprite, _index, _x, _y, _xscale, _depth = 1, _angle = random_range(0, 360), _vsp = random_range(-5, 5), _hsp = random_range(5, -5))
 {
 	var par = create_particleStatic(_sprite, _x, _y, _xscale, _depth)
 	with par
@@ -65,7 +65,7 @@ function create_afterimage(_sprite, _index, _x, _y, _xscale, _alpha = 1)
 		x: _x,
 		y: _y,
 		image_xscale: _xscale,
-		image_blend: choose(#ff50c0, #50ff7c),
+		image_blend: choose(#e48397, #b51a3a),
 		alarm: [15],
 		type: afterimagetype.normal,
 		alpha: _alpha,

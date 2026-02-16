@@ -48,6 +48,7 @@ function scr_player_grab(){
 	}
 	if grounded && ( sprite_index == spr_player_airgrab )
 	{
+		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		grabOut()
 		exit;
 	}
@@ -99,6 +100,7 @@ function scr_player_grab(){
 		state = states.climbwall
 		sprite_index = spr_player_wallclimb
 		image_index = 0
+		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 	}
 	if (place_meeting(x + sign(hsp), y, obj_solid)
 	&& grounded)

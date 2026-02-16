@@ -35,7 +35,7 @@ function unlock_achievemnt(_achievement)
 			ini_close()
 			repeat (10)
 			{
-				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect_layer)
+				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect_gui)
 			}
 			with instance_create(SCREEN_WIDTH - 120, SCREEN_HEIGHT + 200, obj_feat)
 			{
@@ -62,7 +62,7 @@ function unlock_palette(_saveName, _index = 0, _pattern = spr_playerPat_threads)
 			ini_close()
 			repeat (10)
 			{
-				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect)
+				instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect_gui)
 			}
 			with instance_create(SCREEN_WIDTH - 120, SCREEN_HEIGHT + 200, obj_palette_unlock)
 			{

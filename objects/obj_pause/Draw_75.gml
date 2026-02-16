@@ -77,9 +77,9 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 	{
 		draw_set_alpha(treasureAlpha)
 		draw_sprite(spr_treasure_pause, global.treasure ? 0 : 1, 851, 457)
-		treasureAlpha = approach(treasureAlpha, active, 0.1)
 		draw_set_alpha(1)
 	}
+	treasureAlpha = approach(treasureAlpha, active, 0.1)
 	graphBorderSize = lerp(graphBorderSize, active ? 1 : 2, 0.3)
 	if active
 	{
