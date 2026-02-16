@@ -19,10 +19,10 @@ function scr_player_coconut_gun()
 	get_input()
 	hsp = approach(hsp, movespeed * xscale, 0.35)
 	var move = key_right + key_left
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	if move != 0
 	{

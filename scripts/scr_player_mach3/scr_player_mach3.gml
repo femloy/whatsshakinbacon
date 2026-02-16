@@ -70,10 +70,10 @@ function scr_player_mach3()
 		image_index = 0
 		sprite_index = sprites.mach3
 	}
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	if jumpBuffer && coyote_time && sprite_index != spr_player_mach3turn
 	{

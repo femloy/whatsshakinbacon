@@ -5,10 +5,10 @@ function scr_player_jump()
 	var move = key_right + key_left
 	image_speed = 0.35
 	freefalling++
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	
 	if move != 0

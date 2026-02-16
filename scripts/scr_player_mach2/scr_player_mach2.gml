@@ -66,10 +66,10 @@ function scr_player_mach2()
 	else {
 		image_speed = 0.4
 	}
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	if movespeed >= 12 && grounded
 	{

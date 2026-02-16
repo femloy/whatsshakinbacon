@@ -15,10 +15,10 @@ function scr_player_hauling()
 		image_index = 0
 	}
 	
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	swingdingendcooldown = approach(swingdingendcooldown, 0, 1)
 	if grounded && (sprite_index = spr_player_haulingfall || sprite_index == spr_player_haulingjump) && sprite_index != spr_player_swingading

@@ -19,7 +19,7 @@ function scr_player_grab(){
 	}
 	get_input()
 	hsp = movespeed * xscale
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
 		vsp /= 20

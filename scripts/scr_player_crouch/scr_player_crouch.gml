@@ -19,10 +19,10 @@ function scr_player_crouch()
 		sprite_index = spr_player_crouchfall
 		image_index = 0
 	}
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	if grounded && (sprite_index = spr_player_crouchhop || sprite_index == spr_player_crouchfall)
 	{
