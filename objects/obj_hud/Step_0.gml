@@ -47,6 +47,7 @@ with tv
 						sprite_index = _idleSprite
 					}
 				break
+				case spr_tv_hurt:
 				case spr_tv_happy:
 					expressionTimer--
 					if expressionTimer <= 0

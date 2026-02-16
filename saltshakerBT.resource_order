@@ -943,6 +943,7 @@
     {"name":"spr_tv_empty","order":11,"path":"sprites/spr_tv_empty/spr_tv_empty.yy",},
     {"name":"spr_tv_escape","order":3,"path":"sprites/spr_tv_escape/spr_tv_escape.yy",},
     {"name":"spr_tv_happy","order":4,"path":"sprites/spr_tv_happy/spr_tv_happy.yy",},
+    {"name":"spr_tv_hurt","order":15,"path":"sprites/spr_tv_hurt/spr_tv_hurt.yy",},
     {"name":"spr_tv_idle_anim1","order":14,"path":"sprites/spr_tv_idle_anim1/spr_tv_idle_anim1.yy",},
     {"name":"spr_tv_idle","order":5,"path":"sprites/spr_tv_idle/spr_tv_idle.yy",},
     {"name":"spr_tv_mach","order":6,"path":"sprites/spr_tv_mach/spr_tv_mach.yy",},

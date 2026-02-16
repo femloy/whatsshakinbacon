@@ -27,6 +27,7 @@ function hurt_player(_obj = noone)
 			global.collect = 0
 		global.combo.timer -= 25
 		global.combo.timer = clamp(global.combo.timer, 0, 60)
+		tv_anim(spr_tv_hurt, 60 * 3)
 		with obj_hud
 			array_push(kettle.badnum, {x: kettle.x + 90, y: kettle.y, alpha: 1, text: "-100"})
 		i_frame = 100
