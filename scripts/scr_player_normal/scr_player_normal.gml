@@ -161,7 +161,6 @@ function scr_player_normal()
 	}
 	if key_attack && !place_meeting(x + xscale, y, obj_solid)
 	{
-		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
 		movespeed = 6
 		sprite_index = spr_player_mach1
 		image_index = 0

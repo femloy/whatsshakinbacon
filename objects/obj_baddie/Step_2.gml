@@ -34,6 +34,10 @@ if escape && spawnerId == -4
 	exit;
 }
 
+var _prev_mask = mask_index
+
+mask_index = sprite_index
+
 with obj_player
 {
 	if place_meeting(x, y + (vsp * 2), other) && y < other.y && vsp > 0 && !other.invincable
@@ -95,17 +99,17 @@ with obj_player
 		
 		var _baddie = other
 		
-		if state == states.mach2 || state == states.tumble
+		if state == states.mach2 || state == states.tumble && _baddie.scared < 165
 		{
 			with _baddie
 			{
 				FMODevent_oneshot("event:/Sfx/Player/mach2bump", x, y)
 				xscaleMulti = 0.3
 				yscaleMulti = 1.7
-				vsp = (other.y - 180 - y) / 60;
+				vsp = (other.y - 180 - y) / 60
 				xscale = -obj_player.xscale
 				
-				scared = 120
+				scared = 180
 				state = states.stun
 				movespeed = -12
 				sprite_index = spr_stun
@@ -194,3 +198,5 @@ with obj_player
 		}
 	}
 }
+
+mask_index = _prev_mask

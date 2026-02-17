@@ -1,6 +1,7 @@
 if ds_list_find_index(global.saveroom, id) == -1
 {
 	ds_list_add(global.saveroom, id)
+	scr_sleep()
 	FMODevent_oneshot("event:/Sfx/General/Level/breakblock", x, y)
 	var __val = 100
 	global.collect += __val

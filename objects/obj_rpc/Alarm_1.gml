@@ -13,7 +13,7 @@ else if global.collect >= global.Crank
 	_rank = "C"
 if global.level != noone
 {
-	_state = string_concat(timeString(global.level_timer), " | Score: ", global.collect, " | Combo: ", global.combo.amt, " (", global.combo.dropped ? "Non P-Rank)" : "P-Rank)", " | Rank: ", _rank)
+	_state = string_concat(string_seconds_to_timer(global.level_timer), " | Score: ", global.collect, " | Combo: ", global.combo.amt, " (", global.combo.dropped ? "Non P-Rank)" : "P-Rank)", " | Rank: ", _rank)
 	switch global.level
 	{
 		case "forest":

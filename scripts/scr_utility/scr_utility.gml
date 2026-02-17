@@ -74,7 +74,7 @@ function unload_textures(_textures)
 }
 
 function animation_end() {
-	return image_index + image_speed * sprite_get_speed(sprite_index)  >=  image_number;
+	return image_index > image_number - 1
 }
 
 function shake_camera(_intensity, _time)
@@ -161,10 +161,7 @@ function tile_delete(_x, _y) {
 		var lay = layers[i];
 		var layer_name = layer_get_name(lay);
 		if layer_name != "Tiles_BG1" && layer_name != "Tiles_BG" && layer_name != "Tiles_BG2" && layer_name != "Tiles_BG3" {
-			var ID = layer_get_id(layer_name)
-			var tilemapID = layer_tilemap_get_id(ID)
-			var tiledata = tilemap_get_at_pixel(tilemapID, _x, _y)
-			tile_set_empty(tiledata)
+			var tilemapID = layer_tilemap_get_id(layer_name)
 			tilemap_set_at_pixel(tilemapID, 0, _x, _y)
 		}
 	}
@@ -197,7 +194,7 @@ function scr_transfotip(_text, _font = global.creditsfont) {
 	return q
 }
 
-function timeString(_variable)
+function string_seconds_to_timer(_variable)
 {
 	_variable = string_format(_variable, 1, 3);
 	var _ms = string_digits(frac(_variable))

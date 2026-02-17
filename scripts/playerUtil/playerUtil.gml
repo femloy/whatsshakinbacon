@@ -343,7 +343,7 @@ function doGrab()
 function slope_momentum(_accel = 0.1, _deaccel = 0) {
 	if scr_slope(x, y + 1)
 	{
-		var _obj = scr_slope_get()
+		var _obj = instance_place(x, y + 1, obj_slope);
 		
 		if instance_exists(_obj) 
 		{

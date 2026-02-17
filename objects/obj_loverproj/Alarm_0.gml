@@ -1,10 +1,10 @@
-global.collect += 5
+global.collect += 10
 global.combo.timer = 60
-points -= 5
+points -= 10
 var _sprite = asset_get_index($"spr_collect{irandom_range(1, 5)}")
 create_collect(_sprite, x, y)
 FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
 if points > 0
-	alarm[0] = 4
+	alarm[0] = 5
 else
 	instance_destroy()
