@@ -96,7 +96,7 @@ function scr_player_superjump()
 		}
 	}
 	else {
-		image_speed = 0.5
+		image_speed = 0.6
 		verticalMovespeed = 0
 		vsp = verticalMovespeed
 		hsp = 0

@@ -19,7 +19,7 @@
   "height":600,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"a3530060-c718-458a-9785-7b393f945f75","blendMode":0,"displayName":"default","isLocked":false,"name":"a3530060-c718-458a-9785-7b393f945f75","opacity":10.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a3530060-c718-458a-9785-7b393f945f75","blendMode":0,"displayName":"default","isLocked":false,"name":"a3530060-c718-458a-9785-7b393f945f75","opacity":20.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"bg_temple4",
   "nineSlice":null,
