@@ -244,7 +244,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"saltshakerBT",
   "resources":[
@@ -321,6 +321,7 @@
     {"id":{"name":"obj_fmod","path":"objects/obj_fmod/obj_fmod.yy",},},
     {"id":{"name":"obj_followplayer","path":"objects/obj_followplayer/obj_followplayer.yy",},},
     {"id":{"name":"obj_forkbox","path":"objects/obj_forkbox/obj_forkbox.yy",},},
+    {"id":{"name":"obj_ghost_object","path":"objects/obj_ghost_object/obj_ghost_object.yy",},},
     {"id":{"name":"obj_globaltimer","path":"objects/obj_globaltimer/obj_globaltimer.yy",},},
     {"id":{"name":"obj_goodmourning","path":"objects/obj_goodmourning/obj_goodmourning.yy",},},
     {"id":{"name":"obj_goup","path":"objects/obj_goup/obj_goup.yy",},},

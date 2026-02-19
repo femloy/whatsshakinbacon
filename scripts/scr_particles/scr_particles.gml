@@ -50,7 +50,7 @@ function create_collect(_sprite, _x, _y, _bypass = false)
 		vsp: 0,
 		Hmvsp: 0,
 		Vmvsp: 0,
-		movespeed: 12
+		movespeed: 24
 	}
 	ds_list_add(obj_hud.collectVis, par)
 	return par;

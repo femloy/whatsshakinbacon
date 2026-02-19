@@ -1,2 +1,2 @@
 draw_sprite_ext(sprite_index, image_index, x, y + wave(-3, -6, 2, 0), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-draw_sprite_ext(spr_lover_platform, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha * 0.6)
+draw_sprite_ext(spr_lover_platform, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)

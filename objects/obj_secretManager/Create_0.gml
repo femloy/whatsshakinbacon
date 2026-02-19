@@ -1,5 +1,4 @@
 tiles = [];
-collectables = [];
 alarm[0] = 10
 layers = layer_get_all();
 

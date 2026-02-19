@@ -20,6 +20,7 @@ if ds_list_find_index(global.saveroom, id) == -1
 	}
 	create_particleStatic(spr_genericpoofeffect, x, y, 1, -2)
 	create_particleStatic(spr_bangeffect, x, y, 1)
+	scr_sleep(100)
 	var _dialog = instance_create(x, y - 32, obj_smallDialog)
 	with _dialog
 	{

@@ -4,6 +4,8 @@ if active == false
 	
 	if place_meeting(x, y, obj_player)
 	{
+		create_ghost_self_visual()
+		create_ghost_self_visual(spr_lover_platform)
 		image_index = 0
 		sprite_index = asset_get_index($"spr_lover{lover}_shoot")
 		ds_list_add(global.saveroom, id)

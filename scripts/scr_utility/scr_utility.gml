@@ -85,6 +85,15 @@ function shake_camera(_intensity, _time)
 	obj_camera.cameraShake = _intensity
 }
 
+function create_ghost_self_visual(_sprite = sprite_index, _speed = image_speed)
+{
+	with instance_create(x, y, obj_ghost_object)
+	{
+		sprite_index = _sprite
+		image_speed = _speed
+	}
+}
+
 function tv_anim(_sprite, _timer = 0)
 {
 	with obj_hud.tv
@@ -197,8 +206,8 @@ function scr_transfotip(_text, _font = global.creditsfont) {
 function string_seconds_to_timer(_variable)
 {
 	_variable = string_format(_variable, 1, 3);
-	var _ms = string_digits(frac(_variable))
-	_ms = string_copy(_ms, 2, 3)
+	var _ms = frac(_variable)
+	_ms = string_copy(_ms, 3, 5)
 	
 	var _realSecond = floor(_variable)
 	

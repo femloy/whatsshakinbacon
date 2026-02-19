@@ -35,14 +35,4 @@ pal_swap_set(spr_secretColors, 1, false)
 for (var i = 0; i < _tile_count; i++) 
 	draw_tilemap(tiles[i], 0, 0);
 shader_reset()
-for (var i = 0; i < array_length(collectables); i++) 
-{
-	var q = collectables[i]
-	if !instance_exists(q.id)
-	{
-		draw_set_alpha(0.3);
-		draw_sprite(q.sprite, q.index, q.x, q.y)
-	}
-	q.index += 0.35
-}
 draw_set_alpha(1);

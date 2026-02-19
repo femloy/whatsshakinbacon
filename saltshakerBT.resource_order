@@ -216,6 +216,7 @@
     {"name":"obj_flagPile","order":2,"path":"objects/obj_flagPile/obj_flagPile.yy",},
     {"name":"obj_fmod","order":5,"path":"objects/obj_fmod/obj_fmod.yy",},
     {"name":"obj_forkbox","order":1,"path":"objects/obj_forkbox/obj_forkbox.yy",},
+    {"name":"obj_ghost_object","order":10,"path":"objects/obj_ghost_object/obj_ghost_object.yy",},
     {"name":"obj_globaltimer","order":1,"path":"objects/obj_globaltimer/obj_globaltimer.yy",},
     {"name":"obj_goodmourning","order":7,"path":"objects/obj_goodmourning/obj_goodmourning.yy",},
     {"name":"obj_goup","order":2,"path":"objects/obj_goup/obj_goup.yy",},

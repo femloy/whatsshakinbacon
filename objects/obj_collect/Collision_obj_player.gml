@@ -7,3 +7,7 @@ create_collect(sprite_index, x, y)
 ds_list_add(global.saveroom, id)
 instance_destroy()
 FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
+var roomname = string_letters(room_get_name(room))
+var isSecret = string_pos("secret", roomname) > 0
+if isSecret
+	create_ghost_self_visual()

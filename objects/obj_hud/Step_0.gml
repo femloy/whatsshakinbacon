@@ -125,7 +125,6 @@ if (!ds_list_empty(collectVis))
 			var point = point_direction(x, y, targetxx, targetyy)
 			hsp = lengthdir_x(abs(movespeed), point)
 			vsp = lengthdir_y(abs(movespeed), point)
-			movespeed = approach(movespeed, 24, 1)
 			x += hsp
 			y += vsp
 			if point_distance(x, y, targetxx, targetyy) <= 25

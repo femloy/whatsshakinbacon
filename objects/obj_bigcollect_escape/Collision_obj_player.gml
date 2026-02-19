@@ -14,4 +14,8 @@ if global.escape.active
 		if irandom(100) <= 25
 			fmod_studio_event_instance_start(soundsLaugh)
 	}
+	var roomname = string_letters(room_get_name(room))
+var isSecret = string_pos("secret", roomname) > 0
+if isSecret
+	create_ghost_self_visual()
 }
