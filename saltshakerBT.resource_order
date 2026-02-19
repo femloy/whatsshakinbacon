@@ -276,7 +276,6 @@
     {"name":"obj_skateboardgiver","order":4,"path":"objects/obj_skateboardgiver/obj_skateboardgiver.yy",},
     {"name":"obj_skateboardViewer","order":8,"path":"objects/obj_skateboardViewer/obj_skateboardViewer.yy",},
     {"name":"obj_slipperybutter","order":8,"path":"objects/obj_slipperybutter/obj_slipperybutter.yy",},
-    {"name":"obj_slope_platform","order":6,"path":"objects/obj_slope_platform/obj_slope_platform.yy",},
     {"name":"obj_slope","order":1,"path":"objects/obj_slope/obj_slope.yy",},
     {"name":"obj_sloshersplat","order":4,"path":"objects/obj_sloshersplat/obj_sloshersplat.yy",},
     {"name":"obj_smalltext","order":1,"path":"objects/obj_smalltext/obj_smalltext.yy",},

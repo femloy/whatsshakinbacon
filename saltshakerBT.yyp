@@ -400,7 +400,6 @@
     {"id":{"name":"obj_skateboardgiver","path":"objects/obj_skateboardgiver/obj_skateboardgiver.yy",},},
     {"id":{"name":"obj_skateboardViewer","path":"objects/obj_skateboardViewer/obj_skateboardViewer.yy",},},
     {"id":{"name":"obj_slipperybutter","path":"objects/obj_slipperybutter/obj_slipperybutter.yy",},},
-    {"id":{"name":"obj_slope_platform","path":"objects/obj_slope_platform/obj_slope_platform.yy",},},
     {"id":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},},
     {"id":{"name":"obj_slosher","path":"objects/obj_slosher/obj_slosher.yy",},},
     {"id":{"name":"obj_sloshersplat","path":"objects/obj_sloshersplat/obj_sloshersplat.yy",},},

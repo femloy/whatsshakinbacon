@@ -82,7 +82,7 @@ function scr_solid(_x, _y)
 	var _self_id = id
 	var _collided = false
 	var _collision_list = ds_list_create();
-	var _collides_with = [obj_solid, obj_slope, obj_slope_platform, obj_platform, obj_destructibles]
+	var _collides_with = [obj_solid, obj_slope, obj_platform, obj_destructibles]
 	for (var i = 0; i < array_length(_collides_with); i++)
 	{
 		var _num = instance_place_list(_x, _y, _collides_with[i], _collision_list, false);
@@ -106,9 +106,6 @@ function scr_solid(_x, _y)
 							case obj_slope:
 								_collided = scr_slope_collideCheck(_self_id, _x, _y)
 								break
-							case obj_slope_platform:
-								_collided = scr_slope_collideCheck_platform(_self_id, _x, _y)
-								break
 							case obj_platform:
 								_collided = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
 								break
@@ -121,27 +118,6 @@ function scr_solid(_x, _y)
 	ds_list_destroy(_collision_list)
 	
 	return _collided;
-}
-
-
-function scr_slope_collideCheck_platform(_playerId, _x, _y)
-{
-	var _grounded = _playerId.grounded
-	var _player_height = _playerId.bbox_bottom - _playerId.y
-	var _slope_angle = (bbox_bottom - bbox_top) / (bbox_right - bbox_left)
-	var _side = _x + (_playerId.bbox_left - _playerId.x)
-	var _slope = bbox_bottom + ((_side - bbox_right) * _slope_angle)
-	if image_xscale > 0 // Left faced slope
-	{
-		_side = _x + (_playerId.bbox_right - _playerId.x)
-		_slope = bbox_bottom - ((_side - bbox_left) * _slope_angle)
-	}
-	if image_yscale < 0 // Upside down
-	{
-		_player_height = _playerId.y - _playerId.bbox_top
-		return _y + _player_height < bbox_top + (bbox_bottom - _slope) && _playerId.y > bbox_bottom
-	}
-	return _y + _player_height > _slope && _playerId.y > bbox_bottom
 }
 
 function scr_slope_collideCheck(_playerId, _x, _y)

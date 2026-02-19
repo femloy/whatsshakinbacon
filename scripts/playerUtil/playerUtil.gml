@@ -21,6 +21,8 @@ function hurt_player(_obj = noone)
 		if array_contains(_cantHurtStates, state) || i_frame > 0
 			exit;
 		
+		scr_sleep(100)
+		
 		FMODevent_oneshot("event:/Sfx/Player/hurt", x, y)
 		global.collect -= 100
 		if global.collect < 0
@@ -47,11 +49,11 @@ function hurt_player(_obj = noone)
 		vsp = -12
 		repeat (8)
 		{
-			create_particleDebri(spr_baddie_gibs, irandom_range(0, sprite_get_number(spr_baddie_gibs)), x, y, 1, -5)
 			create_particleDebri(spr_slapstar, irandom_range(0, sprite_get_number(spr_slapstar)), x, y, 1, -5)
 			create_particleDebri(asset_get_index($"spr_collect{irandom_range(1, 5)}"), 0, x, y, 1, -5)
 		}
 		create_particleStatic(spr_hurteffect, x, y, 1)
+		create_particleStatic(spr_parryeffect, x, y, 1)
 	}	
 }
 

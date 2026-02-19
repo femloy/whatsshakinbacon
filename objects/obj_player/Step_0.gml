@@ -88,7 +88,7 @@ if hitstun.is == false
 	if state != states.hurt
 		i_frame = approach(i_frame, 0, 1)
 	if i_frame > 0 && state != states.hurt
-		image_alpha = round(wave(0, 1, 0.1, 0))
+		image_alpha = round(wave(0, 1, 0.05, 0))
 	else
 		image_alpha = 1
 	

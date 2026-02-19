@@ -99,7 +99,7 @@ with obj_player
 		
 		var _baddie = other
 		
-		if state == states.mach2 || state == states.tumble && _baddie.scared < 165
+		if (state == states.mach2 || state == states.tumble) && _baddie.scared < 165
 		{
 			with _baddie
 			{

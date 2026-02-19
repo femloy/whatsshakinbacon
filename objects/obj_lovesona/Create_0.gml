@@ -4,3 +4,4 @@ lover = choose(1, 2)
 active = false
 fly = false
 depth = 35
+interp = 0

@@ -8,13 +8,7 @@ if active == false
 		sprite_index = asset_get_index($"spr_lover{lover}_shoot")
 		ds_list_add(global.saveroom, id)
 		FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", x, y)
-		var _proj = instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_loverproj)
-		with _proj 
-		{
-			sprite_index = asset_get_index($"spr_lover{other.lover}_proj")
-		}
-		show_debug_message("disgusting little thing created")
-		alarm[0] = 100
+		alarm[1] = 15
 		active = true
 		with obj_player
 		{
@@ -49,20 +43,18 @@ if active == false
 else
 {
 	if sprite_index == asset_get_index($"spr_lover{lover}_shoot")
-	{
-		
 		if animation_end()
 			image_index = image_number - 1
-		if fly
-		{
-			vspeed = approach(vspeed, -14, 1)
-			hspeed = approach(hspeed, -4, 1)
-		}
-		else
-		{
-			hspeed = approach(hspeed, 0, 0.5)
-			x = lerp(x, obj_player.x - 100, 0.1)
-			y = lerp(y, obj_player.y - 100, 0.15)
-		}
+	if fly 
+	{
+		vspeed = approach(vspeed, -14, 1)
+		hspeed = approach(hspeed, -4, 1)
+	}
+	else 
+	{
+		hspeed = approach(hspeed, 0, 0.5)
+		x = lerp(x, obj_player.x - 100, interp)
+		y = lerp(y, obj_player.y - 100, interp)
+		interp = approach(interp, 0.1, 0.1 / 39)
 	}
 }
