@@ -17,8 +17,7 @@ var yy = 1
 while (i >= 0)
 {
 	var b = _str[i]
-	b = string_copy(b, 0, string_length(b) - 1)
-	var _len =  string_length(b) - 1
+	var _len =  string_length(b)
 	var _xx = _len * string_width("a")
 	var _yy = (string_height("a") * yy)
 	draw_text(SCREEN_WIDTH - _xx + 8, SCREEN_HEIGHT - _yy, b)

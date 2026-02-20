@@ -203,26 +203,29 @@ function scr_transfotip(_text, _font = global.creditsfont) {
 	return q
 }
 
-function string_seconds_to_timer(_variable)
+function string_seconds_to_timer(_num, _speedrun = global.option_speedrun_timer)
 {
-	_variable = string_format(_variable, 1, 3);
-	var _ms = frac(_variable)
-	_ms = string_copy(_ms, 3, 5)
+	var _ms = floor((_num % 1) * (_speedrun ? 1000 : 10))
+	var _s = floor(_num % 60)
+	var _m = floor((_num / 60) % 60)
+	var _h = floor(_num / (60 * 60))
+	_ms = string(_ms)
+	_s = string(_s)
+	_m = string(_m)
+	_h = string(_h)
+	if _speedrun
+	{
+		if string_length(_ms) <= 1
+			_ms = "0" + _ms
+		if string_length(_ms) <= 2
+			_ms = "0" + _ms
+	}
+	if string_length(_s) <= 1
+		_s = "0" + _s
+	if string_length(_m) <= 1
+		_m = "0" + _m
+	if string_length(_h) <= 1
+		_h = "0" + _h
 	
-	var _realSecond = floor(_variable)
-	
-	var _s = _realSecond
-	_s = wrap(_s, 0, 59)
-	if _s < 10
-		_s = string_concat("0", _s)
-	
-	var _m = floor(_realSecond / 60)
-	_m = wrap(_m, 0, 59)
-	if _m < 10
-		_m = string_concat("0", _m)
-		
-	var _h = floor(_realSecond / (60 * 60))
-	if _h < 10
-		_h = string_concat("0", _h)
 	return $"{_h}:{_m}:{_s}.{_ms}"
 }
