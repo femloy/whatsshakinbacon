@@ -104,8 +104,8 @@ with obj_player
 			with _baddie
 			{
 				FMODevent_oneshot("event:/Sfx/Player/mach2bump", x, y)
-				xscaleMulti = 0.3
-				yscaleMulti = 1.7
+				xscaleMulti = 1.7
+				yscaleMulti = 0.5
 				vsp = (other.y - 180 - y) / 60
 				xscale = -obj_player.xscale
 				
@@ -115,6 +115,7 @@ with obj_player
 				sprite_index = spr_stun
 				repeat (2)
 					create_particleDebri(spr_slapstar, irandom_range(0, sprite_get_number(spr_slapstar)), x, y, 1, -5)
+				create_particleStatic(spr_bangeffect, x, y, 1)
 			}
 		}
 		
@@ -141,7 +142,7 @@ with obj_player
 			with _baddie
 			{
 				playerID = other
-				xscaleMulti = 3
+				xscaleMulti = 1.7
 				yscaleMulti = 0.5
 				sprite_index = spr_stun
 				state = states.grab

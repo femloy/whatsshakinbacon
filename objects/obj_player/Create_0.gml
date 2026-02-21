@@ -192,6 +192,7 @@ soundsHammer = FMODcreate_event("event:/Sfx/Player/hammerattack")
 soundsHammerAir = FMODcreate_event("event:/Sfx/Player/hammerair")
 soundsSkateboard = FMODcreate_event("event:/Sfx/Player/Transformations/Skateboard/move")
 soundsSkateAim = FMODcreate_event("event:/Sfx/Player/Transformations/Skateboard/aim")
+soundsBuzzsaw = FMODcreate_event("event:/Sfx/Player/airspin")
 spinsndbuffer = 0
 speedlineseffect = -4
 spinnyeffect = -4

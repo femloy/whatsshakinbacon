@@ -10,5 +10,5 @@ if state == states.terrified
 	exit;
 }
 
-xscaleMulti = lerp(xscaleMulti, 1, 0.35)
-yscaleMulti = lerp(yscaleMulti, 1, 0.35)
+xscaleMulti = lerp(xscaleMulti, 1, 0.25)
+yscaleMulti = lerp(yscaleMulti, 1, 0.25)

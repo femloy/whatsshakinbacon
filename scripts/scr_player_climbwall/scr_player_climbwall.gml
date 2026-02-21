@@ -53,7 +53,8 @@ function scr_player_climbwall()
 				verticalMovespeed = 14
 			movespeed = verticalMovespeed
 			vsp = -10
-			FMODevent_oneshot("event:/Sfx/Player/airspin", x, y)
+			fmod_studio_event_instance_start(soundsBuzzsaw)
+			FMODSet3dPos(soundsBuzzsaw, x, y)
 		}
 		else
 		{

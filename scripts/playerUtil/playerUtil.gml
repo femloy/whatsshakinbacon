@@ -229,12 +229,19 @@ function playerSounds()
 		fmod_studio_event_instance_stop(soundsHammerAir, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 	}
 	
-	if state == states.superjumpprep
+	if state == states.superjumpprep || sprite_index == spr_player_superjump
 	{
 		fmod_studio_event_instance_set_paused(soundsSuperjump, false);
 		if !FMODevent_isplaying(soundsSuperjump)
 			fmod_studio_event_instance_start(soundsSuperjump);
 		FMODSet3dPos(soundsSuperjump, x, y);
+		if sprite_index == spr_player_superjump
+		{
+			fmod_studio_event_instance_set_parameter_by_name(soundsSuperjump, "state", 1)
+		}
+		else {
+			fmod_studio_event_instance_set_parameter_by_name(soundsSuperjump, "state", 0)
+		}
 	}
 	else{
 		fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
