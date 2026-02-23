@@ -1,5 +1,7 @@
 if global.escape.active
 {
+	if !global.escape.party
+		create_ghost_self_visual()
 	var __val = super ? 200 : 100
 	global.collect += __val
 	global.combo.timer = 60
