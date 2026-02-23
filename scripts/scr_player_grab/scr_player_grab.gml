@@ -103,7 +103,7 @@ function scr_player_grab(){
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 	}
 	if (place_meeting(x + sign(hsp), y, obj_solid)
-	&& grounded)
+	&& grounded) && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		movespeed = 0
 		hsp = 0

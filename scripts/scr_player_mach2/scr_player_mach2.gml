@@ -127,7 +127,7 @@ function scr_player_mach2()
 		}
 	}
 	if place_meeting(x + sign(hsp), y, obj_solid) 
-	&& !place_meeting(x, y + 1, obj_slope) && grounded
+	&& !place_meeting(x, y + 1, obj_slope) && grounded && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		FMODevent_oneshot("event:/Sfx/Player/bump", x, y)
 		state = states.hitwall

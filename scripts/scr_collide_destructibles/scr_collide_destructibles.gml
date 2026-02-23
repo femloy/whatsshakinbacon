@@ -2,7 +2,7 @@ function scr_collide_destructibles()
 {
 	var _list = ds_list_create()
 	var _destroy = false
-	var _num = instance_place_list(x + hsp, y + vsp, obj_destructibles, _list, false);
+	var _num = instance_place_list(x + hsp + xscale, y + vsp, obj_destructibles, _list, false);
 
 	if _num > 0 
 	{
@@ -27,7 +27,7 @@ function scr_collide_destructibles()
 				state == states.climbwall ||
 				(state == states.jump && vsp < 0)
 			
-			if _horizontal && place_meeting(x + hsp, y, _obj)
+			if _horizontal && place_meeting(x + (hsp + xscale) * 2, y, _obj)
 				_destroy = true
 			if _vertical && place_meeting(x, y + vsp, _obj)
 				_destroy = true

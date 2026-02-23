@@ -277,7 +277,7 @@ function playerSounds()
 		var s = 0;
 		if state == states.mach2 && sprite_index == spr_player_mach1 && grounded
 			s = 0;
-		else if (state == states.mach2 && sprite_index != spr_player_mach1)
+		else if ((state == states.mach2 && sprite_index != spr_player_mach1) || state == states.climbwall)
 			s = 1;
 		else if state == states.mach3 && sprite_index != sprites.crazyrun
 			s = 2;

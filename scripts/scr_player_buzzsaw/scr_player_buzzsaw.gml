@@ -59,7 +59,7 @@ function scr_player_buzzsaw()
 		FMODevent_oneshot("event:/Sfx/Player/sawland", x, y)
 	}
 	doTaunt()
-	if slapBuffer > 8 || place_meeting(x + xscale, y, obj_metalblock)
+	if slapBuffer > 8
 	{
 		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		slapBuffer = false

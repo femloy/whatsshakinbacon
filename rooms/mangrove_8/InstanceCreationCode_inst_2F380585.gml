@@ -1,2 +1,5 @@
 if global.escape.active
-	instance_destroy()
+{
+	blocked = true
+	sprite_index = spr_door_temple_blocked
+}

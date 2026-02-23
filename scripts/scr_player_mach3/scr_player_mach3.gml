@@ -119,7 +119,7 @@ function scr_player_mach3()
 		exit
 	}
 	if place_meeting(x + sign(hsp), y, obj_solid) 
-	&& !place_meeting(x, y + 1, obj_slope) && grounded && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_secretmetalblock)
+	&& !place_meeting(x, y + 1, obj_slope) && grounded && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_secretmetalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 		state = states.hitwall

@@ -1,2 +1,2 @@
-if sprite_index == spr_magician_unlock
+if sprite_index == spr_detective_unlock
 	instance_destroy()
