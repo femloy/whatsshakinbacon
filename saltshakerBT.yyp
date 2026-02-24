@@ -244,7 +244,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"saltshakerBT",
   "resources":[
@@ -1228,6 +1228,7 @@
     {"id":{"name":"Sprite661","path":"sprites/Sprite661/Sprite661.yy",},},
     {"id":{"name":"Sprite662","path":"sprites/Sprite662/Sprite662.yy",},},
     {"id":{"name":"Sprite665","path":"sprites/Sprite665/Sprite665.yy",},},
+    {"id":{"name":"Sprite667","path":"sprites/Sprite667/Sprite667.yy",},},
     {"id":{"name":"spt_slosher_splat","path":"sprites/spt_slosher_splat/spt_slosher_splat.yy",},},
     {"id":{"name":"tilespr_hub","path":"sprites/tilespr_hub/tilespr_hub.yy",},},
     {"id":{"name":"tilespr_monolith","path":"sprites/tilespr_monolith/tilespr_monolith.yy",},},

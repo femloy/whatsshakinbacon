@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stickcollect_billlargestack",
-    "path":"sprites/spr_stickcollect_billlargestack/spr_stickcollect_billlargestack.yy",
+    "name":"Sprite667",
+    "path":"sprites/Sprite667/Sprite667.yy",
   },
   "spriteMaskId":null,
   "visible":true,

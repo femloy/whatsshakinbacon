@@ -986,6 +986,7 @@
     {"name":"Sprite661","order":6,"path":"sprites/Sprite661/Sprite661.yy",},
     {"name":"Sprite662","order":6,"path":"sprites/Sprite662/Sprite662.yy",},
     {"name":"Sprite665","order":7,"path":"sprites/Sprite665/Sprite665.yy",},
+    {"name":"Sprite667","order":9,"path":"sprites/Sprite667/Sprite667.yy",},
     {"name":"spt_slosher_splat","order":27,"path":"sprites/spt_slosher_splat/spt_slosher_splat.yy",},
     {"name":"tilespr_hub","order":7,"path":"sprites/tilespr_hub/tilespr_hub.yy",},
     {"name":"tilespr_monolith","order":1,"path":"sprites/tilespr_monolith/tilespr_monolith.yy",},
