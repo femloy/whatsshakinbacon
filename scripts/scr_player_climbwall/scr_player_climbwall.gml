@@ -36,6 +36,7 @@ function scr_player_climbwall()
 	{
 		vsp = 0
 		state = states.jump
+		freefalling = 0
 		movespeed = -5
 		sprite_index = spr_player_fall
 	}

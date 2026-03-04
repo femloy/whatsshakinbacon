@@ -3,7 +3,7 @@ if !global.option_hud
 
 if global.escape.party
 {
-	discoAlpha = approach(discoAlpha, 0.05, 1 / 60 * 2)
+	discoAlpha = approach(discoAlpha, 0.05, 0.05 / 60 * 4)
 	var _color = discoColors[discoColor]
 	draw_set_alpha(discoAlpha)
 	gpu_set_blendmode(bm_add)

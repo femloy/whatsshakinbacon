@@ -27,6 +27,7 @@ function hurt_player(_obj = noone)
 		global.collect -= 100
 		if global.collect < 0
 			global.collect = 0
+		global.damage_count++
 		global.combo.timer -= 25
 		global.combo.timer = clamp(global.combo.timer, 0, 60)
 		tv_anim(spr_tv_hurt, 60 * 3)
@@ -125,6 +126,7 @@ function generalReset()
 	global.prankenemy_killed = false
 	global.prankenemy_cankill = true
 	global.tauntcount = 0
+	global.damage_count = 0
 	obj_player.door = "A"
 	obj_player.visible = true
 	obj_player.hallway = false
@@ -143,6 +145,8 @@ function generalReset()
 		combometer.state = -1
 		musicBar = 0
 		musicBeat = 0
+		kettle.previousRank = 0
+		kettle.rankScale = 1
 	}
 	
 	global.escape = 

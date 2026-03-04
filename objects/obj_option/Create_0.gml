@@ -670,9 +670,14 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_windowed", function()
 	{
 		goto_menu(option.video)
+		
 		window_set_fullscreen(false)
 		window_enable_borderless_fullscreen(false);
+		
 		global.Fullscreen = 0
+		var res = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]]
+		window_set_size(res[global.windowSize][0], res[global.windowSize][1])
+		window_center()
 		
 		ini_open(working_directory + "options.ini")
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
@@ -681,8 +686,10 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_fullscreen", function()
 	{
 		goto_menu(option.video)
+		
 		window_enable_borderless_fullscreen(false);
 		window_set_fullscreen(true)
+		
 		global.Fullscreen = 1
 		
 		ini_open(working_directory + "options.ini")
@@ -692,10 +699,12 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_borderless", function()
 	{
 		goto_menu(option.video)
+		
 		if window_get_fullscreen()
 			window_set_fullscreen(false)
 		window_enable_borderless_fullscreen(true);
 		window_set_fullscreen(true);
+		
 		global.Fullscreen = 2
 		
 		ini_open(working_directory + "options.ini")

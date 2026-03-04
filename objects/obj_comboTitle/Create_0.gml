@@ -63,4 +63,4 @@ getProper = function(_combo)
 	return _frame
 }
 points = 0
-point = 60 * 2
+point = 0

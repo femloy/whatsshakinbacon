@@ -147,6 +147,7 @@ function scr_player_normal()
 		create_particleStatic(spr_jumpeffect, x, y, 1, 1)
 		image_index = 0
 		sprite_index = spr_player_jump
+		freefalling = 0
 		state = states.jump
 		vsp = -11
 		jumpstop = false

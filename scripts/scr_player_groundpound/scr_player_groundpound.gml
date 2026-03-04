@@ -220,6 +220,7 @@ function scr_player_freefallland(){
 		if sprite_index == spr_player_hitceiling
 		{
 			state = states.jump
+			freefalling = 0
 			sprite_index = spr_player_spinout
 			vsp = 2
 		}
@@ -232,6 +233,7 @@ function scr_player_freefallland(){
 		if sprite_index == spr_player_piledriverend
 		{
 			state = states.jump
+			freefalling = 0
 			vsp = -15
 			jumpstop = false
 			image_index = 0

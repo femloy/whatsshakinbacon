@@ -22,6 +22,7 @@ if cutscene
 				vsp = 5
 				sprite_index = spr_player_fall
 				state = states.jump
+				freefalling = 0
 				xscaleMulti = 1
 				yscaleMulti = 1
 			}

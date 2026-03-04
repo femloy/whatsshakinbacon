@@ -206,6 +206,7 @@ function scr_player_finishingblow()
 	{
 		slapBuffer = false
 		state = states.jump
+		freefalling = 0
 		sprite_index = spr_player_fall
 		jumpstop = true
 	}

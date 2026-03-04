@@ -994,6 +994,7 @@
     {"name":"tilespr_secret","order":5,"path":"sprites/tilespr_secret/tilespr_secret.yy",},
     {"name":"tilespr_syrupHouse","order":32,"path":"sprites/tilespr_syrupHouse/tilespr_syrupHouse.yy",},
     {"name":"tilespr_temple","order":3,"path":"sprites/tilespr_temple/tilespr_temple.yy",},
+    {"name":"tutorialsigns","order":4,"path":"sprites/tutorialsigns/tutorialsigns.yy",},
     {"name":"ts_hub","order":2,"path":"tilesets/ts_hub/ts_hub.yy",},
     {"name":"ts_secret","order":6,"path":"tilesets/ts_secret/ts_secret.yy",},
     {"name":"ts_syrupHouse","order":2,"path":"tilesets/ts_syrupHouse/ts_syrupHouse.yy",},

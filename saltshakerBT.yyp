@@ -244,7 +244,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"saltshakerBT",
   "resources":[
@@ -1238,6 +1238,7 @@
     {"id":{"name":"tilespr_syrupStreet","path":"sprites/tilespr_syrupStreet/tilespr_syrupStreet.yy",},},
     {"id":{"name":"tilespr_temple","path":"sprites/tilespr_temple/tilespr_temple.yy",},},
     {"id":{"name":"tilespr_tutorial","path":"sprites/tilespr_tutorial/tilespr_tutorial.yy",},},
+    {"id":{"name":"tutorialsigns","path":"sprites/tutorialsigns/tutorialsigns.yy",},},
     {"id":{"name":"ts_hub","path":"tilesets/ts_hub/ts_hub.yy",},},
     {"id":{"name":"ts_monolith","path":"tilesets/ts_monolith/ts_monolith.yy",},},
     {"id":{"name":"ts_secret","path":"tilesets/ts_secret/ts_secret.yy",},},

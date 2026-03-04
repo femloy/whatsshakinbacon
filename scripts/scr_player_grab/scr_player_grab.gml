@@ -76,6 +76,7 @@ function scr_player_grab(){
 		movespeed = 0
 		sprite_index = spr_player_grabcancel
 		state = states.jump
+		freefalling = 0
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		FMODevent_oneshot("event:/Sfx/Player/grabcancel", x, y)
 		exit;

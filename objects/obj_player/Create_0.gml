@@ -144,6 +144,7 @@ if !variable_global_exists("saveroom")
 	global.detective = false
 	global.tauntcount = 0
 	global.waybackIntro = false
+	global.damage_count = 0
 }
 
 spr_palette = spr_playerPal
