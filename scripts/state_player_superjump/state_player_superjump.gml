@@ -21,7 +21,7 @@ function scr_player_superjumpprep()
 			sprite_index = spr_player_superjumpprep
 			movespeed = 0
 		}
-		if !key_up
+		if !key_up && !place_meeting(x, y - 1, obj_solid)
 		{
 			state = states.superjump
 			sprite_index = spr_player_superjump

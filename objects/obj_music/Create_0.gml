@@ -62,7 +62,7 @@ ds_map_add(musicDetails, mangrove_1, new add_music("event:/Music/W1/Monolith Man
     fmod_studio_event_instance_set_parameter_by_name(musicInst, "state", _s)
 }))
 ds_map_add(musicDetails, hotel_receptionentrance, new add_music("event:/Music/W1/hub", -4, -4))
-ds_map_add(musicDetails, hotel_1_hall, new add_music("event:/Music/W1/hub", -4, -4))
+ds_map_add(musicDetails, hotel_1, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, hotel_1_poolroom, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, hotel_lennydesk, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, tutorial_1, new add_music("event:/Music/W1/tutorial", -4, "event:/Ambience/tutorial"))

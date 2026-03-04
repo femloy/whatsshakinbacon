@@ -46,7 +46,7 @@ with obj_player
 		if state == states.jump
 		{
 			vsp = -10
-			if key_jump
+			if key_jump && !grounded
 				vsp = -15
 			jumpstop = true
 			sprite_index = spr_player_bumpenemystart
@@ -70,7 +70,7 @@ with obj_player
 		if state == states.hauling && enemyID != other && !other.invincable
 		{
 			vsp = -10
-			if key_jump
+			if key_jump && !grounded
 				vsp = -15
 			jumpstop = true
 			sprite_index = spr_player_haulingjump
@@ -183,7 +183,7 @@ with obj_player
 			hitstun.is = true
 			create_particleStatic(spr_kungfueffect, x, y, 1, -5)
 			
-			if key_jump || sprite_index == spr_milton_dive
+			if key_jump && !grounded
 				vsp = -10
 			
 			with _baddie

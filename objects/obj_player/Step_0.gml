@@ -50,7 +50,7 @@ if hitstun.is == false
 				image_index = self.getProper(combo)
 				points = round(((global.combo.savecombo ^ 2) * 0.25) + (10 * global.combo.savecombo))
 				global.collect += points
-				point_spd = points / 30
+				alarm[1] = 30
 			}
 		}
 	}

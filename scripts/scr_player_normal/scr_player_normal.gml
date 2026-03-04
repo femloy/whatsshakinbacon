@@ -152,7 +152,7 @@ function scr_player_normal()
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/jump", x, y)
 	}
-	if key_down && grounded
+	if key_down && grounded || place_meeting(x, y - 1, obj_solid)
 	{
 		image_speed = 0.35
 		image_index = 0

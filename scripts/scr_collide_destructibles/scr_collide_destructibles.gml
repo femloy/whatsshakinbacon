@@ -29,7 +29,7 @@ function scr_collide_destructibles()
 			
 			if _horizontal && place_meeting(x + (hsp + xscale) * 2, y, _obj)
 				_destroy = true
-			if _vertical && place_meeting(x, y + vsp, _obj)
+			if _vertical && place_meeting(x, y + (vsp * 2) + 1, _obj)
 				_destroy = true
 			
 			if _destroy
