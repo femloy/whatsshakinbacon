@@ -1,4 +1,4 @@
-if other.i_frame <= 0
+if other.i_frame <= 0 && !hurtenemy
 {
 	hurt_player(self)
 	with other

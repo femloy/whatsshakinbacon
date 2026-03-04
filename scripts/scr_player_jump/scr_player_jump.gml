@@ -21,7 +21,7 @@ function scr_player_jump()
 		}
 	}
 	else {
-		movespeed = approach(movespeed, 0, 0.65)
+		movespeed = 0
 	}
 	
 	if animation_end() && sprite_index = spr_player_jump

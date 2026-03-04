@@ -1,75 +1,54 @@
 function scr_player_gunk()
 {
 	get_input()
-	hsp = 0
-	vsp = 0
-	var move = key_left2 + key_right2
+	hsp = movespeed * xscale
+	var move = key_left + key_right
 	var moveV = key_down2 - key_up2
+	if jumpstop == false && !key_jump && vsp < 0.5
+	{
+		jumpstop = true
+		vsp /= 10
+	}
+	var _accel = 0.5
 	if move != 0
 	{
-		state = states.gunkMove
+		movespeed = approach(movespeed, 6, _accel)
 		xscale = move
-		movespeed = 16
-		verticalMovespeed = 0
-		gunkHard = 0
-		create_particleStatic(spr_crazyrunothereffect, x, y, xscale, 1).image_speed = 0.5
-		exit;
 	}
-	else if moveV != 0
-	{
-		state = states.gunkMove
+	else {
 		movespeed = 0
-		verticalMovespeed = 16 * moveV
-		gunkHard = 0
-		if moveV < 0
-		{
-			with create_particleStatic(spr_crazyrunothereffect, x, y, 1, 1)
-			{
-				image_angle = 90 
-				image_speed = 0.5
-			}
-		}
-		else {
-			with create_particleStatic(spr_crazyrunothereffect, x, y, 1, 1)
-			{
-				image_angle = -90 
-				image_speed = 0.5
-			}
-		}
-		exit;
+	}
+	
+	if jumpBuffer && coyote_time && grounded
+	{
+		jumpBuffer = false
+		create_particleStatic(spr_jumpeffect, x, y, 1, 1)
+		vsp = -11
+		jumpstop = false
+	}
+	if key_slap2
+	{
+		movespeed = 8
+		state = states.gunkMove
+		sprite_index = spr_player_grab
+		image_index = 0
 	}
 }
 
 function scr_player_gunkMove()
 {
-	gunkHard += 5
-	if gunkHard >= 60
-	{
-		if !instance_exists(chargeeffect)
-			chargeeffect = instance_create(x, y, obj_chargeeffect)
-	}
 	get_input()
 	hsp = movespeed * xscale
-	vsp = verticalMovespeed
-	buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
-	if buffers.afterimageBlur == 0
+	var move = key_left + key_right
+	if move != 0
 	{
-		buffers.afterimageBlur = 3
-		create_blur_effect(sprite_index, image_index, x, y, xscale)
+		movespeed = approach(movespeed, 12, 0.5)
 	}
-	buffers.step--
-	if buffers.step <= 0
-	{
-		buffers.step = 5
-		create_particleStatic(spr_cloudeffect, x + irandom_range(42, -42), y + irandom_range(42, -42), 1, 1)
+	else {
 	}
-	
-	if scr_solid(x + hsp, y + vsp) && 
-		!place_meeting(x + hsp, y + vsp, obj_stupidcabbit) && 
-	!place_meeting(x + hsp, y + vsp, obj_secretmetalblock) && 
-	!place_meeting(x + hsp, y + vsp, obj_metalblock) && 
-	!place_meeting(x + hsp, y + vsp, obj_destructibles)
+	if animation_end()
 	{
+		sprite_index = spr_slosher
 		state = states.gunk
 	}
 }
@@ -81,8 +60,10 @@ function scr_player_gunkIntro()
 	image_speed = 0.35
 	if animation_end()
 	{
-		sprite_index = spr_player_skate_idle
+		sprite_index = spr_slosher
 		state = states.gunk
+		vsp = -12
+		jumpstop = true
 		movespeed = 0
 		verticalMovespeed = 0
 	}

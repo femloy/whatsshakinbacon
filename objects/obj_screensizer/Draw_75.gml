@@ -11,8 +11,7 @@ gameframe_draw()
 if global.debug
 {
 	var devWindow = []
-	array_push(devWindow, "POWERED BY AVOCADO ENGINE")
-	array_push(devWindow, "PROPERTY OF OPEN YOUR HEART")
+	array_push(devWindow, "AVACADO")
 	array_push(devWindow, $"FPS: {fps}")
 	array_push(devWindow, $"ROOM: {room_get_name(room)}")
 	array_push(devWindow, $"Real FPS: {fps_real}")
@@ -25,9 +24,9 @@ if global.debug
 		array_push(devWindow, $"Player state: {obj_player.state}")
 		array_push(devWindow, $"Player sprite: {sprite_get_name(obj_player.sprite_index)}")
 	}
-	draw_set_font(font_caption)
+	draw_set_font(Font5)
 	draw_set_halign(fa_left)
-	draw_set_alpha(0.1)
+	draw_set_alpha(0.4)
 	draw_set_color(c_black)
 	
 	var _width = 0
@@ -38,13 +37,13 @@ if global.debug
 			_width = string_width(devWindow[i])
 		_height += string_height(devWindow[i])
 	}
-	var _x = 32
-	var _y = SCREEN_HEIGHT - _height - 64
+	var _x = 16
+	var _y = SCREEN_HEIGHT - _height - 32
 	
 	
-	draw_roundrect_ext(_x - 2, _y - 2, _x + _width + 2, _y + _height + 2, 12, 12, false)
+	draw_rectangle(_x - 2, _y - 2, _x + _width + 2, _y + _height + 2, false)
 	
-	draw_set_alpha(0.35)
+	draw_set_alpha(0.8)
 	draw_set_color(c_white)
 	for (var i = 0; i < array_length(devWindow); i++)
 		draw_text(_x, _y + (string_height("A") * i), devWindow[i])
@@ -55,4 +54,16 @@ if instance_exists(obj_shell)
 {
 	with obj_shell
 		event_perform(ev_draw, ev_gui);
+}
+
+if DEBUG
+{
+	draw_set_font(font_caption)
+	draw_set_alpha(0.3)
+	draw_set_color(c_yellow)
+	draw_set_halign(fa_left)
+	draw_text(string_width("A"), SCREEN_HEIGHT - string_height("A"), "in development")
+	draw_set_alpha(1)
+	draw_set_color(c_white)
+	draw_set_halign(fa_left)
 }

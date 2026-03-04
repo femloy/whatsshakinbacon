@@ -1,3 +1,4 @@
+depth = 0
 if FMODevent_isplaying(soundsOk)
 	FMODSet3dPos(soundsOk, x, y)
 if FMODevent_isplaying(soundsLaugh)
@@ -47,8 +48,9 @@ if hitstun.is == false
 				lostcombo = true
 				combo = wrap(combo, 0, 14)
 				image_index = self.getProper(combo)
-				points = 10 * global.combo.savecombo
+				points = round(((global.combo.savecombo ^ 2) * 0.25) + (10 * global.combo.savecombo))
 				global.collect += points
+				point_spd = points / 30
 			}
 		}
 	}

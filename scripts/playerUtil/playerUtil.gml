@@ -141,6 +141,8 @@ function generalReset()
 		tv.sprite_index = spr_tv_off
 		combometer.y = -128
 		combometer.state = -1
+		musicBar = 0
+		musicBeat = 0
 	}
 	
 	global.escape = 

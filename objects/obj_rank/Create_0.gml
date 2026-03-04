@@ -43,6 +43,7 @@ with obj_music
 }
 
 global.escape.active = false
+obj_hud.musicBar = 0
 global.escape.timer = (60 * 60) * 2
 
 FMODstopAll()

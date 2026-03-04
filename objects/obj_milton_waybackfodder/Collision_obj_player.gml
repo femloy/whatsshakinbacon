@@ -28,7 +28,7 @@ if ds_list_find_index(global.saveroom, id) == -1
 		addDialog(dialogChars.mildred, "Good riddance...")
 		draw_set_font(global.npcfont)
 		draw_set_halign(fa_center)
-		global.textSize = 0.5
+		global.textSize = 0.8
 		draw_text_oyh(x, y, dialogStuff[currentDialog].text, 800)
 		global.textSize = 1
 		var _stringArr = ds_map_find_value(global.textCache, dialogStuff[currentDialog].text)[0]

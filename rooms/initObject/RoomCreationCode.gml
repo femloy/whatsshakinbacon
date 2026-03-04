@@ -12,8 +12,8 @@ global.username = "guest"
 room_goto(rm_intro)
 randomize()
 global.gSocket = irandom_range(1, 166667)
-global.debug = false
-global.showcollisions = false
+global.debug = DEBUG
+global.showcollisions = DEBUG
 
 
 ini_open(working_directory + "options.ini")

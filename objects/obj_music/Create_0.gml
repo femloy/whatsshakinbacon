@@ -69,3 +69,6 @@ ds_map_add(musicDetails, tutorial_1, new add_music("event:/Music/W1/tutorial", -
 ds_map_add(musicDetails, Levelselect, new add_music("event:/Music/Ost/mainmenu", -4, -4))
 ds_map_add(musicDetails, Mainmenu, new add_music(-4, -4, "event:/Ambience/mainmenu"))
 ds_map_add(musicDetails, rank_room, new add_music(-4, -4, -4))
+
+beat = 0
+bar = 0

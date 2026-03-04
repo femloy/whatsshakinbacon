@@ -46,7 +46,7 @@ draw_set_color(c_white)
 draw_set_halign(fa_right)
 var _xx = SCREEN_WIDTH - 32
 var _yy = SCREEN_HEIGHT - 32
-draw_text(_xx, _yy, "v0.0.15")
+draw_text(_xx, _yy, "v0.ind3v")
 draw_set_alpha(1)
 
 if scene == 3 || scene == 4

@@ -5,7 +5,7 @@ with kettle
 {
 	kx = x + irandom_range(shake, -shake)
 	ky = y + irandom_range(shake, -shake)
-	shake = approach(shake, 0, 1)
+	shake = approach(shake, 0, 0.5)
 	rankScale = approach(rankScale, 1, 0.2)
 	cloudIndex += 0.15
 }
@@ -111,7 +111,7 @@ var _escape = global.escape.active == true
 if !_secret
 	global.escape.timer = approach(global.escape.timer, 0, 1)
 		
-if global.escape.timer == 0 && !instance_exists(obj_hipnatuese) && !_secret && global.level != "tutorial" && _escape
+if ((global.escape.timer == 0 && !_secret && global.level != "tutorial" && _escape) || (musicBar >= 72 && global.escape.party)) && !instance_exists(obj_hipnatuese) 
 	instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
 if (!ds_list_empty(collectVis))
 {

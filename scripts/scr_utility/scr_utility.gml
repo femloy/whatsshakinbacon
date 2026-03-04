@@ -31,7 +31,7 @@ function scr_savelevel()
 }
 
 function create_uparrow() {
-	instance_create(x, y, obj_uparrow).objId = id
+	arrow = instance_create(x, y, obj_uparrow).objId = id
 }
 
 function load_textures(_groups)
