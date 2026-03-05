@@ -142,6 +142,8 @@ function scr_player_hauling()
 		image_index = 0
 		sprite_index = spr_player_crouch
 		state = states.crouch
+		enemyID = -4
+		exit;
 	}
 	
 	if key_down2 && !grounded

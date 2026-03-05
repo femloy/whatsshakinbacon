@@ -52,7 +52,7 @@
   "option_back": "BACK",
   "option_reset_binds": "Reset Binds",
   "option_add_bind": "[J] Add Bind",
-  "option_clear_binds": "[T] Clear Binds",
+  "option_clear_binds": "[T] Remove Bind",
   "option_off": "OFF",
   "option_on": "ON",
 

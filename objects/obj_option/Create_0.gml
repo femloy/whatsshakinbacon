@@ -30,6 +30,7 @@ selected = 0
 move = 0
 backgrounds = []
 changingBind = false
+changingBindTimer = 60 * 3
 keyscroll = 0
 var addBackground = function(_menu = [], _index, _alpha = 0)
 {
@@ -485,7 +486,7 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, funct
 		goto_menu(option.controlsPadDeadzones)
 	})
 
-var controlsKey = create_menu(option.controlsKey, option.keys, 40, function()
+var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 	{
 		var q = json_stringify(global.inputMap, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
@@ -543,7 +544,7 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 40, function()
 		}, "Inputs_Player1_menu_clearKey")
 
 
-var controlsPad = create_menu(option.controlsPad, option.keys, 40, function()
+var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 	{
 		goto_menu(option.controlsPadMain)
 	})

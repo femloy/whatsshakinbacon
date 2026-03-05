@@ -75,13 +75,14 @@ if buffer == 0
 		{
 			if !changingBind
 			{
-				if key_jump2
+				if key_jump2 && array_length(global.inputMap[$ q.key]) < 5
 				{
 					changingBind = true
+					changingBindTimer = 60 * 3
 				}
 				else if key_taunt2
 				{
-					global.inputMap[$ q.key] = []
+					array_delete(global.inputMap[$ q.key], array_length(global.inputMap[$ q.key]) - 1, 1)
 				}
 			}
 			else if keyboard_check_pressed(vk_anykey)
@@ -118,10 +119,11 @@ if buffer == 0
 				if key_jump2
 				{
 					changingBind = true
+					changingBindTimer = 60 * 3
 				}
 				else if key_taunt2
 				{
-					global.inputMap[$ q.key][1] = []
+					global.inputMap[$ q.key] = []
 				}
 			}
 			else
