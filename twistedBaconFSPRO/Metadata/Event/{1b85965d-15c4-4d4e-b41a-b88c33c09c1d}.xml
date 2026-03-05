@@ -83,6 +83,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{8756db8e-3999-4dd1-afb5-d8eebdd6a6d9}">
+		<property name="volume">
+			<value>8</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{353bd1ac-6bfd-4d85-b1ff-acf7a459e366}</destination>
 		</relationship>
@@ -106,9 +109,6 @@
 		<property name="length">
 			<value>28.444444444444443</value>
 		</property>
-		<property name="volume">
-			<value>6.5</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{df832cff-7702-4a12-870a-f3d2cf62398f}</destination>
 		</relationship>
@@ -116,6 +116,9 @@
 	<object class="SingleSound" id="{fdb656dd-085d-4859-9b6b-ae6868b74c92}">
 		<property name="length">
 			<value>0.57469387755102042</value>
+		</property>
+		<property name="volume">
+			<value>-10.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{dc73b3b2-9f52-4c38-bca8-e7aff63c2973}</destination>
@@ -207,10 +210,10 @@
 	</object>
 	<object class="MultibandEqEffect" id="{1fc0634d-0488-4057-86aa-2ac84b0ef9a3}">
 		<property name="frequencyA">
-			<value>2498.10815</value>
+			<value>1869.11658</value>
 		</property>
 		<property name="qualityA">
-			<value>0.581413805</value>
+			<value>2.9310348</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{449f0712-0d6b-4ba5-9eac-da1596e03362}" />

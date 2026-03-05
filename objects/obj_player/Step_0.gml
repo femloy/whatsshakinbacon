@@ -111,6 +111,9 @@ if hitstun.is == false
 	
 	if flash = true && alarm[0] <= 0
 		alarm[0] = 5
+	
+	if global.combo.amt >= 15 && alarm[3] <= 0
+		alarm[3] = 10
 	if y < -500 || y > room_height + 500 && state != -4 && !instance_exists(obj_fadeout)
 	{
 		if !instance_exists(obj_technicaldifficulty)

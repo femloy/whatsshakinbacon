@@ -26,7 +26,7 @@ function scr_player_superjumpprep()
 			state = states.superjump
 			sprite_index = spr_player_superjump
 			image_index = 0
-			verticalMovespeed = -14
+			verticalMovespeed = -11
 			vsp = verticalMovespeed
 			create_particleStatic(spr_explosioneffect, x, y, 1)
 		}
@@ -80,7 +80,7 @@ function scr_player_superjump()
 			image_index = 0
 			FMODevent_oneshot("event:/Sfx/Player/superjumpcancel", x, y)
 		}
-		if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_ballofbeer)
+		if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_ballofbeer) && !place_meeting(x, y - 1, obj_destructibles)
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 			shake_camera(15)

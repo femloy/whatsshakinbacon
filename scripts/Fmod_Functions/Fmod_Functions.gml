@@ -111,7 +111,7 @@ function fmod_error_string(_error_code = fmod_last_result())
         case FMOD_RESULT.ERR_ALREADY_LOCKED:            return "The specified resource is already locked.";
         case FMOD_RESULT.ERR_NOT_LOCKED:                return "The specified resource is not locked, so it can't be unlocked.";
         case FMOD_RESULT.ERR_RECORD_DISCONNECTED:       return "The specified recording driver has been disconnected.";
-        case FMOD_RESULT.ERR_TOOMANysAMPLES:            return "The length provided exceeds the allowable limit.";
+        case FMOD_RESULT.ERR_TOOMANYSAMPLES:            return "The length provided exceeds the allowable limit.";
         default :										return "Unknown error.";
     };
 }
@@ -201,12 +201,12 @@ function Fmod3DAttributes() constructor {
 	up = new FmodVector();
 }
 
-function FmodMemorystats() constructor {
+function FmodMemoryStats() constructor {
 	current_alloced = 0;
 	max_alloced = 0;
 }
 
-/// @returns {struct.FmodMemorystats}
+/// @returns {struct.FmodMemoryStats}
 function fmod_memory_get_stats(_blocking)
 {
 	// Get return buffer address

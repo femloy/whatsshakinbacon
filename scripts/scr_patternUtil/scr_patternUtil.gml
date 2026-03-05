@@ -6,6 +6,9 @@ function pattern_draw(_sprite, _index, _x, _y, _xscale, _yscale, _rot, _col, _al
 {
 	if _pattern != -1
 	{
+		if _xscale == 0 || _yscale == 0
+			exit;
+		// fall back if theres really nothing to be drawn
 		var _surf = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite))
 		
 		surface_set_target(_surf);

@@ -352,6 +352,7 @@ function doGrab()
 			image_index = 0
 			sprite_index = spr_milton_hammerspin_prep
 		}
+		exit;
 	}
 }
 
@@ -446,6 +447,7 @@ function doTaunt()
 				FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
 			}
 		}
+		exit;
 	}
 }
 

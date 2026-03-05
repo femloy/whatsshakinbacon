@@ -69,7 +69,7 @@ enum FMOD_TIMEUNIT
 	MODPATTERN = 0x00000400
 }
 
-enum FMOD_SysTEM_CALLBACK 
+enum FMOD_SYSTEM_CALLBACK 
 {
 	DEVICELISTCHANGED      = 0x00000001,
 	DEVICELOST             = 0x00000002,
@@ -268,7 +268,7 @@ enum FMOD_THREAD_AFFINITY
 #macro FMOD_PRESET_UNDERWATER                      { decay_time:  1500, early_delay:   7, late_delay:  11, hf_reference: 5000, hf_decay_ratio:  10, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:   500, early_late_mix:  92, wet_level:   7.0 }
 
 #macro FMOD_MAX_CHANNEL_WIDTH                      32
-#macro FMOD_MAX_SysTEMS                            8
+#macro FMOD_MAX_SYSTEMS                            8
 #macro FMOD_MAX_LISTENERS                          8
 #macro FMOD_REVERB_MAXINSTANCES                    4
 
@@ -374,7 +374,7 @@ enum FMOD_RESULT
     ERR_ALREADY_LOCKED,
     ERR_NOT_LOCKED,
     ERR_RECORD_DISCONNECTED,
-    ERR_TOOMANysAMPLES,
+    ERR_TOOMANYSAMPLES,
 };
 
 enum FMOD_CHANNELCONTROL_TYPE
@@ -562,7 +562,7 @@ enum FMOD_CHANNELCONTROL_DSP_INDEX
 enum FMOD_ERRORCALLBACK_INSTANCETYPE
 {
     NONE,
-    SysTEM,
+    SYSTEM,
     CHANNEL,
     CHANNELGROUP,
     CHANNELCONTROL,
@@ -572,7 +572,7 @@ enum FMOD_ERRORCALLBACK_INSTANCETYPE
     DSPCONNECTION,
     GEOMETRY,
     REVERB3D,
-    STUDIO_SysTEM,
+    STUDIO_SYSTEM,
     STUDIO_EVENTDESCRIPTION,
     STUDIO_EVENTINSTANCE,
     STUDIO_PARAMETERINSTANCE,
@@ -1209,7 +1209,7 @@ enum FMOD_STUDIO_PARAMETER_FLAGS
 	LABELED     = 0x00000010,
 }
 
-enum FMOD_STUDIO_SysTEM_CALLBACK 
+enum FMOD_STUDIO_SYSTEM_CALLBACK 
 {
 	PREUPDATE               = 0x00000001,
 	POSTUPDATE              = 0x00000002,
@@ -1334,7 +1334,7 @@ enum FMOD_STUDIO_STOP_MODE
 enum FMOD_STUDIO_INSTANCETYPE
 {
     NONE,
-    SysTEM,
+    SYSTEM,
     EVENTDESCRIPTION,
     EVENTINSTANCE,
     PARAMETERINSTANCE,

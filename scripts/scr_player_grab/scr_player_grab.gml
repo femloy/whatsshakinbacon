@@ -19,11 +19,13 @@ function scr_player_grab(){
 	}
 	get_input()
 	hsp = movespeed * xscale
+	
 	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
 		vsp /= 20
 	}
+	
 	var move = key_right + key_left
 	if movespeed < 10
 		movespeed = approach(movespeed, 10, 0.5)

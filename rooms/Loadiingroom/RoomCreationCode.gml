@@ -1,3 +1,3 @@
-#macro DEBUG false
+#macro DEBUG true
 window_center()
 window_restore()
