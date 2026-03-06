@@ -221,6 +221,7 @@
     {"link":"io.gamemaker.gm_filter_colourise-1.0.0","name":"io.gamemaker.gm_filter_colourise-1.0.0","path":"io.gamemaker.gm_filter_colourise-1.0.0.yyp",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"gamecontrollerdb.txt","CopyToMask":-1,"filePath":"datafiles","name":"gamecontrollerdb.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"icon.ico","CopyToMask":-1,"filePath":"datafiles","name":"icon.ico","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"art.txt","CopyToMask":-1,"filePath":"datafiles/lang/english","name":"art.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"desktop.ini","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"desktop.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -231,8 +232,8 @@
     {"$GMIncludedFile":"","%Name":"spr_rankD_text.gif","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_rankD_text.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"spr_rankS_text.gif","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_rankS_text.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"spr_teatime.gif","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_teatime.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"spr_titlecardMonolith.png","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_titlecardMonolith.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"spr_titlecardMonolithTitle1.png","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_titlecardMonolithTitle1.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"spr_titlecardMonolith1.png","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_titlecardMonolith1.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"spr_titlecardMonolith2.png","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_titlecardMonolith2.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"spr_titlecardMonolithTitle2.png","CopyToMask":-1,"filePath":"datafiles/lang/english/art","name":"spr_titlecardMonolithTitle2.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"text.txt","CopyToMask":-1,"filePath":"datafiles/lang/english","name":"text.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"README.txt","CopyToMask":-1,"filePath":"datafiles","name":"README.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -245,7 +246,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"saltshakerBT",
   "resources":[
@@ -1197,6 +1198,7 @@
     {"id":{"name":"spr_tv_machT","path":"sprites/spr_tv_machT/spr_tv_machT.yy",},},
     {"id":{"name":"spr_tv_off","path":"sprites/spr_tv_off/spr_tv_off.yy",},},
     {"id":{"name":"spr_tv_palette","path":"sprites/spr_tv_palette/spr_tv_palette.yy",},},
+    {"id":{"name":"spr_tv_party","path":"sprites/spr_tv_party/spr_tv_party.yy",},},
     {"id":{"name":"spr_tv_secret","path":"sprites/spr_tv_secret/spr_tv_secret.yy",},},
     {"id":{"name":"spr_tv_ski","path":"sprites/spr_tv_ski/spr_tv_ski.yy",},},
     {"id":{"name":"spr_tv_switch","path":"sprites/spr_tv_switch/spr_tv_switch.yy",},},

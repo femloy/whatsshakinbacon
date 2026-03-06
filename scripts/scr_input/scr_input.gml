@@ -254,11 +254,11 @@ function read_input(_key /*Like, the map name*/, _press = false)
 	var _axLV = gamepad_axis_value(global.gamepadCurrent, gp_axislv)
 	var _axRH = gamepad_axis_value(global.gamepadCurrent, gp_axisrh)
 	var _axRV = gamepad_axis_value(global.gamepadCurrent, gp_axisrv)
-	var _pDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.press
+	var _pDeadzone = global.gamepadDeadzones.press
 	_pDeadzone = clamp(_pDeadzone, 0, 0.99)
-	var _horizDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.horizontal
+	var _horizDeadzone = global.gamepadDeadzones.horizontal
 	_horizDeadzone = clamp(_horizDeadzone, 0, 0.99)
-	var _vertDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.vertical
+	var _vertDeadzone = global.gamepadDeadzones.vertical
 	_vertDeadzone = clamp(_vertDeadzone, 0, 0.99)
 	switch _press
 	{
@@ -283,65 +283,81 @@ function read_input(_key /*Like, the map name*/, _press = false)
 								if _axLH < -(_pDeadzone) && 
 								obj_inputController.horizontalStickPressed == false 
 								{
-									obj_inputController.horizontalStickPressed = approach(obj_inputController.horizontalStickPressed, true, 0.1)
 									_returnPad = true
+									obj_inputController.horizontalStickPressed = true
 								}
+								else if _axLH > -0.1 && _axLH <= 0
+									obj_inputController.horizontalStickPressed = false
 							break
 							case "joyLR":
 								if _axLH > (_pDeadzone) && 
 								obj_inputController.horizontalStickPressed == false 
 								{
-									obj_inputController.horizontalStickPressed = approach(obj_inputController.horizontalStickPressed, true, 0.1)
 									_returnPad = true
+									obj_inputController.horizontalStickPressed = true
 								}
+								else if _axLH < 0.1 && _axLH >= 0
+									obj_inputController.horizontalStickPressed = false
 							break
 							case "joyLU":
 								if _axLV < -(_pDeadzone) && 
 								obj_inputController.verticalStickPressed == false 
 								{
-									obj_inputController.verticalStickPressed = approach(obj_inputController.verticalStickPressed, true, 0.1)
 									_returnPad = true
+									obj_inputController.verticalStickPressed = true
 								}
+								else if _axLV > -0.1 && _axLV <= 0
+									obj_inputController.verticalStickPressed = false
 							break
 							case "joyLD":
 								if _axLV > (_pDeadzone) && 
 								obj_inputController.verticalStickPressed == false 
 								{
-									obj_inputController.verticalStickPressed = approach(obj_inputController.verticalStickPressed, true, 0.1)
 									_returnPad = true
+									obj_inputController.verticalStickPressed = true
 								}
+								else if _axLV < 0.1 && _axLV >= 0
+									obj_inputController.verticalStickPressed = false
 							break
 							case "joyRL":
 								if _axRH < -(_pDeadzone) && 
 								obj_inputController.horizontalStickPressedR == false 
 								{
-									obj_inputController.horizontalStickPressedR = approach(obj_inputController.horizontalStickPressedR, true, 0.1)
 									_returnPad = true
+									obj_inputController.horizontalStickPressedR = true
 								}
+								else if _axRH > -0.1
+									obj_inputController.horizontalStickPressedR = false
 							break
 							case "joyRR":
 								if _axRH > (_pDeadzone) && 
 								obj_inputController.horizontalStickPressedR == false 
 								{
-									obj_inputController.horizontalStickPressedR = approach(obj_inputController.horizontalStickPressedR, true, 0.1)
 									_returnPad = true
+									obj_inputController.horizontalStickPressedR = true
 								}
+								else if _axRH < 0.1
+									obj_inputController.horizontalStickPressedR = false
 							break
 							case "joyRU":
 								if _axRV < -(_pDeadzone) && 
 								obj_inputController.verticalStickPressedR == false 
 								{
-									obj_inputController.verticalStickPressedR = approach(obj_inputController.verticalStickPressedR, true, 0.1)
 									_returnPad = true
+									obj_inputController.verticalStickPressedR = true
 								}
+								else if _axRV < 0.1
+									obj_inputController.verticalStickPressedR = false
 							break
 							case "joyRD":
 								if _axRV > (_pDeadzone) && 
 								obj_inputController.verticalStickPressedR == false 
 								{
-									obj_inputController.verticalStickPressedR = approach(obj_inputController.verticalStickPressedR, true, 0.1)
 									_returnPad = true
+									obj_inputController.verticalStickPressedR = true
 								}
+								else if _axRV > -0.1
+									obj_inputController.verticalStickPressedR = false
 							break
 						}
 					}

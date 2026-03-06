@@ -24,6 +24,8 @@ with tv
 		_idleSprite = spr_tv_combo
 	if obj_player.state == states.ski
 		_idleSprite = spr_tv_ski
+	if global.escape.party && global.escape.active
+		_idleSprite = spr_tv_party
 	if !other.visible
 	{
 		state = states.normal
@@ -63,6 +65,7 @@ with tv
 						tv_anim(sprites.mach3)
 				break
 				case spr_tv_secret: 
+				case spr_tv_party:
 				case spr_tv_escape:
 				case sprites.idle:
 				case spr_tv_combo:

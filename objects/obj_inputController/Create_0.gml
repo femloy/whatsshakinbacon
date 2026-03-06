@@ -1,6 +1,6 @@
 init_input()
 global.gamepadConnected = false
-global.gamepadCurrent = -4
+global.gamepadCurrent = -2
 
 global.gamepadDeadzones = {}
 ini_open(working_directory + "options.ini")
@@ -16,4 +16,18 @@ horizontalStickPressed = false
 verticalStickPressed = false
 horizontalStickPressedR = false
 verticalStickPressedR = false
-event_perform(ev_async_system_event, 0)
+
+
+
+gamepad_check_any = function(_device)
+{
+	for (var i = gp_face1; i < gp_axisrv; i++)
+	{
+		if gamepad_button_check(_device, i)
+		{
+			return true;
+		} 
+	}
+	return false;
+}
+connectedGamepads = []
