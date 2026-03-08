@@ -21,7 +21,7 @@ surface_set_target(tileSurf);
 // Doodles
 	gpu_set_blendmode(bm_min)
 	draw_sprite_tiled(spr_tileDoodles, patternIndex, -camera_get_view_x(view_camera[0]), -camera_get_view_y(view_camera[0]) + patternPos);
-	gpu_set_blendmode(bm_normal)
+	reset_blendmmode()
 
 surface_reset_target();
 

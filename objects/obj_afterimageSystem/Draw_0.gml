@@ -72,7 +72,7 @@ if (!ds_list_empty(afterimages))
 			{
 				pattern_draw(sprite_index, image_index, x, y, image_xscale, 1, 0, _blend, image_alpha * alpha, global.patternSpr, global.PlayerCharacters[obj_player.character].patColors, obj_player.spr_palette, obj_player.palIndex)
 			}
-			gpu_set_blendmode(bm_normal)
+			reset_blendmmode()
 		}
 	}
 }

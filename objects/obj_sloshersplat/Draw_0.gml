@@ -13,7 +13,7 @@ surface_set_target(tileSurf);
 	shader_reset()
 	gpu_set_blendmode(bm_subtract)
 	draw_sprite_ext(sprite_index, image_index, p_x, p_y, 1, 1, 0, c_white, 1)
-	gpu_set_blendmode(bm_normal)
+	reset_blendmmode()
 
 surface_reset_target();
 draw_surface_ext(tileSurf, x - p_x, y - p_y, 1, 1, 0, blend, 1)

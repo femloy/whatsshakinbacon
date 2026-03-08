@@ -172,6 +172,7 @@ function scr_player_finishingblow()
 	{
 		movespeed = -5
 		vsp = -5
+		global.combo.timer = 60
 		FMODevent_oneshot("event:/Sfx/Player/punch", x, y)
 		
 		repeat (8)

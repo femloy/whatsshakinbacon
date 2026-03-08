@@ -20,7 +20,7 @@ if instance_exists(obj_player)
 		draw_set_alpha(1)
 	}
 }
-gpu_set_blendmode(bm_normal)
+reset_blendmmode()
 surface_reset_target()
 
 if dark

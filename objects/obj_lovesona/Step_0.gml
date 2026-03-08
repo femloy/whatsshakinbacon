@@ -9,7 +9,7 @@ if active == false
 		image_index = 0
 		sprite_index = asset_get_index($"spr_lover{lover}_shoot")
 		ds_list_add(global.saveroom, id)
-		FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", x, y)
+		FMODevent_oneshot("event:/Sfx/General/Level/Doodles/iloveyou", x, y)
 		alarm[1] = 15
 		active = true
 		with obj_player

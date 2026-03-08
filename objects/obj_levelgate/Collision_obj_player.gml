@@ -1,6 +1,6 @@
 var _rm = targetRoom
 var _dr = "A"
-if other.grounded && other.key_up && other.state != states.enterdoor && other.state != states.walkfront && other.state != states.taunt 
+if other.grounded && other.key_up && other.state == states.normal
 {
 	with other
 	{

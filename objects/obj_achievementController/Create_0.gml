@@ -5,7 +5,7 @@ enum achievements
 }
 
 waybackyard = {
-	fodder: 32
+	fodder: 33
 }
 
 achievementBuffer = []
@@ -14,7 +14,7 @@ canExecute = true
 reset_level_stats = function()
 {
 	waybackyard = {
-		fodder: 32
+		fodder: 33
 	}
 }
 

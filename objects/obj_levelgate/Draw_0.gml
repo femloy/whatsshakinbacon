@@ -46,7 +46,7 @@ if bgalpha > 0
 	surface_reset_target()
 	surface_set_target(_surf)
 	draw_surface(_clip, 0, 0)
-	gpu_set_blendmode(bm_normal)
+	reset_blendmmode()
 	surface_reset_target()
 	draw_set_alpha(bgalpha)
 	draw_surface(_surf, x - x1, y - y1)

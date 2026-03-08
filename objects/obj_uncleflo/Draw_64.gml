@@ -10,7 +10,7 @@ surface_set_target(surf);
 			
 	gpu_set_blendmode(bm_min)
 	draw_sprite_tiled(spr_flobox, 0, BGX, BGY)
-	gpu_set_blendmode(bm_normal)
+	reset_blendmmode()
 surface_reset_target()
 	
 draw_surface(surf, borderX, borderY)
