@@ -130,7 +130,7 @@ function scr_player_climbwall()
 	
 	if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles)
 	{
-		shake_camera(15)
+		shake_camera(20, 40)
 		sprite_index = spr_player_hitceiling
 		image_index = 0
 		state = states.freefallland

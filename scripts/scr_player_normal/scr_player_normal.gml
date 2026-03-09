@@ -4,6 +4,8 @@ function scr_player_normal()
 	hsp = movespeed * xscale
 	var move = key_right + key_left
 	var _idle_spr = sprites.idle
+	if global.combo.amt >= 15
+		_idle_spr = spr_player_idle_combo_1
 	if global.escape.active
 		_idle_spr = spr_player_idle_panic
 	if sprite_index == sprites.move

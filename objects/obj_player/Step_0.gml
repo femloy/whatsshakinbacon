@@ -119,7 +119,7 @@ if hitstun.is == false
 		if !instance_exists(obj_technicaldifficulty)
 		{
 			instance_create(x, y, obj_technicaldifficulty) 
-			shake_camera(25)
+			shake_camera(20, 40)
 			FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 		}
 	}

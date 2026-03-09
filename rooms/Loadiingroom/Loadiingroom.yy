@@ -6,8 +6,8 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_15FBA12","path":"rooms/Loadiingroom/Loadiingroom.yy",},
     {"name":"inst_69289404","path":"rooms/Loadiingroom/Loadiingroom.yy",},
+    {"name":"inst_15FBA12","path":"rooms/Loadiingroom/Loadiingroom.yy",},
   ],
   "isDnd":false,
   "layers":[
