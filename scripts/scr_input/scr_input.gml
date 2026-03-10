@@ -266,9 +266,8 @@ function reset_input() // Basically everything we just did, but now it resets yo
  * 
  * You thought the hard part was over? (Well if you thought that was hard, you might wanna take off your pants.)
  * Yup, actually READING your input (as in, like, actually inputting yo input n- shiz) is WAAAY harder than that baby stuff we just did
- * Infact, I'm pretty sure I put SeeJ into Cardiac Arrest, call 911!
- * 
- * Anyway, How the hell do we go about this?
+ -=* Infact, I'm pretty sure I put SeeJ into Cardiac Arrest, call 911!
+ * 9 * Anyway, How the hell do we go about this?
  * Well, we could do it the LAME way and hardcode each input to read from, but thats fucking stupid, never hardcode anything.
 */
 
@@ -313,60 +312,68 @@ function read_input(_key /*Like, the map name*/, _press = false)
 						switch gamepadButton[i]
 						{
 							case "joyLL":
-								if gamepad_axis_check_pressed(gp_axislh, true)
+								if _axLH < -(_pDeadzone) && 
+								obj_inputController.horizontalStickPressed == false 
+								{
+									obj_inputController.horizontalStickPressed = approach(obj_inputController.horizontalStickPressed, true, 0.1)
 									_returnPad = true
+								}
 							break
 							case "joyLR":
-								if gamepad_axis_check_pressed(gp_axislh)
+								if _axLH > (_pDeadzone) && 
+								obj_inputController.horizontalStickPressed == false 
+								{
+									obj_inputController.horizontalStickPressed = approach(obj_inputController.horizontalStickPressed, true, 0.1)
 									_returnPad = true
+								}
 							break
 							case "joyLU":
-								if gamepad_axis_check_pressed(gp_axislv, true)
+								if _axLV < -(_pDeadzone) && 
+								obj_inputController.verticalStickPressed == false 
+								{
+									obj_inputController.verticalStickPressed = approach(obj_inputController.verticalStickPressed, true, 0.1)
 									_returnPad = true
+								}
 							break
 							case "joyLD":
-								if gamepad_axis_check_pressed(gp_axislv)
+								if _axLV > (_pDeadzone) && 
+								obj_inputController.verticalStickPressed == false 
+								{
+									obj_inputController.verticalStickPressed = approach(obj_inputController.verticalStickPressed, true, 0.1)
 									_returnPad = true
+								}
 							break
 							case "joyRL":
-								if _axRH > -0.1
-									obj_inputController.horizontalStickPressedR = false
 								if _axRH < -(_pDeadzone) && 
 								obj_inputController.horizontalStickPressedR == false 
 								{
+									obj_inputController.horizontalStickPressedR = approach(obj_inputController.horizontalStickPressedR, true, 0.1)
 									_returnPad = true
-									obj_inputController.horizontalStickPressedR = true
 								}
 							break
 							case "joyRR":
-								if _axRH < 0.1
-									obj_inputController.horizontalStickPressedR = false
 								if _axRH > (_pDeadzone) && 
 								obj_inputController.horizontalStickPressedR == false 
 								{
+									obj_inputController.horizontalStickPressedR = approach(obj_inputController.horizontalStickPressedR, true, 0.1)
 									_returnPad = true
-									obj_inputController.horizontalStickPressedR = true
 								}
 							break
 							case "joyRU":
 								if _axRV < -(_pDeadzone) && 
 								obj_inputController.verticalStickPressedR == false 
 								{
+									obj_inputController.verticalStickPressedR = approach(obj_inputController.verticalStickPressedR, true, 0.1)
 									_returnPad = true
-									obj_inputController.verticalStickPressedR = true
 								}
-								else if _axRV < 0.1
-									obj_inputController.verticalStickPressedR = false
 							break
 							case "joyRD":
 								if _axRV > (_pDeadzone) && 
 								obj_inputController.verticalStickPressedR == false 
 								{
+									obj_inputController.verticalStickPressedR = approach(obj_inputController.verticalStickPressedR, true, 0.1)
 									_returnPad = true
-									obj_inputController.verticalStickPressedR = true
 								}
-								else if _axRV > -0.1
-									obj_inputController.verticalStickPressedR = false
 							break
 						}
 					}
@@ -439,6 +446,7 @@ function read_input(_key /*Like, the map name*/, _press = false)
 		return false
 	
 }
+
 
 /* Let's run down the pasta I just made;
  * Firstly, it reads the key stored in the input map and stores that in a local variable
