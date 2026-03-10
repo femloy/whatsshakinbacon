@@ -113,9 +113,15 @@ var _secret = string_pos("secret", roomname) > 0
 var _escape = global.escape.active == true
 if !_secret
 	global.escape.timer = approach(global.escape.timer, 0, 1)
-		
-if ((global.escape.timer == 0 && !global.escape.party && !_secret && global.level != "tutorial" && _escape) || (musicBar >= 72 && global.escape.party)) && !instance_exists(obj_hipnatuese) 
+	
+if (global.escape.timer == 0 && !global.escape.party && !_secret && global.level != "tutorial" && _escape) && !instance_exists(obj_hipnatuese) 
 	instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
+
+if global.escape.active && global.escape.party && !instance_exists(obj_stayawake_mash) && !instance_exists(obj_hipnatuese) && !_secret
+{
+	if alarm[1] <= 0
+		alarm[1] = 60 * 30
+}
 if (!ds_list_empty(collectVis))
 {
 	for (var i = 0; i < ds_list_size(collectVis); i++)

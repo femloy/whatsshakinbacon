@@ -378,6 +378,16 @@ function doTaunt()
 {
 	if key_taunt2
 	{
+		if instance_exists(obj_stayawake_mash)
+		{
+			with obj_stayawake_mash
+			{
+				shake = 15
+				mashCount--
+			}
+			exit;
+		}
+		
 		tauntVars = {
 			sprite_index: sprite_index,
 			image_index : image_index,

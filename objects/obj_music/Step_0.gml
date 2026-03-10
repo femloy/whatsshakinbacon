@@ -22,7 +22,12 @@ else {
 			fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
 		}
 		else
-			fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 0)
+		{
+			if global.escape.timer < (60 * 50) // 50 seconds, pinch time
+				fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 1)
+			else
+				fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 0)
+		}
 	}
 }
 
@@ -40,7 +45,6 @@ else {
 	pillar = 0
 }
 fmod_studio_event_instance_set_parameter_by_name(monolith, "flitzani", pillar, true)
-fmod_studio_system_set_parameter_by_name("singer", voices, true)
 
 var roomname = string_letters(room_get_name(room))
 var _isSecret = string_pos("secret", roomname) > 0 || room == hotel_soundtest
@@ -62,7 +66,6 @@ if musicInst != -4
 if isSecret && secretInst != -4
     q = fmod_studio_event_instance_get_timeline_position(secretInst)
 
-global.songCurInf.pos  = q
 //
 
 var s = -4

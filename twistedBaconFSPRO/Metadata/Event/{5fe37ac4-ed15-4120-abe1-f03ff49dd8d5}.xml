@@ -535,7 +535,7 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>1200</value>
+			<value>3200</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
@@ -544,7 +544,6 @@
 	<object class="MixerBusEffectChain" id="{82ce3707-f1c2-41ac-9079-d3ca8a42f8e3}">
 		<relationship name="effects">
 			<destination>{e8d6047f-c06e-4274-9444-782ab1f29bb9}</destination>
-			<destination>{855106a7-7623-47ff-98f2-f0dbb587a9f9}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{de5d094a-a802-4037-9831-d6e0c8fe3f23}" />
@@ -622,30 +621,5 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{e8d6047f-c06e-4274-9444-782ab1f29bb9}" />
-	<object class="PitchShifterEffect" id="{855106a7-7623-47ff-98f2-f0dbb587a9f9}">
-		<property name="pitch">
-			<value>1</value>
-		</property>
-		<relationship name="modulators">
-			<destination>{b669bf07-4782-4d0a-91ff-04f35ad593b8}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusFader" id="{332bcffe-2156-4cd1-ae69-4d217f4e7db9}" />
-	<object class="ADSRModulator" id="{b669bf07-4782-4d0a-91ff-04f35ad593b8}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="decayTime">
-			<value>120</value>
-		</property>
-		<property name="releaseTime">
-			<value>2000</value>
-		</property>
-		<property name="releaseShape">
-			<value>0.274880379</value>
-		</property>
-		<property name="finalValue">
-			<value>100</value>
-		</property>
-	</object>
 </objects>

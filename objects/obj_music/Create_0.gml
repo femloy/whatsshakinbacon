@@ -1,4 +1,3 @@
-global.songCurInf = {}
 musicDetails = ds_map_create()
 music = { regular: "", secret: "", ambience: ""}
 musicInst = -4
@@ -7,14 +6,10 @@ ambienceInst = -4
 isSecret = false
 lock = false
 panicStart = false
-playingSecret = false
 func = -4
 monolith = FMODcreate_event("event:/Music/General/monolith")
 escapeInst = FMODcreate_event("event:/Music/General/escape")
 pillar = 0
-voices = 0
-savedMusicPosition = 0
-musicPos = 0
 currentMusic = ""
 pauseMusic = false
 
@@ -39,7 +34,6 @@ stop_music = function()
 	secretInst = -4
 	ambienceInst = -4
 	music = { regular: "", secret: "", ambience: ""}
-	savedMusicPosition = 0
 	isSecret = false
 }
 
