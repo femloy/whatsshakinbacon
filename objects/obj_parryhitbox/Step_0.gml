@@ -2,7 +2,7 @@ if obj_player.state != states.taunt
 	instance_destroy()
 image_xscale = obj_player.xscale
 x = obj_player.x
-y = obj_player.y
+y = obj_player.y - 16
 if place_meeting(x, y, obj_forkbox)
 {
 	with instance_place(x, y, obj_forkbox)

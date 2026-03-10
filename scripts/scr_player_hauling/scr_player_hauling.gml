@@ -32,6 +32,13 @@ function scr_player_hauling()
 	{
 		movespeed = approach(movespeed, 0, 0.25)
 		
+		buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
+		if buffers.afterimageBlur == 0
+		{
+			buffers.afterimageBlur = 3
+			create_blur_effect(sprite_index, image_index, x, y, xscale)
+		}
+		
 		spinsndbuffer = approach(spinsndbuffer, 0, 1)
 		if floor(image_index) == 0 && spinsndbuffer == 0
 		{
@@ -136,7 +143,7 @@ function scr_player_hauling()
 		exit;
 	}
 	
-	if key_down && grounded
+	if key_down && grounded && sprite_index != spr_player_swingading
 	{
 		image_speed = 0.35
 		image_index = 0
@@ -167,7 +174,7 @@ function scr_player_finishingblow()
 	image_speed = 0.4
 	hsp = movespeed * xscale
 	if floor(image_index) < 4 && sprite_index != spr_player_swingadingend
-		movespeed = approach(movespeed, 0, 1)
+		movespeed = approach(movespeed, 2, 1)
 	if instance_exists(enemyID) && (floor(image_index) > 4 || sprite_index == spr_player_swingadingend) && enemyID.state == states.grab
 	{
 		movespeed = -5
