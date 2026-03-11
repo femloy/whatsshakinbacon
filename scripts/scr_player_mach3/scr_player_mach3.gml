@@ -153,11 +153,20 @@ function scr_player_mach3()
 	}
 	if key_down
 	{
-		image_index = 0
-		sprite_index = spr_player_rollstart
+		if !grounded
+		{
+			FMODevent_oneshot("event:/Sfx/Player/dive", x, y)
+			sprite_index = sprites.dive
+			image_index = 0
+			vsp = 10
+		}
+		else
+		{
+			image_index = 0
+			sprite_index = spr_player_rollstart
+		}
 		state = states.tumble
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
-		exit
 	}
 	
 	doTaunt()

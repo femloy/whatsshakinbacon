@@ -173,7 +173,8 @@ function scr_player_normal()
 	}
 	if key_attack && !place_meeting(x + xscale, y, obj_solid)
 	{
-		movespeed = 6
+		if movespeed < 6
+			movespeed = 6
 		sprite_index = spr_player_mach1
 		image_index = 0
 		state = states.mach2
