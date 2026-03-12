@@ -151,7 +151,10 @@ function scr_player_mach2()
 		}
 		state = states.tumble
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
+		if key_slap2
+			slapBuffer = 2
 	}
+	doGrab()
 	if ((place_meeting(x + sign(hsp), y, obj_solid)
 	&& !grounded)
 	|| (scr_slope(x, y + 4)
@@ -173,5 +176,4 @@ function scr_player_mach2()
 	}
 	
 	doTaunt()
-	doGrab()
 }

@@ -53,7 +53,7 @@ function scr_player_climbwall()
 			if verticalMovespeed < 14
 				verticalMovespeed = 14
 			movespeed = verticalMovespeed
-			vsp = -10
+			vsp = -8
 			fmod_studio_event_instance_start(soundsBuzzsaw)
 			FMODSet3dPos(soundsBuzzsaw, x, y)
 		}

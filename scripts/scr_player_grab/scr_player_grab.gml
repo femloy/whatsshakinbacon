@@ -50,6 +50,7 @@ function scr_player_grab(){
 	}
 	if grounded && ( sprite_index == spr_player_airgrab )
 	{
+		slapBuffer = false
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		grabOut()
 		exit;
