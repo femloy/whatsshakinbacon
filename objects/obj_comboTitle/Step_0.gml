@@ -18,5 +18,3 @@ frame = self.getProper(combo)
 maxframe = frame + 1
 if image_index >= maxframe + 1
 	image_index = frame
-if lostcombo && points > 0 && alarm[1] <= 0
-	alarm[1] = 2

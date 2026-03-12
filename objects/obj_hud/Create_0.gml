@@ -11,6 +11,7 @@ kettle.offset = 0
 kettle.shake = 0
 kettle.lastcollect = -4
 kettle.colorarray = []
+kettle.badnum = []
 depth = -500
 
 collectVis = ds_list_create()
@@ -27,6 +28,7 @@ tv.expressionTimer = 0
 tv.switchindex = 0
 tv.offset = 0
 tv.backindex = 0
+tv.idle = 100
 
 combometer = {}
 combometer.x = 811
@@ -35,6 +37,8 @@ combometer.arrowx = combometer.x
 combometer.vsp = 0
 combometer.state = -1
 combometer.lights = []
+combometer.shake = 0
+combometer.combo = 0
 repeat (4)
 	array_push(combometer.lights, {on: true, sprite: spr_comboLights, x: 0, y: 0, index: 0})
 
@@ -57,3 +61,10 @@ hudVisible = function()
 
 global.Srank = 22000
 idle = 60 * 2
+alarm[0] = 60
+
+discoAlpha = 0
+discoColors = [c_red, c_aqua, c_fuchsia, c_yellow, c_lime]
+discoColor = 0
+musicBeat = 0
+musicBar = 0

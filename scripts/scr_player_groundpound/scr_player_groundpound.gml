@@ -32,7 +32,7 @@ function scr_player_groundpoundstart()
 		buffers.afterimageBlur = 4
 		create_blur_effect(sprite_index, image_index, x, y, xscale)
 	}
-	if grounded && vsp >= 0 && !place_meeting(x, y + vsp, obj_destructibles) && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock))
+	if (grounded && vsp >= 0 && !place_meeting(x, y + vsp + 1, obj_destructibles))
 	{
 		if scr_slope(x, y + 1) && sprite_index != spr_player_piledriver
 		{
@@ -157,7 +157,7 @@ function scr_player_groundpound()
 	if sprite_index == spr_player_wallpoundstart && animation_end()
 		sprite_index = spr_player_wallpound
 		
-	if grounded && vsp >= 0 && !place_meeting(x, y + vsp, obj_destructibles) && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock))
+	if grounded && vsp >= 0 && !place_meeting(x, y + vsp + 1, obj_destructibles) && (freefallsmash < 10 || !place_meeting(x, y + vsp + 1, obj_metalblock))
 	{
 		if scr_slope(x, y + 1) && sprite_index != spr_player_piledriver
 		{
@@ -220,6 +220,7 @@ function scr_player_freefallland(){
 		if sprite_index == spr_player_hitceiling
 		{
 			state = states.jump
+			freefalling = 0
 			sprite_index = spr_player_spinout
 			vsp = 2
 		}
@@ -232,6 +233,7 @@ function scr_player_freefallland(){
 		if sprite_index == spr_player_piledriverend
 		{
 			state = states.jump
+			freefalling = 0
 			vsp = -15
 			jumpstop = false
 			image_index = 0

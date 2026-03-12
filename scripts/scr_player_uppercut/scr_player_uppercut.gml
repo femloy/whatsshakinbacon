@@ -1,9 +1,9 @@
 function scr_player_uppercut(){
 	get_input()
 	var move = key_right + key_left
-	hsp = approach(hsp, movespeed * move, 0.8)
+	hsp = approach(hsp, movespeed * move, 0.4)
 	if move != 0
-		movespeed = 6
+		movespeed = 4
 	image_speed = 0.4
 	if vsp < 0
 	{

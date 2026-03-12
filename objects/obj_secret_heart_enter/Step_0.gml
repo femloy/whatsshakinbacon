@@ -1,9 +1,9 @@
+if animation_end() && sprite_index == spr_loveportal_close_broken
+	{
+		instance_destroy()
+	}
 if cutscene = true
 {
-	xscaleMulti = approach(xscaleMulti, 1, 0.1)
-	yscaleMulti = approach(yscaleMulti, 1, 0.1)
-	if xscaleMulti == 1
-		image_speed = 1
 	with obj_player
 	{
 		x = other.x
@@ -13,14 +13,15 @@ if cutscene = true
 		xscaleMulti = approach(xscaleMulti, 1, 0.05)
 		yscaleMulti = approach(yscaleMulti, 1, 0.05)
 	}
-	if animation_end() && sprite_index == spr_dudle_open
+	if animation_end() && sprite_index == spr_loveportal_open_broken
 	{
-		instance_destroy()
+		cutscene = false
+		sprite_index = spr_loveportal_idle_broken
+		alarm[0] = 120
+		image_index = 0
 		FMODevent_oneshot("event:/Sfx/General/Level/Doodles/doodleget", x, y)
-		create_particleDebri(spr_dudle_debri, 0, x, y, 1, -5)
-		create_particleDebri(spr_dudle_debri, 1, x, y, 1, -5)
 		FMODevent_oneshot("event:/Sfx/General/Enemy/balloonsplat", x, y)
-		instance_create(x, y, obj_sloshersplat).blend = #ff94ad
+		instance_create(x, y, obj_sloshersplat).blend = #b4bcc0
 		with obj_player
 		{
 			jumpstop = true

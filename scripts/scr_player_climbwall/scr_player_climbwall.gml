@@ -36,6 +36,7 @@ function scr_player_climbwall()
 	{
 		vsp = 0
 		state = states.jump
+		freefalling = 0
 		movespeed = -5
 		sprite_index = spr_player_fall
 	}
@@ -52,8 +53,9 @@ function scr_player_climbwall()
 			if verticalMovespeed < 14
 				verticalMovespeed = 14
 			movespeed = verticalMovespeed
-			vsp = -10
-			FMODevent_oneshot("event:/Sfx/Player/airspin", x, y)
+			vsp = -8
+			fmod_studio_event_instance_start(soundsBuzzsaw)
+			FMODSet3dPos(soundsBuzzsaw, x, y)
 		}
 		else
 		{
@@ -126,9 +128,9 @@ function scr_player_climbwall()
 		squashY = 0.8
 	}
 	
-	if place_meeting(x, y - 1, obj_solid)
+	if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles)
 	{
-		shake_camera(15)
+		shake_camera(20, 40)
 		sprite_index = spr_player_hitceiling
 		image_index = 0
 		state = states.freefallland

@@ -8,8 +8,41 @@ function loadString(_fname) //quickly load the string from a file
 }
 global.inputMap = {}
 
+function gamepad_axis_check_pressed(_axis, _invert = false)
+{
+	if !global.gamepadConnected
+		exit;
+	var _s = string($"{_axis}{_invert ? "_invert" : ""}")
+	if !ds_map_find_value(global.gamepad_pressed, _s)
+	{
+		if (!_invert && gamepad_axis_value(global.gamepadCurrent, _axis) >= global.gamepadDeadzones.press) || (_invert && gamepad_axis_value(global.gamepadCurrent, _axis) <= -global.gamepadDeadzones.press)
+		{
+			var _saved_axis = ds_map_find_value(global.gamepad_pressed, $"{_axis}_axis")
+			if (!_invert && _saved_axis < global.gamepadDeadzones.press) || (_invert && _saved_axis > -global.gamepadDeadzones.press)
+			{
+				show_debug_message("Pressed!")
+				ds_map_set(global.gamepad_pressed, _s, true)
+				ds_map_set(global.gamepad_pressed, $"{_axis}_axis", gamepad_axis_value(global.gamepadCurrent, gamepad_axis_value(global.gamepadCurrent, _axis)))
+			}
+		}
+	}
+	
+	return ds_map_find_value(global.gamepad_pressed, _s)
+}
+
 function init_input() // Of course, You have to grab/set your inputs, initialize.
 {
+	global.gamepad_pressed = ds_map_create()
+	var _axis = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv]
+	for (var i = 0; i < array_length(_axis); i++)
+	{
+		var _s = string($"{_axis[i]}")
+		ds_map_add(global.gamepad_pressed, _s, false)
+		_s = string($"{_axis[i]}_invert")
+		ds_map_add(global.gamepad_pressed, _s, false)
+		_s = string($"{_axis[i]}_axis")
+		ds_map_add(global.gamepad_pressed, _s, false)
+	}
 	if !file_exists(working_directory + "input.dat")
 	{
 		
@@ -233,9 +266,8 @@ function reset_input() // Basically everything we just did, but now it resets yo
  * 
  * You thought the hard part was over? (Well if you thought that was hard, you might wanna take off your pants.)
  * Yup, actually READING your input (as in, like, actually inputting yo input n- shiz) is WAAAY harder than that baby stuff we just did
- * Infact, I'm pretty sure I put SeeJ into Cardiac Arrest, call 911!
- * 
- * Anyway, How the hell do we go about this?
+ -=* Infact, I'm pretty sure I put SeeJ into Cardiac Arrest, call 911!
+ * 9 * Anyway, How the hell do we go about this?
  * Well, we could do it the LAME way and hardcode each input to read from, but thats fucking stupid, never hardcode anything.
 */
 
@@ -254,11 +286,11 @@ function read_input(_key /*Like, the map name*/, _press = false)
 	var _axLV = gamepad_axis_value(global.gamepadCurrent, gp_axislv)
 	var _axRH = gamepad_axis_value(global.gamepadCurrent, gp_axisrh)
 	var _axRV = gamepad_axis_value(global.gamepadCurrent, gp_axisrv)
-	var _pDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.press
+	var _pDeadzone = global.gamepadDeadzones.press
 	_pDeadzone = clamp(_pDeadzone, 0, 0.99)
-	var _horizDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.horizontal
+	var _horizDeadzone = global.gamepadDeadzones.horizontal
 	_horizDeadzone = clamp(_horizDeadzone, 0, 0.99)
-	var _vertDeadzone = global.gamepadDeadzones.general + global.gamepadDeadzones.vertical
+	var _vertDeadzone = global.gamepadDeadzones.vertical
 	_vertDeadzone = clamp(_vertDeadzone, 0, 0.99)
 	switch _press
 	{
@@ -414,6 +446,7 @@ function read_input(_key /*Like, the map name*/, _press = false)
 		return false
 	
 }
+
 
 /* Let's run down the pasta I just made;
  * Firstly, it reads the key stored in the input map and stores that in a local variable

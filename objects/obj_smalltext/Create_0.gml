@@ -1,6 +1,6 @@
-vspeed = -1
-alarm[0] = 45
+vspeed = -2
+alarm[0] = 60
 text = "text"
-image_xscale = 3
-image_yscale = 0.5
+image_xscale = 0.2
+image_yscale = 0.2
 stay = true

@@ -34,7 +34,7 @@ if level != "tutorial" && _completed
 	{
 		createdToppins = true
 		repeat (5) {
-			var _toppin = instance_create(x, y + sprite_height / 2, obj_potableHubVisual)
+			var _toppin = instance_create(x, y + sprite_height / 2 + 1, obj_potableHubVisual)
 			with _toppin
 			{
 				level = other.level

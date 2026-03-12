@@ -31,7 +31,13 @@ if escape && spawnerId == -4
 		other.spawnerId = self
 	}
 	instance_deactivate_object(self)
+	exit;
 }
+
+var _prev_mask = mask_index
+
+mask_index = sprite_index
+
 with obj_player
 {
 	if place_meeting(x, y + (vsp * 2), other) && y < other.y && vsp > 0 && !other.invincable
@@ -40,7 +46,7 @@ with obj_player
 		if state == states.jump
 		{
 			vsp = -10
-			if key_jump
+			if key_jump && !grounded
 				vsp = -15
 			jumpstop = true
 			sprite_index = spr_player_bumpenemystart
@@ -64,7 +70,7 @@ with obj_player
 		if state == states.hauling && enemyID != other && !other.invincable
 		{
 			vsp = -10
-			if key_jump
+			if key_jump && !grounded
 				vsp = -15
 			jumpstop = true
 			sprite_index = spr_player_haulingjump
@@ -93,22 +99,23 @@ with obj_player
 		
 		var _baddie = other
 		
-		if state == states.mach2 || state == states.tumble
+		if (state == states.mach2 || state == states.tumble) && _baddie.scared < 165
 		{
 			with _baddie
 			{
 				FMODevent_oneshot("event:/Sfx/Player/mach2bump", x, y)
-				xscaleMulti = 0.3
-				yscaleMulti = 1.7
-				vsp = (other.y - 180 - y) / 60;
+				xscaleMulti = 1.7
+				yscaleMulti = 0.5
+				vsp = (other.y - 180 - y) / 60
 				xscale = -obj_player.xscale
 				
-				scared = 120
+				scared = 180
 				state = states.stun
 				movespeed = -12
 				sprite_index = spr_stun
 				repeat (2)
 					create_particleDebri(spr_slapstar, irandom_range(0, sprite_get_number(spr_slapstar)), x, y, 1, -5)
+				create_particleStatic(spr_bangeffect, x, y, 1)
 			}
 		}
 		
@@ -135,7 +142,7 @@ with obj_player
 			with _baddie
 			{
 				playerID = other
-				xscaleMulti = 3
+				xscaleMulti = 1.7
 				yscaleMulti = 0.5
 				sprite_index = spr_stun
 				state = states.grab
@@ -176,7 +183,7 @@ with obj_player
 			hitstun.is = true
 			create_particleStatic(spr_kungfueffect, x, y, 1, -5)
 			
-			if key_jump || sprite_index == spr_milton_dive
+			if key_jump && !grounded
 				vsp = -10
 			
 			with _baddie
@@ -192,3 +199,5 @@ with obj_player
 		}
 	}
 }
+
+mask_index = _prev_mask

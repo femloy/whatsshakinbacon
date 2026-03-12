@@ -10,6 +10,8 @@ var _transfoPass = [
 	states.skateboardmove, 
 	states.coconutgun, 
 	states.coconutshoot,
+	states.gunk,
+	states.gunkMove,
 	states.coconutjump]
 if !array_contains(_transfoPass, other.state)
 	exit;

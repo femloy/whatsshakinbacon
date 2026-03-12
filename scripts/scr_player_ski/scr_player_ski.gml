@@ -66,7 +66,7 @@ function scr_player_ski()
 				sprite_index = spr_player_ski_fall
 			}
 			
-			if jumpstop == false && !key_jump && vsp < grav
+			if jumpstop == false && !key_jump && vsp < 0.5
 				vsp = grav
 			
 			
@@ -100,7 +100,7 @@ function scr_player_skibounce()
 	if move == -xscale
 		movespeed -= 0.1
 		
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 		vsp = grav
 		
 	if vsp >= 2

@@ -1,0 +1,10 @@
+var _spd = [[-1, 1], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]]
+var _random = irandom_range(0, array_length(_spd) - 1)
+hspeed = _spd[_random][0]
+vspeed = _spd[_random][1]
+sprite_index = obj_player.sprite_index
+image_index = obj_player.image_index
+image_speed = 0
+image_alpha = 0.5
+image_xscale = obj_player.xscale * obj_player.xscaleMulti * obj_player.squashX
+image_yscale = 1 * obj_player.yscaleMulti * obj_player.squashY

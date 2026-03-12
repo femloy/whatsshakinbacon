@@ -3,7 +3,7 @@
   "%Name":"spr_onewaymask",
   "bboxMode":0,
   "bbox_bottom":63,
-  "bbox_left":32,
+  "bbox_left":44,
   "bbox_right":63,
   "bbox_top":0,
   "collisionKind":1,

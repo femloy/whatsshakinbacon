@@ -2,7 +2,7 @@ FMODSet3dPos(mu, x, y)
 scr_collision()
 if room != hotel_soundtest
 	fmod_studio_system_set_parameter_by_name("musicfade", 1, false)
-if target.sprite_index != spr_player_littledanceydance
+if target.sprite_index != spr_player_breakdance
 {
 	create_particleStatic(spr_genericpoofeffect, x, y, 1, -10)
 	instance_destroy() 

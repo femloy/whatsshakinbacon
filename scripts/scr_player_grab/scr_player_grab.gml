@@ -19,11 +19,13 @@ function scr_player_grab(){
 	}
 	get_input()
 	hsp = movespeed * xscale
-	if jumpstop == false && !key_jump && vsp < grav
+	
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
 		vsp /= 20
 	}
+	
 	var move = key_right + key_left
 	if movespeed < 10
 		movespeed = approach(movespeed, 10, 0.5)
@@ -48,6 +50,8 @@ function scr_player_grab(){
 	}
 	if grounded && ( sprite_index == spr_player_airgrab )
 	{
+		slapBuffer = false
+		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		grabOut()
 		exit;
 	}
@@ -75,6 +79,7 @@ function scr_player_grab(){
 		movespeed = 0
 		sprite_index = spr_player_grabcancel
 		state = states.jump
+		freefalling = 0
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		FMODevent_oneshot("event:/Sfx/Player/grabcancel", x, y)
 		exit;
@@ -99,9 +104,10 @@ function scr_player_grab(){
 		state = states.climbwall
 		sprite_index = spr_player_wallclimb
 		image_index = 0
+		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 	}
 	if (place_meeting(x + sign(hsp), y, obj_solid)
-	&& grounded)
+	&& grounded) && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		movespeed = 0
 		hsp = 0

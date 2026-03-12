@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Doors",
-    "path":"folders/Making Levels/Warps/Doors.yy",
+    "name":"Debug",
+    "path":"folders/Sprites/Debug.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

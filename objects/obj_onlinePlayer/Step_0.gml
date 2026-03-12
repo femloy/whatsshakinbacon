@@ -4,7 +4,7 @@ if paused
 else
 	alpha = lerp(alpha, 0, 0.5)
 	
-if breakdancespeed > 0.5 && sprite_index == spr_player_littledanceydance && currentRoom == room
+if breakdancespeed > 0.5 && sprite_index == spr_player_breakdance && currentRoom == room
 {
 	if breakdanceID == -4
 	{

@@ -32,7 +32,7 @@ function scr_enemy_move()
 				sprite_index = spr_scared
 				scared = 120
 				state = states.stun
-				if chance(5 / 50)
+				if chance(1 / 100)
 					FMODevent_oneshot("event:/Sfx/General/Enemy/scream", x, y)
 			}
 }

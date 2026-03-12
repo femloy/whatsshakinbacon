@@ -33,7 +33,7 @@ if (saveHistory) {
 }
 
 if (!isOpen) {
-	if (self._key_combo_pressed(openModifiers, openKey)) {
+	if (self._key_combo_pressed(openModifiers, openKey)) && DEBUG {
 		self.open();
 	}
 } else {

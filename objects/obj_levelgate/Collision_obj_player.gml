@@ -1,6 +1,6 @@
 var _rm = targetRoom
 var _dr = "A"
-if other.grounded && other.key_up && other.state != states.enterdoor && other.state != states.walkfront && other.state != states.taunt 
+if other.grounded && other.key_up && other.state == states.normal
 {
 	with other
 	{
@@ -34,6 +34,7 @@ with other
 		if global.level == "tutorial"
 		{
 			load_textures([_group])
+			generalReset()
 			if !instance_exists(obj_fadeout)
 				instance_create(x, y , obj_fadeout)
 		}

@@ -39,14 +39,14 @@
     "yorigin":0.0,
     "path":"art/spr_titlecardMonolith.png"
   },
-  "spr_titlecardMonolithTitle1":{
+  "spr_titlecardMonolith1":{
     "xorigin":0.0,
     "yorigin":0.0,
-    "path":"art/spr_titlecardMonolithTitle1.png"
+    "path":"art/spr_titlecardMonolith1.png"
   },
-  "spr_titlecardMonolithTitle2":{
+  "spr_titlecardMonolith2":{
     "xorigin":0.0,
     "yorigin":0.0,
-    "path":"art/spr_titlecardMonolithTitle2.png"
+    "path":"art/spr_titlecardMonolith2.png"
   },
 }

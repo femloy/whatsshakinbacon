@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":539,
   "bbox_left":0,
-  "bbox_right":959,
+  "bbox_right":999,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"dc9937b0-05dd-484a-b40a-d2f5d1b88460","name":"dc9937b0-05dd-484a-b40a-d2f5d1b88460","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"05347390-551c-479c-a117-6ea54101252c","name":"05347390-551c-479c-a117-6ea54101252c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":540,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"310ce7ca-42f6-41b9-832e-2ba68a19c7bd","blendMode":0,"displayName":"default","isLocked":false,"name":"310ce7ca-42f6-41b9-832e-2ba68a19c7bd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"bc877210-e5c6-4492-8f8e-ef6fcf0233f5","blendMode":0,"displayName":"default","isLocked":false,"name":"bc877210-e5c6-4492-8f8e-ef6fcf0233f5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"bg_beakerForestTop3_escape",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dc9937b0-05dd-484a-b40a-d2f5d1b88460","path":"sprites/bg_beakerForestTop3_escape/bg_beakerForestTop3_escape.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ad63c07f-e343-4c34-af6a-6fa071b2a0ab","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"05347390-551c-479c-a117-6ea54101252c","path":"sprites/bg_beakerForestTop3_escape/bg_beakerForestTop3_escape.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0d7c8154-20ab-4c31-8b15-5806d2def194","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":960,
+  "width":1000,
 }

@@ -28,7 +28,7 @@ if other.grounded && other.key_up && other.state != states.enterdoor && other.st
 	{
 		x = other.x + other.sprite_width / 2 - 16
 		y = other.y + other.sprite_height / 2
-		sprite_index = spr_magician_unlock
+		sprite_index = spr_detective_unlock
 		xscale = 1
 		image_index = 0
 		persistent = false

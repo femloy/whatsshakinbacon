@@ -112,22 +112,10 @@ if canContinue
 {
 	if key_jump2
 	{
-		with obj_player
-		{
-			generalReset()
-			movespeed = 0
-			vsp = 0
-			hsp = 0
-			state = states.enterdoor
-			door = "BACKTOHUB"
-			visible = true
-			room_goto(backtohubRoom)
-			if instance_exists(obj_backtohub)
-				instance_destroy(obj_backtohub)
-		}
-		global.level = noone
-		global.resetRoom = noone
-		fmod_studio_event_instance_stop(music, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
-		instance_destroy()
+		canContinue = false
+		cutscenePart = 2
+		var t = instance_create(x, y, obj_rank_transition)
+		t.blend = make_colour_rgb(col[0] * 255, col[1] * 255, col[2] * 255)
+		fmod_studio_event_instance_stop(music, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT)
 	}
 }

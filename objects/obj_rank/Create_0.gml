@@ -43,6 +43,7 @@ with obj_music
 }
 
 global.escape.active = false
+obj_hud.musicBar = 0
 global.escape.timer = (60 * 60) * 2
 
 FMODstopAll()
@@ -129,8 +130,8 @@ shake = 0
 textPos = 0
 text = []
 array_push(text, [ false, $"SCORE: {global.collect}" ])
-array_push(text, [ false, $"TIME: {timeString(global.level_timer)}" ])
-array_push(text, [ false, $"DAMAGE: DUMMY" ])
+array_push(text, [ false, $"TIME: {string_seconds_to_timer(global.level_timer)}" ])
+array_push(text, [ false, $"DAMAGE: {global.damage_count}" ])
 array_push(text, [ false, $"HIGHEST COMBO: {global.combo.highest}" ])
 
 toppinPos = 0

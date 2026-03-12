@@ -1,14 +1,14 @@
 draw_self()
 draw_set_font(global.kettleFont)
 draw_set_halign(fa_left)
-var _xx = x + 16 - (string_width(collect) / 2)
+var _xx = x + 16 - (string_width(collect) / 2) - 4
 	if lastcollect != collect
 	{
 		colorarray = array_create(string_length(collect), 0)
 		
 		for (var i = 0; i < array_length(colorarray); i++)
 		{
-			colorarray[i] = irandom_range(0, 2)
+			colorarray[i] = random_range(0, 1)
 		}
 		lastcollect = collect
 	}

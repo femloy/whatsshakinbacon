@@ -30,6 +30,7 @@ selected = 0
 move = 0
 backgrounds = []
 changingBind = false
+changingBindTimer = 60 * 3
 keyscroll = 0
 var addBackground = function(_menu = [], _index, _alpha = 0)
 {
@@ -485,7 +486,7 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, funct
 		goto_menu(option.controlsPadDeadzones)
 	})
 
-var controlsKey = create_menu(option.controlsKey, option.keys, 40, function()
+var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 	{
 		var q = json_stringify(global.inputMap, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
@@ -543,7 +544,7 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 40, function()
 		}, "Inputs_Player1_menu_clearKey")
 
 
-var controlsPad = create_menu(option.controlsPad, option.keys, 40, function()
+var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 	{
 		goto_menu(option.controlsPadMain)
 	})
@@ -670,9 +671,14 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_windowed", function()
 	{
 		goto_menu(option.video)
+		
 		window_set_fullscreen(false)
 		window_enable_borderless_fullscreen(false);
+		
 		global.Fullscreen = 0
+		var res = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]]
+		window_set_size(res[global.windowSize][0], res[global.windowSize][1])
+		window_center()
 		
 		ini_open(working_directory + "options.ini")
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
@@ -681,8 +687,10 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_fullscreen", function()
 	{
 		goto_menu(option.video)
+		
 		window_enable_borderless_fullscreen(false);
 		window_set_fullscreen(true)
+		
 		global.Fullscreen = 1
 		
 		ini_open(working_directory + "options.ini")
@@ -692,10 +700,12 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	add_option_press(windowMode, "option_video_window_mode_borderless", function()
 	{
 		goto_menu(option.video)
+		
 		if window_get_fullscreen()
 			window_set_fullscreen(false)
 		window_enable_borderless_fullscreen(true);
 		window_set_fullscreen(true);
+		
 		global.Fullscreen = 2
 		
 		ini_open(working_directory + "options.ini")

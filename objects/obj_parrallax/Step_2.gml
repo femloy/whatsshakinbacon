@@ -141,8 +141,8 @@ for (var i = 0; i < array_length(layers); i++)
 			layer_y(lay, camy + (layer_get_vspeed(lay) * current_time / 30));
 		break
 		case "Assets_bg1":
-			layer_x(lay, camx * 0.15);
-			layer_y(lay, camy * 0.15);
+			layer_x(lay, camx * 0.01);
+			layer_y(lay, camy * 0.01);
 		break
 		case "Backgrounds_waveH1":
 			layer_x(lay, wave(0, 50, 4, 10) + (layer_get_hspeed(lay) * current_time / 5) * 0.15)

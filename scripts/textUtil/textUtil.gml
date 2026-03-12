@@ -162,6 +162,13 @@ global.textCache = ds_map_create()
 global.textFunc = ds_map_create()
 global.textSize = 1
 
+function scr_sleep(ms = 5)
+{
+	var t = current_time + ms;
+	while current_time < t
+		do {};
+}
+
 function parse_textEX(_text, _w)
 {
 	var _stringArr = []

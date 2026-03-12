@@ -1,7 +1,7 @@
 switch global.level
 {
 	case "forest":
-		global.Srank = 22000
+		global.Srank = 19000
 		tv.backindex = 0
 		break
 	case "shell":

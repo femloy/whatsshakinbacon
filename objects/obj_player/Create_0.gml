@@ -57,6 +57,9 @@ enum states
 	coconutshoot,
 	coconutjump,
 	noclip,
+	gunk,
+	gunkMove,
+	gunkIntro
 }
 
 enum characters
@@ -140,6 +143,8 @@ if !variable_global_exists("saveroom")
 	global.prankenemy_cankill = true
 	global.detective = false
 	global.tauntcount = 0
+	global.waybackIntro = false
+	global.damage_count = 0
 }
 
 spr_palette = spr_playerPal
@@ -188,6 +193,7 @@ soundsHammer = FMODcreate_event("event:/Sfx/Player/hammerattack")
 soundsHammerAir = FMODcreate_event("event:/Sfx/Player/hammerair")
 soundsSkateboard = FMODcreate_event("event:/Sfx/Player/Transformations/Skateboard/move")
 soundsSkateAim = FMODcreate_event("event:/Sfx/Player/Transformations/Skateboard/aim")
+soundsBuzzsaw = FMODcreate_event("event:/Sfx/Player/airspin")
 spinsndbuffer = 0
 speedlineseffect = -4
 spinnyeffect = -4
@@ -251,5 +257,12 @@ freefalling = 0
 swingdingendcooldown = 20
 soundtestroom = room
 
+gunkHard = 60
+
 get_input()
 alarm[1] = irandom_range(5, 15)
+
+blend = c_white
+blendAmount = 0
+blendSpeed = 0.35 / 17
+poison = 0

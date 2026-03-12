@@ -13,6 +13,8 @@ var _transfoPass = [
 	states.coconutjump]
 if array_contains(_transfoPass, other.state)
 	exit;
+if blocked
+	exit;
 if other.grounded && other.key_up && other.state != states.enterdoor && other.state != states.walkfront && other.state != states.snowball
 {
 	with other

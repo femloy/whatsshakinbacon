@@ -2,10 +2,10 @@ with obj_player
 { 
 	var _block = other
 	if state == states.mach3 || state == states.buzzsaw ||
-	(state == states.groundpound && freefallsmash >= 10)
+	(state == states.groundpound && freefallsmash >= 10) || (state == states.gunkMove && gunkHard >= 60)
 	{
 		var _y = y
-		var _x = x + (xscale * 5)
+		var _x = x + (hsp * 5)
 		if state == states.groundpound
 		{
 			_y = y + vsp
@@ -14,7 +14,12 @@ with obj_player
 		if state == states.buzzsaw
 		{
 			_y = y + vsp
-			_x = x + (xscale * 5)
+			_x = x + (hsp * 5)
+		}
+		if state == states.gunkMove
+		{
+			_y = y + (vsp * 5)
+			_x = x + (hsp * 5)
 		}
 		if place_meeting(_x, _y, _block)
 		{

@@ -15,10 +15,10 @@ function scr_player_hauling()
 		image_index = 0
 	}
 	
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	swingdingendcooldown = approach(swingdingendcooldown, 0, 1)
 	if grounded && (sprite_index = spr_player_haulingfall || sprite_index == spr_player_haulingjump) && sprite_index != spr_player_swingading
@@ -31,6 +31,13 @@ function scr_player_hauling()
 	if sprite_index == spr_player_swingading
 	{
 		movespeed = approach(movespeed, 0, 0.25)
+		
+		buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
+		if buffers.afterimageBlur == 0
+		{
+			buffers.afterimageBlur = 3
+			create_blur_effect(sprite_index, image_index, x, y, xscale)
+		}
 		
 		spinsndbuffer = approach(spinsndbuffer, 0, 1)
 		if floor(image_index) == 0 && spinsndbuffer == 0
@@ -136,12 +143,14 @@ function scr_player_hauling()
 		exit;
 	}
 	
-	if key_down && grounded
+	if key_down && grounded && sprite_index != spr_player_swingading
 	{
 		image_speed = 0.35
 		image_index = 0
 		sprite_index = spr_player_crouch
 		state = states.crouch
+		enemyID = -4
+		exit;
 	}
 	
 	if key_down2 && !grounded
@@ -165,11 +174,12 @@ function scr_player_finishingblow()
 	image_speed = 0.4
 	hsp = movespeed * xscale
 	if floor(image_index) < 4 && sprite_index != spr_player_swingadingend
-		movespeed = approach(movespeed, 0, 1)
+		movespeed = approach(movespeed, 2, 1)
 	if instance_exists(enemyID) && (floor(image_index) > 4 || sprite_index == spr_player_swingadingend) && enemyID.state == states.grab
 	{
 		movespeed = -5
 		vsp = -5
+		global.combo.timer = 60
 		FMODevent_oneshot("event:/Sfx/Player/punch", x, y)
 		
 		repeat (8)
@@ -206,6 +216,7 @@ function scr_player_finishingblow()
 	{
 		slapBuffer = false
 		state = states.jump
+		freefalling = 0
 		sprite_index = spr_player_fall
 		jumpstop = true
 	}

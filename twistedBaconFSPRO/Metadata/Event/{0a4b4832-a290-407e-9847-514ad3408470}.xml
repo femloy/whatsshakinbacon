@@ -101,7 +101,7 @@
 	<object class="MixerBusPanner" id="{2be7160f-df5a-4ce5-9f36-c6f83ee9a554}" />
 	<object class="SingleSound" id="{624f2457-c131-44ee-926d-19e3215c0e5e}">
 		<property name="pitch">
-			<value>-2.79999995</value>
+			<value>1.60000002</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{2d05d750-dba5-4dd2-ada3-d8eec0ade0b9}</destination>
@@ -120,7 +120,7 @@
 			<value>0.299999982</value>
 		</property>
 		<property name="depth">
-			<value>45</value>
+			<value>5.5</value>
 		</property>
 	</object>
 </objects>

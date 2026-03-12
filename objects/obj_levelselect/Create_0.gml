@@ -4,7 +4,7 @@ levels = []
 var _world1 = [
 	[tutorial_1, "tutorial", "A", "Tutorial"],
 	[mangrove_1, "forest", "A", "Waybackyard"],
-	[shell_1, "shell", "A", "Shell City"],
+	[shell_1, "shell", "A", "Downtown NYC"],
 	[beach_1, "beach", "A", "Fruitcup Coast"]]
 
 var _world2 = [

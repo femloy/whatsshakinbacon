@@ -1,5 +1,5 @@
-#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2 && !global.dirGround))
-#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump && !global.dirGround))
+#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2))
+#macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
 
 function hurt_player(_obj = noone)
 {
@@ -21,12 +21,18 @@ function hurt_player(_obj = noone)
 		if array_contains(_cantHurtStates, state) || i_frame > 0
 			exit;
 		
+		scr_sleep(100)
+		
 		FMODevent_oneshot("event:/Sfx/Player/hurt", x, y)
 		global.collect -= 100
 		if global.collect < 0
 			global.collect = 0
+		global.damage_count++
 		global.combo.timer -= 25
 		global.combo.timer = clamp(global.combo.timer, 0, 60)
+		tv_anim(spr_tv_hurt, 60 * 3)
+		with obj_hud
+			array_push(kettle.badnum, {x: kettle.x + 90, y: kettle.y, alpha: 1, text: "-100"})
 		i_frame = 100
 		var sameFace = true
 		var facing = xscale
@@ -44,10 +50,11 @@ function hurt_player(_obj = noone)
 		vsp = -12
 		repeat (8)
 		{
-			create_particleDebri(spr_baddie_gibs, irandom_range(0, sprite_get_number(spr_baddie_gibs)), x, y, 1, -5)
 			create_particleDebri(spr_slapstar, irandom_range(0, sprite_get_number(spr_slapstar)), x, y, 1, -5)
+			create_particleDebri(asset_get_index($"spr_collect{irandom_range(1, 5)}"), 0, x, y, 1, -5)
 		}
 		create_particleStatic(spr_hurteffect, x, y, 1)
+		create_particleStatic(spr_parryeffect, x, y, 1)
 	}	
 }
 
@@ -119,6 +126,7 @@ function generalReset()
 	global.prankenemy_killed = false
 	global.prankenemy_cankill = true
 	global.tauntcount = 0
+	global.damage_count = 0
 	obj_player.door = "A"
 	obj_player.visible = true
 	obj_player.hallway = false
@@ -127,6 +135,7 @@ function generalReset()
 	obj_player.yscaleMulti = 1
 	obj_player.hitstun.is = false
 	obj_player.supertaunt = 0
+	obj_player.poison = 0
 	obj_player.canSupertaunt = false
 	
 	with obj_hud
@@ -134,6 +143,10 @@ function generalReset()
 		tv.sprite_index = spr_tv_off
 		combometer.y = -128
 		combometer.state = -1
+		musicBar = 0
+		musicBeat = 0
+		kettle.previousRank = 0
+		kettle.rankScale = 1
 	}
 	
 	global.escape = 
@@ -222,12 +235,19 @@ function playerSounds()
 		fmod_studio_event_instance_stop(soundsHammerAir, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 	}
 	
-	if state == states.superjumpprep
+	if state == states.superjumpprep || sprite_index == spr_player_superjump
 	{
 		fmod_studio_event_instance_set_paused(soundsSuperjump, false);
 		if !FMODevent_isplaying(soundsSuperjump)
 			fmod_studio_event_instance_start(soundsSuperjump);
 		FMODSet3dPos(soundsSuperjump, x, y);
+		if sprite_index == spr_player_superjump
+		{
+			fmod_studio_event_instance_set_parameter_by_name(soundsSuperjump, "state", 1)
+		}
+		else {
+			fmod_studio_event_instance_set_parameter_by_name(soundsSuperjump, "state", 0)
+		}
 	}
 	else{
 		fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
@@ -263,7 +283,7 @@ function playerSounds()
 		var s = 0;
 		if state == states.mach2 && sprite_index == spr_player_mach1 && grounded
 			s = 0;
-		else if (state == states.mach2 && sprite_index != spr_player_mach1)
+		else if ((state == states.mach2 && sprite_index != spr_player_mach1) || state == states.climbwall)
 			s = 1;
 		else if state == states.mach3 && sprite_index != sprites.crazyrun
 			s = 2;
@@ -332,13 +352,14 @@ function doGrab()
 			image_index = 0
 			sprite_index = spr_milton_hammerspin_prep
 		}
+		exit;
 	}
 }
 
 function slope_momentum(_accel = 0.1, _deaccel = 0) {
 	if scr_slope(x, y + 1)
 	{
-		var _obj = scr_slope_get()
+		var _obj = instance_place(x, y + 1, obj_slope);
 		
 		if instance_exists(_obj) 
 		{
@@ -357,6 +378,16 @@ function doTaunt()
 {
 	if key_taunt2
 	{
+		if instance_exists(obj_stayawake_mash)
+		{
+			with obj_stayawake_mash
+			{
+				shake = 15
+				mashCount--
+			}
+			exit;
+		}
+		
 		tauntVars = {
 			sprite_index: sprite_index,
 			image_index : image_index,
@@ -426,6 +457,7 @@ function doTaunt()
 				FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
 			}
 		}
+		exit;
 	}
 }
 

@@ -47,6 +47,8 @@ if (place_meeting(x, y + 4, obj_ballofbeer) || place_meeting(x, y - 16, obj_ball
 
 if place_meeting(x, y, obj_door) || place_meeting(x, y, obj_exitgate) || place_meeting(x, y, obj_detective_door) || place_meeting(x, y, obj_levelgate) || place_meeting(x, y, obj_keydoor) && state == states.enterdoor && !instance_exists(obj_backtohub)
 {
+	blendAmount = 1
+	blendSpeed = 0.35 / 17
 	state = states.walkfront
 	image_index = 0
 	sprite_index = spr_player_walkfront

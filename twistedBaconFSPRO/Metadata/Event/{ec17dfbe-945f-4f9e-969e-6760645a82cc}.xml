@@ -101,6 +101,9 @@
 		<property name="pitch">
 			<value>6</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{d39dfbaa-500e-4f1d-9491-460c2de19f1c}</destination>
+		</relationship>
 		<relationship name="fadeInCurve">
 			<destination>{12d533dc-ef99-4de6-bbae-de9adaecb71e}</destination>
 		</relationship>
@@ -161,6 +164,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{3677cc4a-59b5-4383-83d4-eb6c99272be5}" />
 	<object class="MixerBusFader" id="{a8107fa0-f8be-44e6-8aef-ab661509bffe}" />
+	<object class="LFOModulator" id="{d39dfbaa-500e-4f1d-9491-460c2de19f1c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="rate">
+			<value>9</value>
+		</property>
+		<property name="depth">
+			<value>3.5</value>
+		</property>
+	</object>
 	<object class="FadeCurve" id="{12d533dc-ef99-4de6-bbae-de9adaecb71e}">
 		<relationship name="startPoint">
 			<destination>{4db9d3a4-aac1-43ad-ac4e-184bcf55fdcb}</destination>

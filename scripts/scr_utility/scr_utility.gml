@@ -31,7 +31,7 @@ function scr_savelevel()
 }
 
 function create_uparrow() {
-	instance_create(x, y, obj_uparrow).objId = id
+	arrow = instance_create(x, y, obj_uparrow).objId = id
 }
 
 function load_textures(_groups)
@@ -46,6 +46,12 @@ function load_textures(_groups)
 		}
 		texturesMax = array_length(textures)
 	}
+}
+
+function reset_blendmmode()
+{
+	gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_inv_src_alpha, bm_src_alpha, bm_dest_alpha)
+	gpu_set_blendequation_sepalpha(bm_eq_add, bm_eq_max)
 }
 
 function unload_textures(_textures)
@@ -74,7 +80,7 @@ function unload_textures(_textures)
 }
 
 function animation_end() {
-	return image_index + image_speed * sprite_get_speed(sprite_index)  >=  image_number;
+	return image_index > image_number - 1
 }
 
 function shake_camera(_intensity, _time)
@@ -83,6 +89,15 @@ function shake_camera(_intensity, _time)
 		_time = _intensity
 	obj_camera.cameraShakeTimer = _time / 60
 	obj_camera.cameraShake = _intensity
+}
+
+function create_ghost_self_visual(_sprite = sprite_index, _speed = image_speed)
+{
+	with instance_create(x, y, obj_ghost_object)
+	{
+		sprite_index = _sprite
+		image_speed = _speed
+	}
 }
 
 function tv_anim(_sprite, _timer = 0)
@@ -161,10 +176,7 @@ function tile_delete(_x, _y) {
 		var lay = layers[i];
 		var layer_name = layer_get_name(lay);
 		if layer_name != "Tiles_BG1" && layer_name != "Tiles_BG" && layer_name != "Tiles_BG2" && layer_name != "Tiles_BG3" {
-			var ID = layer_get_id(layer_name)
-			var tilemapID = layer_tilemap_get_id(ID)
-			var tiledata = tilemap_get_at_pixel(tilemapID, _x, _y)
-			tile_set_empty(tiledata)
+			var tilemapID = layer_tilemap_get_id(layer_name)
 			tilemap_set_at_pixel(tilemapID, 0, _x, _y)
 		}
 	}
@@ -197,26 +209,29 @@ function scr_transfotip(_text, _font = global.creditsfont) {
 	return q
 }
 
-function timeString(_variable)
+function string_seconds_to_timer(_num, _speedrun = global.option_speedrun_timer)
 {
-	_variable = string_format(_variable, 1, 3);
-	var _ms = string_digits(frac(_variable))
-	_ms = string_copy(_ms, 2, 3)
+	var _ms = floor((_num % 1) * (_speedrun ? 1000 : 10))
+	var _s = floor(_num % 60)
+	var _m = floor((_num / 60) % 60)
+	var _h = floor(_num / (60 * 60))
+	_ms = string(_ms)
+	_s = string(_s)
+	_m = string(_m)
+	_h = string(_h)
+	if _speedrun
+	{
+		if string_length(_ms) <= 1
+			_ms = "0" + _ms
+		if string_length(_ms) <= 2
+			_ms = "0" + _ms
+	}
+	if string_length(_s) <= 1
+		_s = "0" + _s
+	if string_length(_m) <= 1
+		_m = "0" + _m
+	if string_length(_h) <= 1
+		_h = "0" + _h
 	
-	var _realSecond = floor(_variable)
-	
-	var _s = _realSecond
-	_s = wrap(_s, 0, 59)
-	if _s < 10
-		_s = string_concat("0", _s)
-	
-	var _m = floor(_realSecond / 60)
-	_m = wrap(_m, 0, 59)
-	if _m < 10
-		_m = string_concat("0", _m)
-		
-	var _h = floor(_realSecond / (60 * 60))
-	if _h < 10
-		_h = string_concat("0", _h)
 	return $"{_h}:{_m}:{_s}.{_ms}"
 }

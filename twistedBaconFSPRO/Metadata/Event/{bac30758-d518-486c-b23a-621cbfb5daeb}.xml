@@ -109,7 +109,7 @@
 	<object class="MixerBusPanner" id="{4482bc0b-c899-4675-b2ba-c6fd7a026d68}" />
 	<object class="MultiSound" id="{b9296223-f427-413f-9bb2-c56c11b59631}">
 		<property name="pitch">
-			<value>1</value>
+			<value>0.300000012</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{609a48ab-7c83-453a-9d62-1481f5564c94}</destination>
@@ -148,7 +148,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>7.5</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="LFOModulator" id="{df071441-4dc8-46d6-bbee-f23355cf5995}">
@@ -156,10 +156,10 @@
 			<value>pitch</value>
 		</property>
 		<property name="rate">
-			<value>0.129999995</value>
+			<value>0.620000005</value>
 		</property>
 		<property name="depth">
-			<value>17</value>
+			<value>12.5</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{8408dcf3-4453-40a8-9872-df87fe98d40b}">

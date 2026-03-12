@@ -149,10 +149,10 @@ function scr_player_skateboardmove()
 		create_particleStatic(spr_dashcloud1, x, y, xscale, 1)
 	}
 	
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	
 	slope_momentum(0.25)

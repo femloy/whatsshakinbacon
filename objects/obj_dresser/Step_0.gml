@@ -19,7 +19,6 @@ if place_meeting(x, y, obj_player)
 			}
 			palIndex = other.palettes[other.selected].index
 			global.patternSpr = other.palettes[other.selected].sprite
-			create_particleStatic(spr_genericpoofeffect, x, y, 1, -1)
 			FMODevent_oneshot("event:/Sfx/General/dresser", x, y)
 		}
 	}

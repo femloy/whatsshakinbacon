@@ -1,5 +1,6 @@
 function scr_player_buzzsaw()
 {
+	FMODSet3dPos(soundsBuzzsaw, x, y)
 	get_input()
 	image_speed = 0.7
 	hsp = movespeed * xscale
@@ -22,6 +23,7 @@ function scr_player_buzzsaw()
 		vsp += 0.15
 	if !grounded && key_jump2 && key_down
 	{
+		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		vsp = -6
 		sprite_index = sprites.divebomb
 		image_index = 0
@@ -44,6 +46,7 @@ function scr_player_buzzsaw()
 		sprite_index = spr_player_buzzsaw
 	if grounded
 	{
+		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		if move != 0
 			xscale = move
 		
@@ -56,8 +59,9 @@ function scr_player_buzzsaw()
 		FMODevent_oneshot("event:/Sfx/Player/sawland", x, y)
 	}
 	doTaunt()
-	if slapBuffer > 8 || place_meeting(x + xscale, y, obj_metalblock)
+	if slapBuffer > 8
 	{
+		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		slapBuffer = false
 		if move != 0
 			xscale = move

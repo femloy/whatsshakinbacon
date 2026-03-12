@@ -105,7 +105,7 @@ switch m.anchor
 						var xx = SCREEN_WIDTH / 2 - 16
 						var yy = 16 + (m.ypad) - keyscroll 
 						draw_set_color(_col)
-						keyscroll = lerp(keyscroll, 40 * (selected - 1), 0.02) 
+						keyscroll = lerp(keyscroll, m.ypad * (selected - 1), 0.035) 
 						if !is_string(q.iconIndex)
 							draw_sprite_ext(spr_controlicons, q.iconIndex, xx, yy + m.ypad * i, 1, 1, 0, _col, 1)
 						else {
@@ -247,4 +247,10 @@ if changingBind
 	draw_set_font(global.bigfont)
 	draw_set_halign(fa_center)
 	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "PRESS ANY KEY")
+	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + string_height("ABCDEFG"), $"GOING BACK IN... {ceil(changingBindTimer / 60)}")
+	changingBindTimer--
+	if changingBindTimer <= 0 {
+		changingBind = false
+		exit;
+	}
 }

@@ -66,10 +66,10 @@ function scr_player_mach2()
 	else {
 		image_speed = 0.4
 	}
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	if movespeed >= 12 && grounded
 	{
@@ -127,7 +127,7 @@ function scr_player_mach2()
 		}
 	}
 	if place_meeting(x + sign(hsp), y, obj_solid) 
-	&& !place_meeting(x, y + 1, obj_slope) && grounded
+	&& !place_meeting(x, y + 1, obj_slope) && grounded && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		FMODevent_oneshot("event:/Sfx/Player/bump", x, y)
 		state = states.hitwall
@@ -137,12 +137,24 @@ function scr_player_mach2()
 	}
 	if key_down
 	{
-		image_index = 0
-		sprite_index = spr_player_rollstart
+		if !grounded
+		{
+			FMODevent_oneshot("event:/Sfx/Player/dive", x, y)
+			sprite_index = sprites.dive
+			image_index = 0
+			vsp = 10
+		}
+		else
+		{
+			image_index = 0
+			sprite_index = spr_player_rollstart
+		}
 		state = states.tumble
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
-		exit
+		if key_slap2
+			slapBuffer = 2
 	}
+	doGrab()
 	if ((place_meeting(x + sign(hsp), y, obj_solid)
 	&& !grounded)
 	|| (scr_slope(x, y + 4)
@@ -164,5 +176,4 @@ function scr_player_mach2()
 	}
 	
 	doTaunt()
-	doGrab()
 }

@@ -17,7 +17,7 @@ addPalette = function(_name, _desc, _index, _unlocked = true, _pattern = global.
 }
 ini_open(global.saveFile)
 
-addPalette("Retail Wears", "Unlocked by being Tu", 1, true)
+addPalette("Retail Wears", "Complimentary!", 1, true)
 addPalette("Mint Wears", "Unlocked by finishing the tutorial", 10, ini_read_real("Palette", "mintwears", false))
 addPalette("Red Wears", "Unlocked by ???", 2, ini_read_real("Palette", "redwears", false))
 addPalette("Orange Wears", "Unlocked by ???", 3, ini_read_real("Palette", "orangewears", false))

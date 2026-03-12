@@ -48,6 +48,7 @@ function scr_player_ladder()
 		image_index = 0
 		sprite_index = spr_player_jump
 		state = states.jump
+		freefalling = 0
 		vsp = -12
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/jump", x, y)

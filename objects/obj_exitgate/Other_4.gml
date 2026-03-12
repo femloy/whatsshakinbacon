@@ -5,4 +5,7 @@ if global.escape.active
 if !place_meeting(x, y, obj_player)
 {
 	global.prankenemy_cankill = false
+	
+	if global.level == noone && room == hotel_receptionentrance
+		image_index = 0
 }

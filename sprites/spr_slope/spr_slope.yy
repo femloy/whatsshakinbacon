@@ -6,7 +6,7 @@
   "bbox_left":0,
   "bbox_right":31,
   "bbox_top":0,
-  "collisionKind":1,
+  "collisionKind":0,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
@@ -19,7 +19,7 @@
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c05b627c-a5de-44a7-b4b5-8a37eae85cba","blendMode":0,"displayName":"default","isLocked":false,"name":"c05b627c-a5de-44a7-b4b5-8a37eae85cba","opacity":67.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c05b627c-a5de-44a7-b4b5-8a37eae85cba","blendMode":0,"displayName":"default","isLocked":false,"name":"c05b627c-a5de-44a7-b4b5-8a37eae85cba","opacity":40.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_slope",
   "nineSlice":null,

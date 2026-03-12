@@ -105,7 +105,7 @@ function scr_player_tumble()
 		image_index = 0
 	}
 	
-	if place_meeting(x + sign(hsp), y, obj_solid) 
+	if place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		if character != characters.milton
 		{

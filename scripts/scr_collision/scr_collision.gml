@@ -11,9 +11,9 @@ function scr_collision_init()
 function scr_collision()
 {
 	grounded = false
-	var o_x = x, o_y = y, __hspPlat = 0, __vspPlat = 0
+	var o_x = x, o_y = y
 	if vsp < 20
-		vsp += !place_meeting(x, y, obj_water) ? grav : grav / 2
+		vsp += !place_meeting(x, y, obj_water) ? grav : grav / 1.5
 	var finalHsp = hsp
 	var finalVsp = vsp
 	
@@ -24,6 +24,7 @@ function scr_collision()
 			y += sign(finalVsp);
 		else
 			y += finalVsp;
+		
 		if scr_solid(x, y)
 		{
 			y = o_y
@@ -78,83 +79,62 @@ function scr_slope(_x, _y)
 
 function scr_solid(_x, _y)
 {
+	var _self_id = id
 	var _collided = false
-	var _id = id
-	var _collisionArray = []
-	array_push(_collisionArray, obj_solid)
-	array_push(_collisionArray, obj_slope)
-	array_push(_collisionArray, obj_platform)
-	array_push(_collisionArray, obj_destructibles)
-	for (var i = 0; i < array_length(_collisionArray); i++)
+	var _collision_list = ds_list_create();
+	var _collides_with = [obj_solid, obj_slope, obj_platform, obj_destructibles]
+	for (var i = 0; i < array_length(_collides_with); i++)
 	{
-		var _obj = _collisionArray[i]
-		var _parentCheck = false
-			with instance_place(_x, _y, _obj)
-			{
-				switch object_index
-				{
-					case obj_solid: 
-						_collided = true
-						break
-					case obj_slope:
-						_collided = scr_slope_collideCheck(_id, _x, _y)
-						break
-					case obj_platform: 
-						if _id.bbox_bottom - 1 <= bbox_top + 1 && _id.vsp >= 0 
-							_collided = true 
-					break
-				default:
-					_parentCheck = true
-					break
-				}
-			if _parentCheck
-			{
-					switch object_get_parent(object_index)
-					{
-					case obj_destructibles: 
-					case obj_solid: 
-						_collided = true
-						break
-					case obj_slope:
-						_collided = scr_slope_collideCheck(_id, _x, _y)
-						break
-					case obj_platform: 
-						if _id.bbox_bottom - 1 <= bbox_top + 1 && _id.vsp >= 0 
-							_collided = true 
-						break
-					}
-			}
-			}
-	}
-	return _collided
-}
+		var _num = instance_place_list(_x, _y, _collides_with[i], _collision_list, false);
 
+		if _num > 0
+		{
+		    for (var c = 0; c < _num; c++;)
+		    {
+				var _obj_target = _collision_list[| c].object_index
+				var _solid_type = _collides_with[i]
+		        if object_get_parent(_obj_target) == _solid_type || _obj_target == _solid_type
+				{
+					with _collision_list[| c]
+					{
+						switch _solid_type
+						{
+							case obj_destructibles:
+							case obj_solid:
+								_collided = true
+								break
+							case obj_slope:
+								_collided = scr_slope_collideCheck(_self_id, _x, _y)
+								break
+							case obj_platform:
+								_collided = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
+								break
+						}
+					}
+				}
+		    }
+		}
+	}
+	ds_list_destroy(_collision_list)
+	
+	return _collided;
+}
 
 function scr_slope_collideCheck(_playerId, _x, _y)
 {
-	var _height = _playerId.bbox_bottom - _playerId.y
-	var _slope = (bbox_bottom - bbox_top) / (bbox_right - bbox_left)
+	var _player_height = _playerId.bbox_bottom - _playerId.y
+	var _slope_angle = (bbox_bottom - bbox_top) / (bbox_right - bbox_left)
 	var _side = _x + (_playerId.bbox_left - _playerId.x)
-	var _slopeFinal = bbox_bottom + ((_side - bbox_right) * _slope)
-	if (image_xscale > 0)
+	var _slope = bbox_bottom + ((_side - bbox_right) * _slope_angle)
+	if image_xscale > 0 // Left faced slope
 	{
 		_side = _x + (_playerId.bbox_right - _playerId.x)
-		_slopeFinal = bbox_bottom - ((_side - bbox_left) * _slope)
+		_slope = bbox_bottom - ((_side - bbox_left) * _slope_angle)
 	}
-	if image_yscale < 0
+	if image_yscale < 0 // Upside down
 	{
-		_height = _playerId.y - _playerId.bbox_top
-		return _y + _height < bbox_top + (bbox_bottom - _slopeFinal);
+		_player_height = _playerId.y - _playerId.bbox_top
+		return _y + _player_height < bbox_top + (bbox_bottom - _slope)
 	}
-	return _y + _height > _slopeFinal;
-}
-
-function scr_slope_get(_x = 0, _y = 1)
-{
-	return instance_place(x + _x, y + _y, obj_slope);
-}
-
-function place_meeting_solid(_x = 0, _y = 1)
-{
-	return place_meeting(x + _x, y + _y, obj_solid);
+	return _y + _player_height > _slope
 }

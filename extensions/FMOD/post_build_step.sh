@@ -16,6 +16,25 @@ setupmacOS() {
     SDK_CORE_SOURCE="$SDK_PATH/api/core/lib/libfmodL.dylib"
     SDK_STUDIO_SOURCE="$SDK_PATH/api/studio/lib/libfmodstudioL.dylib"
 
+    for f in "${SDK_CORE_SOURCE}" "${SDK_STUDIO_SOURCE}"; do
+        # Skip empty vars
+        [ -n "$f" ] || continue
+
+        if [ ! -e "$f" ]; then
+            logWarning "Not found: $f"
+            continue
+        fi
+
+        if xattr -p com.apple.quarantine "$f" >/dev/null 2>&1; then
+            logWarning "'$(basename "$f")' is quarantined. Removing com.apple.quarantine…"
+            if xattr -d com.apple.quarantine "$f" >/dev/null 2>&1; then
+                logInformation "Removed quarantine from '$f'"
+            else
+                logError "Failed to remove quarantine from '$f' (permissions/path?)."
+            fi
+        fi
+    done
+
     # assertFileHashEquals $SDK_CORE_SOURCE $MACOS_SDK_HASH "$ERROR_SDK_HASH"
     
     echo "Copying macOS (64 bit) dependencies"
@@ -30,6 +49,7 @@ setupmacOS() {
         # Copy and code sign dependencies
         itemCopyTo "$SDK_CORE_SOURCE" "./libfmodL.dylib"
         codesign -s "${YYPLATFORM_option_mac_signing_identity}" -f --timestamp --verbose --options runtime "./libfmodL.dylib"
+
         itemCopyTo "$SDK_STUDIO_SOURCE" "./libfmodstudioL.dylib"
         codesign -s "${YYPLATFORM_option_mac_signing_identity}" -f --timestamp --verbose --options runtime "./libfmodstudioL.dylib"
 
@@ -84,19 +104,13 @@ setupLinux() {
     # Replace spaces with underscores (this matches the assetcompiler output)
     YYfixedProjectName="${YYprojectName// /_}"
 
-    fileExtract "${YYprojectName}.zip" "_temp"
-
-    if [[ ! -f "_temp/assets/libfmod.so.14" ]]; then 
-        itemCopyTo "$SDK_CORE_SOURCE" "_temp/assets/libfmod.so.14"
-
-        # Copy studio libs if enabled
-        if [[ $ENABLE_STUDIO_FLAG == 1 ]]; then
-            [[ ! -f "_temp/assets/libfmodstudio.so.14" ]] && itemCopyTo "$SDK_STUDIO_SOURCE" "_temp/assets/libfmodstudio.so.14"
-        fi
-    fi
-
-    folderCompress "_temp" "${YYprojectName}.zip"
-    rm -r _temp
+    TEMP_FOLDER="${YYprojectName}___temp___"
+    
+    mkdir "./${TEMP_FOLDER}"
+    itemCopyTo "$SDK_CORE_SOURCE" "${TEMP_FOLDER}/assets/libfmod.so.14"
+    itemCopyTo "$SDK_STUDIO_SOURCE" "${TEMP_FOLDER}/assets/libfmodstudio.so.14"
+    zipUpdate "${TEMP_FOLDER}" "${YYprojectName}.zip"
+    rm -r ${TEMP_FOLDER}
 }
 
 # ----------------------------------------------------------------------------------------------------

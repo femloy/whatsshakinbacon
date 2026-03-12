@@ -9,7 +9,7 @@ if (array_length(textures)) {
 		}
 	}
 	array_shift(textures)
-	alarm[0] = 15
+	alarm[0] = 5
 	
 } 
 else

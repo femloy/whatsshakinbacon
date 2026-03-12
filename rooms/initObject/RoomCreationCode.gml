@@ -7,12 +7,13 @@ global.smallfont = font_add_sprite_ext(spr_smallfont, "abcdefghijklmnopqrstuvwxy
 global.npcfont = font_add_sprite_ext(spr_npcfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!¡,.:0123456789'?¿-áäãàâæéèêëíîïóöõôúùûüÿŸÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇç", true, 2)
 global.smallnumberfnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", 1, 0)
 global.ransomfont = font_add_sprite_ext(spr_ransomfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 1, 0)
+global.badnumfont = font_add_sprite_ext(spr_badfont, "0123456789-", 1, 0)
 global.username = "guest"
 room_goto(rm_intro)
 randomize()
 global.gSocket = irandom_range(1, 166667)
-global.debug = false
-global.showcollisions = false
+global.debug = DEBUG
+global.showcollisions = DEBUG
 
 
 ini_open(working_directory + "options.ini")
@@ -21,6 +22,14 @@ global.MusicVolume = ini_read_real("General", "Music", 1)
 global.SfxVolume = ini_read_real("General", "Sfx", 0.8)
 global.AmbianceVolume = ini_read_real("General", "Ambiance", 1)
 global.Fullscreen = ini_read_real("General", "Fullscreen", 0)
+global.vsync = ini_read_real("General", "Vsync", false)
+global.windowSize = ini_read_real("General", "Windowsize", 1)
+global.texFilter = ini_read_real("General", "texFilter", false)
+display_reset(0, global.vsync)
+gpu_set_tex_filter(global.texFilter)
+var res = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]]
+window_set_size(res[global.windowSize][0], res[global.windowSize][1])
+window_center()
 switch global.Fullscreen
 {
 	case 0:
@@ -33,23 +42,15 @@ switch global.Fullscreen
 		window_set_fullscreen(true);
 		break
 }
-global.vsync = ini_read_real("General", "Vsync", false)
 global.option_hud = ini_read_real("Visual", "showHud", false)
 global.unfocus_mute = ini_read_real("General", "UnfocusMute", true)
 global.dirSuper = ini_read_real("General", "dirSuper", true)
 global.dirGround = ini_read_real("General", "dirGround", true)
-global.windowSize = ini_read_real("General", "Windowsize", 1)
-global.texFilter = ini_read_real("General", "texFilter", false)
 global.option_rumble = ini_read_real("General", "rumble", true)
 global.option_screenshake = ini_read_real("General", "screenshake", true)
 global.option_timer = ini_read_real("General", "timer", true)
 global.option_timer_type = ini_read_real("General", "timerType", 0)
 global.option_speedrun_timer = ini_read_real("General", "speedrunTimer", false)
-display_reset(0, global.vsync)
-gpu_set_tex_filter(global.texFilter)
-var res = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]]
-window_set_size(res[global.windowSize][0], res[global.windowSize][1])
-window_center()
 ini_close()
 global.saveFile = working_directory + "/saves/save.ini"
 

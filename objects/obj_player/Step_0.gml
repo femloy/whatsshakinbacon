@@ -1,8 +1,9 @@
+depth = 0
 if FMODevent_isplaying(soundsOk)
 	FMODSet3dPos(soundsOk, x, y)
 if FMODevent_isplaying(soundsLaugh)
 	FMODSet3dPos(soundsLaugh, x, y) 
-var _insta = ( sprite_index == spr_milton_dive || state == states.slip || state == states.mach3 || state == states.skateboard || state == states.skateboardwall || state == states.skateboardramp || state == states.skateboardmove || state == states.hammerattack || (state == states.machturn && sprite_index == spr_player_mach3turn) || state == states.superjump  || state == states.uppercut || state == states.groundpound || state == states.groundpoundstart || state == states.buzzsaw || state == states.snowball || state == states.snowballjump || state == states.snowballwall)
+var _insta = ( sprite_index == spr_player_swingading || state == states.slip || state == states.mach3 || state == states.skateboard || state == states.skateboardwall || state == states.skateboardramp || state == states.skateboardmove || state == states.hammerattack || (state == states.machturn && sprite_index == spr_player_mach3turn) || state == states.superjump  || state == states.uppercut || state == states.groundpound || state == states.groundpoundstart || state == states.buzzsaw || state == states.snowball || state == states.snowballjump || state == states.snowballwall)
 instakill = _insta
 if hitstun.is == false
 {
@@ -47,8 +48,9 @@ if hitstun.is == false
 				lostcombo = true
 				combo = wrap(combo, 0, 14)
 				image_index = self.getProper(combo)
-				points = 10 * global.combo.savecombo
+				points = round(((global.combo.savecombo ^ 2) * 0.25) + (10 * global.combo.savecombo))
 				global.collect += points
+				alarm[1] = 30
 			}
 		}
 	}
@@ -88,22 +90,36 @@ if hitstun.is == false
 	if state != states.hurt
 		i_frame = approach(i_frame, 0, 1)
 	if i_frame > 0 && state != states.hurt
-		image_alpha = round(wave(0, 1, 0.1, 0))
+		image_alpha = round(wave(0, 1, 0.05, 0))
 	else
 		image_alpha = 1
-	if state == states.walkfront && sprite_index == spr_player_walkfront
-		image_blend = make_colour_hsv(0, 0, image_index / image_number * 255);
-	else {
-		image_blend = make_colour_hsv(0, 0, 255);
+	
+	
+	image_blend = merge_colour(blend, c_black, blendAmount)
+	blendAmount = approach(blendAmount, 0, blendSpeed)
+	poison = approach(poison, 0, 60 / (60 * 3))
+	if poison == 0
+	{
+		if blend = #a3ed99
+		{
+			blend = c_white
+			flash = true
+		}
 	}
+	if poison > 0 && alarm[2] <= 0
+		alarm[2] = 30
+	
 	if flash = true && alarm[0] <= 0
 		alarm[0] = 5
+	
+	if global.combo.amt >= 15 && alarm[3] <= 0
+		alarm[3] = 10
 	if y < -500 || y > room_height + 500 && state != -4 && !instance_exists(obj_fadeout)
 	{
 		if !instance_exists(obj_technicaldifficulty)
 		{
 			instance_create(x, y, obj_technicaldifficulty) 
-			shake_camera(25)
+			shake_camera(20, 40)
 			FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 		}
 	}
@@ -249,6 +265,15 @@ if hitstun.is == false
 			break
 		case states.coconutshoot:
 			scr_player_coconut_shoot()
+			break
+		case states.gunk:
+			scr_player_gunk()
+			break
+		case states.gunkIntro:
+			scr_player_gunkIntro()
+			break
+		case states.gunkMove:
+			scr_player_gunkMove()
 			break
 		case states.noclip:
 			get_input()

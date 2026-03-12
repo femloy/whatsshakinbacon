@@ -3,7 +3,7 @@ depth = 50
 cutscene = false
 ini_open(global.saveFile)
 
-canEnter = ini_read_real("General", "Lap", false)
+canEnter = ini_read_real("General", "Lap", false) || ini_read_string(global.level, "Rank", "NONE") != "NONE"
 if !canEnter
 	sprite_index = spr_partyportal_empty
 ini_close()

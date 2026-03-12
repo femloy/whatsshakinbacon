@@ -7,7 +7,7 @@ draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false)
 draw_set_color(c_white)
 gpu_set_blendmode(bm_subtract)
 draw_circle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, circleSize, false)
-gpu_set_blendmode(bm_normal)
+reset_blendmmode()
 surface_reset_target()
 
 draw_set_alpha(1)

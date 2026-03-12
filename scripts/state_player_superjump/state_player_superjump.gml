@@ -21,14 +21,13 @@ function scr_player_superjumpprep()
 			sprite_index = spr_player_superjumpprep
 			movespeed = 0
 		}
-		if !key_up
+		if !key_up && !place_meeting(x, y - 1, obj_solid)
 		{
 			state = states.superjump
 			sprite_index = spr_player_superjump
 			image_index = 0
-			verticalMovespeed = -14
+			verticalMovespeed = -11
 			vsp = verticalMovespeed
-			FMODevent_oneshot("event:/Sfx/Player/superjumprelease", x, y)
 			create_particleStatic(spr_explosioneffect, x, y, 1)
 		}
 	}
@@ -76,12 +75,14 @@ function scr_player_superjump()
 			movespeed = 0
 		if (key_attack2 || key_slap2) && sprite_index != spr_player_spinout
 		{
+			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 			sprite_index = spr_player_superjumpcancelstart
 			image_index = 0
 			FMODevent_oneshot("event:/Sfx/Player/superjumpcancel", x, y)
 		}
-		if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_ballofbeer)
+		if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_ballofbeer) && !place_meeting(x, y - 1, obj_destructibles)
 		{
+			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 			shake_camera(15)
 			sprite_index = spr_player_hitceiling
 			image_index = 0
@@ -96,7 +97,7 @@ function scr_player_superjump()
 		}
 	}
 	else {
-		image_speed = 0.5
+		image_speed = 0.6
 		verticalMovespeed = 0
 		vsp = verticalMovespeed
 		hsp = 0

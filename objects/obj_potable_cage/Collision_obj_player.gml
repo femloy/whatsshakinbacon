@@ -4,6 +4,10 @@ repeat (10)
 {
 	create_particleDebri(spr_juiceboxcage_debri, irandom_range(0, sprite_get_number(spr_juiceboxcage_debri)), x, y, 1)
 }
+repeat (10) 
+{
+	instance_create(x, y, obj_confettieffect)
+}
 ds_list_add(global.saveroom, id)
 with obj_player 
 {

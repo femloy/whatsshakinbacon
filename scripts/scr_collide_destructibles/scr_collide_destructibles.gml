@@ -1,71 +1,38 @@
 function scr_collide_destructibles()
 {
-	with obj_destructibles
+	var _list = ds_list_create()
+	var _horizontal =
+	state == states.mach2 ||
+	state == states.mach3 ||
+	state == states.grab ||
+	state == states.tumble ||
+	state == states.hammerattack ||
+	state == states.buzzsaw || 
+	sprite_index == spr_player_swingading
+			
+	var _vertical =
+	state == states.groundpound ||
+	state == states.groundpoundstart ||
+	state == states.uppercut ||
+	state == states.superjump ||
+	state == states.buzzsaw ||
+	state == states.climbwall || 
+	(state == states.jump && vsp < 0)
+	var _x = x
+	var _y = y
+	if _horizontal
+		_x = x + (hsp + xscale) * 2
+	if _vertical
+		_y = y + (vsp * 2) + 1
+	var _num = instance_place_list(_x, _y, obj_destructibles, _list, false);
+	if _num > 0 
 	{
-		with obj_player
-		{
-			if state == states.jump && vsp < 0
-			{
-				if place_meeting(x, y + vsp, other)
-				{
-					var _destroy = true
-					if _destroy
-					{
-						instance_destroy(other)
-						vsp = 0
-					}
-				}
-			}
-			if 
-			state == states.mach2 ||
-			state == states.mach3 ||
-			state == states.grab ||
-			state == states.tumble ||
-			state == states.hammerattack ||
-			(sprite_index == spr_player_swingading && state == states.hauling) ||
-			state == states.snowball
-			{
-				if place_meeting(x + hsp * 2 + xscale, y - 1, other)
-				{
-					var _destroy = true
-					if _destroy
-						instance_destroy(other)
-				}
-			}
-			if state == states.tumble || 
-				state == states.groundpound || 
-			state == states.uppercut || 
-			state == states.superjump || 
-			state == states.buzzsaw || 
-			state == states.climbwall ||
-			state == states.skateboard ||
-			state == states.skateboardmove ||
-			state == states.skateboardwall ||
-			state == states.skateboardramp ||
-			state == states.slip
-			{
-				if place_meeting(x + hsp * 2, y + vsp * 2, other)
-				{
-					var _destroy = true
-					if _destroy
-						instance_destroy(other)
-				}
-			}
-		}
-		
-		/*with(obj_baddie)
-		{
-			if state == states.thrown
-			{
-				if place_meeting(x + hsp * 2 + xscale, y + vsp * 2, other)
-				{
-					var _destroy = true
-					if _destroy
-						instance_destroy(other)
-				}
-			}
-		}*/
-				
+		for (var i = 0; i < _num; i++;)
+	    {
+			var _obj = _list[| i]
+	  		instance_destroy(_obj);
+	    }
 	}
 	
+	ds_list_destroy(_list)
 }

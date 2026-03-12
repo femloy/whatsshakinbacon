@@ -10,7 +10,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		draw_sprite(screenSprite, 0, 0, 0)
 		shader_reset()
 		draw_set_alpha(graphBack.alpha)
-		draw_set_color(#ffb7ad)
+		draw_set_color(#ffb0db)
 		draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false)
 		draw_set_color(c_white)
 		draw_set_alpha(1)
@@ -77,9 +77,9 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 	{
 		draw_set_alpha(treasureAlpha)
 		draw_sprite(spr_treasure_pause, global.treasure ? 0 : 1, 851, 457)
-		treasureAlpha = approach(treasureAlpha, active, 0.1)
 		draw_set_alpha(1)
 	}
+	treasureAlpha = approach(treasureAlpha, active, 0.1)
 	graphBorderSize = lerp(graphBorderSize, active ? 1 : 2, 0.3)
 	if active
 	{

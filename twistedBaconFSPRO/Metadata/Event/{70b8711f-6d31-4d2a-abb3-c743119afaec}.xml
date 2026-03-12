@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{dc86ac3c-1e51-48cd-b4ca-b9d465add808}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-10</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{72d0a4d7-3c32-4923-85cd-158146cf8dce}</destination>
@@ -100,12 +100,17 @@
 		<relationship name="effects">
 			<destination>{590d2b93-ca77-4a52-945e-d37d205cc1e2}</destination>
 			<destination>{44b64e5a-b7e7-4765-bd4f-8391c8dc616f}</destination>
+			<destination>{f5005455-04b9-4815-8a75-c263bff77acf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{26afdf34-bc4b-488d-b0ab-4e0cc19f69df}" />
 	<object class="MultiSound" id="{184a992b-02eb-4573-a481-e600a32bf646}">
+		<property name="startOffset">
+			<value>1</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{08672acc-852b-4d53-9af4-edbcaf19f082}</destination>
+			<destination>{8802f6f7-8457-4a31-ba9b-8897d0f1c078}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{db2c0388-a25a-42b2-8111-383e2e766cf3}" />
@@ -130,9 +135,28 @@
 			<value>10</value>
 		</property>
 	</object>
+	<object class="DelayEffect" id="{f5005455-04b9-4815-8a75-c263bff77acf}">
+		<property name="delay">
+			<value>94</value>
+		</property>
+		<property name="level">
+			<value>-20</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{08672acc-852b-4d53-9af4-edbcaf19f082}">
+		<property name="startOffset">
+			<value>69.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{58db2f8e-cb5e-400b-8705-b00b75fd9573}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{8802f6f7-8457-4a31-ba9b-8897d0f1c078}">
+		<property name="volume">
+			<value>7.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a1c69634-0957-4298-bff6-684d0d5733f4}</destination>
 		</relationship>
 	</object>
 </objects>

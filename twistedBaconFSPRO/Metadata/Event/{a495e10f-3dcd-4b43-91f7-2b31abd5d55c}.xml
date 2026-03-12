@@ -5,7 +5,7 @@
 			<value>escapecollectBig</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>5</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b65847ef-56d9-4776-a551-bea10eb80386}</destination>
@@ -92,6 +92,7 @@
 		</property>
 		<relationship name="sounds">
 			<destination>{35dd8ae0-3765-46b1-a9e3-a71595a4bea9}</destination>
+			<destination>{8b16726f-acda-4bd3-8ac4-71edd1f0bdf7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{6a8b0b44-2108-47fa-82d2-cded70ede2b8}">
@@ -115,6 +116,11 @@
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{a953b9d4-009f-4409-89c7-8aafb6acc0a5}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{8b16726f-acda-4bd3-8ac4-71edd1f0bdf7}">
+		<relationship name="event">
+			<destination>{1fd00195-40dd-444d-83fb-4a0b5ed397c4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{5d69ee69-8d2b-43e0-9b6a-641e8c9e9adc}" />

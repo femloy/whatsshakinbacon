@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"ts_hub",
-  "out_columns":47,
+  "out_columns":43,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -34,5 +34,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":2176,
+  "tile_count":1888,
 }

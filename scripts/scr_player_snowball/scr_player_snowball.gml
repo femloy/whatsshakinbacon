@@ -92,10 +92,10 @@ function scr_player_snowball_jump()
 	else
 		movespeed = approach(movespeed, 0, 0.5)
 		
-	if jumpstop == false && !key_jump && vsp < grav
+	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
-		vsp /= 20
+		vsp /= 10
 	}
 	
 	if key_down2 && vsp < 10

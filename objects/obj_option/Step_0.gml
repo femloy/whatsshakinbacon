@@ -75,13 +75,14 @@ if buffer == 0
 		{
 			if !changingBind
 			{
-				if key_jump2
+				if key_jump2 && array_length(global.inputMap[$ q.key]) < 5
 				{
 					changingBind = true
+					changingBindTimer = 60 * 3
 				}
 				else if key_taunt2
 				{
-					global.inputMap[$ q.key] = []
+					array_delete(global.inputMap[$ q.key], array_length(global.inputMap[$ q.key]) - 1, 1)
 				}
 			}
 			else if keyboard_check_pressed(vk_anykey)
@@ -115,13 +116,14 @@ if buffer == 0
 		{
 			if !changingBind
 			{
-				if key_jump2
+				if key_jump2 && array_length(global.inputMap[$ q.key]) < 5
 				{
 					changingBind = true
+					changingBindTimer = 60 * 3
 				}
 				else if key_taunt2
 				{
-					global.inputMap[$ q.key][1] = []
+					array_delete(global.inputMap[$ q.key], array_length(global.inputMap[$ q.key]) - 1, 1)
 				}
 			}
 			else
@@ -222,49 +224,49 @@ if buffer == 0
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axislh) < -(global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axislh) < -(0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyLL")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axislh) > (global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axislh) > (0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyLR")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axislv) < -(global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axislv) < -(0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyLU")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axislv) > (global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axislv) > (0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyLD")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrh) < -(global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrh) < -(0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyRL")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrh) > (global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrh) > (0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyRR")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrv) < -(global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrv) < -(0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyRU")
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrv) > (global.gamepadDeadzones.general)
+				else if gamepad_axis_value(global.gamepadCurrent, gp_axisrv) > (0.5)
 				{
 					array_push(global.inputMap[$ q.key], "joyRD")
 					changingBind = false

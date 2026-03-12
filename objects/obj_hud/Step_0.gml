@@ -5,7 +5,7 @@ with kettle
 {
 	kx = x + irandom_range(shake, -shake)
 	ky = y + irandom_range(shake, -shake)
-	shake = approach(shake, 0, 1)
+	shake = approach(shake, 0, 0.5)
 	rankScale = approach(rankScale, 1, 0.2)
 	cloudIndex += 0.15
 }
@@ -24,6 +24,8 @@ with tv
 		_idleSprite = spr_tv_combo
 	if obj_player.state == states.ski
 		_idleSprite = spr_tv_ski
+	if global.escape.party && global.escape.active
+		_idleSprite = spr_tv_party
 	if !other.visible
 	{
 		state = states.normal
@@ -47,6 +49,7 @@ with tv
 						sprite_index = _idleSprite
 					}
 				break
+				case spr_tv_hurt:
 				case spr_tv_happy:
 					expressionTimer--
 					if expressionTimer <= 0
@@ -62,6 +65,7 @@ with tv
 						tv_anim(sprites.mach3)
 				break
 				case spr_tv_secret: 
+				case spr_tv_party:
 				case spr_tv_escape:
 				case sprites.idle:
 				case spr_tv_combo:
@@ -109,9 +113,15 @@ var _secret = string_pos("secret", roomname) > 0
 var _escape = global.escape.active == true
 if !_secret
 	global.escape.timer = approach(global.escape.timer, 0, 1)
-		
-if global.escape.timer == 0 && !instance_exists(obj_hipnatuese) && !_secret && global.level != "tutorial" && _escape
+	
+if (global.escape.timer == 0 && !global.escape.party && !_secret && global.level != "tutorial" && _escape) && !instance_exists(obj_hipnatuese) 
 	instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
+
+/*if global.escape.active && global.escape.party && !instance_exists(obj_stayawake_mash) && !instance_exists(obj_hipnatuese) && !_secret
+{
+	if alarm[1] <= 0
+		alarm[1] = 60 * 10
+}*/
 if (!ds_list_empty(collectVis))
 {
 	for (var i = 0; i < ds_list_size(collectVis); i++)
@@ -124,7 +134,6 @@ if (!ds_list_empty(collectVis))
 			var point = point_direction(x, y, targetxx, targetyy)
 			hsp = lengthdir_x(abs(movespeed), point)
 			vsp = lengthdir_y(abs(movespeed), point)
-			movespeed = approach(movespeed, 24, 1)
 			x += hsp
 			y += vsp
 			if point_distance(x, y, targetxx, targetyy) <= 25

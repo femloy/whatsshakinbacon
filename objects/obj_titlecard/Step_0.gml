@@ -10,7 +10,6 @@ if scene == 0 || scene == 1
 			FMODevent_oneshot(jingle)
 			fadeIn = false
 			scene = 1
-			alarm[0] = 60 * 2
 			alarm[1] = 60 * 3.5
 		}
 	}
@@ -19,16 +18,7 @@ if scene == 0 || scene == 1
 		fadeAlpha = approach(fadeAlpha, 0, 0.1)
 	}
 	
-	if titlecardName.fadeIn == true
-	{
-		titlecardName.alpha = approach(titlecardName.alpha, 0, 0.05)
-		if titlecardName.alpha == 0
-		{
-			titlecardName.fadeIn = false
-			titlecardName.sprite = lang_get_asset("spr_titlecardMonolithTitle2")
-		}
-	}
-	else if titlecardName.fadeIn == false
+	if titlecardName.fadeIn == false
 	{
 		titlecardName.alpha = approach(titlecardName.alpha, 1, 0.1)
 	}

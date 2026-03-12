@@ -1,6 +1,21 @@
 if !global.option_hud
 	exit;
 
+if global.escape.party
+{
+	discoAlpha = approach(discoAlpha, 0.05, 0.05 / 60 * 4)
+	var _color = discoColors[discoColor]
+	draw_set_alpha(discoAlpha)
+	gpu_set_blendmode(bm_add)
+	draw_rectangle_colour(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false)
+	reset_blendmmode()
+	draw_set_alpha(1)
+	
+}
+else {
+	discoAlpha = 0
+}
+
 if (!ds_list_empty(collectVis))
 {
 	for (var i = 0; i < ds_list_size(collectVis); i++)
@@ -28,14 +43,14 @@ with kettle
 	draw_set_font(global.kettleFont)
 	draw_set_halign(fa_left)
 	
-	var _xx = kx + 16 - (string_width(global.collect) / 2)
+	var _xx = kx + 16 - (string_width(global.collect) / 2) - 4
 	if lastcollect != global.collect
 	{
 		colorarray = array_create(string_length(global.collect), 0)
 		
 		for (var i = 0; i < array_length(colorarray); i++)
 		{
-			colorarray[i] = irandom_range(0, 2)
+			colorarray[i] = random_range(0, 1)
 		}
 		lastcollect = global.collect
 	}
@@ -62,11 +77,15 @@ with kettle
 		rankindex = 1
 	if previousRank != rankindex
 	{
+		if rankindex > previousRank
+			fmod_studio_event_instance_set_parameter_by_name(FMODevent_oneshot("event:/Sfx/UI/rankup"), "state", rankindex - 1)
+		else if rankindex < previousRank
+			fmod_studio_event_instance_set_parameter_by_name(FMODevent_oneshot("event:/Sfx/UI/rankdown"), "state", rankindex - 1)
 		previousRank = rankindex
 		rankScale = 2
 	}
-	var rankX = x + sin(current_time * 0.001) * 2
-	var rankY = y + cos(current_time * 0.001) * 2 - offset
+	var rankX = x - 16
+	var rankY = y - offset
 	draw_sprite_ext(spr_hudRanks, rankindex, rankX + 160, rankY, rankScale, rankScale, 0, c_white, 1)
 	var perc = 0
 	switch rankindex
@@ -99,6 +118,23 @@ with kettle
 		offset = approach(offset, 300, 50)
 	else {
 		offset = approach(offset, 0, 50)
+	}
+	for (var i = 0; i < array_length(badnum); i++)
+	{
+		draw_set_font(global.badnumfont)
+		draw_set_colour(c_red)
+		draw_set_alpha(badnum[i].alpha)
+		draw_set_halign(fa_center)
+		draw_text(badnum[i].x, badnum[i].y, badnum[i].text)
+		draw_set_alpha(1)
+		draw_set_colour(c_white)
+		badnum[i].y -= 1 / 2
+		badnum[i].alpha -= 1 / 60
+		if badnum[i].alpha <= 0
+		{
+			array_delete(badnum, i, 1)
+			i--
+		}
 	}
 }
 with combometer
@@ -157,6 +193,7 @@ with combometer
 	// Lights
 	for (var i = 0; i < array_length(lights); i++)
 	{
+		var _yOffset = (i + 1) % 2 == 0 ? -5 : 5
 		var q = lights[i]
 		var _lights = array_length(lights) * _perc
 		
@@ -173,12 +210,12 @@ with combometer
 		if q.sprite == spr_comboLights
 		{
 			q.x = x - 72 + (45 * i)
-			q.y = y - 5 + sin(current_time / 215 - (i * 60.5))
+			q.y = y - 5 + wave(_yOffset, -_yOffset, 5, 0)
 		}
 		if q.sprite == spr_comboLightsOff
 		{
-			q.x = x - 72 + (45 * i) + irandom_range(-1, 1)
-			q.y = y - 5 + irandom_range(-1, 1)
+			q.x = x - 72 + (45 * i)
+			q.y = y - 5 + irandom_range(-1, 1) + wave(_yOffset, -_yOffset, 5, 0)
 		}
 		q.index += 0.1
 		pal_swap_set(spr_comboPalette, global.combo.dropped, false)
@@ -188,13 +225,27 @@ with combometer
 	var _startPos = lights[3].x + 15
 	var _endPos = lights[0].x - 5
 	var _lights = (array_length(lights) * _perc) / array_length(lights)
-	arrowx = lerp(arrowx, _endPos + ((_startPos - _endPos) * _lights), 0.1)
+	arrowx = lerp(arrowx, _endPos + ((_startPos - _endPos) * _lights), 0.25)
 	draw_sprite(spr_combo_arrow, 0, arrowx, y - 34 - other.tv.offset)
 	
 	draw_sprite(spr_combo_meter, 0, x, y - other.tv.offset)
 	draw_set_font(global.comboFont)
-	draw_set_halign(fa_right)
-	draw_text(x - 4, y + 32 - other.tv.offset, global.combo.amt)
+	draw_set_halign(fa_left)
+	if combo != global.combo.amt
+	{
+		combo = global.combo.amt
+		shake = 6
+	}
+	var _xx = x - 9 - string_width(combo)
+	var _yy = y + 32 - other.tv.offset
+	shake = approach(shake, 0, 6 / 10)
+	for (var i = 0; i < string_length(combo); i++)
+	{
+		var _str = string_char_at(combo, i + 1)
+		draw_text(_xx + random_range(shake, -shake), _yy + random_range(shake, -shake), _str)
+		_xx += string_width(_str)
+		_yy += 2
+	}
 } 
 
 with tv
@@ -248,7 +299,7 @@ with bar
 	
 	if _escape
 	{
-		if ended
+		if ended || global.escape.party
 			y = approach(y, SCREEN_HEIGHT + 100, 1)
 		else {
 			y = approach(y, _secret ? SCREEN_HEIGHT + 100 : SCREEN_HEIGHT - 80, _secret ? 15 : 1)

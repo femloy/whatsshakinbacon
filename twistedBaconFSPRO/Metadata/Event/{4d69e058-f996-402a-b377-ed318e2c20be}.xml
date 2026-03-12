@@ -77,7 +77,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{feda4cde-c5f9-4880-9770-5c6813972ef9}">
 		<property name="volume">
-			<value>3</value>
+			<value>-2</value>
 		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
@@ -99,6 +99,7 @@
 		<relationship name="sounds">
 			<destination>{48cfb422-6059-4072-aeb5-034abd62bea7}</destination>
 			<destination>{67fafca1-148a-46d9-9baf-a2f7513f8317}</destination>
+			<destination>{d2073db5-ca88-47a0-9f2a-c55da45a8ce2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{5eccb69f-4c2d-45a1-883d-a2e0cfb74108}">
@@ -128,6 +129,11 @@
 		<relationship name="sounds">
 			<destination>{1ca61af4-514e-4181-988a-9825e7ccf6f8}</destination>
 			<destination>{c2a0c59e-1955-4a39-9b50-718bdb6ce9c7}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{d2073db5-ca88-47a0-9f2a-c55da45a8ce2}">
+		<relationship name="event">
+			<destination>{8312ae6c-248d-42e6-826e-a10049637304}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{4d955232-5c13-4b4d-9b14-8020c34b10b3}" />
