@@ -1,22 +1,3 @@
-if distance_to_object(obj_player) <= 200 && obj_player.super
-	state = states.terrified
-	
-if state == states.terrified
-{
-	xoffset = irandom_range(-20, 25)
-	yoffset = irandom_range(25, -25)
-	
-	fear++
-	xscaleMulti += 0.025
-	yscaleMulti += 0.025
-	sprite_index = spr_scared
-	
-	if fear >= 120
-		instance_destroy()
-	
-	exit;	
-}
-
 scr_collision()
 mask_index = spr_player_mask
 if y > (room_height + 100) || y < -100

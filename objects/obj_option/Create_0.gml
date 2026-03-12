@@ -119,7 +119,7 @@ add_option_ext = function(_id, _type, _name, _function, _value, _max, _toggle = 
 	return q;
 }
 
-add_option_key = function(_id, _iconIndex, _function, _key = "Inputs_Player1_leftKey")
+add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 {
 	var q = 
 	{
@@ -420,7 +420,7 @@ var controlsMain = create_menu(option.controlsMain, option.left, 40, function()
 	})
 	add_option_press(controlsMain, "option_controls_reset_config", function()
 	{
-		reset_input()
+		input_start(true)
 		var _s = scr_transfotip(lang_get_phrase("option_controls_config_reset_tip"))
 		_s.depth = depth - 1
 	})
@@ -488,7 +488,7 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, funct
 
 var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 	{
-		var q = json_stringify(global.inputMap, true)
+		var q = json_stringify(global.key_map, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
 		file_text_write_string(_file, q);
 		file_text_close(_file);
@@ -499,112 +499,118 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 	add_option_press(controlsKey, "option_back", function()
 	{
 		goto_menu(option.controlsKeyMain)
-		var json = json_stringify(global.inputMap, true)
+		var q = json_stringify(global.key_map, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, json);
+		file_text_write_string(_file, q);
 		file_text_close(_file);
+		var p = loadString(working_directory + "input.dat")
 		var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
 		_s.depth = depth - 1
 	})
 	add_option_key(controlsKey, 0, function(){
-		}, "Inputs_Player1_upKey")
+		}, "up_key")
 	add_option_key(controlsKey, 1, function(){
-		}, "Inputs_Player1_downKey")
+		}, "down_key")
 	add_option_key(controlsKey, 3, function(){
-		}, "Inputs_Player1_leftKey")
+		}, "left_key")
 	add_option_key(controlsKey, 2, function(){
-		}, "Inputs_Player1_rightKey")
+		}, "right_key")
 	add_option_key(controlsKey, 4, function(){
-		}, "Inputs_Player1_jumpKey")
+		}, "jump_key")
 	add_option_key(controlsKey, 5, function(){
-		}, "Inputs_Player1_slapKey")
+		}, "grab_key")
 	add_option_key(controlsKey, 6, function(){
-		}, "Inputs_Player1_attackKey")
+		}, "attack_key")
 	add_option_key(controlsKey, 7, function(){
-		}, "Inputs_Player1_tauntKey")
+		}, "taunt_key")
 	add_option_key(controlsKey, 8, function(){
-		}, "Inputs_Player1_startKey")
+		}, "start_key")
 	add_option_key(controlsKey, 9, function(){
-		}, "Inputs_Player1_superjumpKey")
+		}, "superjump_key")
 	add_option_key(controlsKey, 10, function(){
-		}, "Inputs_Player1_groundpoundKey")
+		}, "groundpound_key")
 	add_option_key(controlsKey, "MENU LEFT", function(){
-		}, "Inputs_Player1_menu_leftKey")
+		}, "menu_left_key")
 	add_option_key(controlsKey, "MENU RIGHT", function(){
-		}, "Inputs_Player1_menu_rightKey")
+		}, "menu_right_key")
 	add_option_key(controlsKey, "MENU UP", function(){
-		}, "Inputs_Player1_menu_upKey")
+		}, "menu_up_key")
 	add_option_key(controlsKey, "MENU DOWN", function(){
-		}, "Inputs_Player1_menu_downKey")
+		}, "menu_down_key")
 	add_option_key(controlsKey, "MENU CONFIRM", function(){
-		}, "Inputs_Player1_menu_confirmKey")
+		}, "menu_confirm_key")
 	add_option_key(controlsKey, "MENU BACK", function(){
-		}, "Inputs_Player1_menu_backKey")
+		}, "menu_back_key")
 	add_option_key(controlsKey, "MENU CLEAR", function(){
-		}, "Inputs_Player1_menu_clearKey")
+		}, "menu_clear_key")
 
 
 var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 	{
+		var q = json_stringify(global.key_map, true)
+		var _file = file_text_open_write(working_directory + "input.dat");
+		file_text_write_string(_file, q);
+		file_text_close(_file);
+		var p = loadString(working_directory + "input.dat")
 		goto_menu(option.controlsPadMain)
 	})
 
 	add_option_press(controlsPad, "option_back", function()
 	{
 		goto_menu(option.controlsPadMain)
-		var json = json_stringify(global.inputMap, true)
+		var q = json_stringify(global.key_map, true)
 		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, json);
+		file_text_write_string(_file, q);
 		file_text_close(_file);
+		var p = loadString(working_directory + "input.dat")
 		var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
 		_s.depth = depth - 1
 	})
 	add_option_key(controlsPad, 0, function(){
-		}, "Inputs_Player1_upPad")
+		}, "up_pad")
 	add_option_key(controlsPad, 1, function(){
-		}, "Inputs_Player1_downPad")
+		}, "down_pad")
 	add_option_key(controlsPad, 3, function(){
-		}, "Inputs_Player1_leftPad")
+		}, "left_pad")
 	add_option_key(controlsPad, 2, function(){
-		}, "Inputs_Player1_rightPad")
+		}, "right_pad")
 	add_option_key(controlsPad, 4, function(){
-		}, "Inputs_Player1_jumpPad")
+		}, "jump_pad")
 	add_option_key(controlsPad, 5, function(){
-		}, "Inputs_Player1_slapPad")
+		}, "grab_pad")
 	add_option_key(controlsPad, 6, function(){
-		}, "Inputs_Player1_attackPad")
+		}, "attack_pad")
 	add_option_key(controlsPad, 7, function(){
-		}, "Inputs_Player1_tauntPad")
+		}, "taunt_pad")
 	add_option_key(controlsPad, 8, function(){
-		}, "Inputs_Player1_startPad")
+		}, "start_pad")
 	add_option_key(controlsPad, 9, function(){
-		}, "Inputs_Player1_superjumpPad")
+		}, "superjump_pad")
 	add_option_key(controlsPad, 10, function(){
-		}, "Inputs_Player1_groundpoundPad")
+		}, "groundpound_pad")
 	add_option_key(controlsPad, "MENU LEFT", function(){
-		}, "Inputs_Player1_menu_leftPad")
+		}, "menu_left_pad")
 	add_option_key(controlsPad, "MENU RIGHT", function(){
-		}, "Inputs_Player1_menu_rightPad")
+		}, "menu_right_pad")
 	add_option_key(controlsPad, "MENU UP", function(){
-		}, "Inputs_Player1_menu_upPad")
+		}, "menu_up_pad")
 	add_option_key(controlsPad, "MENU DOWN", function(){
-		}, "Inputs_Player1_menu_downPad")
+		}, "menu_down_pad")
 	add_option_key(controlsPad, "MENU CONFIRM", function(){
-		}, "Inputs_Player1_menu_confirmPad")
+		}, "menu_confirm_pad")
 	add_option_key(controlsPad, "MENU BACK", function(){
-		}, "Inputs_Player1_menu_backPad")
+		}, "menu_back_pad")
 	add_option_key(controlsPad, "MENU CLEAR", function(){
-		}, "Inputs_Player1_menu_clearPad")
+		}, "menu_clear_pad")
 
 var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, function()
 	{
 		goto_menu(option.controlsPadMain)
 		ini_open(working_directory + "options.ini")
 		
-		ini_write_real("Deadzones", "general", global.gamepadDeadzones.general)
-		ini_write_real("Deadzones", "horiz", global.gamepadDeadzones.horizontal)
-		ini_write_real("Deadzones", "verti", global.gamepadDeadzones.vertical)
-		ini_write_real("Deadzones", "press", global.gamepadDeadzones.press)
+		ini_write_real("Deadzones", "horiz", global.gamepad_deadzones.horizontal)
+		ini_write_real("Deadzones", "verti", global.gamepad_deadzones.vertical)
+		ini_write_real("Deadzones", "press", global.gamepad_deadzones.press)
 		
 		ini_close()
 	})
@@ -614,46 +620,37 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 		goto_menu(option.controlsPadMain)
 		ini_open(working_directory + "options.ini")
 		
-		ini_write_real("Deadzones", "general", global.gamepadDeadzones.general)
-		ini_write_real("Deadzones", "horiz", global.gamepadDeadzones.horizontal)
-		ini_write_real("Deadzones", "verti", global.gamepadDeadzones.vertical)
-		ini_write_real("Deadzones", "press", global.gamepadDeadzones.press)
+		ini_write_real("Deadzones", "horiz", global.gamepad_deadzones.horizontal)
+		ini_write_real("Deadzones", "verti", global.gamepad_deadzones.vertical)
+		ini_write_real("Deadzones", "press", global.gamepad_deadzones.press)
 		
 		ini_close()
 	})
-	
-	add_option_ext(DEADZONES, option.slider, "option_controls_controller_deadzone_general", function()
-	{
-		var m = menus[currentmenu]
-		var opt = m.options
-		var q = opt[selected]
-		global.gamepadDeadzones.general = q.val / 100
-		q.val = global.gamepadDeadzones.general * 100
-	}, global.gamepadDeadzones.general * 100, 100)
+
 	add_option_ext(DEADZONES, option.slider, "option_controls_controller_deadzone_horiz", function()
 	{
 		var m = menus[currentmenu]
 		var opt = m.options
 		var q = opt[selected]
-		global.gamepadDeadzones.horizontal = q.val / 100
-		q.val = global.gamepadDeadzones.horizontal * 100
-	}, global.gamepadDeadzones.horizontal * 100, 100)
+		global.gamepad_deadzones.horizontal = q.val / 100
+		q.val = global.gamepad_deadzones.horizontal * 100
+	}, global.gamepad_deadzones.horizontal * 100, 100)
 	add_option_ext(DEADZONES, option.slider, "option_controls_controller_deadzone_vert", function()
 	{
 		var m = menus[currentmenu]
 		var opt = m.options
 		var q = opt[selected]
-		global.gamepadDeadzones.vertical = q.val / 100
-		q.val = global.gamepadDeadzones.vertical * 100
-	}, global.gamepadDeadzones.vertical * 100, 100)
+		global.gamepad_deadzones.vertical = q.val / 100
+		q.val = global.gamepad_deadzones.vertical * 100
+	}, global.gamepad_deadzones.vertical * 100, 100)
 	add_option_ext(DEADZONES, option.slider, "option_controls_controller_deadzone_press", function()
 	{
 		var m = menus[currentmenu]
 		var opt = m.options
 		var q = opt[selected]
-		global.gamepadDeadzones.press = q.val / 100
-		q.val = global.gamepadDeadzones.press * 100
-	}, global.gamepadDeadzones.press * 100, 100)
+		global.gamepad_deadzones.press = q.val / 100
+		q.val = global.gamepad_deadzones.press * 100
+	}, global.gamepad_deadzones.press * 100, 100)
 
 	var windowMode = create_menu(option.videoWindowMode, option.left, 40, function()
 	{

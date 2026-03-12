@@ -110,7 +110,7 @@ switch cutscenePart
 }
 if canContinue
 {
-	if key_jump2
+	if key_jump_pressed
 	{
 		canContinue = false
 		cutscenePart = 2

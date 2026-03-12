@@ -151,7 +151,7 @@ function scr_player_mach2()
 		}
 		state = states.tumble
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
-		if key_slap2
+		if key_grab_pressed
 			slapBuffer = 2
 	}
 	doGrab()

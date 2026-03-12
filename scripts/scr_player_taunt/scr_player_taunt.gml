@@ -17,7 +17,7 @@ function scr_player_taunt()
 			movespeed = tauntVars.movespeed
 			image_speed = tauntVars.image_speed
 		}
-		var _isSupertaunt = canSupertaunt && key_up2
+		var _isSupertaunt = canSupertaunt && key_up_pressed
 		if _isSupertaunt
 		{
 			state = states.taunt

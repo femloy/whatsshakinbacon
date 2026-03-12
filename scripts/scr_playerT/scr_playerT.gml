@@ -29,7 +29,7 @@ function scr_player_hammerattack()
 	if !instance_exists(chargeeffect)
 		chargeeffect = instance_create(x, y, obj_chargeeffect)
 	
-	if key_down2 && grounded
+	if key_down_pressed && grounded
 	{
 		FMODevent_oneshot("event:/Sfx/Player/crouchslide", x, y)
 		crouchslip = 25
@@ -42,7 +42,7 @@ function scr_player_hammerattack()
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 	}
 	
-	if key_down2 && !grounded
+	if key_down_pressed && !grounded
 	{
 		image_index = 0
 		sprite_index = sprites.rolling
@@ -65,7 +65,7 @@ function scr_player_hammerattack()
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 	}
 	
-	if !key_slap && buffers.hammer == 0
+	if !key_grab && buffers.hammer == 0
 	{
 		flash = true
 		state = states.mach3

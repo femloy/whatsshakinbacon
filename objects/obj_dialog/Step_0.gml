@@ -1,4 +1,4 @@
-getMenu_input()
+get_menu_input()
 if active
 {
 	if !array_contains(portraitsExist, currentChar)
@@ -6,7 +6,7 @@ if active
 		array_push(portraitsExist, currentChar)
 		add_portrait(currentChar)
 	}
-	if key_jump2
+	if key_jump_pressed
 	{
 		event_user(0)
 	}

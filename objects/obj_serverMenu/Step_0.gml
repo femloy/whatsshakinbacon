@@ -2,20 +2,20 @@ bgx++
 get_input()
 if menu == 0
 {
-	var m = key_down2 - key_up2
+	var m = key_down_pressed - key_up_pressed
 	if m != 0
 	{
 		selected += m
 		selected = clamp(selected, 0, array_length(menus[currentmenu]) - 1)
 	}
-	if key_jump2
+	if key_jump_pressed
 	{
 		menus[currentmenu][selected][2]()
 	}
 }
 else 
 { 
-	if key_slap2
+	if key_grab_pressed
 	{
 		menu = 0
 		selected  = 0
@@ -24,14 +24,14 @@ else
 	{
 		if (!keyboard_check_pressed(vk_enter) && 
 		!keyboard_check_pressed(vk_shift) && 
-		!key_jump2 && 
+		!key_jump_pressed && 
 		!keyboard_check_pressed(vk_tab)) 
 		{
 			draw_set_font(global.bigfont)
 			textInput = keyboard_string
 		} 
 
-		if (keyboard_check_pressed(vk_enter) || key_jump2)
+		if (keyboard_check_pressed(vk_enter) || key_jump_pressed)
 		{
 			if menu == 1
 			{

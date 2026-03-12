@@ -8,3 +8,9 @@ if usePalette
 
 	pattern_draw(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, spr_pattern, patColors, spr_palette, paletteIndex)
 }
+
+if hallucination
+{
+	draw_sprite_ext(sprite_index, image_index, x + 5, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha / 4)
+	draw_sprite_ext(sprite_index, image_index, x - 5, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha / 4)
+}

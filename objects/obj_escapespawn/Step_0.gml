@@ -21,6 +21,7 @@ if visible == true
 			sprite_index = spr_stun
 			scared = 30
 			state = states.stun
+			escapeSpawned = true
 		}
 	}
 	if animation_end()

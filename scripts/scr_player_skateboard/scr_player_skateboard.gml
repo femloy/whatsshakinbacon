@@ -26,7 +26,7 @@ function scr_player_skateboardAim()
 	movespeed = lerp(movespeed, 0, 0.15)
 	verticalMovespeed = lerp(verticalMovespeed, 0, 0.15)
 	aimTime--
-	if ((hsp == 0 && vsp == 0) || !key_slap)
+	if ((hsp == 0 && vsp == 0) || !key_grab)
 	{
 		FMODevent_oneshot("event:/Sfx/Player/Transformations/Skateboard/release", x, y)
 		
@@ -72,7 +72,7 @@ function scr_player_skateboardwall()
 		sprite_index = spr_player_skate_idle
 		state = states.skateboard
 	}
-	if key_slap2 && sprayCans >= 1
+	if key_grab_pressed && sprayCans >= 1
 	{
 		sprayCans--
 		aimTime = 15
@@ -121,7 +121,7 @@ function scr_player_skateboardramp()
 		buffers.afterimageBlur = 3
 		create_blur_effect(sprite_index, image_index, x, y, xscale)
 	}
-	if key_slap2 && sprayCans >= 1
+	if key_grab_pressed && sprayCans >= 1
 	{
 		sprayCans--
 		aimTime = 15
@@ -129,7 +129,7 @@ function scr_player_skateboardramp()
 		verticalMovespeed = vsp
 		movespeed = hsp
 	}
-	if key_down2
+	if key_down_pressed
 	{
 		vsp = 12
 	}
@@ -216,7 +216,7 @@ function scr_player_skateboardmove()
 		}
 	}
 	
-	if key_slap2 && sprayCans >= 1
+	if key_grab_pressed && sprayCans >= 1
 	{
 		sprayCans--
 		aimTime = 15
@@ -236,7 +236,7 @@ function scr_player_skateboard()
 		sprayCans = 4
 	if sprite_index != spr_player_skate_startup
 	{
-		if key_slap && sprayCans >= 1
+		if key_grab && sprayCans >= 1
 		{
 			sprayCans--
 			aimTime = 15

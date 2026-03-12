@@ -1,33 +1,27 @@
-init_input()
-global.gamepadConnected = false
-global.gamepadCurrent = -2
+if !variable_global_exists("input_map")
+	global.input_map = ds_map_create()
+if !variable_global_exists("key_map")
+	global.key_map = {}
 
-global.gamepadDeadzones = {}
-ini_open(working_directory + "options.ini")
-global.gamepadDeadzones.horizontal = ini_read_real("Deadzones", "horiz", 0.1)
-global.gamepadDeadzones.vertical = ini_read_real("Deadzones", "verti", 0.2)
-global.gamepadDeadzones.general = ini_read_real("Deadzones", "general", 0.4)
-global.gamepadDeadzones.press = ini_read_real("Deadzones", "press", 0.4)
 global.buttonSpr = spr_gamepadbuttons_style1
-global.joystickSpr = spr_joystick_style2
-ini_close()
-
-horizontalStickPressed = false
-verticalStickPressed = false
-horizontalStickPressedR = false
-verticalStickPressedR = false
-
-
-
-gamepad_check_any = function(_device)
+global.joystickSpr = spr_joystick_style1
+global.gamepad_axis_pressed = ds_map_create()
+var _axes = [gp_axisrh, gp_axisrv, gp_axislv, gp_axislh];
+for (var i = 0; i < array_length(_axes); i++)
 {
-	for (var i = gp_face1; i < gp_axisrv; i++)
-	{
-		if gamepad_button_check(_device, i)
-		{
-			return true;
-		} 
-	}
-	return false;
+	ds_map_add(global.gamepad_axis_pressed, _axes[i], false)
 }
-connectedGamepads = []
+
+global.gamepad_deadzones = {}
+ini_open(working_directory + "options.ini")
+struct_set(global.gamepad_deadzones, "horizontal", ini_read_real("Deadzones", "horiz", 0.1))
+struct_set(global.gamepad_deadzones, "vertical", ini_read_real("Deadzones", "verti", 0.2))
+struct_set(global.gamepad_deadzones, "press", ini_read_real("Deadzones", "press", 0.4))
+ini_close()
+input_start()
+
+active = true
+device_found = false
+global.player_gamepad_current = -4
+vibration = 0
+vibration_mag = 0

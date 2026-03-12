@@ -1,4 +1,4 @@
-getMenu_input()
+get_menu_input()
 if fadeout == false
 {
 	blackAlpha = approach(blackAlpha, 0, 0.01)
@@ -14,7 +14,7 @@ switch scene
 		{
 			alarm[1] = 60 * 2
 		}
-		if fadeout && blackAlpha == 1 || key_jump2
+		if fadeout && blackAlpha == 1 || key_jump_pressed
 		{
 			showFmod = true
 			showHeart = false
@@ -28,7 +28,7 @@ switch scene
 		{
 			alarm[1] = 60 * 2
 		}
-		if fadeout && blackAlpha == 1 || key_jump2
+		if fadeout && blackAlpha == 1 || key_jump_pressed
 		{
 			room_goto(Mainmenu)
 		}

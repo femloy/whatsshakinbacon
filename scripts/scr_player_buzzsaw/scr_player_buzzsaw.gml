@@ -13,7 +13,7 @@ function scr_player_buzzsaw()
 		buffers.afterimageBlur = 3
 		create_buzzsawAfterimage(sprite_index, image_index, x, y, xscale)
 	}
-	if key_down2
+	if key_down_pressed
 	{
 		if vsp < 10
 			vsp = 10
@@ -21,7 +21,7 @@ function scr_player_buzzsaw()
 	}
 	if vsp >= -grav && vsp < 10
 		vsp += 0.15
-	if !grounded && key_jump2 && key_down
+	if !grounded && key_jump_pressed && key_down
 	{
 		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
 		vsp = -6

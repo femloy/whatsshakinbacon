@@ -115,7 +115,7 @@ function scr_player_climbwall()
 		image_index = 0
 	}
 	
-	if key_down2 && character == characters.mildred
+	if key_down_pressed && character == characters.mildred
 	{
 		freefallsmash = 20
 		vsp = 10

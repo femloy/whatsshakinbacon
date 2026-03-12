@@ -1,6 +1,6 @@
 if place_meeting(x, y, obj_player)
 {
-	if obj_player.key_up2
+	if obj_player.key_up_pressed
 	{
 		selected++
 		selected = wrap(selected, 0, array_length(palettes) - 1)

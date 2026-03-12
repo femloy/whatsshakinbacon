@@ -1,26 +1,26 @@
 obj_player.state = -4
 obj_player.x = -100
 obj_player.y = -100
-getMenu_input()
-if key_down2
+get_menu_input()
+if key_down_pressed
 	selectedLevel++
-else if key_up2
+else if key_up_pressed
 	selectedLevel--
 selectedLevel = clamp(selectedLevel, 0, array_length(levels[selectedWorld]) - 1)
 
-if key_right2
+if key_right_pressed
 {
 	selectedLevel = 0
 	selectedWorld++
 }
-else if -key_left2
+else if -key_left_pressed
 {
 	selectedLevel = 0
 	selectedWorld--
 }
 selectedWorld = clamp(selectedWorld, 0, array_length(levels) - 1)
 potableIndex += 0.35
-if key_jump2
+if key_jump_pressed
 {
 	var _levelDeets = levels[selectedWorld][selectedLevel]
 	with obj_player

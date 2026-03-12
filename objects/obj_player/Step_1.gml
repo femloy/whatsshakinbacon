@@ -1,6 +1,6 @@
-if key_jump2
+if key_jump_pressed
 	jumpBuffer = 15
-if key_slap2
+if key_grab_pressed
 	slapBuffer = 15
 
 jumpBuffer = approach(jumpBuffer, 0, 1)

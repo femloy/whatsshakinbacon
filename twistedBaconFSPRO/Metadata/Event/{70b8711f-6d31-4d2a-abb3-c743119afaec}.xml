@@ -137,7 +137,7 @@
 	</object>
 	<object class="DelayEffect" id="{f5005455-04b9-4815-8a75-c263bff77acf}">
 		<property name="delay">
-			<value>94</value>
+			<value>160</value>
 		</property>
 		<property name="level">
 			<value>-20</value>

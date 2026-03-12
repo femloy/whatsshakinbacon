@@ -3,7 +3,7 @@ function scr_player_gunk()
 	get_input()
 	hsp = movespeed * xscale
 	var move = key_left + key_right
-	var moveV = key_down2 - key_up2
+	var moveV = key_down_pressed - key_up_pressed
 	if jumpstop == false && !key_jump && vsp < 0.5
 	{
 		jumpstop = true
@@ -26,7 +26,7 @@ function scr_player_gunk()
 		vsp = -11
 		jumpstop = false
 	}
-	if key_slap2
+	if key_grab_pressed
 	{
 		movespeed = 8
 		state = states.gunkMove

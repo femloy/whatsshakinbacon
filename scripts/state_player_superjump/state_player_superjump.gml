@@ -73,7 +73,7 @@ function scr_player_superjump()
 		}
 		else
 			movespeed = 0
-		if (key_attack2 || key_slap2) && sprite_index != spr_player_spinout
+		if (key_attack_pressed || key_grab_pressed) && sprite_index != spr_player_spinout
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 			sprite_index = spr_player_superjumpcancelstart

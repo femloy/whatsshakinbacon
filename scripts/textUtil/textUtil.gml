@@ -7,7 +7,7 @@ function scr_compileIconText(_string)
 		sprite = _sprite
 	}
 	var _inputFind = ""
-	var _prioritizeInput = global.gamepadConnected
+	var _prioritizeInput = global.player_gamepad_current != -4
 	switch _string
 	{
 		case "U":
@@ -29,7 +29,7 @@ function scr_compileIconText(_string)
 			_inputFind = "jump"
 			break
 		case "G":
-			_inputFind = "slap"
+			_inputFind = "grab"
 			break
 		case "T":
 			_inputFind = "taunt"
@@ -38,9 +38,9 @@ function scr_compileIconText(_string)
 			_inputFind = "start"
 			break
 	}
-	if array_length(global.inputMap[$ $"Inputs_Player1_{_inputFind}Key"]) <= 0
+	if array_length(global.key_map[$ $"{_inputFind}_key"]) <= 0
 		return new _keyFunc(false, " ")
-	var _inputKey = [global.inputMap[$ $"Inputs_Player1_{_inputFind}Key"][0], global.inputMap[$ $"Inputs_Player1_{_inputFind}Pad"][0]]
+	var _inputKey = [global.key_map[$ $"{_inputFind}_key"][0], global.key_map[$ $"{_inputFind}_pad"][0]]
 	var _inputKeystring = chr(_inputKey[_prioritizeInput])
 	var _key = -4
 	if _prioritizeInput == 0
@@ -287,7 +287,6 @@ function draw_text_oyh(_x, _y, _text, _w = string_width(_text), _typewriter = un
 	if !ds_map_exists(global.textCache, _text)
 	{
 		ds_map_add(global.textCache, _text, parse_textEX(_text, _w))
-		show_debug_message($"Added {_text} to cache")
 	}
 	
 	var func = function(_x, _y, _text, w = string_width(_text), _typewriter)

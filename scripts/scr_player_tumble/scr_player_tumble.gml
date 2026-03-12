@@ -37,7 +37,7 @@ function scr_player_tumble()
 	
 	if sprite_index == sprites.dive || sprite_index == spr_milton_diveprep
 	{
-		if key_jump2 && !grounded && character != characters.milton
+		if key_jump_pressed && !grounded && character != characters.milton
 		{
 			vsp = -6
 			sprite_index = sprites.divebomb
@@ -69,11 +69,11 @@ function scr_player_tumble()
 			exit;
 		}
 		
-		if key_down2 && !grounded && vsp < 14
+		if key_down_pressed && !grounded && vsp < 14
 			vsp = 14
 		if sprite_index == spr_milton_dive
 		{
-			if key_slap2
+			if key_grab_pressed
 			{
 				if move != 0
 					xscale = move

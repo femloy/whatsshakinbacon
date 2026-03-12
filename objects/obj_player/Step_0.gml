@@ -283,7 +283,7 @@ if hitstun.is == false
 			x += move * spd
 			hsp = 0
 			vsp = 0
-			if key_jump2
+			if key_jump_pressed
 				state = states.normal
 			break
 	}

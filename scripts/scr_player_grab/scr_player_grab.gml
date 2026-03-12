@@ -62,7 +62,7 @@ function scr_player_grab(){
 	}
 	if animation_end() && sprite_index == spr_player_airgrabstart
 		sprite_index = spr_player_airgrab
-	if key_down2 && grounded
+	if key_down_pressed && grounded
 	{
 		FMODevent_oneshot("event:/Sfx/Player/crouchslide", x, y)
 		crouchslip = 25

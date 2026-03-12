@@ -153,7 +153,7 @@ function scr_player_hauling()
 		exit;
 	}
 	
-	if key_down2 && !grounded
+	if key_down_pressed && !grounded
 	{
 		vsp = -6
 		sprite_index = spr_player_piledriver

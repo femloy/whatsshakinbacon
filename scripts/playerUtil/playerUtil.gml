@@ -1,4 +1,4 @@
-#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2))
+#macro doGroundpoundCheck ((key_down_pressed && global.dirGround) || (key_groundpound_pressed))
 #macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
 
 function hurt_player(_obj = noone)
@@ -376,7 +376,7 @@ function slope_momentum(_accel = 0.1, _deaccel = 0) {
 
 function doTaunt()
 {
-	if key_taunt2
+	if key_taunt_pressed
 	{
 		if instance_exists(obj_stayawake_mash)
 		{

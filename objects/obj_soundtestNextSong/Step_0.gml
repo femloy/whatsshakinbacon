@@ -2,7 +2,7 @@ if place_meeting(x, y, obj_player)
 {
 	with obj_player
 	{
-		if key_up2
+		if key_up_pressed
 		{
 			with obj_soundtestPlayer
 			{

@@ -28,3 +28,4 @@ yscaleMulti = 1
 invincable = false
 supertauntKill = false
 spawned = false
+escapeSpawned = false

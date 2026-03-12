@@ -114,11 +114,11 @@ switch m.anchor
 							draw_text_oyh(xx - 16, yy + m.ypad * i, q.iconIndex)
 						} 
 						draw_set_halign(fa_right)
-						for (var p = 0; p < array_length(global.inputMap[$ q.key]); p++)
+						for (var p = 0; p < array_length(global.key_map[$ q.key]); p++)
 						{
 							if currentmenu == 6
 							{
-								switch global.inputMap[$ q.key][p]
+								switch global.key_map[$ q.key][p]
 								{
 									case vk_left:
 										draw_sprite(spr_tutorialkeyspecial, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
@@ -148,13 +148,13 @@ switch m.anchor
 										draw_set_color(c_black)
 										draw_set_font(global.npcfont)
 										draw_set_halign(fa_left)
-										draw_text(SCREEN_WIDTH - 64 - (42 * p), yy + m.ypad * i - 6, chr(global.inputMap[$ q.key][p]))
+										draw_text(SCREEN_WIDTH - 64 - (42 * p), yy + m.ypad * i - 6, chr(global.key_map[$ q.key][p]))
 									break
 								}
 							}
 							if currentmenu == 8
 							{
-								switch global.inputMap[$ q.key][p]
+								switch global.key_map[$ q.key][p]
 								{
 									case gp_face1:
 										draw_sprite(global.buttonSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
@@ -204,28 +204,28 @@ switch m.anchor
 									case gp_select:
 										draw_sprite(global.buttonSpr, 15, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyLL":
+									case "joystickL_left":
 										draw_sprite(global.joystickSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyLR":
+									case "joystickL_right":
 										draw_sprite(global.joystickSpr, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyLU":
+									case "joystickL_up":
 										draw_sprite(global.joystickSpr, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyLD":
+									case "joystickL_down":
 										draw_sprite(global.joystickSpr, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyRL":
+									case "joystickR_left":
 										draw_sprite(global.joystickSpr, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyRR":
+									case "joystickR_right":
 										draw_sprite(global.joystickSpr, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyRU":
+									case "joystickR_up":
 										draw_sprite(global.joystickSpr, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
-									case "joyRD":
+									case "joystickR_down":
 										draw_sprite(global.joystickSpr, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
 										break
 								}
