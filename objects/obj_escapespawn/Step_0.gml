@@ -1,14 +1,14 @@
 if point_distance(x, 0, obj_player.x, 0) <= 550 && 
 	point_distance(0, y, 0, obj_player.y) <= 256 && visible == false && global.escape.active && activated == false
 {
-	visible = true
+	active = true
 	image_index = 0
 }
-if visible == false
+if active == false
 	instance_deactivate_object(content)
-if visible == true
+if active == true
 {
-	if activated == false && floor(image_index) == 7
+	if activated == false
 	{
 		activated = true
 		FMODevent_oneshot("event:/Sfx/General/Enemy/spawnenemy", x, y)

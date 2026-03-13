@@ -112,8 +112,8 @@ function input_start(_restart = false)
 	struct_set(_inputsGamepad, "up", [gp_padu, "joystickL_up"])
 	struct_set(_inputsGamepad, "right", [gp_padr, "joystickL_right"])
 	struct_set(_inputsGamepad, "jump", [gp_face1])
-	struct_set(_inputsGamepad, "grab", [gp_face2])
-	struct_set(_inputsGamepad, "taunt", [gp_face3])
+	struct_set(_inputsGamepad, "grab", [gp_face3])
+	struct_set(_inputsGamepad, "taunt", [gp_face4])
 	struct_set(_inputsGamepad, "attack", [gp_shoulderr, gp_shoulderrb])
 	struct_set(_inputsGamepad, "start", [gp_start])
 	struct_set(_inputsGamepad, "superjump", [])
@@ -123,8 +123,8 @@ function input_start(_restart = false)
 	struct_set(_inputsGamepad, "menu_up", [gp_padu, "joystickL_up"])
 	struct_set(_inputsGamepad, "menu_right", [gp_padr, "joystickL_right"])
 	struct_set(_inputsGamepad, "menu_confirm", [gp_face1])
-	struct_set(_inputsGamepad, "menu_back", [gp_face2])
-	struct_set(_inputsGamepad, "menu_clear", [gp_face3])
+	struct_set(_inputsGamepad, "menu_back", [gp_face3])
+	struct_set(_inputsGamepad, "menu_clear", [gp_face4])
 	
 	var _struct_names = struct_get_names(_inputsKeyboard)
 	var _struct_size = array_length(_struct_names) 
@@ -202,6 +202,7 @@ function input_start(_restart = false)
 							return true
 					}
 				}
+				gamepad_reset_axis_pressed()
 				return false;
 			}
 			held = function()
