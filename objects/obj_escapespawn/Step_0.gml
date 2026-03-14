@@ -17,7 +17,6 @@ if active == true
 			image_alpha = 0
 			x = other.x
 			y = other.y - 15
-			create_particleStatic(spr_kungfueffect, x, y, 1, -1)
 			sprite_index = spr_stun
 			scared = 30
 			state = states.stun

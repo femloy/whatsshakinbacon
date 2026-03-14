@@ -1,0 +1,1 @@
+text = "Bro, tapping [D] while grabbing lets you quickly roll under smaller gaps bro."

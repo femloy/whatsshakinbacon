@@ -1,0 +1,1 @@
+text = "Bro, grabbing into an enemy makes you haul them, you can hold any direction [U][D][L][R] and tap [G] again to throw the bro however youd like bro."

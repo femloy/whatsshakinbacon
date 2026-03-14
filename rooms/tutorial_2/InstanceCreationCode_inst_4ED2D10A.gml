@@ -1,0 +1,1 @@
+text = "Bro, you can press and hold [Q] to mach dash, this will be your quickest way of travel bro, hold it for long enough bro and you'll be able to break metal blocks bro, just try not to crash bro!"

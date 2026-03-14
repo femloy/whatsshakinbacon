@@ -1,0 +1,1 @@
+text = "Bro, you go much faster while running down hill bro, try going back up over there and coming back down using your mach and break that metal block right infront of me bro."

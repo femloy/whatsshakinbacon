@@ -1,0 +1,1 @@
+text = "Bro, holding [D] while mach runing lets you roll under smaller gaps bro, releasing it of course lets you keep all of your speed!"

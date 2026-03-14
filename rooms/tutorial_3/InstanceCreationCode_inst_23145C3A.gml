@@ -1,0 +1,1 @@
+text = "Bro, that pit up ahead of me bro is blocked off by a metal block, but while airborne you can press [D] to preform a Pound-The-Ground move bro, doing it from this high up should get rid of it lickity split- er, I mean bro."

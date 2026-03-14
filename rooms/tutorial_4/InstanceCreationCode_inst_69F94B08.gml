@@ -1,0 +1,1 @@
+text = "Bro, you can also bounce off of walls bro while in this move bro, i call it the buzzsaw bro, landing puts you into mach, so you can use this to your advantage bro."

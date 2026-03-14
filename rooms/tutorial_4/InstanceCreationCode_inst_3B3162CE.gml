@@ -1,0 +1,1 @@
+text = "Bro, you can begin wallrunning by touching a wall while airborne in mach bro, or alternatively bro, you can run up this slope into one bro. You can press [J] to jump off of a wall bro."

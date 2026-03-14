@@ -19,8 +19,8 @@ draw_set_color(c_black)
 
 	draw_set_font(global.npcfont)
 	draw_set_halign(fa_left)
-	draw_text_oyh(borderX + 32, borderY + 10, text, 850)
-	var _height = ds_map_find_value(global.textCache, text)[2] / string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ") + 1
+	draw_text_oyh(borderX + 32, borderY + 10, $"[wave]{text}", 850)
+	var _height = ds_map_find_value(global.textCache, $"[wave]{text}")[2] / string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ") + 1
 	if rescaled == false
 	{
 		rescaled = true
