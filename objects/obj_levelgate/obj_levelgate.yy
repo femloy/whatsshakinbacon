@@ -33,7 +33,7 @@
     {"$GMObjectProperty":"v2","%Name":"level","filters":[],"listItems":[],"multiselect":false,"name":"level","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"forest","varType":2,},
     {"$GMObjectProperty":"v2","%Name":"targetRoom","filters":[
         "GMRoom",
-      ],"listItems":[],"multiselect":false,"name":"targetRoom","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"mangrove_1","path":"rooms/mangrove_1/mangrove_1.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"mangrove_1","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"targetRoom","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"wayback_1","path":"rooms/wayback_1/wayback_1.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"wayback_1","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"sprite_index","filters":[],"listItems":[],"multiselect":false,"name":"sprite_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sprite_index","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"texture_group","filters":[],"listItems":[],"multiselect":false,"name":"texture_group","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Wayback_group","varType":2,},
   ],

@@ -19,7 +19,7 @@ if active == false
 				instance_create(x + irandom_range(-70, 70), y + irandom_range(-70, 70), obj_notes).sprite_index = spr_heart_part
 			switch room
 			{
-				case mangrove_secret1:
+				case wayback_secret1:
 					var _dialog = instance_create(x, y - 32, obj_smallDialog)
 					with _dialog
 					{

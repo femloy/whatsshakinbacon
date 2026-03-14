@@ -1,1 +1,0 @@
-gameframe_caption_text = "A city inside the Fidelity Hotel"

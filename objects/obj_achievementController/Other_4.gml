@@ -1,4 +1,4 @@
-if room == mangrove_9
+if room == wayback_9
 {
 	push_achievement(achievements.waybackTourist)
 }

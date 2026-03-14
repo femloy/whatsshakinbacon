@@ -1,1 +1,0 @@
-gameframe_caption_text = "Fidelity Hotel"

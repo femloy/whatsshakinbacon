@@ -48,16 +48,15 @@ add_music = function(_music, _secret, _ambience, _function = function()
 	func = _function
 }
 
-ds_map_add(musicDetails, mangrove_1, new add_music("event:/Music/W1/Monolith Mangrove/mangrove", "event:/Music/W1/Monolith Mangrove/mangrovesecret", "event:/Ambience/mangrove", function()
+ds_map_add(musicDetails, wayback_1, new add_music("event:/Music/W1/Monolith Mangrove/mangrove", "event:/Music/W1/Monolith Mangrove/mangrovesecret", "event:/Ambience/mangrove", function()
 {
 	var _s = 0
-    if room == mangrove_9 || room == mangrove_10 || room == mangrove_11
+    if room == wayback_9 || room == wayback_10 || room == wayback_11
         var _s = 1
     fmod_studio_event_instance_set_parameter_by_name(musicInst, "state", _s)
 }))
 ds_map_add(musicDetails, hotel_receptionentrance, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, hotel_1, new add_music("event:/Music/W1/hub", -4, -4))
-ds_map_add(musicDetails, hotel_1_poolroom, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, hotel_lennydesk, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, tutorial_1, new add_music("event:/Music/W1/tutorial", -4, "event:/Ambience/tutorial"))
 ds_map_add(musicDetails, Levelselect, new add_music("event:/Music/Ost/mainmenu", -4, -4))

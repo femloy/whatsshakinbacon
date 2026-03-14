@@ -15,10 +15,6 @@ if escape && spawnerId == -4
 	exit;
 }
 
-var _prev_mask = mask_index
-
-mask_index = sprite_index
-
 with obj_player
 {
 	if place_meeting(x, y + (vsp * 2), other) && y < other.y && vsp > 0 && !other.invincable
@@ -180,5 +176,3 @@ with obj_player
 		}
 	}
 }
-
-mask_index = _prev_mask

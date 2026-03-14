@@ -281,7 +281,7 @@ if buffer == 0
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.player_gamepad_current, gp_axislh) < -(0.5)
+				else if gamepad_axis_value(global.player_gamepad_current, gp_axislh) < -0.5
 				{
 					array_push(global.key_map[$ q.key], "joystickL_left")
 					
@@ -299,7 +299,7 @@ if buffer == 0
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.player_gamepad_current, gp_axislv) < -(0.5)
+				else if gamepad_axis_value(global.player_gamepad_current, gp_axislv) < -0.5
 				{
 					array_push(global.key_map[$ q.key], "joystickL_up")
 					
@@ -317,7 +317,7 @@ if buffer == 0
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrh) < -(0.5)
+				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrh) < -0.5
 				{
 					array_push(global.key_map[$ q.key], "joystickR_left")
 					
@@ -335,7 +335,7 @@ if buffer == 0
 					changingBind = false
 					q.func()
 				}
-				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrv) < -(0.5)
+				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrv) < -0.5
 				{
 					array_push(global.key_map[$ q.key], "joystickR_up")
 					
