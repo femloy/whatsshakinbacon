@@ -47,7 +47,7 @@ function scr_player_mach3()
 		flash = true
 	}
 	mach4mode = character == characters.milton ? movespeed >= 24 : movespeed >= 16
-	if movespeed < 18
+	if movespeed < 18 && movespeed > 10
 		slope_momentum()
 	if sprite_index == sprites.crazyrun
 	{

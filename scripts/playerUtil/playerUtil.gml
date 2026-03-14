@@ -356,15 +356,17 @@ function doGrab()
 	}
 }
 
-function slope_momentum(_accel = 0.1, _deaccel = 0.2) {
+function slope_momentum(_accel = 0.1, _accel2 = 0.2) {
+	if !scr_slope(x, y + 1)
+		exit;
 	with (instance_place(x, y + 1, obj_slope))
 	{
-		if sign(image_xscale) == -sign(other.xscale)
+		if sign(image_xscale) != other.xscale
 		{
-			if abs(image_yscale) < abs(image_xscale)
-				other.movespeed += _accel
+			if abs(image_yscale) >= abs(image_xscale)
+				other.movespeed += _accel2
 			else
-				other.movespeed += _deaccel
+				other.movespeed += _accel
 		}
 	}
 }

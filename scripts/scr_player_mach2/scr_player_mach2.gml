@@ -4,7 +4,7 @@ function scr_player_mach2()
 	hsp = movespeed * xscale
 	var move = key_right + key_left
 	var _accel = 0.1
-	if grounded && movespeed > 12
+	if grounded && movespeed < 12
 		movespeed += _accel
 	buffers.afterimageMach = approach(buffers.afterimageMach, 0, 1)
 	if buffers.afterimageMach <= 0
