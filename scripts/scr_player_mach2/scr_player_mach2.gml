@@ -4,9 +4,7 @@ function scr_player_mach2()
 	hsp = movespeed * xscale
 	var move = key_right + key_left
 	var _accel = 0.1
-	if character == characters.milton
-		_accel = 0.065
-	if grounded 
+	if grounded && movespeed > 12
 		movespeed += _accel
 	buffers.afterimageMach = approach(buffers.afterimageMach, 0, 1)
 	if buffers.afterimageMach <= 0
@@ -73,7 +71,6 @@ function scr_player_mach2()
 	}
 	if movespeed >= 12 && grounded
 	{
-		movespeed = max(movespeed, 12)
 		flash = true
 		state = states.mach3
 		if sprite_index != spr_player_rollgetup

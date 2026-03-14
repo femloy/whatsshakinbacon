@@ -1,0 +1,1 @@
+text = "Bro, DONT FORGET to grab these little bros bro, they give you HELLA points bro, and you need those if you want to progress bro! Foshoe!"

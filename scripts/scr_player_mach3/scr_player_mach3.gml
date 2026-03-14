@@ -48,7 +48,7 @@ function scr_player_mach3()
 	}
 	mach4mode = character == characters.milton ? movespeed >= 24 : movespeed >= 16
 	if movespeed < 18
-		slope_momentum(0.1)
+		slope_momentum()
 	if sprite_index == sprites.crazyrun
 	{
 		buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)

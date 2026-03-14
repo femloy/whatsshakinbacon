@@ -461,6 +461,7 @@
     {"id":{"name":"tutorial_4","path":"rooms/tutorial_4/tutorial_4.yy",},},
     {"id":{"name":"tutorial_5","path":"rooms/tutorial_5/tutorial_5.yy",},},
     {"id":{"name":"tutorial_6","path":"rooms/tutorial_6/tutorial_6.yy",},},
+    {"id":{"name":"tutorial_7","path":"rooms/tutorial_7/tutorial_7.yy",},},
     {"id":{"name":"wayback_1","path":"rooms/wayback_1/wayback_1.yy",},},
     {"id":{"name":"wayback_10","path":"rooms/wayback_10/wayback_10.yy",},},
     {"id":{"name":"wayback_11","path":"rooms/wayback_11/wayback_11.yy",},},
@@ -1266,6 +1267,7 @@
     {"roomId":{"name":"tutorial_4","path":"rooms/tutorial_4/tutorial_4.yy",},},
     {"roomId":{"name":"tutorial_5","path":"rooms/tutorial_5/tutorial_5.yy",},},
     {"roomId":{"name":"tutorial_6","path":"rooms/tutorial_6/tutorial_6.yy",},},
+    {"roomId":{"name":"tutorial_7","path":"rooms/tutorial_7/tutorial_7.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

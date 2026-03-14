@@ -328,6 +328,7 @@
     {"name":"tutorial_4","order":3,"path":"rooms/tutorial_4/tutorial_4.yy",},
     {"name":"tutorial_5","order":4,"path":"rooms/tutorial_5/tutorial_5.yy",},
     {"name":"tutorial_6","order":5,"path":"rooms/tutorial_6/tutorial_6.yy",},
+    {"name":"tutorial_7","order":6,"path":"rooms/tutorial_7/tutorial_7.yy",},
     {"name":"wayback_10","order":12,"path":"rooms/wayback_10/wayback_10.yy",},
     {"name":"wayback_11","order":11,"path":"rooms/wayback_11/wayback_11.yy",},
     {"name":"wayback_12","order":14,"path":"rooms/wayback_12/wayback_12.yy",},
