@@ -136,21 +136,6 @@ function scr_player_groundpound()
 		}
 	}
 	
-	if (slapBuffer > 0 && !grounded && character == characters.mildred) && sprite_index != spr_player_spinout && sprite_index != spr_player_piledriver
-	{
-		sprite_index = spr_player_groundpoundcancel
-		flash = true
-		image_index = 0
-		vsp = -6
-		movespeed = 10
-		slapBuffer = false
-		state = states.mach2
-		if move != 0
-			xscale = move
-		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
-		exit;
-	}
-	
 	if sprite_index == spr_player_groundpoundstart && animation_end()
 		sprite_index = spr_player_groundpound
 		

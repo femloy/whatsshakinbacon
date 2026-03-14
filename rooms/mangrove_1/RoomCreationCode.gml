@@ -1,1 +1,1 @@
-gameframe_caption_text = "What's Shakin, Bacon? The Smell of Wet Grass"
+gameframe_caption_text = "The Nature Reserve of Fidelity Hotel"

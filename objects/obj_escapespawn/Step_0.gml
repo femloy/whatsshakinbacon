@@ -11,13 +11,13 @@ if active == true
 	if activated == false
 	{
 		activated = true
-		FMODevent_oneshot("event:/Sfx/General/Enemy/spawnenemy", x, y)
 		instance_activate_object(content)
 		with content
 		{
+			image_alpha = 0
 			x = other.x
 			y = other.y - 15
-			create_particleStatic(spr_genericpoofeffect, x, y, 1, -1)
+			create_particleStatic(spr_kungfueffect, x, y, 1, -1)
 			sprite_index = spr_stun
 			scared = 30
 			state = states.stun

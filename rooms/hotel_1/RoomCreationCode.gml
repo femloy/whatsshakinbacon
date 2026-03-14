@@ -1,1 +1,1 @@
-gameframe_caption_text = "What's Shakin, Bacon?"
+gameframe_caption_text = "Fidelity Hotel"

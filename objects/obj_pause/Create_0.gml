@@ -99,6 +99,7 @@ with obj_pause
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)
 		doUnpause()
+		FMODstopAll()
 		with obj_music
 		{
 			stop_music()
@@ -135,6 +136,7 @@ var _exitlevel =
 	with obj_pause
 	{
 		doUnpause()
+		FMODstopAll()
 		unload_textures(global.level_loaded_pages)
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)

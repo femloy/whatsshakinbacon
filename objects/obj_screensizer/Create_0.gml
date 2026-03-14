@@ -1,6 +1,6 @@
 depth = -998
 gameframe_init()
-gameframe_caption_text = "What's Shakin, Bacon?"
+gameframe_caption_text = "Fidelity Hotel"
 gameframe_caption_font = font_caption
 gameframe_caption_icon = spr_ico
 gameframe_caption_text_align = fa_center

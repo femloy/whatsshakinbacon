@@ -159,6 +159,15 @@ function input_start(_restart = false)
 		{
 			key_input_array = _struct_value_key
 			pad_input_array = _struct_value_pad
+			is_pressed = false
+			is_held = false
+			
+			update = function()
+			{
+				self.is_pressed = self.pressed()
+				self.is_held = self.held()
+			}
+			
 			pressed = function()
 			{
 				for (var i = 0; i < array_length(self.key_input_array); i++)
@@ -202,7 +211,6 @@ function input_start(_restart = false)
 							return true
 					}
 				}
-				gamepad_reset_axis_pressed()
 				return false;
 			}
 			held = function()
@@ -248,9 +256,9 @@ function read_input(_input, _press = false)
 	var _key_board = $"{_input}"
 	var _map = ds_map_find_value(global.input_map, _key_board)
 	if _press
-		_return = _map.pressed()
+		_return = _map.is_pressed
 	else
-		_return = _map.held()
+		_return = _map.is_held
 	return _return
 	
 }
