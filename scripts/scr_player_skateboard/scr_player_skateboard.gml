@@ -6,12 +6,12 @@ function scr_player_skateboardIntro()
 	if animation_end()
 	{
 		sprite_index = spr_player_skate_idle
-		state = states.skateboard
+		state = states.skateboardmove
 		prevOnSlope = false
 		onSlope = false
 		slopeObj = -4
 		wasRamp = false 
-		sprayCans = 4
+		movespeed = 12
 		instance_create(x, y, obj_skateboardViewer)
 	}
 }
@@ -133,6 +133,15 @@ function scr_player_skateboardramp()
 	{
 		vsp = 12
 	}
+	if place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_stupidcabbit)
+	{
+		var _hitwall = doBump(12, (abs(hsp) + 1))
+		if _hitwall
+		{
+			xscale *= -1
+			vsp = -12
+		}
+	}
 }
 
 function scr_player_skateboardmove()
@@ -140,8 +149,6 @@ function scr_player_skateboardmove()
 	get_input()
 	hsp = movespeed * xscale
 	image_speed = 0.4
-	if grounded
-		sprayCans = 4
 	buffers.dashcloud--
 	if buffers.dashcloud <= 0 && grounded
 	{
@@ -155,7 +162,7 @@ function scr_player_skateboardmove()
 		vsp /= 10
 	}
 	
-	slope_momentum(0.25)
+	slope_momentum(0.25, 0.4)
 	
 	if jumpBuffer > 5 && grounded
 	{
@@ -203,27 +210,13 @@ function scr_player_skateboardmove()
 	
 	if place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_stupidcabbit)
 	{
-		var _hitwall = doBump(40, (abs(hsp) + 1))
+		var _hitwall = doBump(12, (abs(hsp) + 1))
 		if _hitwall
 		{
-			vsp = -6
-			movespeed = -6
-			sprite_index = spr_player_skate_stun
-			image_index = 0
-			state = states.skateboardhitwall
-			FMODevent_oneshot("event:/Sfx/Player/Transformations/Skateboard/bump", x, y)
-			exit;
+			xscale *= -1
 		}
 	}
-	
-	if key_grab_pressed && sprayCans >= 1
-	{
-		sprayCans--
-		aimTime = 15
-		state = states.skateboardaim
-		verticalMovespeed = vsp
-		movespeed = hsp
-	}
+
 }
 
 function scr_player_skateboard()

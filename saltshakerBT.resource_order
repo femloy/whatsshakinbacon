@@ -53,6 +53,7 @@
     {"name":"Hub","order":12,"path":"folders/Rooms/Hub.yy",},
     {"name":"Levels","order":6,"path":"folders/Rooms/Levels.yy",},
     {"name":"Floor 1","order":1,"path":"folders/Rooms/Levels/Floor 1.yy",},
+    {"name":"Rock Bottom","order":3,"path":"folders/Rooms/Levels/Floor 1/Rock Bottom.yy",},
     {"name":"Tutorial","order":2,"path":"folders/Rooms/Levels/Floor 1/Tutorial.yy",},
     {"name":"Test","order":8,"path":"folders/Rooms/Test.yy",},
     {"name":"Scripts","order":23,"path":"folders/Scripts.yy",},

@@ -1,7 +1,8 @@
 var _transfoPass = [
-	states.gunkIntro,
-	states.gunkMove,
-	states.gunk
+	states.skateboard,
+	states.skateboardintro,
+	states.skateboardramp,
+	states.skateboardmove
 	]
 if array_contains(_transfoPass, obj_player.state)
 	canGive = false

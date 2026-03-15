@@ -81,6 +81,7 @@
     {"$GMFolder":"","%Name":"Hub","folderPath":"folders/Rooms/Hub.yy","name":"Hub","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Levels","folderPath":"folders/Rooms/Levels.yy","name":"Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Floor 1","folderPath":"folders/Rooms/Levels/Floor 1.yy","name":"Floor 1","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Rock Bottom","folderPath":"folders/Rooms/Levels/Floor 1/Rock Bottom.yy","name":"Rock Bottom","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tutorial","folderPath":"folders/Rooms/Levels/Floor 1/Tutorial.yy","name":"Tutorial","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Waybackyard","folderPath":"folders/Rooms/Levels/Floor 1/Waybackyard.yy","name":"Waybackyard","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Test","folderPath":"folders/Rooms/Test.yy","name":"Test","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -452,6 +453,7 @@
     {"id":{"name":"Mainmenu","path":"rooms/Mainmenu/Mainmenu.yy",},},
     {"id":{"name":"rank_room","path":"rooms/rank_room/rank_room.yy",},},
     {"id":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
+    {"id":{"name":"rock_1","path":"rooms/rock_1/rock_1.yy",},},
     {"id":{"name":"serverMenuShit","path":"rooms/serverMenuShit/serverMenuShit.yy",},},
     {"id":{"name":"test_1","path":"rooms/test_1/test_1.yy",},},
     {"id":{"name":"timesup_room","path":"rooms/timesup_room/timesup_room.yy",},},
@@ -1269,6 +1271,7 @@
     {"roomId":{"name":"tutorial_5","path":"rooms/tutorial_5/tutorial_5.yy",},},
     {"roomId":{"name":"tutorial_6","path":"rooms/tutorial_6/tutorial_6.yy",},},
     {"roomId":{"name":"tutorial_7","path":"rooms/tutorial_7/tutorial_7.yy",},},
+    {"roomId":{"name":"rock_1","path":"rooms/rock_1/rock_1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

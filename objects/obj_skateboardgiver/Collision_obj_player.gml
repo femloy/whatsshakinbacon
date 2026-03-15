@@ -7,8 +7,7 @@ if canGive
 		image_index = 0
 		image_speed = 0.35
 		sprite_index = spr_player_skate_intro
-		state = states.gunkIntro
+		state = states.skateboardintro
 		movespeed = 0
-		scr_transfotip("[wave][U][D][L][R] Move")
 	}
 }
