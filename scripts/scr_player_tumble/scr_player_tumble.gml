@@ -93,8 +93,10 @@ function scr_player_tumble()
 		}
 	}
 	
-	if sprite_index == sprites.dive && grounded
+	if (sprite_index == sprites.dive || sprite_index == spr_player_wallpound) && grounded
 	{
+		if sprite_index == spr_player_wallpound
+			movespeed = 12
 		sprite_index = spr_player_rollstart
 		image_index = 0
 	}
