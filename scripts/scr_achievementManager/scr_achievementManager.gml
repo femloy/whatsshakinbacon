@@ -24,7 +24,8 @@ function unlock_achievemnt(_achievement)
 	ini_open(global.saveFile)
 	_unlocked = ini_read_real("Achievements", q.name, false)
 	ini_close()
-	
+	if !instance_exists(obj_achievementController)
+		instance_create(x, y, obj_achievementController)
 	if !_unlocked
 	{
 		array_push(obj_achievementController.achievementBuffer, [_achievement, function(_achievement)

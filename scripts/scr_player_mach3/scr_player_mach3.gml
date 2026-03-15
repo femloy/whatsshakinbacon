@@ -11,10 +11,14 @@ function scr_player_mach3()
 	if !instance_exists(speedlineseffect) && movespeed > 13
 		speedlineseffect = instance_create(x, y, obj_speedlines)
 	buffers.bigdashcloud--
-	if buffers.bigdashcloud <= 0 && grounded
+	if buffers.bigdashcloud <= 0
 	{
-		buffers.bigdashcloud = 24
-		create_particleStatic(spr_superdashcloud, x, y, xscale, 1)
+		if mach4mode && !grounded {}
+		else
+		{
+			buffers.bigdashcloud = mach4mode ? 24 : 12
+			create_particleStatic(mach4mode ? spr_superdashcloud : spr_crazyruneffect, x, y, xscale, 1)
+		}
 	}
 	
 	

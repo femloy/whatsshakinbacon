@@ -669,6 +669,7 @@
     {"id":{"name":"spr_crab_scared","path":"sprites/spr_crab_scared/spr_crab_scared.yy",},},
     {"id":{"name":"spr_crab_stun","path":"sprites/spr_crab_stun/spr_crab_stun.yy",},},
     {"id":{"name":"spr_cratedust","path":"sprites/spr_cratedust/spr_cratedust.yy",},},
+    {"id":{"name":"spr_crazyruneffect","path":"sprites/spr_crazyruneffect/spr_crazyruneffect.yy",},},
     {"id":{"name":"spr_crazyrunothereffect","path":"sprites/spr_crazyrunothereffect/spr_crazyrunothereffect.yy",},},
     {"id":{"name":"spr_creditsfont","path":"sprites/spr_creditsfont/spr_creditsfont.yy",},},
     {"id":{"name":"spr_crouchmask","path":"sprites/spr_crouchmask/spr_crouchmask.yy",},},
