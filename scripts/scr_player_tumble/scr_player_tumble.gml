@@ -107,6 +107,14 @@ function scr_player_tumble()
 		image_index = 0
 	}
 	
+	if !key_down && !scr_solid(x, y - 16) && grounded && crouchslip <= 0
+	{
+		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
+		image_index = 0
+		sprite_index = spr_player_rollgetup
+		state = states.mach2
+	}
+	
 	if place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_destructibles)
 	{
 		if character != characters.milton
@@ -128,13 +136,7 @@ function scr_player_tumble()
 			if movespeed < 20
 				movespeed++
 		}
+		exit;
 	}
 	
-	if !key_down && !scr_solid(x, y - 16) && grounded && crouchslip <= 0
-	{
-		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
-		image_index = 0
-		sprite_index = spr_player_rollgetup
-		state = states.mach2
-	}
 }
