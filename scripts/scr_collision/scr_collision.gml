@@ -107,7 +107,10 @@ function scr_solid(_x, _y)
 								_collided = scr_slope_collideCheck(_self_id, _x, _y)
 								break
 							case obj_platform:
-								_collided = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
+								if sign(image_yscale) < 0
+									_collided = (_self_id.bbox_top - 1 <= bbox_bottom + 1) && _self_id.vsp <= 0
+								else
+									_collided = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
 								break
 						}
 					}

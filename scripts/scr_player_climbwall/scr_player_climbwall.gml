@@ -128,7 +128,7 @@ function scr_player_climbwall()
 		squashY = 0.8
 	}
 	
-	if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles)
+	if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_destructibles)
 	{
 		shake_camera(20, 40)
 		sprite_index = spr_player_hitceiling
