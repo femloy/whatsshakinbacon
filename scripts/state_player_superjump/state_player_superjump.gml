@@ -73,6 +73,18 @@ function scr_player_superjump()
 		}
 		else
 			movespeed = 0
+		if key_down_pressed && character == characters.mildred
+		{
+			movespeed = movespeed / 3 * 6
+			if move != 0
+				xscale = move
+			FMODevent_oneshot("event:/Sfx/Player/dive", x, y)
+			sprite_index = spr_player_wallpound
+			image_index = 0
+			vsp = 11
+			state = states.tumble
+			create_particleStatic(spr_grabcloud, x, y, xscale, 1)
+		}
 		if (key_attack_pressed || key_grab_pressed) && sprite_index != spr_player_spinout
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);

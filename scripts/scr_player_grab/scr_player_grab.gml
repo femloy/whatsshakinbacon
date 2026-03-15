@@ -90,7 +90,7 @@ function scr_player_grab(){
 		image_index = 0
 		sprite_index = spr_player_longjump
 		state = states.mach2
-		vsp = -12
+		vsp = -11
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)

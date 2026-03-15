@@ -12,7 +12,6 @@ function scr_player_skateboardIntro()
 		slopeObj = -4
 		wasRamp = false 
 		movespeed = 12
-		instance_create(x, y, obj_skateboardViewer)
 	}
 }
 
@@ -120,14 +119,6 @@ function scr_player_skateboardramp()
 	{
 		buffers.afterimageBlur = 3
 		create_blur_effect(sprite_index, image_index, x, y, xscale)
-	}
-	if key_grab_pressed && sprayCans >= 1
-	{
-		sprayCans--
-		aimTime = 15
-		state = states.skateboardaim
-		verticalMovespeed = vsp
-		movespeed = hsp
 	}
 	if key_down_pressed
 	{

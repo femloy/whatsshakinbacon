@@ -323,10 +323,7 @@ function doGrab()
 				FMODevent_oneshot("event:/Sfx/Player/uppercut", x, y)
 				slapBuffer = false
 				state = states.uppercut
-				if coyote_time
-					vsp = -17
-				else
-					vsp = -12
+				vsp = -17
 				sprite_index = spr_player_uppercut
 				image_index = 0
 				create_particleStatic(spr_jumpeffect, x, y, 1, 1)
