@@ -321,6 +321,7 @@
     {"name":"Mainmenu","order":5,"path":"rooms/Mainmenu/Mainmenu.yy",},
     {"name":"rank_room","order":4,"path":"rooms/rank_room/rank_room.yy",},
     {"name":"rm_intro","order":3,"path":"rooms/rm_intro/rm_intro.yy",},
+    {"name":"rock_2","order":1,"path":"rooms/rock_2/rock_2.yy",},
     {"name":"serverMenuShit","order":7,"path":"rooms/serverMenuShit/serverMenuShit.yy",},
     {"name":"test_1","order":3,"path":"rooms/test_1/test_1.yy",},
     {"name":"timesup_room","order":10,"path":"rooms/timesup_room/timesup_room.yy",},
