@@ -15,4 +15,5 @@ if global.escape.active
 	var isSecret = string_pos("secret", roomname) > 0
 	if isSecret
 		create_ghost_self_visual()
+	create_particleStatic(spr_sparkle, x, y, 1)
 }

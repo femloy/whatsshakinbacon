@@ -33,7 +33,7 @@ if key_jump_pressed
 		backtohubX = x
 		backtohubY = y
 		global.resetRoom = _levelDeets[0]
-		if !instance_exists(obj_fadeout)
-				instance_create(x, y , obj_fadeout)
+		room_goto(targetRoom)
+		instance_create(x, y, obj_titlecardRating)
 	}
 }

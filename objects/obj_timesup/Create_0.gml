@@ -1,11 +1,3 @@
-x = SCREEN_WIDTH / 2
-y = -200
-FMODevent_oneshot("event:/Music/General/timesup", x, y)
-alarm[0] = 60 * 2.9
-alarm[1] = 60 * 6
-vsp = 0
-falling = false
-depth = 15
 generalReset()
 
 with obj_music

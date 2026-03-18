@@ -51,7 +51,6 @@ enum states
 	skateboardwall,
 	skateboardaim,
 	slip,
-	terrified, // Im not scared, im terrified!
 	coconutgun,
 	coconutintro,
 	coconutshoot,

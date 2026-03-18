@@ -99,10 +99,10 @@
 	<object class="MixerBusPanner" id="{44d39604-887e-447e-9bd1-76813a9c5f18}" />
 	<object class="SingleSound" id="{3457f01a-557a-4cf3-a7fc-e274ea98ddaa}">
 		<property name="length">
-			<value>69.524149659863951</value>
+			<value>65.454541666666671</value>
 		</property>
 		<property name="volume">
-			<value>4</value>
+			<value>3</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{a250b85f-6a5e-4d34-98b1-5a9d05f33070}</destination>

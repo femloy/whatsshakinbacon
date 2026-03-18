@@ -1,6 +1,7 @@
 with obj_player
 {
 	generalReset()
+	visible = true
 	movespeed = 0
 	vsp = 0
 	hsp = 0

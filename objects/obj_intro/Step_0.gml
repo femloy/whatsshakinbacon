@@ -30,7 +30,7 @@ switch scene
 		}
 		if fadeout && blackAlpha == 1 || key_jump_pressed
 		{
-			room_goto(Mainmenu)
+			room_goto(Levelselect)
 		}
 		break
 }

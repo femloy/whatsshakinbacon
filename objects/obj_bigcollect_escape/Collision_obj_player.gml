@@ -17,7 +17,9 @@ if global.escape.active
 			fmod_studio_event_instance_start(soundsLaugh)
 	}
 	var roomname = string_letters(room_get_name(room))
-var isSecret = string_pos("secret", roomname) > 0
-if isSecret
-	create_ghost_self_visual()
+	var isSecret = string_pos("secret", roomname) > 0
+	if isSecret
+		create_ghost_self_visual()
+	repeat(4)
+		create_particleStatic(spr_sparkle, x + irandom_range(-16, 16), y + irandom_range(-16, 16), 1)
 }

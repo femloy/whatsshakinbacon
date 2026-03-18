@@ -122,6 +122,13 @@ if (global.escape.timer == 0 && !global.escape.party && !_secret && global.level
 	if alarm[1] <= 0
 		alarm[1] = 60 * 10
 }*/
+
+if global.escape.active
+{
+	if alarm[0] <= 0
+		alarm[0] = 60
+}
+
 if (!ds_list_empty(collectVis))
 {
 	for (var i = 0; i < ds_list_size(collectVis); i++)
