@@ -20,8 +20,10 @@ with tv
 		_idleSprite = spr_tv_secret
 	if global.escape.active && !isSecret
 		_idleSprite = spr_tv_escape
-	if global.combo.amt >= 15 && !isSecret
+	if global.combo.amt >= 10 && !isSecret
 		_idleSprite = spr_tv_combo
+	if global.combo.amt >= 50 && !isSecret
+		_idleSprite = spr_tv_heat
 	if obj_player.state == states.ski
 		_idleSprite = spr_tv_ski
 	if global.escape.party && global.escape.active
@@ -69,6 +71,7 @@ with tv
 				case spr_tv_escape:
 				case sprites.idle:
 				case spr_tv_combo:
+				case spr_tv_heat:
 				case spr_tv_ski:
 				case spr_tv_idle_anim1:
 					idle--

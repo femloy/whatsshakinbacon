@@ -14,6 +14,7 @@ if active == true
 		instance_activate_object(content)
 		with content
 		{
+			FMODevent_oneshot("event:/Sfx/General/Enemy/spawnenemy", x, y)
 			repeat(4)
 				create_particleStatic(spr_escapespawner, x + irandom_range(-32, 32), y + irandom_range(-32, 32), 1, -5)
 			image_alpha = 0

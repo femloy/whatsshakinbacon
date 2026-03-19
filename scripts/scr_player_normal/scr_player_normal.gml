@@ -3,11 +3,17 @@ function scr_player_normal()
 	get_input()
 	hsp = movespeed * xscale
 	var move = key_right + key_left
+	var _move_spr = sprites.move
 	var _idle_spr = sprites.idle
 	if global.combo.amt >= 15
 		_idle_spr = spr_player_idle_combo_1
 	if global.escape.active
 		_idle_spr = spr_player_idle_panic
+	if global.escape.party
+	{
+		_idle_spr = spr_player_idle_dance
+		_move_spr = spr_player_idle_dance
+	}
 	if sprite_index == sprites.move
 	{
 		if ( floor(image_index) == 3 || floor(image_index) == 8 ) && buffers.step <= 0
@@ -20,10 +26,10 @@ function scr_player_normal()
 	}
 	if move != 0
 	{
-		if sprite_index != sprites.move && sprite_index != spr_player_land2 && sprite_index != spr_player_machslideend && sprite_index != spr_player_breakdance
+		if sprite_index != _move_spr && sprite_index != spr_player_land2 && sprite_index != spr_player_machslideend && sprite_index != spr_player_breakdance
 		{
 			image_index = 0
-			sprite_index = sprites.move
+			sprite_index = _move_spr
 		}
 		if sprite_index != spr_player_breakdance
 			image_speed = (movespeed / 6) * 0.35
@@ -40,13 +46,13 @@ function scr_player_normal()
 		if animation_end() && sprite_index = spr_player_land2
 		{
 			image_index = 0
-			sprite_index = sprites.move
+			sprite_index = _move_spr
 		}
 		
 		if animation_end() && sprite_index = spr_player_machslideend
 		{
 			image_index = 0
-			sprite_index = sprites.move
+			sprite_index = _move_spr
 		}
 	}
 	else {
