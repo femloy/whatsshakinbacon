@@ -1,6 +1,39 @@
 #macro doGroundpoundCheck ((key_down_pressed && global.dirGround) || (key_groundpound_pressed))
 #macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
 
+function check_grabbed_solid(_player)
+{
+	if !place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, _player.x, _player.y, obj_solid, false, true) != -4)
+	{
+		var _dist = abs(x - obj_player.x)
+		x = _player.x
+		y = _player.y
+		if !scr_solid(x + _player.xscale, y)
+		{
+			var i = 0
+			while !scr_solid(x + _player.xscale, y)
+			{
+				x += _player.xscale
+				i++
+				if i > _dist
+					break
+			}
+			if scr_solid(x + _player.xscale, y)
+			{
+				var i = 0
+				while scr_solid(x + _player.xscale, y)
+				{
+					x -= _player.xscale
+					i++
+					if i > _dist
+						break
+				}
+			}
+		}
+	}
+	
+}
+
 function hurt_player(_obj = noone)
 {
 	with obj_player

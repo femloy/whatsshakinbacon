@@ -16,7 +16,7 @@ if variable_global_exists("escape") && global.escape.active
 	var intensity = 0.08
 	shader_set_uniform_f(shaderUniforms.intensity, intensity);
 	shader_set_uniform_f_array(shaderUniforms.resolution, [display_get_gui_width(), display_get_gui_height()]);
-	shader_set_uniform_f(shaderUniforms.wave.amplitude, 0.015);
+	shader_set_uniform_f(shaderUniforms.wave.amplitude, 0.02);
 	shader_set_uniform_f(shaderUniforms.wave.frequency, 10.0);
 	draw_surface(application_surface, 0, 0);
 	
