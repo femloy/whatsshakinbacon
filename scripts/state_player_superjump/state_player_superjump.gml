@@ -75,15 +75,13 @@ function scr_player_superjump()
 			movespeed = 0
 		if key_down_pressed && character == characters.mildred
 		{
-			movespeed = movespeed / 3 * 6
-			if move != 0
-				xscale = move
-			FMODevent_oneshot("event:/Sfx/Player/dive", x, y)
-			sprite_index = spr_player_wallpound
+			state = states.buzzsaw
 			image_index = 0
-			vsp = 11
-			state = states.tumble
-			create_particleStatic(spr_grabcloud, x, y, xscale, 1)
+			sprite_index = spr_player_buzzsawFastFall
+			movespeed = 8
+			vsp = 14
+			fmod_studio_event_instance_start(soundsBuzzsaw)
+			FMODSet3dPos(soundsBuzzsaw, x, y)
 		}
 		if (key_attack_pressed || key_grab_pressed) && sprite_index != spr_player_spinout
 		{

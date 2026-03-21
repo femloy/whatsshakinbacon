@@ -2,6 +2,8 @@ function scr_collide_destructibles()
 {
 	var _list = ds_list_create()
 	var _horizontal =
+	state == states.machslide ||
+	state == states.machturn ||
 	state == states.mach2 ||
 	state == states.mach3 ||
 	state == states.grab ||
