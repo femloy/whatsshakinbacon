@@ -3,7 +3,10 @@ function scr_player_uppercut(){
 	var move = key_right + key_left
 	hsp = approach(hsp, movespeed * move, 0.4)
 	if move != 0
-		movespeed = 4
+	{
+		if abs(hsp) < 4
+			movespeed = 4
+	}
 	image_speed = 0.4
 	if vsp < 0
 	{
@@ -14,6 +17,12 @@ function scr_player_uppercut(){
 			create_machEffect(sprite_index, image_index, x, y, xscale, 1)
 		}
 	}
+	if buffers.step <= 0
+	{
+		buffers.step = 5
+		create_particleStatic(spr_shineeffect, x, y, 1, 1)
+	}
+	buffers.step--
 	if animation_end()
 		image_index = image_number - 1
 	if grounded && vsp > 0

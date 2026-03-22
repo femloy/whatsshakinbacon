@@ -38,7 +38,7 @@ function scr_enemy_grabbed()
 		}
 		if playerID.sprite_index == spr_player_swingading
 		{
-			y = playerID.y - 15
+			y = playerID.y
 			switch floor(playerID.image_index)
 			{
 				case 0:
@@ -66,6 +66,7 @@ function scr_enemy_grabbed()
 					x = playerID.x + (5 * xscale)
 					break
 			}
+			check_grabbed_solid(playerID)
 		}
 	}
 	else if playerID.state == states.groundpound || playerID.state == states.groundpoundstart
@@ -76,6 +77,7 @@ function scr_enemy_grabbed()
 	else {
 		x = playerID.x + (50 * xscale)
 		y = playerID.y - 5
+		check_grabbed_solid(playerID)
 	}
 	if playerID.state != states.hauling && playerID.state != states.finishingblow && playerID.state != states.groundpoundstart && playerID.state != states.groundpound
 	{

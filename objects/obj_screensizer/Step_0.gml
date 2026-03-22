@@ -27,7 +27,7 @@ else {
 if gameframe_visible_time > 0
 {
 	gameframe_visible_time--
-	gameframe_alpha = approach(gameframe_alpha, 1, 0.1)
+	gameframe_alpha = approach(gameframe_alpha, 1, 0.2)
 }
 else
 	gameframe_alpha = approach(gameframe_alpha, 0, 0.1)
