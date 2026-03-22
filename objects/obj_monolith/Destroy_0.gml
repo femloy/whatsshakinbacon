@@ -18,6 +18,7 @@ if ds_list_find_index(global.saveroom, id) == -1
 	
 	instance_create(x, y, obj_goodmourning)
 	instance_create(x, y, obj_whiteflash)
+	scr_sleep(50)
 	global.escape.active = true
 	switch global.level
 	{

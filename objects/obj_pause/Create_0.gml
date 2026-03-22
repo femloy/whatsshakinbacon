@@ -96,6 +96,10 @@ with obj_pause
 {
 	if global.resetRoom != noone
 	{
+		if instance_exists(obj_rank_transition)
+			instance_destroy(obj_rank_transition)
+		if instance_exists(obj_secret_transition)
+			instance_destroy(obj_secret_transition)
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)
 		doUnpause()
@@ -140,6 +144,10 @@ var _exitlevel =
 		unload_textures(global.level_loaded_pages)
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)
+		if instance_exists(obj_rank_transition)
+			instance_destroy(obj_rank_transition)
+		if instance_exists(obj_secret_transition)
+			instance_destroy(obj_secret_transition)
 		with obj_player
 		{
 			if global.level == noone

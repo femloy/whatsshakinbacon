@@ -43,8 +43,8 @@ if cutscene = true
 	if animation_end() && sprite_index == spr_loveportal_close
 	{
 		image_alpha = 0
-		if !instance_exists(obj_fadeout)
-			instance_create(x, y, obj_fadeout)
+		if !instance_exists(obj_secret_transition)
+			instance_create(x, y, obj_secret_transition)
 	}
 	
 }

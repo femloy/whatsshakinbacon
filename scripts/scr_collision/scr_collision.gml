@@ -110,7 +110,7 @@ function scr_solid(_x, _y)
 							case obj_platform:
 								var _top = false
 								if sign(image_yscale) < 0
-									_top = (_self_id.bbox_top - 1 <= bbox_bottom + 1) && _self_id.vsp <= 0
+									_top = (_self_id.bbox_top - 1 >= bbox_top + 1) && _self_id.vsp <= 0
 								else
 									_top = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
 								if _top
