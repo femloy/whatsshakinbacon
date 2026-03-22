@@ -11,7 +11,7 @@ for (var i = 0; i < array_length(stickers); i++)
 	{
 		q.alpha -= q.fadeSpeed
 		q.y += q.vspeed
-		q.vspeed = approach(q.vspeed, q.targetSpeed, 0.5)
+		q.vspeed += q.targetSpeed / 15
 	}
 	if q.alpha <= 0
 	{

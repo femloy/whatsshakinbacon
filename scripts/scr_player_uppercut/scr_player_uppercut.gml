@@ -18,11 +18,11 @@ function scr_player_uppercut(){
 		}
 	}
 	if buffers.step <= 0
-		{
-			buffers.step = 5
-			create_particleStatic(spr_shineeffect, x, y, 1, 1)
-		}
-		buffers.step--
+	{
+		buffers.step = 5
+		create_particleStatic(spr_shineeffect, x, y, 1, 1)
+	}
+	buffers.step--
 	if animation_end()
 		image_index = image_number - 1
 	if grounded && vsp > 0
