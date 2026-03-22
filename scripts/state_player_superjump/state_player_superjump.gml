@@ -75,6 +75,8 @@ function scr_player_superjump()
 			movespeed = 0
 		if key_down_pressed && character == characters.mildred
 		{
+			if move != 0
+				xscale = move
 			state = states.buzzsaw
 			image_index = 0
 			sprite_index = spr_player_buzzsawFastFall
