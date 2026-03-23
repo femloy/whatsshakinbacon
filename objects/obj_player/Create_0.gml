@@ -175,6 +175,7 @@ breakdancespeed = 0
 breakdanceID = -4
 jumpBuffer = false
 slapBuffer = false
+downBuffer = false
 
 flash = false
 rainbow = 0
