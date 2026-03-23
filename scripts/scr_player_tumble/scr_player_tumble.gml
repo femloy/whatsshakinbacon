@@ -42,7 +42,7 @@ function scr_player_tumble()
 			vsp = -6
 			sprite_index = sprites.divebomb
 			image_index = 0
-			state = states.groundpoundstart
+			state = states.groundpound
 			squashX = 1.3
 			squashY = 0.8
 		}

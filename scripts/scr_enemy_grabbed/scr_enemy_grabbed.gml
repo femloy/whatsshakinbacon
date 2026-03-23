@@ -8,11 +8,11 @@ function scr_enemy_grabbed()
 	if playerID.state == states.hauling
 	{
 		x = playerID.x - (10 * xscale)
-		y = playerID.y - 46
+		y = playerID.y - 40
 		if playerID.sprite_index == spr_player_haulingjump || playerID.sprite_index == spr_player_haulingfall
 		{
 			x = playerID.x - (5 * xscale)
-			y = playerID.y - 55
+			y = playerID.y - 50
 		}
 		if playerID.sprite_index == spr_player_haulingland
 		{
@@ -38,7 +38,7 @@ function scr_enemy_grabbed()
 		}
 		if playerID.sprite_index == spr_player_swingading
 		{
-			y = playerID.y
+			y = playerID.y - 12
 			switch floor(playerID.image_index)
 			{
 				case 0:

@@ -56,6 +56,7 @@ function scr_player_hauling()
 		if place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles)
 		{
 			state = states.finishingblow
+			movespeed = -4
 			sprite_index = spr_player_swingadingend
 			image_index = 0
 			exit;
@@ -135,7 +136,10 @@ function scr_player_hauling()
 		else 
 		{
 			if sprite_index == spr_player_swingading
+			{
 				sprite_index = spr_player_swingadingend
+				movespeed = -4
+			}
 			else
 				sprite_index = choose(spr_player_finisher1, spr_player_finisher2, spr_player_finisher3, spr_player_finisher4)
 		}
@@ -158,7 +162,7 @@ function scr_player_hauling()
 		vsp = -6
 		sprite_index = spr_player_piledriver
 		image_index = 0
-		state = states.groundpoundstart
+		state = states.groundpound
 	}
 	
 	if !instance_exists(enemyID)
@@ -174,11 +178,12 @@ function scr_player_finishingblow()
 	image_speed = 0.4
 	hsp = movespeed * xscale
 	if floor(image_index) < 4 && sprite_index != spr_player_swingadingend
-		movespeed = approach(movespeed, 2, 1)
+		movespeed = approach(movespeed, 0, 1)
+	else
+		movespeed = approach(movespeed, -4, 0.5)
 	if instance_exists(enemyID) && (floor(image_index) > 4 || sprite_index == spr_player_swingadingend) && enemyID.state == states.grab
 	{
-		movespeed = -5
-		vsp = -5
+		vsp = -6
 		global.combo.timer = 60
 		FMODevent_oneshot("event:/Sfx/Player/punch", x, y)
 		

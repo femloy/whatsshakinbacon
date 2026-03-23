@@ -129,7 +129,7 @@ with obj_player
 				vsp = -14
 				sprite_index = spr_player_piledriver
 				image_index = 0
-				state = states.groundpoundstart
+				state = states.groundpound
 			}
 		}
 		

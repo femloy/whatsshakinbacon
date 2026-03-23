@@ -58,7 +58,7 @@ function scr_player_jump()
 		vsp = -6
 		sprite_index = spr_player_groundpoundstart
 		image_index = 0
-		state = states.groundpoundstart
+		state = states.groundpound
 		squashX = 1.3
 		squashY = 0.8
 		freefalling = 0

@@ -26,7 +26,7 @@ function scr_player_superjumpprep()
 			state = states.superjump
 			sprite_index = spr_player_superjump
 			image_index = 0
-			verticalMovespeed = -11
+			verticalMovespeed = -12
 			vsp = verticalMovespeed
 			create_particleStatic(spr_explosioneffect, x, y, 1)
 		}
@@ -121,6 +121,7 @@ function scr_player_superjump()
 			create_particleStatic(spr_grabcloud, x, y, xscale, 1)
 			movespeed = 12
 			state = states.mach3
+			flash = true
 			jumpstop = true
 			vsp = -5
 			sprite_index = spr_player_superjumpcancel
