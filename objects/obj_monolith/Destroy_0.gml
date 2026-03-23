@@ -2,12 +2,16 @@ if ds_list_find_index(global.saveroom, id) == -1
 {
 	ds_list_add(global.saveroom, id)
 	FMODevent_oneshot("event:/Sfx/General/Enemy/Monolith/cupdead", x, y)
-	
-	with instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_baddiedead)
+	for (var i = 0; i < sprite_get_number(spr_mugmonolith_dead); i++)
 	{
-		sprite_index = spr_mugmonolith_dead
-		hsp = random_range(5, 7) * sign(x - obj_player.x)
-		image_xscale = other.image_xscale
+		with instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_baddiedead)
+		{
+			sprite_index = spr_mugmonolith_dead
+			hsp = random_range(3, 5) * sign(x - obj_player.x)
+			image_xscale = other.image_xscale
+			image_speed = 0
+			image_index = i
+		}
 	}
 	
 	repeat (8)

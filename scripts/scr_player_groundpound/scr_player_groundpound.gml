@@ -18,8 +18,8 @@ function scr_player_groundpound()
 	if vsp > 0
 		freefallsmash++
 	else
-		freefallsmash = -14
-	if vsp >= 2
+		freefallsmash = -8
+	if vsp > 0
 		vsp += 0.5
 	buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
 	if buffers.afterimageBlur == 0
@@ -33,29 +33,29 @@ function scr_player_groundpound()
 		create_particleStatic(spr_cloudeffect, x + irandom_range(-5, 5), y + irandom_range(-5, 5), 1, 1)
 	}
 	buffers.step--
+	if vsp > 17
+	{
+		buffers.afterimageMach = approach(buffers.afterimageMach, 0, 1)
+		if buffers.afterimageMach == 0
+		{
+			buffers.afterimageMach = 4
+			create_machEffect(sprite_index, image_index, x, y, xscale, 1)
+		}
+		buffers.crazyothereffect--
+		if buffers.crazyothereffect <= 0
+		{
+			buffers.crazyothereffect = 9
+			with create_particleStatic(spr_crazyrunothereffect, x, y, 1, 1)
+			{
+				image_angle = -90 
+				image_speed = 0.5
+			}
+		}
+	}
 	if freefallsmash >= 10
 	{
 		if !instance_exists(chargeeffect)
 			chargeeffect = instance_create(x, y, obj_chargeeffect)
-		if vsp > 17
-		{
-			buffers.afterimageMach = approach(buffers.afterimageMach, 0, 1)
-			if buffers.afterimageMach == 0
-			{
-				buffers.afterimageMach = 4
-				create_machEffect(sprite_index, image_index, x, y, xscale, 1)
-			}
-			buffers.crazyothereffect--
-			if buffers.crazyothereffect <= 0
-			{
-				buffers.crazyothereffect = 9
-				with create_particleStatic(spr_crazyrunothereffect, x, y, 1, 1)
-				{
-					image_angle = -90 
-					image_speed = 0.5
-				}
-			}
-		}
 	}
 	
 	if sprite_index == spr_player_groundpoundstart && animation_end()

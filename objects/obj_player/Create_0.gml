@@ -20,7 +20,7 @@ enum states
 	taunt,
 	tumble,
 	climbwall,
-	groundpoundstart,
+	groundpoundstart, // Unused
 	groundpound,
 	enterdoor,
 	walkfront,

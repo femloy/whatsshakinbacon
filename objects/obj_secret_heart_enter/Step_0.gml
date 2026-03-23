@@ -26,7 +26,7 @@ if cutscene = true
 		{
 			jumpstop = true
 			vsp = 10
-			
+			state = states.groundpound
 			sprite_index = spr_player_groundpound
 			xscaleMulti = 1
 			yscaleMulti = 1
