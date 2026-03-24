@@ -141,6 +141,7 @@ function scr_player_hammertwirl()
 		sprite_index = spr_player_groundpoundstart
 		image_index = 0
 		state = states.groundpound
+		movespeed = hsp
 		squashX = 1.3
 		squashY = 0.8
 		freefalling = 0

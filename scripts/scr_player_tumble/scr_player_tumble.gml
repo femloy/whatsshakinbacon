@@ -43,6 +43,7 @@ function scr_player_tumble()
 			sprite_index = sprites.divebomb
 			image_index = 0
 			state = states.groundpound
+			movespeed = hsp
 			squashX = 1.3
 			squashY = 0.8
 		}

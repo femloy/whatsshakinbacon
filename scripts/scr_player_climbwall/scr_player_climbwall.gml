@@ -119,6 +119,7 @@ function scr_player_climbwall()
 	{
 		freefallsmash = 20
 		vsp = 10
+		movespeed = hsp
 		state = states.groundpound
 		create_particleStatic(spr_cloudeffect, x, y, 1, 1)
 		buffers.crazyothereffect = 0

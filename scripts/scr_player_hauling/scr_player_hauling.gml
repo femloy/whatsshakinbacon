@@ -163,6 +163,7 @@ function scr_player_hauling()
 		sprite_index = spr_player_piledriver
 		image_index = 0
 		state = states.groundpound
+		movespeed = hsp
 	}
 	
 	if !instance_exists(enemyID)

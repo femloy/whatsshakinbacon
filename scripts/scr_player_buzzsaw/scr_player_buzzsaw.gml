@@ -27,6 +27,7 @@ function scr_player_buzzsaw()
 		vsp = -6
 		sprite_index = sprites.divebomb
 		image_index = 0
+		movespeed = hsp
 		state = states.groundpound
 		squashX = 1.3
 		squashY = 0.8
