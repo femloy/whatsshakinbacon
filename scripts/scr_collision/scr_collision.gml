@@ -67,6 +67,8 @@ function scr_collision()
 	}
 	
 	grounded |= scr_solid(x, y + 1)
+	if grounded
+		y = floor(y)
 }
 
 function scr_slope(_x, _y)

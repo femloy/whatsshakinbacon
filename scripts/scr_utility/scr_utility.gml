@@ -87,7 +87,7 @@ function shake_camera(_intensity, _time)
 {
 	if is_undefined(_time)
 		_time = _intensity
-	obj_camera.cameraShakeTimer = _time / 60
+	obj_camera.cameraShakeTimer = _time / room_speed
 	obj_camera.cameraShake = _intensity
 }
 

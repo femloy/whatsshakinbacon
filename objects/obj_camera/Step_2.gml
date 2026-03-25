@@ -38,7 +38,9 @@ switch state
 }
 
 
-cameraShake = approach(cameraShake, 0, cameraShakeTimer)
+cameraShake -= cameraShakeTimer
+if cameraShake < 0
+	cameraShake = 0
 var _realX = camera.x - (camera.width / 2)
 var _realY = camera.y - (camera.height / 2)
 _realX = clamp(_realX, 0, (room_width - camera.width))

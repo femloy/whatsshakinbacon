@@ -4,6 +4,7 @@ function scr_player_groundpoundstart()
 
 function scr_player_groundpound()
 {
+	image_speed = sprite_index != spr_player_groundpoundstart ? 0.35 : 0.4
 	get_input()
 	var move = key_right + key_left
 	hsp = movespeed
@@ -56,26 +57,24 @@ function scr_player_groundpound()
 			}
 		}
 	}
-	
-	image_speed = 0.35
 	if vsp > 0
 		freefallsmash++
 	else if vsp < 0
 		freefallsmash = -14
-	if vsp >=2
+	if vsp >= 2
 	{
 		if vsp > 17
 		{
 			buffers.afterimageMach = approach(buffers.afterimageMach, 0, 1)
 			if buffers.afterimageMach == 0
 			{
-				buffers.afterimageMach = 4
+				buffers.afterimageMach = 5
 				create_machEffect(sprite_index, image_index, x, y, xscale, 1)
 			}
 			buffers.crazyothereffect--
 			if buffers.crazyothereffect <= 0
 			{
-				buffers.crazyothereffect = 9
+				buffers.crazyothereffect = 15
 				with create_particleStatic(spr_crazyrunothereffect, x, y, 1, 1)
 				{
 					image_angle = -90 
@@ -120,14 +119,17 @@ function scr_player_groundpound()
 		{
 			var slope = instance_place(x, y + 1, obj_slope)
 			xscale = -sign(slope.image_xscale)
-			movespeed = freefallsmash >= 10 ? 12 : 8
+			movespeed = freefallsmash > 20 ? 12 : 8
 			state = states.tumble
 			sprite_index = spr_player_rolling
 			FMODevent_oneshot("event:/Sfx/Player/crouchslide", x, y)
+			freefallsmash = -14
 			create_particleStatic(spr_superdashcloud, x, y, xscale, 1)
+			exit;
 		} 
 		else
 		{
+			freefallsmash = -14
 			if sprite_index == spr_player_piledriver
 			{
 				sprite_index = spr_player_piledriverend
@@ -155,11 +157,12 @@ function scr_player_groundpound()
 			vsp = 0
 			hsp = 0
 			state = states.freefallland
-			movespeed = abs(hsp)
+			movespeed = 0
+			hsp = 0
 			if freefallsmash < 10
-				shake_camera(5, 15)
+				shake_camera(10, 10)
 			else
-				shake_camera(10, 30)
+				shake_camera(20, 20)
 			FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 			create_particleStatic(spr_groundpoundeffect, x, y, 1, -2)
 		}

@@ -23,6 +23,7 @@ if global.debug
 		array_push(devWindow, $"Player y: {obj_player.y}")
 		array_push(devWindow, $"Player state: {obj_player.state}")
 		array_push(devWindow, $"Player sprite: {sprite_get_name(obj_player.sprite_index)}")
+		array_push(devWindow, $"smash: {obj_player.freefallsmash}")
 	}
 	draw_set_font(Font5)
 	draw_set_halign(fa_left)
