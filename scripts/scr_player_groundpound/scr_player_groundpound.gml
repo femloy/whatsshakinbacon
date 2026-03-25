@@ -160,9 +160,9 @@ function scr_player_groundpound()
 			movespeed = 0
 			hsp = 0
 			if freefallsmash < 10
-				shake_camera(10, 10)
+				shake_camera(5, 15)
 			else
-				shake_camera(20, 20)
+				shake_camera(10, 30)
 			FMODevent_oneshot("event:/Sfx/Player/slam", x, y)
 			create_particleStatic(spr_groundpoundeffect, x, y, 1, -2)
 		}

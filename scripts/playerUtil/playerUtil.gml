@@ -1,6 +1,174 @@
 #macro doGroundpoundCheck ((key_down_pressed && global.dirGround) || (key_groundpound_pressed))
 #macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
 
+function do_state()
+{
+	switch state
+	{
+		case states.normal:
+			scr_player_normal()
+		break
+		case states.jump:
+			scr_player_jump()
+		break
+		case states.crouch:
+			scr_player_crouch()
+		break
+		case states.mach2:
+			scr_player_mach2()
+		break
+		case states.machslide:
+			scr_player_machslide()
+		break
+		case states.mach3:
+			scr_player_mach3()
+		break
+		case states.machturn:
+			scr_player_machturn()
+		break
+		case states.hitwall:
+			scr_player_hitwall()
+		break
+		case states.superjumpprep:
+			scr_player_superjumpprep()
+		break
+		case states.superjump:
+			scr_player_superjump()
+		break
+		case states.freefallland:
+			scr_player_freefallland()
+		break
+		case states.taunt:
+			scr_player_taunt()
+		break
+		case states.tumble:
+			scr_player_tumble()
+		break
+		case states.climbwall:
+			scr_player_climbwall()
+		break
+		case states.groundpound:
+			scr_player_groundpound()
+		break
+		case states.groundpoundstart:
+			scr_player_groundpoundstart()
+		break
+		case states.enterdoor:
+			scr_player_enterdoor()
+		break
+		case states.grab:
+			scr_player_grab()
+		break
+		case states.hauling:
+			scr_player_hauling()
+		break
+		case states.finishingblow:
+			scr_player_finishingblow()
+		break
+		case states.uppercut:
+			scr_player_uppercut()
+		break
+		case states.hurt:
+			scr_player_hurt()
+		break
+		case states.ladder:
+			scr_player_ladder()
+		break
+		case states.buzzsaw:
+			scr_player_buzzsaw()
+		break
+		case states.walkfront:
+			scr_player_walkfront()
+		break
+		case states.parry:
+			scr_player_parry()
+		break
+		case states.surfing:
+			scr_player_surfing()
+		break
+		case states.diveboard:
+			scr_player_diveboard()
+		break 
+        case states.ski:
+			scr_player_ski()
+		break
+		case states.skibounce:
+			scr_player_skibounce()
+			break
+		case states.skirow:
+			scr_player_skirow()
+			break
+		case states.hammerattack:
+			scr_player_hammerattack()
+			break
+		case states.hammertwirl:
+			scr_player_hammertwirl()
+			break
+		case states.snowball:
+			scr_player_snowball()
+			break
+		case states.snowballjump:
+			scr_player_snowball_jump()
+			break
+		case states.snowballwall:
+			scr_player_snowball_wall()
+			break
+		case states.skateboard:
+			scr_player_skateboard()
+			break
+		case states.skateboardintro:
+			scr_player_skateboardIntro()
+			break
+		case states.skateboardmove:
+			scr_player_skateboardmove()
+			break
+		case states.skateboardhitwall:
+			scr_player_skateboardhitwall()
+			break
+		case states.skateboardramp:
+			scr_player_skateboardramp()
+			break
+		case states.skateboardwall:
+			scr_player_skateboardwall()
+			break
+		case states.skateboardaim:
+			scr_player_skateboardAim()
+			break
+		case states.slip:
+			scr_player_slip()
+			break
+		case states.coconutintro:
+			scr_player_coconut_intro()
+			break
+		case states.coconutgun:
+			scr_player_coconut_gun()
+			break
+		case states.coconutshoot:
+			scr_player_coconut_shoot()
+			break
+		case states.gunk:
+			scr_player_gunk()
+			break
+		case states.gunkIntro:
+			scr_player_gunkIntro()
+			break
+		case states.gunkMove:
+			scr_player_gunkMove()
+			break
+		case states.noclip:
+			get_input()
+			var spd = key_attack ? 20 : 10
+			var move = key_right + key_left, move2 = key_down - key_up
+			y += move2 * spd
+			x += move * spd
+			hsp = 0
+			vsp = 0
+			if key_jump_pressed
+				state = states.normal
+			break
+	}
+}
+
 function check_grabbed_solid(_player)
 {
 	if !place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, _player.x, _player.y, obj_solid, false, true) != -4)
@@ -475,7 +643,7 @@ function doTaunt()
 				instance_create_online(other.x, other.y, other.depth + 2, obj_onlineTaunteffect)
 		}
 		
-		if place_meeting(x, y, obj_exitgate) && global.combo.timer > 0 && global.escape.active && global.level != "tutorial"
+		if place_meeting(x, y, obj_exitgate) && global.escape.active && global.level != "tutorial"
 		{
 			if global.tauntcount < 10
 			{

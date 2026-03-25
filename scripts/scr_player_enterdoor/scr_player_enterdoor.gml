@@ -66,7 +66,7 @@ function scr_player_walkfront()
 			{
 				sprite_index = sprites.gateslam
 				image_index = 0
-				shake_camera(10, 30)
+				shake_camera(3, 3)
 				with instance_place(x, y, obj_exitgate)
 				{
 					image_index = 0

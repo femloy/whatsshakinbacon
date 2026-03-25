@@ -95,7 +95,7 @@ function scr_player_superjump()
 		if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_ballofbeer) && !place_meeting(x, y - 1, obj_destructibles)
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
-			shake_camera(20, 20)
+			shake_camera(10, 30)
 			sprite_index = spr_player_hitceiling
 			image_index = 0
 			state = states.freefallland

@@ -38,9 +38,7 @@ switch state
 }
 
 
-cameraShake -= cameraShakeTimer
-if cameraShake < 0
-	cameraShake = 0
+cameraShake = max(cameraShake - cameraShakeTimer, 0)
 var _realX = camera.x - (camera.width / 2)
 var _realY = camera.y - (camera.height / 2)
 _realX = clamp(_realX, 0, (room_width - camera.width))
@@ -64,7 +62,7 @@ if !global.option_screenshake
 	cameraShake = 0
 }
 camera_set_view_pos(view_camera[0], 
-_realX + irandom_range(cameraShake, -cameraShake) + _escapeShake1,
-_realY + irandom_range(cameraShake, -cameraShake) + _escapeShake2)
+_realX + irandom_range(-cameraShake, cameraShake) + _escapeShake1,
+_realY + irandom_range(-cameraShake, cameraShake) + _escapeShake2)
 camera_set_view_angle(view_camera[0], camera.angle)
 camera_set_view_size(view_camera[0], camera.width, camera.height)
