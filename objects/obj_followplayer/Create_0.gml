@@ -7,4 +7,4 @@ target_y = y
 xscale = 1
 space = 1
 interp = 0
-show_debug_message(32 * max(position_in_line, 1))
+canmove = true

@@ -3,9 +3,9 @@ switch state
 {
 	case states.normal:
 		image_speed = 0.35
+		event_inherited();
 		if sprite_index != spr_intro
 		{
-			event_inherited();
 			if og_x != x || og_y != y
 			{
 				sprite_index = spr_walk
@@ -24,8 +24,10 @@ switch state
 			}
 		}
 		else {
+			canmove = false
 			if animation_end()
 			{
+				canmove = true
 				sprite_index = spr_idle
 				interp = 0
 			}
