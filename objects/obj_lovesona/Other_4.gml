@@ -1,2 +1,4 @@
-if ds_list_find_index(global.saveroom, id) != -1
-	instance_destroy()
+with obj_collect
+	create_ghost_self_visual()
+with obj_bigcollect
+	create_ghost_self_visual()

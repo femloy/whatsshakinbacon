@@ -1,3 +1,0 @@
-repeat (points) {
-	global.collect++
-}

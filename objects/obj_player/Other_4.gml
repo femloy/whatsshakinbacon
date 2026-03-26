@@ -57,10 +57,10 @@ if place_meeting(x, y, obj_door) || place_meeting(x, y, obj_exitgate) || place_m
 with obj_followplayer
 {
 	ds_queue_clear(followqueue)
-	gx = other.x
-	gy = other.y
-	x = gx
-	y = gy
+	target_x = other.x
+	target_y = other.y
+	x = target_x
+	y = target_y
 }
 
 with obj_hipnatuese

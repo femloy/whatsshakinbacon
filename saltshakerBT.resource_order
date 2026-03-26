@@ -431,7 +431,6 @@
     {"name":"bg_coast2","order":3,"path":"sprites/bg_coast2/bg_coast2.yy",},
     {"name":"bg_coast3","order":4,"path":"sprites/bg_coast3/bg_coast3.yy",},
     {"name":"bg_coast5","order":1,"path":"sprites/bg_coast5/bg_coast5.yy",},
-    {"name":"bg_doodle2","order":1,"path":"sprites/bg_doodle2/bg_doodle2.yy",},
     {"name":"bg_house_front","order":4,"path":"sprites/bg_house_front/bg_house_front.yy",},
     {"name":"bg_house","order":3,"path":"sprites/bg_house/bg_house.yy",},
     {"name":"bg_rooftop_cloudsBack","order":9,"path":"sprites/bg_rooftop_cloudsBack/bg_rooftop_cloudsBack.yy",},

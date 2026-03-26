@@ -119,6 +119,7 @@ function scr_player_climbwall()
 	{
 		freefallsmash = 20
 		vsp = 10
+		movespeed = hsp
 		state = states.groundpound
 		create_particleStatic(spr_cloudeffect, x, y, 1, 1)
 		buffers.crazyothereffect = 0
@@ -130,7 +131,7 @@ function scr_player_climbwall()
 	
 	if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_destructibles)
 	{
-		shake_camera(20, 40)
+		shake_camera(10, 30)
 		sprite_index = spr_player_hitceiling
 		image_index = 0
 		state = states.freefallland

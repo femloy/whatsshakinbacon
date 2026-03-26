@@ -1,9 +1,10 @@
-lag = 20
-followqueue = ds_queue_create()
-gx = x
-gy = y
 ds_list_add(global.followers, id)
-interp = 1
-space = image_xscale
-xoffset = 32
-facing = 1
+position_in_line = ds_list_find_index(global.followers, id) + 1
+followqueue = ds_queue_create()
+queue_lag = 20
+target_x = x
+target_y = y
+xscale = 1
+space = 1
+interp = 0
+canmove = true

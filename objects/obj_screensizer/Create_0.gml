@@ -3,7 +3,7 @@ gameframe_init()
 gameframe_caption_text = "Fidelity Hotel"
 gameframe_caption_font = font_caption
 gameframe_caption_icon = spr_ico
-gameframe_caption_text_align = fa_center
+gameframe_caption_text_align = fa_left
 mouse_in_window = false
 gameframe_visible_time = 60
 mouseX = mouse_x
