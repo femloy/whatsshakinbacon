@@ -7,12 +7,14 @@ function scr_collide_destructibles()
 	state == states.mach2 ||
 	state == states.mach3 ||
 	state == states.grab ||
+	state == states.uppercut ||
 	state == states.tumble ||
 	state == states.hammerattack ||
 	state == states.buzzsaw || 
 	sprite_index == spr_player_swingading
 			
 	var _vertical =
+	state == states.machturn ||
 	state == states.groundpound ||
 	state == states.groundpoundstart ||
 	state == states.uppercut ||

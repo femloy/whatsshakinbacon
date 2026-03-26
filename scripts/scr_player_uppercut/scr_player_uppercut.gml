@@ -37,4 +37,12 @@ function scr_player_uppercut(){
 			xscale = move
 		hsp = movespeed * xscale
 	}
+	if !grounded and key_down
+	{
+		vsp = 20
+	}
+	if vsp >= 20
+	{
+		image_index = round(approach(image_index, 12, 1))
+	}
 }
