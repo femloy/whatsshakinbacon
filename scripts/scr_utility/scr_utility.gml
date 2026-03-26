@@ -30,6 +30,17 @@ function scr_savelevel()
 	ini_close()
 }
 
+function add_party_time(time_in_seconds, _freeze)
+{
+	if !global.escape.party
+		exit;
+	with obj_hud
+	{
+		lapbar.time += time_in_seconds * 60
+		lapbar.freeze = _freeze
+	}
+}
+
 function create_uparrow() {
 	arrow = instance_create(x, y, obj_uparrow).objId = id
 }
