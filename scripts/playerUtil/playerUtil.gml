@@ -651,7 +651,7 @@ function doTaunt()
 				create_collect(spr_taunteffect, x, y)
 				global.collect += 25
 				create_smalltext(25)
-				FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
+				FMODevent_oneshot("event:/Sfx/General/Collects/escapecollect", x, y)
 			}
 		}
 		exit;

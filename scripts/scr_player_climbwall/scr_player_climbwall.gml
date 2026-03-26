@@ -50,8 +50,8 @@ function scr_player_climbwall()
 			state = states.buzzsaw
 			image_index = 0
 			sprite_index = spr_player_buzzsawBump
-			if verticalMovespeed < 14
-				verticalMovespeed = 14
+			if verticalMovespeed < 13
+				verticalMovespeed = 13
 			movespeed = verticalMovespeed
 			vsp = -8
 			fmod_studio_event_instance_start(soundsBuzzsaw)

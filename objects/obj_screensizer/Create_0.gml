@@ -14,6 +14,7 @@ displayHeight = 540
 
 darksurf = surface_create(displayWidth + 32, displayHeight + 32)
 dark = false
+bleedIntensity = 1
 
 gameSurface = -4
 screen_surf = -4

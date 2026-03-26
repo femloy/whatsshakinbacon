@@ -1,7 +1,13 @@
+wasParty = false
+if global.escape.party
+	wasParty = true
+
 generalReset()
 
 with obj_music
 	stop_music()
+if wasParty
+	FMODevent_oneshot("event:/Music/General/rtrend")
 	
 with obj_player
 {

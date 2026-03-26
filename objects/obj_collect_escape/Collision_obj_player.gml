@@ -16,4 +16,6 @@ if global.escape.active
 	if isSecret
 		create_ghost_self_visual()
 	create_particleStatic(spr_sparkle, x, y, 1)
+	obj_hud.lapbar.time += 60 / 4
+	obj_hud.lapbar.freeze += 10
 }

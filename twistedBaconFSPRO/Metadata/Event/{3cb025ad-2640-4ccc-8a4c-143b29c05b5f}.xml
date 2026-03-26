@@ -89,6 +89,7 @@
 			<destination>{f3f5dacb-b4a7-4704-8849-3a7b7f1d4c8a}</destination>
 			<destination>{80457ea7-93ba-41fc-a4fa-d2bf2a5d40cd}</destination>
 			<destination>{b47c28bc-2cc9-427c-a81d-2a25c825deb0}</destination>
+			<destination>{a3107c46-b3a0-4c1e-ae8e-b9a433b5e05b}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{b882edb8-9733-43e2-abe2-97ada3bea899}</destination>
@@ -111,6 +112,7 @@
 		<relationship name="modules">
 			<destination>{4998cbb6-6a48-4fb2-a962-68cb90e8097c}</destination>
 			<destination>{f3f5dacb-b4a7-4704-8849-3a7b7f1d4c8a}</destination>
+			<destination>{a3107c46-b3a0-4c1e-ae8e-b9a433b5e05b}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{c6577f12-24dd-4bce-9ecb-927e879081bd}</destination>
@@ -218,7 +220,7 @@
 			<value>312</value>
 		</property>
 		<property name="length">
-			<value>174.18742517006797</value>
+			<value>166.53060416666665</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>9.7921666666667306</value>
@@ -249,6 +251,20 @@
 		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{230032be-c269-458d-b570-d758ef6b3bec}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{a3107c46-b3a0-4c1e-ae8e-b9a433b5e05b}">
+		<property name="start">
+			<value>478.53060416666665</value>
+		</property>
+		<property name="length">
+			<value>7.6568210034013191</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>176.32277083333338</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{b27c8386-8f22-4972-9066-43b9ceb96c66}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b882edb8-9733-43e2-abe2-97ada3bea899}">
