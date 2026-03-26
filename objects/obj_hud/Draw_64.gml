@@ -10,7 +10,7 @@ if global.escape.party
 	draw_rectangle_colour(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false)
 	reset_blendmmode()
 	draw_set_alpha(1)
-	if bar == 137 && room != timesup_room
+	if musicBar == 137 && room != timesup_room
 		room_goto(timesup_room)
 }
 else {
