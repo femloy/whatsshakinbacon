@@ -10,8 +10,6 @@ if global.escape.party
 	draw_rectangle_colour(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false)
 	reset_blendmmode()
 	draw_set_alpha(1)
-	if musicBar >= 137
-		room_goto(timesup_room)
 }
 else {
 	discoAlpha = 0

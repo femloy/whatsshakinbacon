@@ -37,7 +37,7 @@ function add_party_time(time_in_seconds, _freeze)
 	with obj_hud
 	{
 		lapbar.time += time_in_seconds * 60
-		lapbar.freeze = _freeze
+		lapbar.freeze += _freeze
 	}
 }
 

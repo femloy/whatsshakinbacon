@@ -1,7 +1,5 @@
 if global.escape.active
 {
-	if !global.escape.party
-		create_ghost_self_visual()
 	var __val = super ? 20 : 10
 	global.collect += __val
 	global.combo.timer += 10
@@ -16,5 +14,5 @@ if global.escape.active
 	if isSecret
 		create_ghost_self_visual()
 	create_particleStatic(spr_sparkle, x, y, 1)
-	add_party_time(1 / 4, 10)
+	add_party_time(1 / 5, 10)
 }
