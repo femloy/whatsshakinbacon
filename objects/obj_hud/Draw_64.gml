@@ -10,7 +10,7 @@ if global.escape.party
 	draw_rectangle_colour(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false)
 	reset_blendmmode()
 	draw_set_alpha(1)
-	if musicBar == 137 && room != timesup_room
+	if musicBar >= 137
 		room_goto(timesup_room)
 }
 else {
@@ -368,8 +368,8 @@ with lapbar
 	var _timer = string("{1}:{0}", _seconds, _minutes)
 	if _active
 	{
-		if time > 20 * 60
-			time = 20 * 60
+		if time > 30 * 60
+			time = 30 * 60
 		freeze = max(freeze - 1, 0)
 		if freeze == 0
 			time = max(time - 1, 0)

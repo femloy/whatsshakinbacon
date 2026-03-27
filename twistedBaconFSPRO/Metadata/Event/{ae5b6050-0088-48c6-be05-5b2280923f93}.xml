@@ -102,6 +102,9 @@
 		<property name="length">
 			<value>27.428571428571427</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{c397726f-35f7-4cdd-89d4-2475abc30b15}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{0423a58b-dc82-4372-a299-d8e2e9385797}</destination>
 		</relationship>
@@ -122,10 +125,10 @@
 	</object>
 	<object class="LoopRegion" id="{8dc569f6-2361-42b3-b30d-f2a745003cb8}">
 		<property name="position">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>27.428571428571427</value>
+			<value>24</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{6ee2d750-a7ec-4059-8599-78270fc6f15a}</destination>
@@ -138,10 +141,22 @@
 		<relationship name="effects">
 			<destination>{b4d409fc-cf30-4474-ad40-196e153f6bad}</destination>
 			<destination>{72363d84-4e0b-4c42-b1e5-5633dcdf37e8}</destination>
+			<destination>{07065106-7290-40a8-bde4-dc7238274fe3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7a72aa73-3c14-49c9-b375-820a068f3449}" />
 	<object class="MixerBusFader" id="{33b50ae5-089c-41e6-8331-1ba4b853fd4b}" />
+	<object class="LFOModulator" id="{c397726f-35f7-4cdd-89d4-2475abc30b15}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="rate">
+			<value>0.299999982</value>
+		</property>
+		<property name="depth">
+			<value>42.5</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{6263a2b3-3e2e-43b4-b037-91aa23c560c5}">
 		<relationship name="effects">
 			<destination>{bab8f78b-bee6-4199-b405-30f6c4fece92}</destination>
@@ -167,6 +182,11 @@
 		</property>
 		<property name="minimumExtent">
 			<value>10</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{07065106-7290-40a8-bde4-dc7238274fe3}">
+		<property name="depth">
+			<value>48.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{bab8f78b-bee6-4199-b405-30f6c4fece92}" />

@@ -94,6 +94,9 @@
 		<property name="length">
 			<value>2.8846258503401359</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{94e825b7-5d54-4c42-9c85-91e4b36d5f81}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{8d94bfb6-6256-4db9-b7e0-2391a796a117}</destination>
 		</relationship>
@@ -128,6 +131,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{69f058a8-3629-4f6c-98fb-3699c7ccacc7}" />
 	<object class="MixerBusFader" id="{706dcb66-efbf-4ff6-9cee-228cac5e6077}" />
+	<object class="LFOModulator" id="{94e825b7-5d54-4c42-9c85-91e4b36d5f81}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
+		<property name="rate">
+			<value>2</value>
+		</property>
+		<property name="depth">
+			<value>20</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{f5d8055c-8177-4fef-b0cc-73d304d18698}">
 		<relationship name="effects">
 			<destination>{feade7ef-170a-4f13-8391-f4acdd5e1b59}</destination>
