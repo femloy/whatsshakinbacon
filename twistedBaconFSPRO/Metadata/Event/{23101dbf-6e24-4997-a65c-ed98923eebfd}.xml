@@ -105,6 +105,7 @@
 			<destination>{b2c6dc7c-5099-4b47-b7e2-f4c3a8a3401a}</destination>
 			<destination>{2e2f4dd3-f8c7-47cc-a7cd-cd72603ab050}</destination>
 			<destination>{e563f459-472d-4781-ac3e-335f502a0647}</destination>
+			<destination>{0c425490-a45d-4647-894f-2cffe60ed5f6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{73817940-52ba-4391-9302-edd5bb3e25e4}" />
@@ -146,6 +147,14 @@
 		</property>
 		<property name="level">
 			<value>-21.5</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{0c425490-a45d-4647-894f-2cffe60ed5f6}">
+		<property name="rate">
+			<value>0.179999992</value>
+		</property>
+		<property name="depth">
+			<value>54</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{c468d894-0944-46b5-947a-d1fae3202acf}">

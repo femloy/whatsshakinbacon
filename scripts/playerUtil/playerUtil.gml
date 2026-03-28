@@ -223,7 +223,7 @@ function hurt_player(_obj = noone)
 			exit;
 		
 		scr_sleep(100)
-		
+		add_party_time(-5, 10)
 		FMODevent_oneshot("event:/Sfx/Player/hurt", x, y)
 		global.collect -= 100
 		if global.collect < 0
@@ -651,7 +651,7 @@ function doTaunt()
 				create_collect(spr_taunteffect, x, y)
 				global.collect += 25
 				create_smalltext(25)
-				FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
+				FMODevent_oneshot("event:/Sfx/General/Collects/escapecollect", x, y)
 			}
 		}
 		exit;

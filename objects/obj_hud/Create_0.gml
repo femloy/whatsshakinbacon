@@ -52,6 +52,11 @@ bar.endIndex = 0
 bar.ending = false
 bar.ended = false
 
+lapbar = {}
+lapbar.time = 60 * 10
+lapbar.freeze = 0
+lapbar.color = 0
+
 hudVisible = function()
 {
 	var isHub = string_pos("hotel", string_letters(room_get_name(room))) > 0

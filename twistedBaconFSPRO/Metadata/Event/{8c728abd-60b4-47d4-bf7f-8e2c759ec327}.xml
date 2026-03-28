@@ -100,10 +100,14 @@
 		<relationship name="effects">
 			<destination>{247aea2e-2c95-40eb-9aba-eb72c94bcfca}</destination>
 			<destination>{a22d3df1-e269-4c51-a621-0947b9e4890b}</destination>
+			<destination>{ea073310-5fa7-4c18-a8e8-fdd8b4497f7e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{adb1108d-4f7b-45d3-a76a-87f725aefa52}" />
 	<object class="SingleSound" id="{0a9153a0-8793-4180-a0ed-29182e3d9af1}">
+		<relationship name="modulators">
+			<destination>{5f048b30-821e-4ec7-a192-bbc6dce7251a}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{fbf86fe5-91dc-4f82-bc63-a23c35a0aa62}</destination>
 		</relationship>
@@ -128,6 +132,22 @@
 		</property>
 		<property name="minimumExtent">
 			<value>10</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{ea073310-5fa7-4c18-a8e8-fdd8b4497f7e}">
+		<property name="depth">
+			<value>54</value>
+		</property>
+	</object>
+	<object class="LFOModulator" id="{5f048b30-821e-4ec7-a192-bbc6dce7251a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="rate">
+			<value>0.155000001</value>
+		</property>
+		<property name="depth">
+			<value>34.5</value>
 		</property>
 	</object>
 </objects>

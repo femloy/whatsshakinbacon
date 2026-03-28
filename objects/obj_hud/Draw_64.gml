@@ -10,7 +10,6 @@ if global.escape.party
 	draw_rectangle_colour(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false)
 	reset_blendmmode()
 	draw_set_alpha(1)
-	
 }
 else {
 	discoAlpha = 0
@@ -349,6 +348,38 @@ with bar
 	}
 }
 
+with lapbar
+{
+	var _escape = global.escape.active == true && global.escape.party
+	
+	var roomname = string_letters(room_get_name(room))
+	var _secret = string_pos("secret", roomname) > 0
+	
+	var _active = _escape && !_secret && !instance_exists(obj_hipnatuese)
+	
+	var _sec = wrap(time / 60, 0, 59)
+	var _seconds = _sec
+	
+	if _sec < 10
+		_seconds = string("0{0}", _sec)
+	var _minutes = wrap(time / (60 * 60), 0, 59)
+	var _timer = string("{1}:{0}", _seconds, _minutes)
+	if _active
+	{
+		if time > 30 * 60
+			time = 30 * 60
+		freeze = max(freeze - 1, 0)
+		if freeze == 0
+			time = max(time - 1, 0)
+		if time == 0
+			instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
+		color = approach(color, freeze > 0 ? 1 : 0, 1 / 15)
+		draw_set_colour(merge_colour(c_yellow, c_aqua, color))
+		draw_set_font(global.bigfont)
+		draw_set_halign(fa_center)
+		draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 80 - 24, _timer)
+	}
+}
 
 
 

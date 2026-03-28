@@ -20,6 +20,7 @@ else {
 			fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
 			fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 2)
 			fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
+			
 		}
 		else
 		{

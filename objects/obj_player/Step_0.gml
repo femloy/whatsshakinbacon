@@ -10,7 +10,7 @@ if hitstun.is == false
 	do_state() // state machine
 	
 	if !instance_exists(obj_technicaldifficulty) && obj_player.state != states.enterdoor && obj_player.state != states.skateboardintro && obj_player.state != states.walkfront && !instance_exists(obj_fadeout) && obj_player.state != -4
-		global.combo.timer = approach(global.combo.timer, 0, 0.15) 
+		global.combo.timer = max(global.combo.timer - 0.15, 0) 
 	if global.combo.previouscombo != global.combo.amt
 	{
 		global.combo.previouscombo = global.combo.amt
@@ -98,8 +98,8 @@ if hitstun.is == false
 	
 	
 	image_blend = merge_colour(blend, c_black, blendAmount)
-	blendAmount = approach(blendAmount, 0, blendSpeed)
-	poison = approach(poison, 0, 60 / (60 * 3))
+	blendAmount = max(blendAmount - blendSpeed, 0)
+	poison = max(poison - 60 / (60 * 3), 0)
 	if poison == 0
 	{
 		if blend = #a3ed99

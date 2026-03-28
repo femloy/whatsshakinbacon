@@ -116,8 +116,12 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{a3cbb97d-0024-44a1-8e9b-2b4aec294fba}">
+		<property name="pitch">
+			<value>-1.39999998</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{398fe0f9-cb92-4130-b52f-37b6f60ebdc6}</destination>
+			<destination>{a34d284f-36ba-4796-ada4-b8f6f59489ad}</destination>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{243ea2aa-c530-41dc-b755-5d75bdb895f8}</destination>
@@ -151,6 +155,17 @@
 		</property>
 		<property name="amount">
 			<value>11</value>
+		</property>
+	</object>
+	<object class="LFOModulator" id="{a34d284f-36ba-4796-ada4-b8f6f59489ad}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="rate">
+			<value>2.4000001</value>
+		</property>
+		<property name="depth">
+			<value>21.5</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{d06912cb-61fb-431c-bcbd-4aeca3a59eac}">

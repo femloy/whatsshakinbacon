@@ -90,7 +90,7 @@ music = FMODcreate_event("event:/Music/General/mainmenu")
 TVsprite = spr_mainmenu_tv
 TVindex = 0
 TVsnd = FMODcreate_event("event:/Sfx/UI/Mainmenu/static")
-depth = -300
+depth = -100
 created = false
 for (var i = 0; i < array_length(saveFiles); i++)
 {
