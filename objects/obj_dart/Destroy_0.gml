@@ -1,0 +1,1 @@
+FMODevent_oneshot("event:/Sfx/General/Enemy/Ant/darthit", x, y)

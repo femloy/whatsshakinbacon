@@ -37,7 +37,7 @@ if hitstun.is == false
 				{
 					image_xscale = other.xscale
 				}
-				FMODevent_oneshot("event:/Sfx/General/Enemy/dart", x, y)
+				FMODevent_oneshot("event:/Sfx/General/Enemy/Ant/dart", x, y)
 			}
 			if animation_end() && sprite_index == spr_cocoant_shoot
 			{

@@ -4,6 +4,7 @@ if obj_player.hitstun.is
 ds_queue_enqueue(followqueue, obj_player.x)
 ds_queue_enqueue(followqueue, obj_player.y)
 ds_queue_enqueue(followqueue, obj_player.xscale)
+position_in_line = ds_list_find_index(global.followers, id) + 1
 	
 if ds_queue_size(followqueue) > (queue_lag * position_in_line)
 {

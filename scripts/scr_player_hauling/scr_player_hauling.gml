@@ -101,7 +101,7 @@ function scr_player_hauling()
 		}
 	}
 	if sprite_index == spr_player_swingading
-		image_speed = 0.45
+		image_speed = movespeed > 12 ? 0.67 : 0.45
 	if !grounded && sprite_index != spr_player_haulingjump && sprite_index != spr_player_haulingfall && sprite_index != spr_player_swingading
 	{
 		image_index = 0
