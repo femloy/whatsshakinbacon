@@ -184,6 +184,7 @@ super = false
 
 soundsOk = FMODcreate_event("event:/Sfx/Player/yeag")
 soundsLaugh = FMODcreate_event("event:/Sfx/Player/yay")
+soundsHurt = FMODcreate_event("event:/Sfx/Player/gaey")
 soundsMach = FMODcreate_event("event:/Sfx/Player/mach")
 soundsSuperjump = FMODcreate_event("event:/Sfx/Player/superjump")
 soundsRoll = FMODcreate_event("event:/Sfx/Player/tumble")
