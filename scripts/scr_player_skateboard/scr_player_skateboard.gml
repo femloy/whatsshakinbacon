@@ -17,70 +17,27 @@ function scr_player_skateboardIntro()
 
 function scr_player_skateboardAim()
 {
-	get_input()
-	sprite_index = spr_player_fall
-	image_speed = 0.35
-	vsp = verticalMovespeed
-	hsp = movespeed
-	movespeed = lerp(movespeed, 0, 0.15)
-	verticalMovespeed = lerp(verticalMovespeed, 0, 0.15)
-	aimTime--
-	if ((hsp == 0 && vsp == 0) || !key_grab)
+	hsp = 0
+	vsp = 0
+	if animation_end()
 	{
-		FMODevent_oneshot("event:/Sfx/Player/Transformations/Skateboard/release", x, y)
-		
-		var move = key_right + key_left
-			if move != 0
-				xscale = move
-			if !key_up
-			{
-				movespeed = 16
-				vsp = -8
-				sprite_index = spr_player_skate_rampjump
-				image_index = 0
-				state = states.skateboardramp
-			}
-			else {
-				if move == 0
-				{
-					movespeed = 0
-					hsp = 0
-					vsp = -20
-					state = states.skateboardwall
-					movespeed = 0
-					sprite_index = spr_playerN_knightdoublejump
-				}
-				else {
-					vsp = -20
-					movespeed = 16
-					sprite_index = spr_player_skate_rampjump
-					image_index = 0
-					state = states.skateboardramp
-				}
-			}
-			create_particleStatic(spr_crazyrunothereffect, x, y, xscale, 1).image_speed = 0.5
+		if key_up
+		{
+			state = states.skateboardramp
+			verticalMovespeed = -12
+			movespeed = 0
+		}
+		else
+		{
+			state = states.skateboardramp
+			verticalMovespeed = 0
+			movespeed = 12
+		}
 	}
 }
 
 function scr_player_skateboardwall()
 {
-	image_speed = 0.35
-	get_input()
-	if grounded
-	{
-		sprite_index = spr_player_skate_idle
-		state = states.skateboard
-	}
-	if key_grab_pressed && sprayCans >= 1
-	{
-		sprayCans--
-		aimTime = 15
-		state = states.skateboardaim
-		verticalMovespeed = vsp
-		movespeed = hsp
-	}
-	if grounded
-		sprayCans = 4
 }
 
 function scr_player_skateboardhitwall()
@@ -104,42 +61,25 @@ function scr_player_skateboardramp()
 {
 	get_input()
 	hsp = movespeed * xscale
-	movespeed = approach(movespeed, 13, 1)
-	image_speed = 0.4
-	if grounded
+	vsp = verticalMovespeed
+	if place_meeting(x + hsp, y, obj_solid) || place_meeting(x, y + vsp, obj_solid)
 	{
-		sprite_index = spr_player_skate_walk
-		image_index = 0
-		state = states.skateboardmove
-	}
-	if grounded
-		sprayCans = 4
-	buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
-	if buffers.afterimageBlur == 0
-	{
-		buffers.afterimageBlur = 3
-		create_blur_effect(sprite_index, image_index, x, y, xscale)
-	}
-	if key_down_pressed
-	{
-		vsp = 12
-	}
-	if place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_stupidcabbit)
-	{
-		var _hitwall = doBump(12, (abs(hsp) + 1))
-		if _hitwall
-		{
-			xscale *= -1
-			vsp = -12
-		}
+		xscale *= -1
+		vsp = -4
+		state = states.skateboard
 	}
 }
 
 function scr_player_skateboardmove()
 {
+}
+
+function scr_player_skateboard()
+{
 	get_input()
 	hsp = movespeed * xscale
-	image_speed = 0.4
+	movespeed = approach(movespeed, 15, 0.1)
+	image_speed = 0.35
 	buffers.dashcloud--
 	if buffers.dashcloud <= 0 && grounded
 	{
@@ -155,49 +95,48 @@ function scr_player_skateboardmove()
 	
 	slope_momentum(0.25, 0.4)
 	
-	if jumpBuffer > 5 && grounded
+	var _grounded = grounded || place_meeting(x, y, obj_bouncybouncebounce)
+	if jumpBuffer > 5 && _grounded
 	{
+		if place_meeting(x, y, obj_bouncybouncebounce)
+		{
+			var _obj = instance_place(x, y, obj_bouncybouncebounce)
+			if !_obj.active
+			{
+				exit;
+			}
+			else
+			{
+				_obj.active = false
+				_obj.alarm[0] = 30
+			}
+		}
 		jumpBuffer = false
 		jumpStop = false
 		image_index = 0
-		sprite_index = spr_player_skate_jump
+		sprite_index = spr_player_pizzacarjump
 		vsp = -10
 		FMODevent_oneshot("event:/Sfx/Player/Transformations/Skateboard/jump", x, y)
 	}
-	
-	if animation_end() && sprite_index == spr_player_skate_jump
-		sprite_index = spr_player_skate_walk
-	
-	prevOnSlope = scr_slope(x, y + 1)
-	if prevOnSlope == true
+	if animation_end()
 	{
-		slopeObj = instance_place(x, y + 1, obj_slope)
-		if sign(slopeObj.image_xscale) == xscale
-			wasRamp = true
-		else
-			wasRamp = false
-	}
-	
-	// Ramp logic
-	
-	if onSlope != prevOnSlope
-	{
-		if onSlope == true && prevOnSlope == false && wasRamp
+		switch sprite_index
 		{
-			show_debug_message("Ramp Jumped!")
-			onSlope = prevOnSlope
-			vsp = -12
-			movespeed = 13
-			sprite_index = spr_player_skate_rampjump
-			image_index = 0
-			state = states.skateboardramp
-			FMODevent_oneshot("event:/Sfx/Player/Transformations/Skateboard/ramp", x, y)
-			exit;
-		}
-		else {
-			onSlope = prevOnSlope
+			case spr_player_pizzacarjump:
+				sprite_index = spr_player_pizzacarfall
+				break
+			case spr_player_pizzacarland:
+				sprite_index = spr_player_pizzacar
+				break
 		}
 	}
+	
+	if grounded && (sprite_index == spr_player_pizzacarjump || sprite_index == spr_player_pizzacarfall)
+	{
+		image_index = 0
+		sprite_index = spr_player_pizzacarland
+	}
+	
 	
 	if place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_stupidcabbit)
 	{
@@ -205,28 +144,7 @@ function scr_player_skateboardmove()
 		if _hitwall
 		{
 			xscale *= -1
-		}
-	}
-
-}
-
-function scr_player_skateboard()
-{
-	get_input()
-	hsp = movespeed * xscale
-	var move = key_right + key_left
-	image_speed = 0.4
-	if grounded
-		sprayCans = 4
-	if sprite_index != spr_player_skate_startup
-	{
-		if key_grab && sprayCans >= 1
-		{
-			sprayCans--
-			aimTime = 15
-			state = states.skateboardaim
-			verticalMovespeed = vsp
-			movespeed = -3 * move
+			vsp = -4
 		}
 	}
 }

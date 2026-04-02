@@ -30,7 +30,8 @@ switch scene
 		}
 		if fadeout && blackAlpha == 1 || key_jump_pressed
 		{
-			room_goto(Levelselect)
+			instance_destroy()
+			instance_create(x, y, obj_intro_video)
 		}
 		break
 }

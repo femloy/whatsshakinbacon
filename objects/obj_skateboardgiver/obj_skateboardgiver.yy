@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite667",
-    "path":"sprites/Sprite667/Sprite667.yy",
+    "name":"spr_pizzacar_move",
+    "path":"sprites/spr_pizzacar_move/spr_pizzacar_move.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -99,6 +99,13 @@
 		<property name="length">
 			<value>3</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{b5837b5e-85c9-45ce-9771-f9aa75425cef}</destination>
+			<destination>{fb84ee6d-ff19-4e4f-9a1d-90d2086ad59b}</destination>
+		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{6bd488e9-5be1-4a30-bee0-7768a86194dd}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{9d6c914b-84c9-4e13-921b-8717b1ec830d}</destination>
 		</relationship>
@@ -121,10 +128,38 @@
 		<relationship name="effects">
 			<destination>{8694786c-beab-43ac-8394-1499c0da9a37}</destination>
 			<destination>{2d95b428-b945-4ec8-80b0-0379e0f82482}</destination>
+			<destination>{85c97be7-12ba-463a-99b3-d722f6fb0228}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d72c5867-a8d7-42a2-b8f7-85bd048ea12c}" />
 	<object class="MixerBusFader" id="{2858c5b5-a3db-46c4-820a-b72693706561}" />
+	<object class="RandomizerModulator" id="{b5837b5e-85c9-45ce-9771-f9aa75425cef}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>10</value>
+		</property>
+	</object>
+	<object class="LFOModulator" id="{fb84ee6d-ff19-4e4f-9a1d-90d2086ad59b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="rate">
+			<value>0.164999992</value>
+		</property>
+		<property name="depth">
+			<value>32</value>
+		</property>
+	</object>
+	<object class="FadeCurve" id="{6bd488e9-5be1-4a30-bee0-7768a86194dd}">
+		<relationship name="startPoint">
+			<destination>{4c426718-e1fa-4fca-a91b-fa02b81deae2}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{27d25eeb-5723-4958-a6a9-1bde508906ca}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{d08f1240-2e4f-4b14-b853-895d9ee48fa0}">
 		<relationship name="effects">
 			<destination>{becf4bc3-e934-4721-93c5-b7786fde4b5b}</destination>
@@ -150,6 +185,42 @@
 		</property>
 		<property name="minimumExtent">
 			<value>10</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{85c97be7-12ba-463a-99b3-d722f6fb0228}">
+		<property name="decayTime">
+			<value>4000</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>20.5</value>
+		</property>
+		<property name="diffusion">
+			<value>70.5</value>
+		</property>
+		<property name="density">
+			<value>28.5</value>
+		</property>
+		<property name="wetLevel">
+			<value>-40</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{4c426718-e1fa-4fca-a91b-fa02b81deae2}">
+		<property name="position">
+			<value>0.84375</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>-1.00000048</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{27d25eeb-5723-4958-a6a9-1bde508906ca}">
+		<property name="position">
+			<value>3</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{becf4bc3-e934-4721-93c5-b7786fde4b5b}" />

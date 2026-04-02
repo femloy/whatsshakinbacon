@@ -1,0 +1,1 @@
+image_alpha = active ? 1 : 0.3
