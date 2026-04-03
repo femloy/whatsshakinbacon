@@ -225,6 +225,8 @@ function hurt_player(_obj = noone)
 		scr_sleep(100)
 		add_party_time(-5, 10)
 		FMODevent_oneshot("event:/Sfx/Player/hurt", x, y)
+		if irandom(100) <= 25
+			fmod_studio_event_instance_start(soundsHurt)
 		global.collect -= 100
 		if global.collect < 0
 			global.collect = 0

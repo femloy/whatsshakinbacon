@@ -3,6 +3,8 @@ if FMODevent_isplaying(soundsOk)
 	FMODSet3dPos(soundsOk, x, y)
 if FMODevent_isplaying(soundsLaugh)
 	FMODSet3dPos(soundsLaugh, x, y) 
+if FMODevent_isplaying(soundsHurt)
+	FMODSet3dPos(soundsHurt, x, y) 
 var _insta = ( sprite_index == spr_player_swingading || state == states.slip || state == states.mach3 || state == states.skateboard || state == states.skateboardwall || state == states.skateboardramp || state == states.skateboardmove || state == states.hammerattack || (state == states.machturn && sprite_index == spr_player_mach3turn) || state == states.superjump  || state == states.uppercut || state == states.groundpound || state == states.groundpoundstart || state == states.buzzsaw || state == states.snowball || state == states.snowballjump || state == states.snowballwall)
 instakill = _insta
 if hitstun.is == false
