@@ -8,7 +8,7 @@ function scr_player_climbwall()
 	
 	if character != characters.milton
 	{
-		if move == xscale
+		
 			verticalMovespeed = approach(verticalMovespeed, 20, 0.15)
 	}
 	else
