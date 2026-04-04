@@ -20,8 +20,8 @@ if (!ds_list_empty(afterimages))
 					_drawPattern = true
 					break
 				case afterimagetype.buzzsaw:
-					var _col = #ab39f5
-					var _col2 = #ec94ff
+					var _col = #CB5084
+					var _col2 = merge_colour(#CB5084, c_white, 0.7)
 					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
 					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
@@ -30,8 +30,8 @@ if (!ds_list_empty(afterimages))
 					_shd = true
 					break
 				case afterimagetype.mach:
-					var _col2 = merge_colour(image_blend, c_black, 0.5)
-					var _col = image_blend
+					var _col2 = image_blend
+					var _col = merge_colour(image_blend, c_white, 0.5)
 					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
 					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)

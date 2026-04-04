@@ -33,6 +33,9 @@ if ds_list_find_index(global.saveroom, id) == -1
 		case "forest":
 			global.escape.timer = (60 * 60 * 3) + (60 * 30) // 3:30
 			break
+		case "hotel":
+			global.escape.timer = (60 * 60 * 2) + (60 * 07) // 2:07
+			break
 	}
 	obj_hud.bar.chunkMax = global.escape.timer
 	global.combo.amt += 1

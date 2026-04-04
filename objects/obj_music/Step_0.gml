@@ -1,5 +1,19 @@
 if func != -4
 	func()
+var _final = global.level == "hotel"
+if _final && escapePath == "event:/Music/General/escape"
+{
+	fmod_studio_event_instance_release(escapeInst)
+	escapePath = "event:/Music/General/finalescape"
+	escapeInst = FMODcreate_event("event:/Music/General/finalescape")
+}
+else if escapePath != "event:/Music/General/escape"
+{
+	fmod_studio_event_instance_release(escapeInst)
+	escapePath = "event:/Music/General/escape"
+	escapeInst = FMODcreate_event("event:/Music/General/escape")
+}
+
 
 if global.escape.active == false {
 	panicStart = true
