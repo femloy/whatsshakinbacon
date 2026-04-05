@@ -20,8 +20,8 @@ if (!ds_list_empty(afterimages))
 					_drawPattern = true
 					break
 				case afterimagetype.buzzsaw:
-					var _col = #CB5084
-					var _col2 = merge_colour(#CB5084, c_white, 0.7)
+					var _col = #9FBF00
+					var _col2 = merge_colour(#CB5084, c_white, 0.2)
 					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
 					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
