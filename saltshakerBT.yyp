@@ -80,11 +80,11 @@
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Hub","folderPath":"folders/Rooms/Hub.yy","name":"Hub","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Levels","folderPath":"folders/Rooms/Levels.yy","name":"Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Everywhere At The End","folderPath":"folders/Rooms/Levels/Everywhere At The End.yy","name":"Everywhere At The End","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Floor 1","folderPath":"folders/Rooms/Levels/Floor 1.yy","name":"Floor 1","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rock Bottom","folderPath":"folders/Rooms/Levels/Floor 1/Rock Bottom.yy","name":"Rock Bottom","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tutorial","folderPath":"folders/Rooms/Levels/Floor 1/Tutorial.yy","name":"Tutorial","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Waybackyard","folderPath":"folders/Rooms/Levels/Floor 1/Waybackyard.yy","name":"Waybackyard","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Everywhere At The End","folderPath":"folders/Rooms/Levels/Everywhere At The End.yy","name":"Everywhere At The End","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Test","folderPath":"folders/Rooms/Test.yy","name":"Test","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemy States","folderPath":"folders/Scripts/Enemy States.yy","name":"Enemy States","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -243,7 +243,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.221",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"saltshakerBT",
   "resources":[
