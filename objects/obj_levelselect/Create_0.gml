@@ -1,18 +1,15 @@
 obj_player.state = -4
-worldNames = ["Lunch Hour", "Happy Holidays", "Privacy"]
+worldNames = ["Lunch Hour", "Final"]
 levels = []
 var _world1 = [
 	[tutorial_1, "tutorial", "A", "Tutorial"],
-	[mangrove_1, "forest", "A", "Waybackyard"],
-	[shell_1, "shell", "A", "Downtown NYC"],
-	[beach_1, "beach", "A", "Fruitcup Coast"]]
+	[wayback_1, "forest", "A", "Waybackyard"], 
+	[rock_1, "rock", "A", "Rock Bottom"], ]
+var _final = [
+	[hotel_final, "hotel", "A", "Final"],]
 
-var _world2 = [
-	[castle_1, "castle", "A", "Castle Pumpkinstein"],
-	[kingdom_1, "kingdom", "A", "Snowcone Kingdom"], ]
 
-array_push(levels, _world1)
-array_push(levels, _world2)
+array_push(levels, _world1, _final)
 
 selectedWorld = 0
 selectedLevel = 0

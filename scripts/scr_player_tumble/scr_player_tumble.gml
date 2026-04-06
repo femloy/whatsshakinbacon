@@ -37,12 +37,13 @@ function scr_player_tumble()
 	
 	if sprite_index == sprites.dive || sprite_index == spr_milton_diveprep
 	{
-		if key_jump2 && !grounded && character != characters.milton
+		if key_jump_pressed && !grounded && character != characters.milton
 		{
 			vsp = -6
 			sprite_index = sprites.divebomb
 			image_index = 0
-			state = states.groundpoundstart
+			state = states.groundpound
+			movespeed = hsp
 			squashX = 1.3
 			squashY = 0.8
 		}
@@ -69,11 +70,11 @@ function scr_player_tumble()
 			exit;
 		}
 		
-		if key_down2 && !grounded && vsp < 14
+		if key_down_pressed && !grounded && vsp < 14
 			vsp = 14
 		if sprite_index == spr_milton_dive
 		{
-			if key_slap2
+			if key_grab_pressed
 			{
 				if move != 0
 					xscale = move
@@ -93,8 +94,10 @@ function scr_player_tumble()
 		}
 	}
 	
-	if sprite_index == sprites.dive && grounded
+	if (sprite_index == sprites.dive || sprite_index == spr_player_wallpound) && grounded
 	{
+		if sprite_index == spr_player_wallpound
+			movespeed = 12
 		sprite_index = spr_player_rollstart
 		image_index = 0
 	}
@@ -103,6 +106,14 @@ function scr_player_tumble()
 	{
 		sprite_index = sprites.rolling
 		image_index = 0
+	}
+	
+	if !key_down && !scr_solid(x, y - 16) && grounded && crouchslip <= 0
+	{
+		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
+		image_index = 0
+		sprite_index = spr_player_rollgetup
+		state = states.mach2
 	}
 	
 	if place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_destructibles)
@@ -126,13 +137,7 @@ function scr_player_tumble()
 			if movespeed < 20
 				movespeed++
 		}
+		exit;
 	}
 	
-	if !key_down && !scr_solid(x, y - 16) && grounded && crouchslip <= 0
-	{
-		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
-		image_index = 0
-		sprite_index = spr_player_rollgetup
-		state = states.mach2
-	}
 }

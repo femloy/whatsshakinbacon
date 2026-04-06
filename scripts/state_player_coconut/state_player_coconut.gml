@@ -58,7 +58,7 @@ function scr_player_coconut_gun()
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/jump", x, y)
 	}
-	if key_slap2
+	if key_grab_pressed
 	{
 		sprite_index = spr_player_coconut_shoot
 		image_index = 0

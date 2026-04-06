@@ -66,7 +66,7 @@ function scr_player_walkfront()
 			{
 				sprite_index = sprites.gateslam
 				image_index = 0
-				shake_camera(10, 30)
+				shake_camera(3, 3)
 				with instance_place(x, y, obj_exitgate)
 				{
 					image_index = 0
@@ -84,7 +84,7 @@ function scr_player_walkfront()
 		}
 		else 
 		{
-			if room == mangrove_1 && sprite_index != spr_player_wayback_umbrella && character == characters.mildred && sprite_index == sprites.gateslam
+			if room == wayback_1 && sprite_index != spr_player_wayback_umbrella && character == characters.mildred && sprite_index == sprites.gateslam
 			{
 				FMODevent_oneshot("event:/Sfx/General/Beaker Backyard/noumbrella")
 				sprite_index = spr_player_wayback_umbrella

@@ -1,28 +1,11 @@
 with obj_player
+	visible = false
+x += 2
+if x > (960 / 3)
 {
-	if sprite_index == sprites.gateslam
-	{
-		hsp = 0
-		vsp = 0
-		
-		if animation_end()
-			image_index = image_number - 1
-			
-		if place_meeting(x, y, obj_timesup)
-		{
-			hsp = 4
-			vsp = -10
-			sprite_index = spr_player_gameover
-		}
-	}
-	if sprite_index == spr_player_gameover
-	{
-		
-	}
+	whiteAlpha += 1 / (60 * 4)
+	y += vsp
+	vsp = approach(vsp, -1, 1 / 60)
 }
-
-if falling
-{
-	y = approach(y, SCREEN_HEIGHT / 2, vsp)
-	vsp += 1
-}
+if whiteAlpha >= 1.1
+	event_user(0)

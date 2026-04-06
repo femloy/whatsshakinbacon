@@ -1,6 +1,3 @@
-backgroundX += 1
-backgroundY -= 1
-backgroundAlpha = approach(backgroundAlpha, showBackground, 0.1)
 depth = obj_player.depth + 5
 shake = approach(shake, 0, 1)
 fadeAlpha = approach(fadeAlpha, 1, 0.1)
@@ -84,11 +81,6 @@ switch cutscenePart
 				rankIndex = 0
 				obj_player.visible = false
 				ranktimer = 60 * 5
-				if gotoBackground != backgroundIndex
-				{
-					backgroundAlpha = 0
-					backgroundIndex = gotoBackground
-				}
 			}
 			else
 			{
@@ -110,7 +102,7 @@ switch cutscenePart
 }
 if canContinue
 {
-	if key_jump2
+	if key_jump_pressed
 	{
 		canContinue = false
 		cutscenePart = 2

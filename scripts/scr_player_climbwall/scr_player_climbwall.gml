@@ -8,7 +8,7 @@ function scr_player_climbwall()
 	
 	if character != characters.milton
 	{
-		if move == xscale
+		
 			verticalMovespeed = approach(verticalMovespeed, 20, 0.15)
 	}
 	else
@@ -50,8 +50,8 @@ function scr_player_climbwall()
 			state = states.buzzsaw
 			image_index = 0
 			sprite_index = spr_player_buzzsawBump
-			if verticalMovespeed < 14
-				verticalMovespeed = 14
+			if verticalMovespeed < 13
+				verticalMovespeed = 13
 			movespeed = verticalMovespeed
 			vsp = -8
 			fmod_studio_event_instance_start(soundsBuzzsaw)
@@ -115,10 +115,11 @@ function scr_player_climbwall()
 		image_index = 0
 	}
 	
-	if key_down2 && character == characters.mildred
+	if key_down_pressed && character == characters.mildred
 	{
 		freefallsmash = 20
 		vsp = 10
+		movespeed = hsp
 		state = states.groundpound
 		create_particleStatic(spr_cloudeffect, x, y, 1, 1)
 		buffers.crazyothereffect = 0
@@ -128,9 +129,9 @@ function scr_player_climbwall()
 		squashY = 0.8
 	}
 	
-	if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles)
+	if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_destructibles)
 	{
-		shake_camera(20, 40)
+		shake_camera(10, 30)
 		sprite_index = spr_player_hitceiling
 		image_index = 0
 		state = states.freefallland

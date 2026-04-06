@@ -24,7 +24,7 @@ var _struct = {
 	depth: obj_player.depth,
 	spr_palette: obj_player.spr_palette,
 	spr_pattern: global.patternSpr,
-	palIndex: obj_player.palIndex,
+	palIndex: obj_player.palette_index,
 	name: global.username,
 	breakdanceheld: obj_player.buffers.breakdanceheld,
 	breakdancespeed: obj_player.breakdancespeed,

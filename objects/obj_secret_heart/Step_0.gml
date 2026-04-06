@@ -17,7 +17,7 @@ if place_meeting(x, y, obj_player) && cutscene == false
 	sprite_index = spr_loveportal_close
 	image_index = 0
 }
-visible = !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_destroyable_secret1) && !place_meeting(x, y, obj_destroyable_secret2)
+visible = !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_destroyable_secret1) && !place_meeting(x, y, obj_destroyable_secret2) && !place_meeting(x, y, obj_metalblock)
 if !visible
 {
 	sprite_index = spr_loveportal_open
@@ -43,8 +43,8 @@ if cutscene = true
 	if animation_end() && sprite_index == spr_loveportal_close
 	{
 		image_alpha = 0
-		if !instance_exists(obj_fadeout)
-			instance_create(x, y, obj_fadeout)
+		if !instance_exists(obj_secret_transition)
+			instance_create(x, y, obj_secret_transition)
 	}
 	
 }

@@ -104,6 +104,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{20af7b87-597c-4638-afd3-ae68304c204b}" />
 	<object class="MultiSound" id="{90a05e52-eb13-49c2-8426-bdf850606f7b}">
+		<property name="pitch">
+			<value>-0.300000012</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{94feac38-ae3d-47e2-a930-b1941b1f0c32}</destination>
 			<destination>{2f3c1c2e-2ca1-4536-a151-4cd9e8c3d09b}</destination>
@@ -148,8 +151,17 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
+		<property name="rate">
+			<value>0.280000001</value>
+		</property>
+		<property name="phase">
+			<value>34</value>
+		</property>
 		<property name="depth">
-			<value>17</value>
+			<value>10</value>
+		</property>
+		<property name="direction">
+			<value>-74</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{0f1a64d2-a3b4-4a95-b029-d54643709dfa}">

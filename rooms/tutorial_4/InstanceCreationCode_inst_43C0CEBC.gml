@@ -1,0 +1,1 @@
+text = "Bro, if you reach the peak of a wallclimb bro, you'll be sent into a buzzsaw bro, you can jump out of this into mach bro by using [G], but you may also cancel downward by tapping [D] bro."

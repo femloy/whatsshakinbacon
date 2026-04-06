@@ -1,5 +1,206 @@
-#macro doGroundpoundCheck ((key_down2 && global.dirGround) || (key_groundpound2))
+#macro doGroundpoundCheck ((key_down_pressed && global.dirGround) || (key_groundpound_pressed))
 #macro doSuperjumpCheck ((key_up && global.dirGround) || (key_superjump))
+
+function do_state()
+{
+	switch state
+	{
+		case states.normal:
+			scr_player_normal()
+		break
+		case states.jump:
+			scr_player_jump()
+		break
+		case states.crouch:
+			scr_player_crouch()
+		break
+		case states.mach2:
+			scr_player_mach2()
+		break
+		case states.machslide:
+			scr_player_machslide()
+		break
+		case states.mach3:
+			scr_player_mach3()
+		break
+		case states.machturn:
+			scr_player_machturn()
+		break
+		case states.hitwall:
+			scr_player_hitwall()
+		break
+		case states.superjumpprep:
+			scr_player_superjumpprep()
+		break
+		case states.superjump:
+			scr_player_superjump()
+		break
+		case states.freefallland:
+			scr_player_freefallland()
+		break
+		case states.taunt:
+			scr_player_taunt()
+		break
+		case states.tumble:
+			scr_player_tumble()
+		break
+		case states.climbwall:
+			scr_player_climbwall()
+		break
+		case states.groundpound:
+			scr_player_groundpound()
+		break
+		case states.groundpoundstart:
+			scr_player_groundpoundstart()
+		break
+		case states.enterdoor:
+			scr_player_enterdoor()
+		break
+		case states.grab:
+			scr_player_grab()
+		break
+		case states.hauling:
+			scr_player_hauling()
+		break
+		case states.finishingblow:
+			scr_player_finishingblow()
+		break
+		case states.uppercut:
+			scr_player_uppercut()
+		break
+		case states.hurt:
+			scr_player_hurt()
+		break
+		case states.ladder:
+			scr_player_ladder()
+		break
+		case states.buzzsaw:
+			scr_player_buzzsaw()
+		break
+		case states.walkfront:
+			scr_player_walkfront()
+		break
+		case states.parry:
+			scr_player_parry()
+		break
+		case states.surfing:
+			scr_player_surfing()
+		break
+		case states.diveboard:
+			scr_player_diveboard()
+		break 
+        case states.ski:
+			scr_player_ski()
+		break
+		case states.skibounce:
+			scr_player_skibounce()
+			break
+		case states.skirow:
+			scr_player_skirow()
+			break
+		case states.hammerattack:
+			scr_player_hammerattack()
+			break
+		case states.hammertwirl:
+			scr_player_hammertwirl()
+			break
+		case states.snowball:
+			scr_player_snowball()
+			break
+		case states.snowballjump:
+			scr_player_snowball_jump()
+			break
+		case states.snowballwall:
+			scr_player_snowball_wall()
+			break
+		case states.skateboard:
+			scr_player_skateboard()
+			break
+		case states.skateboardintro:
+			scr_player_skateboardIntro()
+			break
+		case states.skateboardmove:
+			scr_player_skateboardmove()
+			break
+		case states.skateboardhitwall:
+			scr_player_skateboardhitwall()
+			break
+		case states.skateboardramp:
+			scr_player_skateboardramp()
+			break
+		case states.skateboardwall:
+			scr_player_skateboardwall()
+			break
+		case states.skateboardaim:
+			scr_player_skateboardAim()
+			break
+		case states.slip:
+			scr_player_slip()
+			break
+		case states.coconutintro:
+			scr_player_coconut_intro()
+			break
+		case states.coconutgun:
+			scr_player_coconut_gun()
+			break
+		case states.coconutshoot:
+			scr_player_coconut_shoot()
+			break
+		case states.gunk:
+			scr_player_gunk()
+			break
+		case states.gunkIntro:
+			scr_player_gunkIntro()
+			break
+		case states.gunkMove:
+			scr_player_gunkMove()
+			break
+		case states.noclip:
+			get_input()
+			var spd = key_attack ? 20 : 10
+			var move = key_right + key_left, move2 = key_down - key_up
+			y += move2 * spd
+			x += move * spd
+			hsp = 0
+			vsp = 0
+			if key_jump_pressed
+				state = states.normal
+			break
+	}
+}
+
+function check_grabbed_solid(_player)
+{
+	if !place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, _player.x, _player.y, obj_solid, false, true) != -4)
+	{
+		var _dist = abs(x - obj_player.x)
+		x = _player.x
+		y = _player.y
+		if !scr_solid(x + _player.xscale, y)
+		{
+			var i = 0
+			while !scr_solid(x + _player.xscale, y)
+			{
+				x += _player.xscale
+				i++
+				if i > _dist
+					break
+			}
+			if scr_solid(x + _player.xscale, y)
+			{
+				var i = 0
+				while scr_solid(x + _player.xscale, y)
+				{
+					x -= _player.xscale
+					i++
+					if i > _dist
+						break
+				}
+			}
+		}
+	}
+	
+}
 
 function hurt_player(_obj = noone)
 {
@@ -22,8 +223,10 @@ function hurt_player(_obj = noone)
 			exit;
 		
 		scr_sleep(100)
-		
+		add_party_time(-5, 10)
 		FMODevent_oneshot("event:/Sfx/Player/hurt", x, y)
+		if irandom(100) <= 25
+			fmod_studio_event_instance_start(soundsHurt)
 		global.collect -= 100
 		if global.collect < 0
 			global.collect = 0
@@ -322,13 +525,13 @@ function doGrab()
 			else {
 				FMODevent_oneshot("event:/Sfx/Player/uppercut", x, y)
 				slapBuffer = false
-				state = states.uppercut
-				if coyote_time
-					vsp = -17
+				vsp = -16
+				if state == states.mach3 || sprite_index == spr_player_longjump || sprite_index == spr_player_longjumpend
+					sprite_index = spr_player_mach_uppercut
 				else
-					vsp = -12
-				sprite_index = spr_player_uppercut
+					sprite_index = spr_player_uppercut
 				image_index = 0
+				state = states.uppercut
 				create_particleStatic(spr_jumpeffect, x, y, 1, 1)
 				squashX = 1.5
 				squashY = 0.6
@@ -356,27 +559,24 @@ function doGrab()
 	}
 }
 
-function slope_momentum(_accel = 0.1, _deaccel = 0) {
-	if scr_slope(x, y + 1)
+function slope_momentum(_accel = 0.1, _accel2 = 0.2) {
+	if !scr_slope(x, y + 1)
+		exit;
+	with (instance_place(x, y + 1, obj_slope))
 	{
-		var _obj = instance_place(x, y + 1, obj_slope);
-		
-		if instance_exists(_obj) 
+		if sign(image_xscale) != other.xscale
 		{
-			if sign(_obj.image_xscale) != xscale
-			{
-				if movespeed < 20
-					movespeed += _accel
-			}
+			if abs(image_yscale) >= abs(image_xscale)
+				other.movespeed += _accel2
 			else
-				movespeed -= _deaccel
+				other.movespeed += _accel
 		}
 	}
 }
 
 function doTaunt()
 {
-	if key_taunt2
+	if key_taunt_pressed
 	{
 		if instance_exists(obj_stayawake_mash)
 		{
@@ -402,6 +602,8 @@ function doTaunt()
 		var _isSupertaunt = canSupertaunt && key_up
 		if !_isSupertaunt
 		{
+			squashX = 1.1
+			squashY = 1.1
 			state = states.taunt
 			image_speed = 0
 			sprite_index = sprites.taunt
@@ -446,7 +648,7 @@ function doTaunt()
 				instance_create_online(other.x, other.y, other.depth + 2, obj_onlineTaunteffect)
 		}
 		
-		if place_meeting(x, y, obj_exitgate) && global.combo.timer > 0 && global.escape.active && global.level != "tutorial"
+		if place_meeting(x, y, obj_exitgate) && global.escape.active && global.level != "tutorial"
 		{
 			if global.tauntcount < 10
 			{
@@ -454,7 +656,7 @@ function doTaunt()
 				create_collect(spr_taunteffect, x, y)
 				global.collect += 25
 				create_smalltext(25)
-				FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
+				FMODevent_oneshot("event:/Sfx/General/Collects/escapecollect", x, y)
 			}
 		}
 		exit;
@@ -482,27 +684,12 @@ function get_characterspr(character)
 			st.player.dive = spr_player_dive
 			st.player.divebomb = spr_player_divebomb
 			st.player.gateslam = spr_player_gateslam
+			st.player.palette_colors = spr_playerPatColors
+			st.player.player_pal = spr_playerPal
 			//TV
 			st.tv.idle = spr_tv_idle
 			st.tv.mach3 = spr_tv_mach
 			st.tv.crazyrun = spr_tv_crazyrun
-			break
-		case characters.milton:
-			st.player.idle = spr_milton_idle
-			st.player.taunt = spr_milton_taunt
-			st.player.mach3 = spr_milton_mach3
-			st.player.mach3hit = spr_milton_mach3hit
-			st.player.mach3jump = spr_milton_mach3jump
-			st.player.rolling = spr_milton_roll
-			st.player.move = spr_milton_walk
-			st.player.crazyrun = spr_milton_crazyrun
-			st.player.dive = spr_milton_dive
-			st.player.divebomb = spr_player_divebomb
-			st.player.gateslam = spr_milton_gateslam
-			//TV
-			st.tv.idle = spr_tv_idleT
-			st.tv.mach3 = spr_tv_machT
-			st.tv.crazyrun = spr_tv_crazyrunT
 			break
 	}
 	

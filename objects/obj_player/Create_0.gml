@@ -20,7 +20,7 @@ enum states
 	taunt,
 	tumble,
 	climbwall,
-	groundpoundstart,
+	groundpoundstart, // Unused
 	groundpound,
 	enterdoor,
 	walkfront,
@@ -51,7 +51,6 @@ enum states
 	skateboardwall,
 	skateboardaim,
 	slip,
-	terrified, // Im not scared, im terrified!
 	coconutgun,
 	coconutintro,
 	coconutshoot,
@@ -64,35 +63,46 @@ enum states
 
 enum characters
 {
-	mildred = 0,
-	milton = 1
+	mildred,
+	milton
 }
 
-global.PlayerCharacters = []
-global.PlayerCharacters[0] = {
-	initials: "B",
-	name: "Mildred",
-	sprites: get_characterspr(characters.mildred),
-	patColors: spr_playerPatColors,
-	playerPal: spr_playerPal,
-	patternSpr: spr_playerPat_threads
+global.characters = {}
+
+function character_get_color(_palette, _index)
+{
+	var col = {
+		main: #FFFFFF,
+		secon: #FFFFFF,
+	}
+	var _temp_surface = surface_create(sprite_get_width(_palette), sprite_get_height(_palette))
+	
+	surface_set_target(_temp_surface)
+	draw_clear_alpha(c_black, 0)
+	draw_sprite(_palette, 0, 0, 0)
+	surface_reset_target()
+	
+	col.main = surface_getpixel(_temp_surface, _index, 2)
+	col.secon = surface_getpixel(_temp_surface, _index, 5)
+	surface_free(_temp_surface)
+	
+	return col
 }
-global.PlayerCharacters[1] = {
-	initials: "T",
-	name: "Milton",
-	sprites: get_characterspr(characters.milton),
-	patColors: spr_miltonPatColors,
-	playerPal: spr_miltonPal,
-	patternSpr: spr_playerPat_miltonTears
+
+global.characters[characters.mildred] =
+{
+	sprites: get_characterspr(characters.mildred),
+	mainColors: {}
 }
 
 character = characters.mildred
-sprites = get_characterspr(characters.mildred)
+sprites = global.characters[character].sprites.player
+palette_index = 1
 
 isMildred = true
 isMilton = false
 
-depth = 0
+depth = -50
 image_speed = 0.35
 scr_collision_init()
 grav = 0.5
@@ -147,9 +157,6 @@ if !variable_global_exists("saveroom")
 	global.damage_count = 0
 }
 
-spr_palette = spr_playerPal
-palIndex = 1
-
 jumpstop = false
 door = "A"
 state = states.normal
@@ -176,6 +183,7 @@ breakdancespeed = 0
 breakdanceID = -4
 jumpBuffer = false
 slapBuffer = false
+downBuffer = false
 
 flash = false
 rainbow = 0
@@ -184,6 +192,7 @@ super = false
 
 soundsOk = FMODcreate_event("event:/Sfx/Player/yeag")
 soundsLaugh = FMODcreate_event("event:/Sfx/Player/yay")
+soundsHurt = FMODcreate_event("event:/Sfx/Player/gaey")
 soundsMach = FMODcreate_event("event:/Sfx/Player/mach")
 soundsSuperjump = FMODcreate_event("event:/Sfx/Player/superjump")
 soundsRoll = FMODcreate_event("event:/Sfx/Player/tumble")

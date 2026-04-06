@@ -1,22 +1,3 @@
-if distance_to_object(obj_player) <= 200 && obj_player.super
-	state = states.terrified
-	
-if state == states.terrified
-{
-	xoffset = irandom_range(-20, 25)
-	yoffset = irandom_range(25, -25)
-	
-	fear++
-	xscaleMulti += 0.025
-	yscaleMulti += 0.025
-	sprite_index = spr_scared
-	
-	if fear >= 120
-		instance_destroy()
-	
-	exit;	
-}
-
 scr_collision()
 mask_index = spr_player_mask
 if y > (room_height + 100) || y < -100
@@ -33,10 +14,6 @@ if escape && spawnerId == -4
 	instance_deactivate_object(self)
 	exit;
 }
-
-var _prev_mask = mask_index
-
-mask_index = sprite_index
 
 with obj_player
 {
@@ -152,7 +129,8 @@ with obj_player
 				vsp = -14
 				sprite_index = spr_player_piledriver
 				image_index = 0
-				state = states.groundpoundstart
+				state = states.groundpound
+				movespeed = hsp
 			}
 		}
 		
@@ -199,5 +177,3 @@ with obj_player
 		}
 	}
 }
-
-mask_index = _prev_mask

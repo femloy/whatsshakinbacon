@@ -98,7 +98,7 @@ function scr_player_snowball_jump()
 		vsp /= 10
 	}
 	
-	if key_down2 && vsp < 10
+	if key_down_pressed && vsp < 10
 		vsp = 10
 		
 	if vsp <= 0

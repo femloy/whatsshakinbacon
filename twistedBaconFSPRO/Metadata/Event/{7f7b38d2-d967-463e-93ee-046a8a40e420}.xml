@@ -108,6 +108,9 @@
 		<property name="volume">
 			<value>5</value>
 		</property>
+		<property name="pitch">
+			<value>4</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{bf87ad2d-cb8b-4f6f-8acb-21876b901937}</destination>
 			<destination>{2d859ce5-4ea4-4a66-95e8-50bfef1c4a82}</destination>
@@ -143,7 +146,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>12</value>
+			<value>19</value>
 		</property>
 	</object>
 	<object class="LFOModulator" id="{2d859ce5-4ea4-4a66-95e8-50bfef1c4a82}">

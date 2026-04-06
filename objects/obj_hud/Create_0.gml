@@ -52,10 +52,15 @@ bar.endIndex = 0
 bar.ending = false
 bar.ended = false
 
+lapbar = {}
+lapbar.time = 60 * 10
+lapbar.freeze = 0
+lapbar.color = 0
+
 hudVisible = function()
 {
-	var isHub = string_pos("hotel", string_letters(room_get_name(room))) > 0
-	var _rooms = room == rm_intro ||room == rank_room || room == Levelselect || room == Mainmenu || room == serverMenuShit || isHub || (global.level == "tutorial") || room == timesup_room || room == credits_room
+	var isHub = string_pos("hotel", string_letters(room_get_name(room))) > 0 && !global.escape.active
+	var _rooms = room == rm_intro ||room == rank_room || room == Levelselect || room == Mainmenu || isHub || (global.level == "tutorial") || room == timesup_room || room == credits_room
 	return !_rooms
 }
 

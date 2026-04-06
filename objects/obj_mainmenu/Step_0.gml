@@ -3,8 +3,8 @@ roomPaletteIndex = approach(roomPaletteIndex, selectedFile + 1, 0.1)
 switch scene
 {
 	case -2:
-		getMenu_input()
-		if key_jump2
+		get_menu_input()
+		if key_jump_pressed
 		{
 			dark = false
 			FMODevent_oneshot("event:/Sfx/UI/Mainmenu/turnon")
@@ -20,10 +20,10 @@ switch scene
 	case -1:
 		break
 	case 0:
-		getMenu_input()
+		get_menu_input()
 		if instance_exists(obj_option)
 			exit;
-		if key_start2
+		if key_start_pressed
 		{
 			FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
 			instance_create(x, y, obj_option)
@@ -32,7 +32,7 @@ switch scene
 		hudAlpha = approach(hudAlpha, 1, 0.1)
 		var q = saveFiles[selectedFile]
 		selectBuffer = approach(selectBuffer, 0, 1)
-		if key_jump2 && selectBuffer == 0
+		if key_jump_pressed && selectBuffer == 0
 		{
 			global.saveFile = q.savePath
 			alarm[1] = 60 * 3
@@ -48,7 +48,7 @@ switch scene
 			TVindex = selectedFile + 1
 			exit;
 		}
-		var move = key_right2 + key_left2
+		var move = key_right_pressed + key_left_pressed
 		if move != 0
 		{
 			selectedFile += -move
@@ -79,7 +79,7 @@ switch scene
 			q.movie.y = lerp(q.movie.y, selectedFile == q.file ? q.movie.saveY - 5 : q.movie.saveY, 0.25)
 		}
 		
-		if key_slap2
+		if key_grab_pressed
 		{
 			scene = 3
 			selectedMenu = 0
@@ -92,7 +92,7 @@ switch scene
 			"DONT QUIT PLEASE!")
 		}
 		
-		if key_taunt2
+		if key_taunt_pressed
 		{
 			var q = saveFiles[selectedFile]
 			if file_exists(q.savePath)
@@ -118,8 +118,8 @@ switch scene
 		}
 		break
 	case 3:
-		getMenu_input()
-		var move = key_right2 + key_left2
+		get_menu_input()
+		var move = key_right_pressed + key_left_pressed
 		if move != 0
 		{
 			selectedMenu += -move
@@ -127,7 +127,7 @@ switch scene
 			FMODevent_oneshot("event:/Sfx/UI/Pause/menumove")
 			exit;
 		}
-		if key_jump2
+		if key_jump_pressed
 		{
 			if selectedMenu == 0
 			{

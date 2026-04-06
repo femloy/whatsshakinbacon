@@ -1,0 +1,1 @@
+text = "Bro, if you tap the opposite direction while on the ground bro, you can turn around and preserve your speed off ledges, try reaching mach 3 and doing that up ahead."

@@ -62,8 +62,9 @@ function scr_player_grab(){
 	}
 	if animation_end() && sprite_index == spr_player_airgrabstart
 		sprite_index = spr_player_airgrab
-	if key_down2 && grounded
+	if downBuffer && grounded
 	{
+		downBuffer = false
 		FMODevent_oneshot("event:/Sfx/Player/crouchslide", x, y)
 		crouchslip = 25
 		sprite_index = spr_player_crouchslip
@@ -90,7 +91,7 @@ function scr_player_grab(){
 		image_index = 0
 		sprite_index = spr_player_longjump
 		state = states.mach2
-		vsp = -12
+		vsp = -11
 		jumpstop = false
 		FMODevent_oneshot("event:/Sfx/Player/rollgetup", x, y)
 		fmod_studio_event_instance_stop(soundGrab, FMOD_STUDIO_STOP_MODE.IMMEDIATE)

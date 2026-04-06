@@ -26,7 +26,7 @@ function scr_player_superjumpprep()
 			state = states.superjump
 			sprite_index = spr_player_superjump
 			image_index = 0
-			verticalMovespeed = -11
+			verticalMovespeed = -12
 			vsp = verticalMovespeed
 			create_particleStatic(spr_explosioneffect, x, y, 1)
 		}
@@ -73,17 +73,29 @@ function scr_player_superjump()
 		}
 		else
 			movespeed = 0
-		if (key_attack2 || key_slap2) && sprite_index != spr_player_spinout
+		if key_down_pressed && character == characters.mildred
+		{
+			if move != 0
+				xscale = move
+			state = states.buzzsaw
+			image_index = 0
+			sprite_index = spr_player_buzzsawFastFall
+			movespeed = 8
+			vsp = 14
+			fmod_studio_event_instance_start(soundsBuzzsaw)
+			FMODSet3dPos(soundsBuzzsaw, x, y)
+		}
+		if (key_attack_pressed || key_grab_pressed) && sprite_index != spr_player_spinout
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 			sprite_index = spr_player_superjumpcancelstart
 			image_index = 0
 			FMODevent_oneshot("event:/Sfx/Player/superjumpcancel", x, y)
 		}
-		if place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_ballofbeer) && !place_meeting(x, y - 1, obj_destructibles)
+		if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_ballofbeer) && !place_meeting(x, y - 1, obj_destructibles)
 		{
 			fmod_studio_event_instance_stop(soundsSuperjump, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
-			shake_camera(15)
+			shake_camera(10, 30)
 			sprite_index = spr_player_hitceiling
 			image_index = 0
 			state = states.freefallland
@@ -109,6 +121,7 @@ function scr_player_superjump()
 			create_particleStatic(spr_grabcloud, x, y, xscale, 1)
 			movespeed = 12
 			state = states.mach3
+			flash = true
 			jumpstop = true
 			vsp = -5
 			sprite_index = spr_player_superjumpcancel

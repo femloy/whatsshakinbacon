@@ -42,7 +42,7 @@ switch global.Fullscreen
 		window_set_fullscreen(true);
 		break
 }
-global.option_hud = ini_read_real("Visual", "showHud", false)
+global.option_hud = ini_read_real("Visual", "showHud", true)
 global.unfocus_mute = ini_read_real("General", "UnfocusMute", true)
 global.dirSuper = ini_read_real("General", "dirSuper", true)
 global.dirGround = ini_read_real("General", "dirGround", true)
@@ -58,7 +58,7 @@ ini_open(global.saveFile)
 
 global.cutscenes = {}
 global.cutscenes.miltonIntro = ini_read_real("Cutscenes", "miltonIntro", false)
-obj_player.palIndex = ini_read_real("Game", "Palette", 1)
+obj_player.palette_index = ini_read_real("Game", "Palette", 1)
 
 global.fun = irandom_range(0, 100)
 

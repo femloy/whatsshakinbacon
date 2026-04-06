@@ -28,7 +28,7 @@ function wrap(_variable, _minimum, _maximum)
 /// @param offset // is actually bullshit because it does fucking nothing to the output, thanks whoever wrote this function! (IT WAS UNOWN)
 function wave(from, to, duration, offset) {
 	var a4 = (to - from) * 0.5;
-	return from + a4 + sin((((current_time * 0.001) + duration - offset) / duration) * (pi * 2)) * a4;	
+	return from + a4 + sin(((((current_time - offset) * 0.001) + duration) / duration) * (pi * 2)) * a4;	
 }
 
 /// @description Returns true or false depending on RNG.

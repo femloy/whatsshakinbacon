@@ -14,39 +14,39 @@ if (!ds_list_empty(afterimages))
 					_blend = image_blend
 					break
 				case afterimagetype.fade:
-					pal_swap_set(obj_player.spr_palette, obj_player.palIndex, false)
+					pal_swap_set(obj_player.sprites.player_pal, obj_player.palette_index, false)
 					_blend = image_blend
 					_shd = true
 					_drawPattern = true
 					break
 				case afterimagetype.buzzsaw:
-					var _col = #ab39f5
-					var _col2 = #ec94ff
+					var _col = global.characters[obj_player.character].mainColors.main
+					var _col2 = global.characters[obj_player.character].mainColors.secon
 					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
 					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
-					shader_set_uniform_f_array(other.uniformLight, [col[0], col[1], col[2]])
-					shader_set_uniform_f_array(other.uniformDark, [col2[0], col2[1], col2[2]])
+					shader_set_uniform_f_array(other.uniformLight, col)
+					shader_set_uniform_f_array(other.uniformDark, col2)
 					_shd = true
 					break
 				case afterimagetype.mach:
-					var _col2 = merge_colour(image_blend, c_black, 0.5)
 					var _col = image_blend
-					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
-					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
+					col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
+					var _col2 = c_black
+					col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
-					shader_set_uniform_f_array(other.uniformLight, [col[0], col[1], col[2]])
-					shader_set_uniform_f_array(other.uniformDark, [col2[0], col2[1], col2[2]])
+					shader_set_uniform_f_array(other.uniformLight, col)
+					shader_set_uniform_f_array(other.uniformDark, col2)
 					_shd = true
 					break	
 				case afterimagetype.selectcolor:
-					var _col2 = selectcolor2
 					var _col = selectcolor
-					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
-					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
+					var _col2 = selectcolor2
+					col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
+					col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
-					shader_set_uniform_f_array(other.uniformLight, [col[0], col[1], col[2]])
-					shader_set_uniform_f_array(other.uniformDark, [col2[0], col2[1], col2[2]])
+					shader_set_uniform_f_array(other.uniformLight, col)
+					shader_set_uniform_f_array(other.uniformDark, col2)
 					_shd = true
 					break
 				case afterimagetype.milton:
@@ -55,8 +55,8 @@ if (!ds_list_empty(afterimages))
 					var col = [ color_get_red(_col) / 255, color_get_green(_col) / 255, color_get_blue(_col) / 255 ]
 					var col2 = [ color_get_red(_col2) / 255, color_get_green(_col2) / 255, color_get_blue(_col2) / 255 ]
 					shader_set(shd_fullshade)
-					shader_set_uniform_f_array(other.uniformLight, [col[0], col[1], col[2]])
-					shader_set_uniform_f_array(other.uniformDark, [col2[0], col2[1], col2[2]])
+					shader_set_uniform_f_array(other.uniformLight, col)
+					shader_set_uniform_f_array(other.uniformDark, col2)
 					_shd = true
 					break
 				case afterimagetype.attack:
@@ -70,7 +70,7 @@ if (!ds_list_empty(afterimages))
 				shader_reset()
 			if _drawPattern
 			{
-				pattern_draw(sprite_index, image_index, x, y, image_xscale, 1, 0, _blend, image_alpha * alpha, global.patternSpr, global.PlayerCharacters[obj_player.character].patColors, obj_player.spr_palette, obj_player.palIndex)
+				pattern_draw(sprite_index, image_index, x, y, image_xscale, 1, 0, _blend, image_alpha * alpha, global.patternSpr, obj_player.sprites.palette_colors, obj_player.sprites.player_pal, obj_player.palette_index)
 			}
 			reset_blendmmode()
 		}

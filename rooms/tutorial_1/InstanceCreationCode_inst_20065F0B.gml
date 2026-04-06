@@ -1,0 +1,1 @@
+text = "Sup bro, I'm your uncle bro, to jump bro, press [J], and hold [D] to crouch bro, you can use [U] to ender doors bro."

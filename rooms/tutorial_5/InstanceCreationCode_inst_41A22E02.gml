@@ -1,0 +1,1 @@
+text = "Bro I almost forgot bro, you can perform a grab dash by pressing [G] bro, this can break those regular crates up ahead bro. You can also do a long jump from it with [J] bro."

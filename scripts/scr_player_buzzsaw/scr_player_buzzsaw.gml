@@ -4,8 +4,8 @@ function scr_player_buzzsaw()
 	get_input()
 	image_speed = 0.7
 	hsp = movespeed * xscale
-	if movespeed > 14
-		movespeed = 14
+	if movespeed > 13
+		movespeed = 13
 	var move = key_right + key_left
 	buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
 	if buffers.afterimageBlur == 0
@@ -13,24 +13,14 @@ function scr_player_buzzsaw()
 		buffers.afterimageBlur = 3
 		create_buzzsawAfterimage(sprite_index, image_index, x, y, xscale)
 	}
-	if key_down2
+	if key_down_pressed
 	{
 		if vsp < 10
 			vsp = 10
 		sprite_index = spr_player_buzzsawFastFall
 	}
-	if vsp >= -grav && vsp < 10
-		vsp += 0.15
-	if !grounded && key_jump2 && key_down
-	{
-		fmod_studio_event_instance_stop(soundsBuzzsaw, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
-		vsp = -6
-		sprite_index = sprites.divebomb
-		image_index = 0
-		state = states.groundpoundstart
-		squashX = 1.3
-		squashY = 0.8
-	}
+	if vsp > 0
+		vsp += 0.1
 	if place_meeting(x + sign(hsp), y, obj_solid) && !grounded && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_secretmetalblock) && !place_meeting(x + hsp, y, obj_destructibles)
 	{
 		if vsp < 10

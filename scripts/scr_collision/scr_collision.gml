@@ -67,6 +67,8 @@ function scr_collision()
 	}
 	
 	grounded |= scr_solid(x, y + 1)
+	if grounded
+		y = floor(y)
 }
 
 function scr_slope(_x, _y)
@@ -104,10 +106,17 @@ function scr_solid(_x, _y)
 								_collided = true
 								break
 							case obj_slope:
-								_collided = scr_slope_collideCheck(_self_id, _x, _y)
+								if scr_slope_collideCheck(_self_id, _x, _y)
+									_collided = true
 								break
 							case obj_platform:
-								_collided = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
+								var _top = false
+								if sign(image_yscale) < 0
+									_top = (_self_id.bbox_top - 1 >= bbox_top + 1) && _self_id.vsp <= 0
+								else
+									_top = (_self_id.bbox_bottom - 1 <= bbox_top + 1) && _self_id.vsp >= 0
+								if _top
+									_collided = true
 								break
 						}
 					}

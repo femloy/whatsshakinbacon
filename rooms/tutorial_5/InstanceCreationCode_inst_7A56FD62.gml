@@ -1,0 +1,1 @@
+text = "Bro, you can use [D] to go down ladders from platforms."

@@ -19,6 +19,7 @@ if cutscene = true
 {
 	with obj_player
 	{
+		state = -4
 		vsp = 0
 		hsp = 0
 		x = approach(x, other.x, 3)

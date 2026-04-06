@@ -1,15 +1,13 @@
-x = SCREEN_WIDTH / 2
-y = -200
-FMODevent_oneshot("event:/Music/General/timesup", x, y)
-alarm[0] = 60 * 2.9
-alarm[1] = 60 * 6
-vsp = 0
-falling = false
-depth = 15
+wasParty = false
+if global.escape.party
+	wasParty = true
+
 generalReset()
 
 with obj_music
 	stop_music()
+if wasParty
+	FMODevent_oneshot("event:/Music/General/rtrend")
 	
 with obj_player
 {
@@ -20,3 +18,8 @@ with obj_player
 	image_index = 0
 	image_speed = 0.35
 }
+
+y = SCREEN_HEIGHT / 2
+x = -(SCREEN_WIDTH / 2)
+vsp = 0
+whiteAlpha = 0

@@ -16,6 +16,7 @@ if cutscene
 		{
 			instance_create(x, y, obj_lap2visual)
 			global.escape.party = true
+			obj_hud.lapbar.time = 60 * 15
 			with obj_player
 			{
 				jumpstop = true

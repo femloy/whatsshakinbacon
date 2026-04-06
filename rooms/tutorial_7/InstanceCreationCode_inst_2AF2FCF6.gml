@@ -1,0 +1,1 @@
+text = "Bro, this is the Monolith Mary bro, she's very sickly, taking her out will make you sleepy as hell bro! You'll start hallucinating things bro, get back to the start before you fall asleep bro!"

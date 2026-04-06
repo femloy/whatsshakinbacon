@@ -14,40 +14,8 @@ if hitstun.is == false
 			scr_enemy_turn()
 			break
 		case states.move:
+			scr_enemy_move()
 			attackTimer--
-			image_speed = 0.35
-			hsp = movespeed * xscale
-			movespeed = 1
-			if buffers.step <= 0
-			{
-				buffers.step = 45
-				create_particleStatic(spr_cloudeffect, x, y + 42, 1, 1)
-			}
-			buffers.step--
-			sprite_index = spr_move
-			if place_meeting(x + xscale, y, obj_solid) ||
-			place_meeting(x + xscale, y, obj_hallway) ||
-			!(place_meeting(x + xscale * 15, y + 31, obj_solid) ||
-			place_meeting(x + xscale * 15, y + 31, obj_slope) ||
-			place_meeting(x + xscale * 15, y + 31, obj_platform)) &&
-			grounded
-			{
-				image_speed = 0.35
-				xscale *= -1
-			}
-			if point_distance(x, 0, obj_player.x, 0) <= 32 * 10 && 
-			point_distance(0, y, 0, obj_player.y) <= 32 * 5 && 
-			(obj_player.state == states.mach3 || obj_player.state == states.buzzsaw || (obj_player.state == states.hammerattack && obj_player.movespeed >= 16))
-			{
-				vsp = -5
-				if obj_player.x != x
-					xscale = sign(obj_player.x - x)
-				sprite_index = spr_scared
-				scared = 120
-				state = states.stun
-				if chance(1 / 100)
-					FMODevent_oneshot("event:/Sfx/General/Enemy/scream", x, y)
-			}
 			break
 		case states.grab:
 			scr_enemy_grabbed()
@@ -69,7 +37,7 @@ if hitstun.is == false
 				{
 					image_xscale = other.xscale
 				}
-				FMODevent_oneshot("event:/Sfx/General/Enemy/dart", x, y)
+				FMODevent_oneshot("event:/Sfx/General/Enemy/Ant/dart", x, y)
 			}
 			if animation_end() && sprite_index == spr_cocoant_shoot
 			{

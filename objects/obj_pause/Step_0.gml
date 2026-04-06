@@ -1,5 +1,5 @@
 if !instance_exists(obj_option) && !instance_exists(obj_feats)
-getMenu_input()
+get_menu_input()
 
 var _nopauseRooms = 
 room == rm_intro ||
@@ -15,23 +15,23 @@ if !active
 {
 	graphBack.alpha = approach(graphBack.alpha, 0, 0.1)
 }
-if !active && key_start2 && !_nopauseRooms
+if !active && key_start_pressed && !_nopauseRooms
 { 
 	doPause()
 }
 else if active && !instance_exists(obj_option) && !instance_exists(obj_feats) && buffer == 0
 {
 	graphBack.alpha = approach(graphBack.alpha, 0.4, 0.01)
-	var move = key_down2 - key_up2
+	var move = key_down_pressed - key_up_pressed
 	if move != 0
 	{
 		selected += move
 		FMODevent_oneshot("event:/Sfx/UI/Pause/lettermove")
 	}
 	selected = clamp(selected, 0, array_length(options) - 1)
-	if key_slap2 || key_start2
+	if key_grab_pressed || key_start_pressed
 		doUnpause()
-	if key_jump2
+	if key_jump_pressed
 		options[selected].func()
 	var _pos = fmod_studio_event_instance_get_timeline_position(pauseMusic) * 0.01
 }

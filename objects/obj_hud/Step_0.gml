@@ -1,11 +1,11 @@
-var sprites = global.PlayerCharacters[obj_player.character].sprites.tv
+var sprites = global.characters[obj_player.character].sprites.tv
 
 visible = hudVisible()
 with kettle
 {
 	kx = x + irandom_range(shake, -shake)
-	ky = y + irandom_range(shake, -shake)
-	shake = approach(shake, 0, 0.5)
+	ky = y + irandom_range(-shake, shake)
+	shake = max(shake - 0.5, 0)
 	rankScale = approach(rankScale, 1, 0.2)
 	cloudIndex += 0.15
 }
@@ -20,8 +20,10 @@ with tv
 		_idleSprite = spr_tv_secret
 	if global.escape.active && !isSecret
 		_idleSprite = spr_tv_escape
-	if global.combo.amt >= 15 && !isSecret
+	if global.combo.amt >= 10 && !isSecret
 		_idleSprite = spr_tv_combo
+	if global.combo.amt >= 50 && !isSecret
+		_idleSprite = spr_tv_heat
 	if obj_player.state == states.ski
 		_idleSprite = spr_tv_ski
 	if global.escape.party && global.escape.active
@@ -69,6 +71,7 @@ with tv
 				case spr_tv_escape:
 				case sprites.idle:
 				case spr_tv_combo:
+				case spr_tv_heat:
 				case spr_tv_ski:
 				case spr_tv_idle_anim1:
 					idle--
@@ -114,14 +117,21 @@ var _escape = global.escape.active == true
 if !_secret
 	global.escape.timer = approach(global.escape.timer, 0, 1)
 	
-if (global.escape.timer == 0 && !global.escape.party && !_secret && global.level != "tutorial" && _escape) && !instance_exists(obj_hipnatuese) 
-	instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
+//if (global.escape.timer == 0 && !global.escape.party && !_secret && global.level != "tutorial" && _escape) && !instance_exists(obj_hipnatuese) 
+	//instance_create(obj_player.x, obj_player.y, obj_hipnatuese)
 
 /*if global.escape.active && global.escape.party && !instance_exists(obj_stayawake_mash) && !instance_exists(obj_hipnatuese) && !_secret
 {
 	if alarm[1] <= 0
 		alarm[1] = 60 * 10
 }*/
+
+if global.escape.active
+{
+	if alarm[0] <= 0
+		alarm[0] = 60
+}
+
 if (!ds_list_empty(collectVis))
 {
 	for (var i = 0; i < ds_list_size(collectVis); i++)

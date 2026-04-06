@@ -32,7 +32,7 @@ if place_meeting(x, y, obj_player)
 			}
 			else if sign(other.image_yscale) == -1
 			{
-				state = states.groundpound
+				
 				sprite_index = spr_player_spinout
 				image_index = 0
 				create_particleStatic(spr_cloudeffect, x, y, 1, 1)

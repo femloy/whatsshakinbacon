@@ -105,6 +105,10 @@
 		<property name="volume">
 			<value>-4.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{0adb0746-3188-4714-885d-07d00ef5de14}</destination>
+			<destination>{18ded378-8b85-4e42-9de2-20835a0379ef}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{1044ca7d-2775-4982-a69a-ddd5a2a5502d}</destination>
 		</relationship>
@@ -129,6 +133,22 @@
 		</property>
 		<property name="minimumExtent">
 			<value>10</value>
+		</property>
+	</object>
+	<object class="LFOModulator" id="{0adb0746-3188-4714-885d-07d00ef5de14}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="depth">
+			<value>10</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{18ded378-8b85-4e42-9de2-20835a0379ef}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>12</value>
 		</property>
 	</object>
 </objects>

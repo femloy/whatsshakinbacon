@@ -11,10 +11,14 @@ function scr_player_mach3()
 	if !instance_exists(speedlineseffect) && movespeed > 13
 		speedlineseffect = instance_create(x, y, obj_speedlines)
 	buffers.bigdashcloud--
-	if buffers.bigdashcloud <= 0 && grounded
+	if buffers.bigdashcloud <= 0
 	{
-		buffers.bigdashcloud = 24
-		create_particleStatic(spr_superdashcloud, x, y, xscale, 1)
+		if mach4mode && !grounded {}
+		else
+		{
+			buffers.bigdashcloud = mach4mode ? 24 : 12
+			create_particleStatic(mach4mode ? spr_superdashcloud : spr_crazyruneffect, x, y, xscale, 1)
+		}
 	}
 	
 	
@@ -47,8 +51,8 @@ function scr_player_mach3()
 		flash = true
 	}
 	mach4mode = character == characters.milton ? movespeed >= 24 : movespeed >= 16
-	if movespeed < 18
-		slope_momentum(0.1)
+	if movespeed < 18 && movespeed > 10
+		slope_momentum()
 	if sprite_index == sprites.crazyrun
 	{
 		buffers.afterimageBlur = approach(buffers.afterimageBlur, 0, 1)
@@ -167,7 +171,7 @@ function scr_player_mach3()
 		}
 		state = states.tumble
 		create_particleStatic(spr_grabcloud, x, y, xscale, 1)
-		if key_slap2
+		if key_grab_pressed
 			slapBuffer = 2
 	}
 	doGrab()

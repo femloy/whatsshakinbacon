@@ -1,0 +1,1 @@
+text = "Bro... I know you're one of those lovebirds or something bro, there are many little areas like these bro, but they're a little secret, so keep your eyes peeled bro."

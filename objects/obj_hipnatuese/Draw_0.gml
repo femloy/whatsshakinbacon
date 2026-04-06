@@ -1,3 +1,7 @@
 draw_set_color(c_white)
 draw_self()
+gpu_set_blendmode(bm_add)
+draw_sprite_ext(sprite_index, image_index, x + wave(5, -5, 1, 0), y, 1, 1, image_angle, image_blend, image_alpha / 4)
+draw_sprite_ext(sprite_index, image_index, x - wave(5, -5, 1, 0), y, 1, 1, image_angle, image_blend, image_alpha / 4)
+reset_blendmmode()
 draw_set_color(c_white)

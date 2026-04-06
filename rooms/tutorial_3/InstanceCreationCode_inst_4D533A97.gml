@@ -1,0 +1,1 @@
+text = "Bro, now that you know how to go DOWN, now lets try going UP bro, while at mach 3, press and hold [U] to begin a superjump bro, release it to go as high as the ceiling allows you! you can use [L][R] to reposition yourself too bro."
