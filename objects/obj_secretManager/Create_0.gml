@@ -16,7 +16,7 @@ fadein = true
 stateTimer = 60 * 1.5
 patternIndex = irandom_range(0, sprite_get_number(spr_tileDoodles))
 tileSurf = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT);
-depth = 50
+depth = 80
 
 need_mask_update = false;
 global.secretCount++

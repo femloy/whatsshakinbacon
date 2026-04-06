@@ -13,7 +13,7 @@ if place_meeting(x, y, obj_player)
 				spr_palette = spr_playerPal
 				paletteIndex = other.palette_index
 				spr_pattern = global.patternSpr
-				patColors = global.characters[other.character].sprites.patColors
+				patColors = global.characters[other.character].sprites.player.palette_colors
 				hsp = random_range(-7, 7)
 				vsp = random_range(-10, -14)
 			}
