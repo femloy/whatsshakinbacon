@@ -2,10 +2,10 @@
   "$GMSprite":"v2",
   "%Name":"spr_secret_transition_balloons",
   "bboxMode":0,
-  "bbox_bottom":230,
-  "bbox_left":0,
-  "bbox_right":147,
-  "bbox_top":0,
+  "bbox_bottom":224,
+  "bbox_left":6,
+  "bbox_right":135,
+  "bbox_top":15,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -14,8 +14,6 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"a080c636-1763-4c40-8be9-ce64f1228789","name":"a080c636-1763-4c40-8be9-ce64f1228789","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"2ef32a5c-59b5-4a39-b658-2c160fa78086","name":"2ef32a5c-59b5-4a39-b658-2c160fa78086","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"60f9aad2-dd4e-473b-a234-d332dafecc1d","name":"60f9aad2-dd4e-473b-a234-d332dafecc1d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"37d119c5-b29a-450e-8c38-3256d247d318","name":"37d119c5-b29a-450e-8c38-3256d247d318","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -52,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -77,12 +75,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2ef32a5c-59b5-4a39-b658-2c160fa78086","path":"sprites/spr_secret_transition_balloons/spr_secret_transition_balloons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"68a7af28-9545-43c2-89a0-b70da4717d2f","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"60f9aad2-dd4e-473b-a234-d332dafecc1d","path":"sprites/spr_secret_transition_balloons/spr_secret_transition_balloons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7f6146dc-daf5-48ab-93b7-63cedbba6f59","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"37d119c5-b29a-450e-8c38-3256d247d318","path":"sprites/spr_secret_transition_balloons/spr_secret_transition_balloons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c3cff232-3174-4ef3-acec-f8c0a162f7a4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

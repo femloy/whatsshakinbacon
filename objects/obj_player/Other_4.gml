@@ -26,7 +26,7 @@ if instance_exists(doorOBJ)
 	else 
 	{
 		if hallway
-			x = doorOBJ.x + 16 + (32 * 6 * hallwayDirection)
+			x = doorOBJ.x + 16 + (32 * 3 * hallwayDirection)
 		else
 			x = doorOBJ.x + 16
 			

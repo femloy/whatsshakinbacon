@@ -10,12 +10,12 @@ if super
 		reset_blendmmode()
 	}
 }
-pal_swap_set(spr_palette, palIndex, false)
+pal_swap_set(sprites.player_pal, palette_index, false)
 draw_sprite_ext(sprite_index, image_index, x, y, xscale * xscaleMulti * squashX, 1 * yscaleMulti * squashY, image_angle, image_blend, image_alpha)
 shader_reset()
 squashX = lerp(squashX, 1, 0.25)
 squashY = lerp(squashY, 1, 0.25)
-pattern_draw(sprite_index, image_index, x, y, xscale * xscaleMulti * squashX, 1 * yscaleMulti * squashY, image_angle, image_blend, image_alpha, global.patternSpr, global.PlayerCharacters[character].patColors)
+pattern_draw(sprite_index, image_index, x, y, xscale * xscaleMulti * squashX, 1 * yscaleMulti * squashY, image_angle, image_blend, image_alpha, global.patternSpr, sprites.palette_colors)
 
 if flash
 {

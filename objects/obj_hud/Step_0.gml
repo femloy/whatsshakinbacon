@@ -1,11 +1,11 @@
-var sprites = global.PlayerCharacters[obj_player.character].sprites.tv
+var sprites = global.characters[obj_player.character].sprites.tv
 
 visible = hudVisible()
 with kettle
 {
 	kx = x + irandom_range(shake, -shake)
-	ky = y + irandom_range(shake, -shake)
-	shake = approach(shake, 0, 0.5)
+	ky = y + irandom_range(-shake, shake)
+	shake = max(shake - 0.5, 0)
 	rankScale = approach(rankScale, 1, 0.2)
 	cloudIndex += 0.15
 }

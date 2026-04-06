@@ -11,13 +11,13 @@ if place_meeting(x, y, obj_player)
 				sprite_index = spr_mildred_clothes
 				usePalette = true
 				spr_palette = spr_playerPal
-				paletteIndex = other.palIndex
+				paletteIndex = other.palette_index
 				spr_pattern = global.patternSpr
-				patColors = global.PlayerCharacters[other.character].patColors
+				patColors = global.characters[other.character].sprites.patColors
 				hsp = random_range(-7, 7)
 				vsp = random_range(-10, -14)
 			}
-			palIndex = other.palettes[other.selected].index
+			palette_index = other.palettes[other.selected].index
 			global.patternSpr = other.palettes[other.selected].sprite
 			FMODevent_oneshot("event:/Sfx/General/dresser", x, y)
 		}

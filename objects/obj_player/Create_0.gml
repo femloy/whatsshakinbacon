@@ -63,30 +63,41 @@ enum states
 
 enum characters
 {
-	mildred = 0,
-	milton = 1
+	mildred,
+	milton
 }
 
-global.PlayerCharacters = []
-global.PlayerCharacters[0] = {
-	initials: "B",
-	name: "Mildred",
-	sprites: get_characterspr(characters.mildred),
-	patColors: spr_playerPatColors,
-	playerPal: spr_playerPal,
-	patternSpr: spr_playerPat_threads
+global.characters = {}
+
+function character_get_color(_palette, _index)
+{
+	var col = {
+		main: #FFFFFF,
+		secon: #FFFFFF,
+	}
+	var _temp_surface = surface_create(sprite_get_width(_palette), sprite_get_height(_palette))
+	
+	surface_set_target(_temp_surface)
+	draw_clear_alpha(c_black, 0)
+	draw_sprite(_palette, 0, 0, 0)
+	surface_reset_target()
+	
+	col.main = surface_getpixel(_temp_surface, _index, 2)
+	col.secon = surface_getpixel(_temp_surface, _index, 6)
+	surface_free(_temp_surface)
+	
+	return col
 }
-global.PlayerCharacters[1] = {
-	initials: "T",
-	name: "Milton",
-	sprites: get_characterspr(characters.milton),
-	patColors: spr_miltonPatColors,
-	playerPal: spr_miltonPal,
-	patternSpr: spr_playerPat_miltonTears
+
+global.characters[characters.mildred] =
+{
+	sprites: get_characterspr(characters.mildred),
+	mainColors: {}
 }
 
 character = characters.mildred
-sprites = get_characterspr(characters.mildred)
+sprites = global.characters[character].sprites.player
+palette_index = 1
 
 isMildred = true
 isMilton = false
@@ -145,9 +156,6 @@ if !variable_global_exists("saveroom")
 	global.waybackIntro = false
 	global.damage_count = 0
 }
-
-spr_palette = spr_playerPal
-palIndex = 1
 
 jumpstop = false
 door = "A"

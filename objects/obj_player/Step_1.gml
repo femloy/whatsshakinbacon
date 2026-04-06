@@ -14,6 +14,8 @@ playerSounds()
 isMildred = character == characters.mildred
 isMilton = character == characters.milton
 
+global.characters[character].mainColors = character_get_color(sprites.player_pal, palette_index)
+
 if supertaunt >= 10 && !canSupertaunt
 {
 	ini_open(global.saveFile)
@@ -29,19 +31,3 @@ if supertaunt >= 10 && !canSupertaunt
 }
 else if supertaunt < 10 && canSupertaunt
 	canSupertaunt = false
-
-if sprites != global.PlayerCharacters[character].sprites.player
-{
-	sprites = global.PlayerCharacters[character].sprites.player
-	spr_palette = global.PlayerCharacters[character].playerPal
-	global.patternSpr = global.PlayerCharacters[character].patternSpr
-	if character == characters.milton
-		palIndex = 1 // makes him Work.
-	ini_open(global.saveFile)
-	if ini_read_string("Game", "Pattern", "spr_playerPat_threads") != -1 && character == characters.mildred // change/remove when miton has stuff Tu!
-	{
-		global.patternSpr = asset_get_index(ini_read_string("Game", "Pattern", "spr_playerPat_threads"))
-		aalIndex = ini_read_real("Game", "Palette", 1)
-	}
-	ini_close()
-}

@@ -25,7 +25,6 @@ function doPause()
 {
 	fmod_studio_event_instance_set_parameter_by_name(pauseMusic, "state", obj_player.character == characters.milton)
 	playeractiveState = obj_player.state
-	playerPalIndex = obj_player.palIndex
 	character = obj_player.character
 	isMilton = obj_player.character == characters.milton
 	active = true

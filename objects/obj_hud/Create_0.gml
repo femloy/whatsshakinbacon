@@ -60,7 +60,7 @@ lapbar.color = 0
 hudVisible = function()
 {
 	var isHub = string_pos("hotel", string_letters(room_get_name(room))) > 0 && !global.escape.active
-	var _rooms = room == rm_intro ||room == rank_room || room == Levelselect || room == Mainmenu || room == serverMenuShit || isHub || (global.level == "tutorial") || room == timesup_room || room == credits_room
+	var _rooms = room == rm_intro ||room == rank_room || room == Levelselect || room == Mainmenu || isHub || (global.level == "tutorial") || room == timesup_room || room == credits_room
 	return !_rooms
 }
 

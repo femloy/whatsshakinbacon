@@ -17,7 +17,7 @@ var _yy = SCREEN_HEIGHT / 2 + irandom_range(shake, -shake)
 if showRank
 {
 	draw_sprite(rankspr, rankIndex, _xx, _yy)
-	pal_swap_set(obj_player.spr_palette, obj_player.palIndex, false)
+	pal_swap_set(obj_player.sprites.player_pal, obj_player.palette_index, false)
 	draw_sprite(rankspr, rankIndex, _xx, _yy)
 	shader_reset()
 	pattern_draw(rankspr, rankIndex, _xx, _yy, 1, 1, 0, c_white, 1, global.patternSpr, spr_playerPatColors)

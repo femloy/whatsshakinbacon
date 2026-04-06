@@ -251,10 +251,10 @@ with tv
 {
 	if sprite_index != spr_tv_turnon
 		draw_sprite(spr_tv_bg, backindex, x, y - offset)
-	pal_swap_set(obj_player.spr_palette, obj_player.palIndex, false)
+	pal_swap_set(obj_player.sprites.player_pal, obj_player.palette_index, false)
 	draw_sprite(sprite_index, image_index, x, y - offset)
 	shader_reset()
-	pattern_draw(sprite_index, image_index, x, y - offset, 1, 1, 0, c_white, 1, global.patternSpr, global.PlayerCharacters[obj_player.character].patColors)
+	pattern_draw(sprite_index, image_index, x, y - offset, 1, 1, 0, c_white, 1, global.patternSpr, obj_player.sprites.palette_colors)
 	if state == states.move
 		draw_sprite(spr_tv_switch, switchindex, x, y - offset)
 	if sprite_index != spr_tv_turnon

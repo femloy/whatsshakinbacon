@@ -58,7 +58,7 @@ ini_open(global.saveFile)
 
 global.cutscenes = {}
 global.cutscenes.miltonIntro = ini_read_real("Cutscenes", "miltonIntro", false)
-obj_player.palIndex = ini_read_real("Game", "Palette", 1)
+obj_player.palette_index = ini_read_real("Game", "Palette", 1)
 
 global.fun = irandom_range(0, 100)
 

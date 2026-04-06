@@ -6,7 +6,7 @@ indicatorAlpha = 0
 indicator = false
 
 //Add Palettes
-addPalette = function(_name, _desc, _index, _unlocked = true, _pattern = global.PlayerCharacters[obj_player.character].patternSpr)
+addPalette = function(_name, _desc, _index, _unlocked = true, _pattern = spr_playerPat_threads)
 {
 	var q =	{ pName: _name, desc: _desc, index: _index, sprite: _pattern }
 	if _unlocked
@@ -33,7 +33,7 @@ for (var i = 0; i < array_length(palettes); i++)
 {
 	var q = palettes[i].index
 	var p = palettes[i].sprite
-	if q == obj_player.palIndex && p == global.patternSpr
+	if q == obj_player.palette_index && p == global.patternSpr
 	{
 		selected = i
 		break

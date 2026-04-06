@@ -681,27 +681,12 @@ function get_characterspr(character)
 			st.player.dive = spr_player_dive
 			st.player.divebomb = spr_player_divebomb
 			st.player.gateslam = spr_player_gateslam
+			st.player.palette_colors = spr_playerPatColors
+			st.player.player_pal = spr_playerPal
 			//TV
 			st.tv.idle = spr_tv_idle
 			st.tv.mach3 = spr_tv_mach
 			st.tv.crazyrun = spr_tv_crazyrun
-			break
-		case characters.milton:
-			st.player.idle = spr_milton_idle
-			st.player.taunt = spr_milton_taunt
-			st.player.mach3 = spr_milton_mach3
-			st.player.mach3hit = spr_milton_mach3hit
-			st.player.mach3jump = spr_milton_mach3jump
-			st.player.rolling = spr_milton_roll
-			st.player.move = spr_milton_walk
-			st.player.crazyrun = spr_milton_crazyrun
-			st.player.dive = spr_milton_dive
-			st.player.divebomb = spr_player_divebomb
-			st.player.gateslam = spr_milton_gateslam
-			//TV
-			st.tv.idle = spr_tv_idleT
-			st.tv.mach3 = spr_tv_machT
-			st.tv.crazyrun = spr_tv_crazyrunT
 			break
 	}
 	
