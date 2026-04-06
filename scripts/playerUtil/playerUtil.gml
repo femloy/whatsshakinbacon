@@ -526,7 +526,7 @@ function doGrab()
 				FMODevent_oneshot("event:/Sfx/Player/uppercut", x, y)
 				slapBuffer = false
 				vsp = -16
-				if state == states.mach3 || state == states.mach2
+				if state == states.mach3 || sprite_index == spr_player_longjump || sprite_index == spr_player_longjumpend
 					sprite_index = spr_player_mach_uppercut
 				else
 					sprite_index = spr_player_uppercut
