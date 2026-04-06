@@ -1,18 +1,5 @@
 if func != -4
 	func()
-var _final = global.level == "hotel"
-if _final && escapePath == "event:/Music/General/escape"
-{
-	fmod_studio_event_instance_release(escapeInst)
-	escapePath = "event:/Music/General/finalescape"
-	escapeInst = FMODcreate_event("event:/Music/General/finalescape")
-}
-else if escapePath != "event:/Music/General/escape"
-{
-	fmod_studio_event_instance_release(escapeInst)
-	escapePath = "event:/Music/General/escape"
-	escapeInst = FMODcreate_event("event:/Music/General/escape")
-}
 
 
 if global.escape.active == false {
@@ -29,19 +16,27 @@ else {
 	else {
 		if fmod_studio_event_instance_get_paused(musicInst) == false
 			fmod_studio_event_instance_set_paused(musicInst, true)
-		if global.escape.party
+		var _final = global.level == "hotel"
+		if _final
 		{
-			fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
-			fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 2)
-			fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
-			
+			fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 3)
 		}
 		else
 		{
-			if global.escape.timer < (60 * 50) // 50 seconds, pinch time
-				fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 1)
+			if global.escape.party
+			{
+				fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
+				fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 2)
+				fmod_studio_event_instance_set_callback(escapeInst, FMOD_STUDIO_EVENT_CALLBACK.TIMELINE_BEAT)
+			
+			}
 			else
-				fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 0)
+			{
+				if global.escape.timer < (60 * 50) // 50 seconds, pinch time
+					fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 1)
+				else
+					fmod_studio_event_instance_set_parameter_by_name(escapeInst, "state", 0)
+			}
 		}
 	}
 }

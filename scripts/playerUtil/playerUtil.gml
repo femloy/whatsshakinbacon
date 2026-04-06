@@ -525,10 +525,13 @@ function doGrab()
 			else {
 				FMODevent_oneshot("event:/Sfx/Player/uppercut", x, y)
 				slapBuffer = false
-				state = states.uppercut
-				vsp = -17
-				sprite_index = spr_player_uppercut
+				vsp = -16
+				if state == states.mach3 || state == states.mach2
+					sprite_index = spr_player_mach_uppercut
+				else
+					sprite_index = spr_player_uppercut
 				image_index = 0
+				state = states.uppercut
 				create_particleStatic(spr_jumpeffect, x, y, 1, 1)
 				squashX = 1.5
 				squashY = 0.6

@@ -143,11 +143,6 @@ array_push(toppins, [ false, global.toppins.lime, SCREEN_HEIGHT, 2])
 array_push(toppins, [ false, global.toppins.bag, SCREEN_HEIGHT, 3])
 array_push(toppins, [ false, global.toppins.orange, SCREEN_HEIGHT, 4])
 
-backgroundX = 0
-backgroundY = 0
-backgroundAlpha = 0
-backgroundIndex = 0
-showBackground = false
 if !tutorial
 	alarm[3] = 35
 destroy = false

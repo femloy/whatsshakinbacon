@@ -83,7 +83,7 @@ function character_get_color(_palette, _index)
 	surface_reset_target()
 	
 	col.main = surface_getpixel(_temp_surface, _index, 2)
-	col.secon = surface_getpixel(_temp_surface, _index, 6)
+	col.secon = surface_getpixel(_temp_surface, _index, 5)
 	surface_free(_temp_surface)
 	
 	return col

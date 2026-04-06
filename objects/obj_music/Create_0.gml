@@ -9,7 +9,6 @@ panicStart = false
 func = -4
 monolith = FMODcreate_event("event:/Music/General/monolith")
 escapeInst = FMODcreate_event("event:/Music/General/escape")
-escapePath = "event:/Music/General/escape"
 pillar = 0
 currentMusic = ""
 pauseMusic = false

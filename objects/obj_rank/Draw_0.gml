@@ -8,10 +8,6 @@ draw_rectangle(0, 0, room_width, room_height, false)
 draw_set_color(c_white)
 draw_set_alpha(1)
 
-draw_set_alpha(backgroundAlpha)
-draw_sprite_tiled(spr_rankBackgrounds, backgroundIndex, backgroundX, backgroundY + wave(-50, 150, 4, 10))
-draw_set_alpha(1)
-
 var _xx = SCREEN_WIDTH / 2 + irandom_range(shake, -shake)
 var _yy = SCREEN_HEIGHT / 2 + irandom_range(shake, -shake)
 if showRank
