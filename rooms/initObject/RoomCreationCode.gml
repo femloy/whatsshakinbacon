@@ -51,6 +51,7 @@ global.option_screenshake = ini_read_real("General", "screenshake", true)
 global.option_timer = ini_read_real("General", "timer", true)
 global.option_timer_type = ini_read_real("General", "timerType", 0)
 global.option_speedrun_timer = ini_read_real("General", "speedrunTimer", false)
+global.option_screen_effects = ini_read_real("General", "screen_effects", true)
 ini_close()
 global.saveFile = working_directory + "/saves/save.ini"
 

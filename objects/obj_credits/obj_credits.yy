@@ -9,8 +9,8 @@
   "name":"obj_credits",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cutscene",
+    "path":"folders/Objects/Cutscene.yy",
   },
   "parentObjectId":null,
   "persistent":false,

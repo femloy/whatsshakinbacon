@@ -23,6 +23,7 @@
   "option_video_vsync": "VSYNC",
   "option_video_filtering": "TEXTURE FILTERING",
   "option_video_hide_hud": "SHOW HUD",
+  "option_video_screen_effects": "SCREEN EFFECTS",
 
   "option_game": "GAME",
   "option_rumble": "RUMBLE",

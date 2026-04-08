@@ -319,6 +319,15 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 		q.val = global.option_hud
 	}, global.option_hud, 1)
 
+	add_option_ext(VIDEO, option.multi, "option_video_screen_effects", function()
+	{
+		var m = menus[currentmenu]
+		var opt = m.options
+		var q = opt[selected]
+		global.option_screen_effects = q.val
+		q.val = global.option_screen_effects
+	}, global.option_screen_effects, 1)
+
 #endregion
 
 #region Game

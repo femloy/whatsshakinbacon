@@ -10,8 +10,8 @@
   "name":"obj_intro_video",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Intro",
+    "path":"folders/Objects/Cutscene/Intro.yy",
   },
   "parentObjectId":null,
   "persistent":false,
