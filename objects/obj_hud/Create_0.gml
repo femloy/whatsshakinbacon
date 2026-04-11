@@ -12,6 +12,7 @@ kettle.shake = 0
 kettle.lastcollect = -4
 kettle.colorarray = []
 kettle.badnum = []
+kettle.rankPerc = 0
 depth = -500
 
 collectVis = ds_list_create()

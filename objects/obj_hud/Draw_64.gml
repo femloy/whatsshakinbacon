@@ -42,7 +42,7 @@ with kettle
 	draw_set_font(global.kettleFont)
 	draw_set_halign(fa_left)
 	
-	var _xx = kx + 16 - (string_width(global.collect) / 2) - 4
+	var _xx = kx + 24 - (string_width(global.collect) / 2 / 1.1) - 4
 	if lastcollect != global.collect
 	{
 		colorarray = array_create(string_length(global.collect), 0)
@@ -59,7 +59,7 @@ with kettle
 		shader_set(shd_pal_swapper)
 		pal_swap_set(pal_kettlefont, colorarray[i], false)
 		draw_text(floor(_xx), floor(ky + 12 - offset + _yOffset), string_char_at(global.collect, i + 1))
-		_xx += string_width(global.collect) / string_length(global.collect)
+		_xx += (string_width(global.collect) / string_length(global.collect)) / 1.1
 		shader_reset()
 	}
 	//draw_text(kx + 16, ky + 12 - offset, global.collect)
@@ -83,9 +83,9 @@ with kettle
 		previousRank = rankindex
 		rankScale = 2
 	}
-	var rankX = x - 16
-	var rankY = y - offset
-	draw_sprite_ext(spr_hudRanks, rankindex, rankX + 160, rankY, rankScale, rankScale, 0, c_white, 1)
+	var rankX = x - 12
+	var rankY = y + 64
+	draw_sprite_ext(spr_hudRanks, rankindex, rankX, rankY, rankScale, rankScale, 0, c_white, 1)
 	var perc = 0
 	switch rankindex
 	{
@@ -108,11 +108,13 @@ with kettle
 			perc = global.collect / global.Crank
 		break
 	}
+	rankPerc = lerp(rankPerc, perc, 0.1)
+	perc = rankPerc
 	var amt = sprite_get_height(spr_hudRanksFill) * perc
 	var top = sprite_get_height(spr_hudRanksFill) - amt
 	var xo = sprite_get_xoffset(spr_hudRanksFill)
 	var yo = sprite_get_yoffset(spr_hudRanksFill)
-	draw_sprite_part_ext(spr_hudRanksFill, rankindex, 0, top, sprite_get_width(spr_hudRanksFill), sprite_get_height(spr_hudRanksFill) - top,  rankX + 160 - xo, rankY - yo + top, rankScale, rankScale, c_white, 1)
+	draw_sprite_part_ext(spr_hudRanksFill, rankindex, 0, top, sprite_get_width(spr_hudRanksFill), sprite_get_height(spr_hudRanksFill) - top,  rankX - xo, rankY - yo + top, rankScale, rankScale, c_white, 1)
 	if obj_player.x < 295 && obj_player.y < 170
 		offset = approach(offset, 300, 50)
 	else {

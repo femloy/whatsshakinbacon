@@ -5,7 +5,7 @@
 			<value>escapecollectBig</value>
 		</property>
 		<property name="outputFormat">
-			<value>5</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b65847ef-56d9-4776-a551-bea10eb80386}</destination>
@@ -78,6 +78,9 @@
 	<object class="EventMixerMaster" id="{263f6913-92f0-407d-92d4-c3763a216937}">
 		<property name="volume">
 			<value>1</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{11e91121-a7af-431c-8645-4aed7b9a5d2c}</destination>

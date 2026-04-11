@@ -5,7 +5,7 @@ with kettle
 {
 	kx = x + irandom_range(shake, -shake)
 	ky = y + irandom_range(-shake, shake)
-	shake = max(shake - 0.5, 0)
+	shake = max(shake - 2, 0)
 	rankScale = approach(rankScale, 1, 0.2)
 	cloudIndex += 0.15
 }
