@@ -1,1 +1,1 @@
-gameframe_caption_text = "The Nature Reserve of Fidelity Hotel"
+gameframe_caption_text = "Fidelity Hotel - Love, Lust, and Legacy"

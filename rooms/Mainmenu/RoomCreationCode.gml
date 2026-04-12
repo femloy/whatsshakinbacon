@@ -1,1 +1,1 @@
-gameframe_caption_text = "Welcome to Fidelity Hotel"
+gameframe_caption_text = "Now Playing: Fidelity Hotel"

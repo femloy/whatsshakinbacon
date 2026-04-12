@@ -84,8 +84,9 @@ function scr_player_walkfront()
 		}
 		else 
 		{
-			if room == wayback_1 && sprite_index != spr_player_wayback_umbrella && character == characters.mildred && sprite_index == sprites.gateslam
+			if room == wayback_1 && sprite_index != spr_player_wayback_umbrella && character == characters.mildred && sprite_index == sprites.gateslam && global.waybackIntro == false
 			{
+				global.waybackIntro = true
 				FMODevent_oneshot("event:/Sfx/General/Beaker Backyard/noumbrella")
 				sprite_index = spr_player_wayback_umbrella
 				image_index = 0

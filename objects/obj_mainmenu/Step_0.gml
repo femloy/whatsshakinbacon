@@ -75,7 +75,27 @@ switch scene
 		{
 			var q = saveFiles[i]
 			q.faceAlpha = approach(q.faceAlpha, (selectedFile == q.file) && q.created ? 1 : 0, 0.1)
-			q.movie.x = lerp(q.movie.x, selectedFile == q.file ? q.movie.saveX + 80 : q.movie.saveX, 0.25)
+			var _targetPos = q.movie.saveX + 80
+			if selectedFile != q.file
+				q.movie.state = 0
+			else
+			{
+				if q.movie.state == 0
+				{
+					q.movie.state = 1
+				}
+				if q.movie.state == 1
+				{
+					_targetPos = q.movie.saveX + 130
+					if q.movie.x >= q.movie.saveX + 100
+						q.movie.state = 2
+				}
+				if q.movie.state == 2
+				{
+					_targetPos = q.movie.saveX + 95
+				}
+			}
+			q.movie.x = lerp(q.movie.x, selectedFile == q.file ? _targetPos : q.movie.saveX, 0.25)
 			q.movie.y = lerp(q.movie.y, selectedFile == q.file ? q.movie.saveY - 5 : q.movie.saveY, 0.25)
 		}
 		
@@ -153,7 +173,8 @@ switch scene
 			}
 			else
 			{
-				q.movie.scale = approach(q.movie.scale, 100, 2)
+				q.movie.scale = approach(q.movie.scale, 100, q.movie.scaleSpeed)
+				q.movie.scaleSpeed += 1 / 5
 				if moviefade > 0
 					moviefade -= 5
 				else

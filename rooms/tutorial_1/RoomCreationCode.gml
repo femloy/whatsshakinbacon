@@ -1,0 +1,1 @@
+gameframe_caption_text = "Fidelity Hotel - Pilot"

@@ -53,7 +53,8 @@ function unlock_palette(_saveName, _index = 0, _pattern = spr_playerPat_threads)
 	ini_open(global.saveFile)
 	_unlocked = ini_read_real("Palette", _saveName, false)
 	ini_close()
-	
+	if !instance_exists(obj_achievementController)
+		instance_create(x, y, obj_achievementController)
 	if !_unlocked
 	{
 		array_push(obj_achievementController.achievementBuffer, [[_saveName, _pattern, _index], function(_palStuff)

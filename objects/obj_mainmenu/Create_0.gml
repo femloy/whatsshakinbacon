@@ -14,6 +14,7 @@ createSave = function(_save) constructor
 	movie = {}
 	movie.x = 341
 	movie.y = 253
+	movie.state = 0
 	switch _save
 	{
 		default:
@@ -38,6 +39,7 @@ createSave = function(_save) constructor
 	movie.index = _save
 	movie.alpha = 1
 	movie.scale = 1
+	movie.scaleSpeed = 0
 	ini_open(savePath)
 	created = ini_read_real("General", "created", false)
 	var _completionNum = 0

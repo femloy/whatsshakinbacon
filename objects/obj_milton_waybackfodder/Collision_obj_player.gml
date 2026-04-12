@@ -21,21 +21,4 @@ if ds_list_find_index(global.saveroom, id) == -1
 	create_particleStatic(spr_genericpoofeffect, x, y, 1, -2)
 	create_particleStatic(spr_bangeffect, x, y, 1)
 	scr_sleep(100)
-	var _dialog = instance_create(x, y - 32, obj_smallDialog)
-	with _dialog
-	{
-		target = obj_player
-		addDialog(dialogChars.mildred, "Good riddance...")
-		draw_set_font(global.npcfont)
-		draw_set_halign(fa_center)
-		global.textSize = 0.8
-		draw_text_oyh(x, y, dialogStuff[currentDialog].text, 800)
-		global.textSize = 1
-		var _stringArr = ds_map_find_value(global.textCache, dialogStuff[currentDialog].text)[0]
-		var _stringArrLength = array_length(_stringArr)
-		textLength = _stringArrLength
-		textLetter = 0
-		active = true
-		alarm[0] = 45
-	}
 }

@@ -1,1 +1,1 @@
-gameframe_caption_text = "You suck at Fidelity Hotel"
+gameframe_caption_text = "Fidelity Hotel - FIN"

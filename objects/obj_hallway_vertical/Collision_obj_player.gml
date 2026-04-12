@@ -1,4 +1,3 @@
-instance_destroy()
 with other
 {
 	door = other.targetDoor
