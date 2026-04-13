@@ -19,7 +19,7 @@
   "height":540,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"54f89c64-8f26-45b9-81cb-eaee4d70c546","blendMode":0,"displayName":"default","isLocked":false,"name":"54f89c64-8f26-45b9-81cb-eaee4d70c546","opacity":20.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"54f89c64-8f26-45b9-81cb-eaee4d70c546","blendMode":0,"displayName":"default","isLocked":false,"name":"54f89c64-8f26-45b9-81cb-eaee4d70c546","opacity":14.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"fg_beakerTrees",
   "nineSlice":null,

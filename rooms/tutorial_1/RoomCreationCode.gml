@@ -1,1 +1,1 @@
-gameframe_caption_text = "Fidelity Hotel - Pilot"
+gameframe_caption_text = "Fidelity Hotel: Pilot"

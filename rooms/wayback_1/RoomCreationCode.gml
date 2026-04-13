@@ -1,1 +1,1 @@
-gameframe_caption_text = "Fidelity Hotel - Love, Lust, and Legacy"
+gameframe_caption_text = "Fidelity Hotel: Love, Lust, and Legacy"

@@ -10,6 +10,5 @@ if ds_list_find_index(global.saveroom, id) == -1
 	create_smalltext(__val)
 	ds_list_add(global.saveroom, id)
 	instance_destroy()
-	FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", x, y)
 	create_particleStatic(spr_destroyabledonutDead, x + 32, y + 32, 1, depth)
 }

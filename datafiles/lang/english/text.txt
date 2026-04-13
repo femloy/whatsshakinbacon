@@ -59,8 +59,11 @@
 
   "secret_get":"[wave]YOUVE FOUND [global.secretCount] SECRETS OUT OF 3",
 
-  "roomname_hotel_receptionentrance":"whats shakin bacon",
-  "roomname_hotel_1":"guilty pleasure",
+  "roomname_hotel_receptionentrance":"fidelity hotel",
+  "roomname_wayback_1":"backyard",
+  "roomname_wayback_7":"legacy",
+  "roomname_wayback_9":"ruin",
+  "roomname_tutorial_1":"pilot",
 
   "dialog_milton1_1_MT": "HEY!",
   "dialog_milton1_2_MT": "Let me set some DAMN ground rules for you",
