@@ -14,6 +14,8 @@ if escape && spawnerId == -4
 	exit;
 }
 
+mask_index = spr_player_mask
+
 with obj_player
 {
 	if place_meeting(x, y + (vsp * 2), other) && y < other.y && vsp > 0 && !other.invincable
