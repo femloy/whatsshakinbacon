@@ -8,6 +8,12 @@ switch room
 	case hotel_receptionentrance:
 		_text  = lang_get_phrase($"roomname_{room_get_name(room)}")
 		break
+	case city_1:
+		_text = "redemption"
+		break
+	case city_3:
+		_text = "beware of drugs"
+		break
 }
 if _text != ""
 {
