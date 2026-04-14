@@ -256,6 +256,7 @@ wasRamp = false
 aimTime = 0
 canHit = true
 sprayCans = 4
+skatespeed = 13
 
 supertaunt = 0
 canSupertaunt = false

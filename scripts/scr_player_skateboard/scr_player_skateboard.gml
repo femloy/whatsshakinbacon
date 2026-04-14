@@ -78,7 +78,7 @@ function scr_player_skateboard()
 {
 	get_input()
 	hsp = movespeed * xscale
-	movespeed = approach(movespeed, 15, 0.1)
+	movespeed = approach(movespeed, skatespeed, 0.1)
 	image_speed = 0.35
 	buffers.dashcloud--
 	if buffers.dashcloud <= 0 && grounded

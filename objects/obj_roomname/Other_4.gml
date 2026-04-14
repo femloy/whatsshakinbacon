@@ -15,8 +15,9 @@ switch room
 		_text = "beware of drugs"
 		break
 }
-if _text != ""
+if _text != "" && ds_list_find_index(global.saveroom, $"roomname: {room_get_name(room)}") == -1
 {
+	ds_list_add(global.saveroom, $"roomname: {room_get_name(room)}")
 	text = _text
 	show = true
 	alarm[0] = 60 * 3
