@@ -1,4 +1,5 @@
-textY = -128
+textX = -192
+textXspd = 0
 show = false
 visible = true
 depth = -200

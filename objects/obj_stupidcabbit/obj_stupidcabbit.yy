@@ -12,8 +12,8 @@
   "name":"obj_stupidcabbit",
   "overriddenProperties":[],
   "parent":{
-    "name":"Stupid Fucking Cabbit",
-    "path":"folders/Objects/Level Structure/Blocks/Stupid Fucking Cabbit.yy",
+    "name":"Blocks",
+    "path":"folders/Objects/Level Structure/Blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

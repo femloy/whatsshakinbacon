@@ -15,3 +15,5 @@ image_speed = 0.35;
 blackAlpha = 0
 fadeOut = false
 global.level_loaded_pages = noone
+
+show_debug_overlay(true)

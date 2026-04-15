@@ -6,7 +6,7 @@ draw_clear_alpha(c_black, 0);
 gpu_set_blendenable(false);
 draw_clear_alpha(c_black, 0);
 gpu_set_blendenable(false);
-if variable_global_exists("escape") && global.escape.active
+if variable_global_exists("escape") && global.escape.active && global.option_screen_effects == true
 {
 	// Apply shader
 	shader_set(shd_escape);

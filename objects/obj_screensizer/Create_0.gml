@@ -1,9 +1,11 @@
+init()
 depth = -998
 gameframe_init()
-gameframe_caption_text = "Fidelity Hotel"
-gameframe_caption_font = font_caption
+gameframe_caption_text = "Waiting: Fidelity Hotel"
+gameframe_caption_font = global.creditsfontsmall
 gameframe_caption_icon = spr_ico
 gameframe_caption_text_align = fa_left
+gameframe_blend = c_white
 mouse_in_window = false
 gameframe_visible_time = 60
 mouseX = mouse_x

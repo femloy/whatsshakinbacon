@@ -10,7 +10,6 @@ add_sticker = function(_x, _y) constructor
 	index = irandom_range(0, sprite_get_number(spr_secret_transition_balloons))
 	alpha = 1
 	scale = 1.1
-	FMODevent_oneshot("event:/Sfx/General/Collects/collect", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 }
 alarm[0] = 5
 depth = -100

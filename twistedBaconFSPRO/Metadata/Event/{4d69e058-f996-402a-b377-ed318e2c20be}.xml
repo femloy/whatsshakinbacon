@@ -77,7 +77,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{feda4cde-c5f9-4880-9770-5c6813972ef9}">
 		<property name="volume">
-			<value>-2</value>
+			<value>6</value>
 		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
@@ -100,6 +100,7 @@
 			<destination>{48cfb422-6059-4072-aeb5-034abd62bea7}</destination>
 			<destination>{67fafca1-148a-46d9-9baf-a2f7513f8317}</destination>
 			<destination>{d2073db5-ca88-47a0-9f2a-c55da45a8ce2}</destination>
+			<destination>{f6767284-b622-465b-a701-cf6afbb2f41e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{5eccb69f-4c2d-45a1-883d-a2e0cfb74108}">
@@ -115,6 +116,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{e6f84524-d551-4236-a7e2-6787a525a3b4}" />
 	<object class="SingleSound" id="{48cfb422-6059-4072-aeb5-034abd62bea7}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{b40438ea-0fe5-4da0-b0fb-bada327a8e81}</destination>
 		</relationship>
@@ -134,6 +138,17 @@
 	<object class="EventSound" id="{d2073db5-ca88-47a0-9f2a-c55da45a8ce2}">
 		<relationship name="event">
 			<destination>{8312ae6c-248d-42e6-826e-a10049637304}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{f6767284-b622-465b-a701-cf6afbb2f41e}">
+		<property name="volume">
+			<value>4</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{b49414fd-46bd-4ce9-9b5c-ddffbc5c4387}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{8525cb31-2fc2-4663-a20d-56a11d5eb15d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{4d955232-5c13-4b4d-9b14-8020c34b10b3}" />
@@ -163,5 +178,13 @@
 		<relationship name="audioFile">
 			<destination>{b90b30b9-378a-4c39-bd30-33fcc2a42074}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{b49414fd-46bd-4ce9-9b5c-ddffbc5c4387}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6</value>
+		</property>
 	</object>
 </objects>

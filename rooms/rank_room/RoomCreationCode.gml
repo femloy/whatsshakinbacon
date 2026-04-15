@@ -1,1 +1,1 @@
-gameframe_caption_text = "Getting Graded at the Fidelity Hotel"
+gameframe_caption_text = "Fidelity Hotel: IMPTV"

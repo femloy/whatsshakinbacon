@@ -19,7 +19,7 @@
   "height":960,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"9b607bbc-15b1-4eca-9aca-3aa40364dc05","blendMode":0,"displayName":"default","isLocked":false,"name":"9b607bbc-15b1-4eca-9aca-3aa40364dc05","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"9b607bbc-15b1-4eca-9aca-3aa40364dc05","blendMode":0,"displayName":"default","isLocked":false,"name":"9b607bbc-15b1-4eca-9aca-3aa40364dc05","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"bg_beakerRain",
   "nineSlice":null,

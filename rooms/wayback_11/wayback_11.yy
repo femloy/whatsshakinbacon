@@ -85,6 +85,7 @@
     {"name":"inst_32667115","path":"rooms/wayback_11/wayback_11.yy",},
     {"name":"inst_20F09D78","path":"rooms/wayback_11/wayback_11.yy",},
     {"name":"inst_11E00ED2","path":"rooms/wayback_11/wayback_11.yy",},
+    {"name":"inst_73ECED13","path":"rooms/wayback_11/wayback_11.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -179,6 +180,9 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1152.0,"y":1056.0,},
         {"$GMRInstance":"v4","%Name":"inst_32667115","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_32667115","objectId":{"name":"obj_sunny","path":"objects/obj_sunny/obj_sunny.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":419.0,"y":818.0,},
         {"$GMRInstance":"v4","%Name":"inst_11E00ED2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_11E00ED2","objectId":{"name":"obj_escape_pointer","path":"objects/obj_escape_pointer/obj_escape_pointer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":3392.0,"y":1074.0,},
+        {"$GMRInstance":"v4","%Name":"inst_73ECED13","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_73ECED13","objectId":{"name":"obj_potable_cage","path":"objects/obj_potable_cage/obj_potable_cage.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_potable_cage","path":"objects/obj_potable_cage/obj_potable_cage.yy",},"propertyId":{"name":"content","path":"objects/obj_potable_cage/obj_potable_cage.yy",},"resource":{"name":"obj_potableOrange","path":"objects/obj_potableOrange/obj_potableOrange.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_potableOrange",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2143.0,"y":1202.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":44,"SerialiseWidth":138,"TileCompressedData":[
           -3182,-2147483648,1,0,-553,-2147483648,1,0,-137,-2147483648,1,0,-137,-2147483648,1,0,-137,-2147483648,

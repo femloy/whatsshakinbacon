@@ -1,5 +1,4 @@
 scr_collision()
-mask_index = spr_player_mask
 if y > (room_height + 100) || y < -100
 	instance_destroy()
 if (x > (room_width + 100) || x < -100 || y < -100) && state == states.thrown
@@ -14,6 +13,8 @@ if escape && spawnerId == -4
 	instance_deactivate_object(self)
 	exit;
 }
+
+mask_index = spr_player_mask
 
 with obj_player
 {

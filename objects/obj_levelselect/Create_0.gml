@@ -4,7 +4,7 @@ levels = []
 var _world1 = [
 	[tutorial_1, "tutorial", "A", "Tutorial"],
 	[wayback_1, "forest", "A", "Waybackyard"], 
-	[rock_1, "rock", "A", "Rock Bottom"], ]
+	[city_1, "rock", "A", "Rock Bottom"], ]
 var _final = [
 	[hotel_final, "hotel", "A", "Final"],]
 
