@@ -45,49 +45,10 @@ function create_uparrow() {
 	arrow = instance_create(x, y, obj_uparrow).objId = id
 }
 
-function load_textures(_groups)
-{
-	with instance_create(0, 0, obj_loadingMini)
-	{
-		groups = _groups
-		textures = []
-			
-		for (var i = 0; i < array_length(groups); i++) {
-			array_push(textures, texturegroup_get_textures(groups[i]))
-		}
-		texturesMax = array_length(textures)
-	}
-}
-
 function reset_blendmmode()
 {
 	gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_inv_src_alpha, bm_src_alpha, bm_dest_alpha)
 	gpu_set_blendequation_sepalpha(bm_eq_add, bm_eq_max)
-}
-
-function unload_textures(_textures)
-{
-	if _textures != noone
-	{
-		var _rep = array_length(_textures)
-		repeat _rep
-		{
-			if (array_length(_textures)) 
-			{
-				var group = _textures[0]
-				for (var i = 0; i < array_length(group); i++)
-				{
-					if texture_is_ready(group[i])
-					{
-						show_debug_message($"unloaded texture page {group[i]}")
-						texture_flush(group[i])
-					}
-				}
-				array_shift(_textures)
-			}
-		}
-		
-	}
 }
 
 function animation_end() {

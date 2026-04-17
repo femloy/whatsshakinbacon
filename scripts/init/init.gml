@@ -1,4 +1,5 @@
 function init(){
+surface_depth_disable(true)
 global.kettleFont = font_add_sprite_ext(font_kettle, "0123456789", 1, 0)
 global.comboFont = font_add_sprite_ext(font_combo, "1234567890", 1, 0)
 global.percentageFont = font_add_sprite_ext(font_percentage, "0123456789%", 1, 0)

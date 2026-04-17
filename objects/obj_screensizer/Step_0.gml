@@ -1,4 +1,4 @@
-gameframe_update()
+
 if gameframe_mouse_in_window()
 {
 	if mouse_in_window == false

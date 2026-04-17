@@ -602,8 +602,6 @@ function doTaunt()
 		var _isSupertaunt = canSupertaunt && key_up
 		if !_isSupertaunt
 		{
-			squashX = 1.1
-			squashY = 1.1
 			state = states.taunt
 			image_speed = 0
 			sprite_index = sprites.taunt

@@ -30,3 +30,4 @@ if (!ds_list_empty(particles))
 		}
 	}
 }
+depth = 0

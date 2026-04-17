@@ -29,15 +29,8 @@ if scene == 2
 	circleSizeSpeed += 1
 	if circleSize == 0
 	{
-		if !instance_exists(obj_loadingMini)
-		{
-			unload_textures(global.level_loaded_pages)
-			load_textures([group])
-		}
-		else {
-			scene = 3
-			alarm[2] = 45
-		}
+		scene = 3
+		alarm[2] = 45
 	}
 }
 if scene == 4

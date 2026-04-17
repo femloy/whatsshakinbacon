@@ -15,5 +15,5 @@ draw_surface(fadeSurface, 0, 0)
 draw_set_alpha(1)
 
 draw_set_alpha(ratingAlpha)
-draw_sprite(spr_ratingLabel, eForEveryone, 32, 32)
+draw_sprite(spr_ratingLabel, eForEveryone, SCREEN_WIDTH - (960 - 828), SCREEN_HEIGHT - (540 - 406))
 draw_set_alpha(1)

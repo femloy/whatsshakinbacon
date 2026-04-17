@@ -23,8 +23,8 @@
   },
   "spriteNoExport":false,
   "textureGroupId":{
-    "name":"Wayback_group",
-    "path":"texturegroups/Wayback_group",
+    "name":"Default",
+    "path":"texturegroups/Default",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

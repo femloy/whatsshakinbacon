@@ -23,8 +23,8 @@
   },
   "spriteNoExport":false,
   "textureGroupId":{
-    "name":"Secret_group",
-    "path":"texturegroups/Secret_group",
+    "name":"Default",
+    "path":"texturegroups/Default",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

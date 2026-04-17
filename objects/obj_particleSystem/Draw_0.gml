@@ -1,4 +1,3 @@
-depth = 0
 if (!ds_list_empty(particles))
 {
 	for (var i = 0; i < ds_list_size(particles); i++)

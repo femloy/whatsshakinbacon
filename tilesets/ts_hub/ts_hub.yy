@@ -23,8 +23,8 @@
   },
   "spriteNoExport":false,
   "textureGroupId":{
-    "name":"Hub_group",
-    "path":"texturegroups/Hub_group",
+    "name":"Default",
+    "path":"texturegroups/Default",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

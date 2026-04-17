@@ -1,0 +1,2 @@
+draw_sprite(spr_loadingBacon, 1, 960 / 2, 540 / 2)
+draw_sprite_part(spr_loadingBacon, 0, 0, 0, (1 - (array_length(textures) / texturesMax)) * sprite_get_width(spr_loadingBacon), sprite_get_height(spr_loadingBacon), 960 / 2 - (sprite_get_width(spr_loadingBacon) / 2), 540 / 2 - (sprite_get_height(spr_loadingBacon) / 2))

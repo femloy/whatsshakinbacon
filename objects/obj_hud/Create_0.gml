@@ -1,6 +1,6 @@
 kettle = {}
-kettle.x = 124
-kettle.y = 54
+kettle.x = 150
+kettle.y = 76
 kettle.index = 0
 kettle.kx = kettle.x
 kettle.ky = kettle.y

@@ -140,7 +140,6 @@ var _exitlevel =
 	{
 		doUnpause()
 		FMODstopAll()
-		unload_textures(global.level_loaded_pages)
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)
 		if instance_exists(obj_rank_transition)
