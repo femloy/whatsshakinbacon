@@ -147,7 +147,7 @@ function tile_delete(_x, _y) {
 	for (var i = 0; i < array_length(layers); i++) {
 		var lay = layers[i];
 		var layer_name = layer_get_name(lay);
-		if layer_name != "Tiles_BG1" && layer_name != "Tiles_BG" && layer_name != "Tiles_BG2" && layer_name != "Tiles_BG3" {
+		if string_starts_with(layer_name, "Tiles") && string_pos(layer_name, "BG") == 0 {
 			var tilemapID = layer_tilemap_get_id(layer_name)
 			tilemap_set_at_pixel(tilemapID, 0, _x, _y)
 		}

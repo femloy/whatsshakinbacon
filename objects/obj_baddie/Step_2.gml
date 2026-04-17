@@ -160,13 +160,13 @@ with obj_player
 			hitstun.y = y
 			hitstun.time = 5
 			hitstun.is = true
-			create_particleStatic(spr_kungfueffect, x, y, 1, -5)
 			
 			if key_jump && !grounded
 				vsp = -10
 			
 			with _baddie
 			{
+				create_particleStatic(spr_kungfueffect, x, y, 1, -5)
 				hitstun.x = x
 				hitstun.y = y
 				hitstun.time = 5

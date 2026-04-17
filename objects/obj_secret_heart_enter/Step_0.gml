@@ -19,7 +19,6 @@ if cutscene = true
 		sprite_index = spr_loveportal_idle_broken
 		alarm[0] = 120
 		image_index = 0
-		FMODevent_oneshot("event:/Sfx/General/Level/Doodles/doodleget", x, y)
 		FMODevent_oneshot("event:/Sfx/General/Enemy/balloonsplat", x, y)
 		instance_create(x, y, obj_sloshersplat).blend = #b4bcc0
 		with obj_player
