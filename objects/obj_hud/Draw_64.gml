@@ -305,30 +305,25 @@ with bar
 		else {
 			y = approach(y, _secret ? SCREEN_HEIGHT + 100 : SCREEN_HEIGHT - 80, _secret ? 15 : 1)
 		}
-		var _width = sprite_get_width(spr_timerBar)
-		var _height = sprite_get_height(spr_timerBar)
-		var _cigarOffset = 42
-		var _chunkFill = (1 - (global.escape.timer / chunkMax))
-		var _fill = _width * _chunkFill
-		if !ending
-		{
-			draw_sprite_part(spr_timerBar, 1, 0, 0, _fill, _height, x - _width / 2 - _cigarOffset, y - _height / 2)
-			draw_sprite_part(spr_timerBar, 0, _fill, 0, _width, _height, x - _width / 2 + _fill - _cigarOffset, y - _height / 2)
-			sparkIndex += 0.35
-			draw_sprite(spr_timerMoon, sparkIndex, x + (_width / 2) + 10, y)
-			draw_sprite(spr_timerBar_flame, sparkIndex, (x - _width / 2 - _cigarOffset) + (_width * _chunkFill), y)
-			draw_text(x, y - 24, _timer)
-		}
-		else if ending
-		{
-			draw_sprite(spr_timerBar_end, endIndex, x - _cigarOffset, y)
-			endIndex += 0.35
-			if endIndex > sprite_get_number(spr_timerBar_end)
+			draw_sprite(spr_timer_back, 0, x, y)
+			var _tickets = sprite_get_number(spr_escape_ticket)
+			var _xx = x - ((sprite_get_width(spr_escape_ticket) * 0.8) * 1.5)
+			var _max = chunkMax / 3
+			for (var i = 0; i < _tickets; i++)
 			{
-				endIndex = sprite_get_number(spr_timerBar_end) - 2
-				ended = true
+				var _sprite = spr_escape_ticket
+				var _xo = 0
+				var _yo = wave(-2, 2, 2, i * 160)
+				if global.escape.timer <= _max * (_tickets - 1 - i)
+				{
+					_sprite = spr_escape_ticket_empty
+					_xo = irandom_range(-1, 1)
+					_yo = irandom_range(-1, 1)
+				}
+				draw_sprite(_sprite, i, _xx + _xo, y + _yo)
+				_xx += (sprite_get_width(spr_escape_ticket) * 0.8)
 			}
-		}
+			draw_text(x, y - 24, _timer)
 		if ending && global.escape.timer != 0
 		{
 			ending = false
@@ -338,7 +333,7 @@ with bar
 		{
 			if ending == false
 			{
-				ended = false
+				ended = true
 				endIndex = 0
 				ending = true
 			}
