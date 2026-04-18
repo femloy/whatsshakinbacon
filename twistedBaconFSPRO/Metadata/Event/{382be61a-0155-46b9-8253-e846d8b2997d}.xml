@@ -189,19 +189,31 @@
 	</object>
 	<object class="SFXReverbEffect" id="{85c97be7-12ba-463a-99b3-d722f6fb0228}">
 		<property name="decayTime">
-			<value>4000</value>
+			<value>8500</value>
 		</property>
 		<property name="HFDecayRatio">
-			<value>20.5</value>
+			<value>54</value>
 		</property>
 		<property name="diffusion">
-			<value>70.5</value>
+			<value>80.5</value>
 		</property>
 		<property name="density">
 			<value>28.5</value>
 		</property>
+		<property name="lowShelfFrequency">
+			<value>620</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>12</value>
+		</property>
+		<property name="highCut">
+			<value>20000</value>
+		</property>
 		<property name="wetLevel">
 			<value>-40</value>
+		</property>
+		<property name="dryLevel">
+			<value>4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{4c426718-e1fa-4fca-a91b-fa02b81deae2}">

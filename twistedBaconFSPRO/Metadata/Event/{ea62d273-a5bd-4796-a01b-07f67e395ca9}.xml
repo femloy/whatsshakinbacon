@@ -171,10 +171,10 @@
 	</object>
 	<object class="SFXReverbEffect" id="{37013883-d11d-423d-aa85-0b542d520602}">
 		<property name="decayTime">
-			<value>100</value>
+			<value>10000</value>
 		</property>
 		<property name="earlyDelay">
-			<value>300</value>
+			<value>160</value>
 		</property>
 		<property name="lateDelay">
 			<value>50</value>
@@ -183,7 +183,7 @@
 			<value>20000</value>
 		</property>
 		<property name="HFDecayRatio">
-			<value>32.5</value>
+			<value>10</value>
 		</property>
 		<property name="diffusion">
 			<value>84.5</value>
@@ -195,7 +195,7 @@
 			<value>-16.5</value>
 		</property>
 		<property name="earlyLateMix">
-			<value>68</value>
+			<value>98</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{5d988055-4ee5-4584-aa0d-04262ac59e68}" />

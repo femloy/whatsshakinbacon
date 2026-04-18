@@ -156,11 +156,20 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
 		<property name="rate">
 			<value>2.4000001</value>
 		</property>
+		<property name="phase">
+			<value>94</value>
+		</property>
 		<property name="depth">
 			<value>21.5</value>
+		</property>
+		<property name="direction">
+			<value>22</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{0a134cb3-51f3-4a8e-978e-05854f35cb96}">

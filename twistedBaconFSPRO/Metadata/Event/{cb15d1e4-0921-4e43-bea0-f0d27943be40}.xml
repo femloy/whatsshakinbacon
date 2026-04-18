@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{f05de1f5-ef9b-4881-83d5-cb4b528b2c32}">
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-9</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{9785a8f9-2d77-4703-aa82-2b0cc7ca87ea}</destination>
@@ -151,17 +151,17 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
 		<property name="rate">
 			<value>0.280000001</value>
 		</property>
 		<property name="phase">
-			<value>34</value>
+			<value>-58</value>
 		</property>
 		<property name="depth">
-			<value>10</value>
-		</property>
-		<property name="direction">
-			<value>-74</value>
+			<value>18.5</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{0f1a64d2-a3b4-4a95-b029-d54643709dfa}">

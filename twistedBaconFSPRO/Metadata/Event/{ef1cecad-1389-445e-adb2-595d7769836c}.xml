@@ -100,6 +100,7 @@
 		<relationship name="effects">
 			<destination>{203a5446-88a0-4aba-97f6-7fe17bb5af3a}</destination>
 			<destination>{49eb2a65-dae7-4637-8e24-9af8b567752f}</destination>
+			<destination>{b6ccec04-ff3b-4597-9209-f00f45ce11f1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{29627b94-a449-4901-b17b-3b4523cfa291}" />
@@ -136,6 +137,14 @@
 		</property>
 		<property name="minimumExtent">
 			<value>10</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{b6ccec04-ff3b-4597-9209-f00f45ce11f1}">
+		<property name="delay">
+			<value>260</value>
+		</property>
+		<property name="level">
+			<value>-26</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{fd5022b5-9413-431e-a5d2-13e3ab911f6f}">

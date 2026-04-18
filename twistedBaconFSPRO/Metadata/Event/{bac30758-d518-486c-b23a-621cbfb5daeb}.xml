@@ -155,11 +155,20 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
 		<property name="rate">
 			<value>0.620000005</value>
 		</property>
+		<property name="phase">
+			<value>-60</value>
+		</property>
 		<property name="depth">
-			<value>12.5</value>
+			<value>19.5</value>
+		</property>
+		<property name="direction">
+			<value>84</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{8408dcf3-4453-40a8-9872-df87fe98d40b}">
