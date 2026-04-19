@@ -324,7 +324,6 @@
     {"name":"credits_room","order":13,"path":"rooms/credits_room/credits_room.yy",},
     {"name":"hotel_1","order":6,"path":"rooms/hotel_1/hotel_1.yy",},
     {"name":"hotel_final_1","order":1,"path":"rooms/hotel_final_1/hotel_final_1.yy",},
-    {"name":"hotel_lennydesk","order":3,"path":"rooms/hotel_lennydesk/hotel_lennydesk.yy",},
     {"name":"hotel_soundtest","order":2,"path":"rooms/hotel_soundtest/hotel_soundtest.yy",},
     {"name":"initObject","order":2,"path":"rooms/initObject/initObject.yy",},
     {"name":"Loadiingroom","order":1,"path":"rooms/Loadiingroom/Loadiingroom.yy",},

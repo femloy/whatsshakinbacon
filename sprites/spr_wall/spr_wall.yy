@@ -24,15 +24,15 @@
   "name":"spr_wall",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":3,
-    "enabled":false,
+    "bottom":2,
+    "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
     "highlightStyle":0,
-    "left":3,
+    "left":2,
     "resourceType":"GMNineSliceData",
     "resourceVersion":"2.0",
-    "right":3,
+    "right":2,
     "tileMode":[
       0,
       0,
@@ -40,7 +40,7 @@
       0,
       0,
     ],
-    "top":3,
+    "top":2,
   },
   "origin":0,
   "parent":{

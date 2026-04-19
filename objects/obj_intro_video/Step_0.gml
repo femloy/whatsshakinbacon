@@ -10,6 +10,6 @@ if video_get_status() == video_status_closed
 {
 	video_close()
 	instance_destroy() 
-    room_goto(Levelselect)
+    room_goto(Mainmenu)
 }
 video_set_volume(global.MasterVolume / 100)

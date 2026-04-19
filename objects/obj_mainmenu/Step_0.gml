@@ -45,7 +45,7 @@ switch scene
 			ini_write_real("General", "created", true)
 			ini_close()
 			TVsprite = spr_mainmenu_tv
-			TVindex = selectedFile + 1
+			TVindex = 0
 			exit;
 		}
 		var move = key_right_pressed + key_left_pressed
@@ -63,7 +63,7 @@ switch scene
 			exit;
 		}
 		if TVsprite == spr_mainmenu_tv
-			TVindex = selectedFile + 1
+			TVindex = 0
 		else {
 			TVindex += 0.35
 		}

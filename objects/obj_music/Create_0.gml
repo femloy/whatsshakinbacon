@@ -57,7 +57,6 @@ ds_map_add(musicDetails, wayback_1, new add_music("event:/Music/W1/Monolith Mang
 }))
 ds_map_add(musicDetails, hotel_receptionentrance, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, hotel_1, new add_music("event:/Music/W1/hub", -4, -4))
-ds_map_add(musicDetails, hotel_lennydesk, new add_music("event:/Music/W1/hub", -4, -4))
 ds_map_add(musicDetails, tutorial_1, new add_music("event:/Music/W1/tutorial", -4, "event:/Ambience/tutorial"))
 ds_map_add(musicDetails, Levelselect, new add_music("event:/Music/Ost/mainmenu", -4, -4))
 ds_map_add(musicDetails, Mainmenu, new add_music(-4, -4, "event:/Ambience/mainmenu"))
