@@ -10,3 +10,7 @@ if image_xscale < 1
 	image_yscale += 1 / 30
 	image_alpha += 1 / 30
 }
+if keyboard_check_pressed(vk_f1)
+{
+	input_start(true)
+}

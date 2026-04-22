@@ -106,7 +106,7 @@ if buffer == 0
 						array_push(global.key_map[$ q.key], keyboard_key)
 						
 						var _str = string_delete(q.key, string_length(q.key) - 3, 4)
-						ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
+						ds_map_find_value(global.input_map, _str).key_input_array = global.key_map[$ q.key]
 						changingBind = false
 					}
 			}
