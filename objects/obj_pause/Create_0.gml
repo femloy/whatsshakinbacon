@@ -203,9 +203,9 @@ freq = 0.01
 amp = 0.009
 
 secrets = []
-array_push(secrets, {x: 54, y: 136, index: 0, secret: false, scale: 1})
-array_push(secrets, {x: 94, y: 54, index: 1, secret: false, scale: 1})
-array_push(secrets, {x: 151, y: 115, index: 2, secret: false, scale: 1})
+array_push(secrets, {x: 42, y: 114, index: 0, secret: false, scale: 1})
+array_push(secrets, {x: 43, y: 43, index: 1, secret: false, scale: 1})
+array_push(secrets, {x: 95, y: 72, index: 2, secret: false, scale: 1})
 
 backgroundhearts = []
 create_background_heart = function(_x, _y)

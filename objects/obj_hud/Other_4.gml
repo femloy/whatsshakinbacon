@@ -4,7 +4,7 @@ switch global.level
 		global.Srank = 19000
 		tv.backindex = 0
 		break
-	case "shell":
+	case "city":
 		global.Srank = 30000
 		tv.backindex = 1
 		break

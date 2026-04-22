@@ -1,5 +1,5 @@
 fade_alpha = approach(fade_alpha, 0, 0.1)
-roomPaletteIndex = approach(roomPaletteIndex, selectedFile + 1, 0.1)
+roomPaletteIndex = approach(roomPaletteIndex, selectedFile + 1, 1 / 3)
 switch scene
 {
 	case -2:

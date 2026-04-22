@@ -11,5 +11,3 @@ for (var i = 0; i < array_length(textures_to_load); i++) {
 
 texturesMax = array_length(textures)
 alarm[0] = 20;
-
-show_debug_overlay(true)
