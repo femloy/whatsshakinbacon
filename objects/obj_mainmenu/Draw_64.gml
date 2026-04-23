@@ -1,5 +1,18 @@
+
 pal_swap_set(pal_mainmenu_room, roomPaletteIndex, false)
 draw_sprite_ext(spr_mainmenu_tvBackground, 0, 0, 0, menuscale + 1, menuscale + 1, 0, c_white, 1)
+shader_reset()
+
+if TVBackSprite != -4
+{
+	var q = saveFiles[selectedFile]
+	pal_swap_set(spr_playerPal, q.palette, false)
+	draw_sprite_ext(TVBackSprite, TVindex, 768, 288, menuscale + 1, menuscale + 1, 0, c_white, 1)
+	shader_reset()
+	pattern_draw(TVBackSprite, TVindex, 768, 288, menuscale + 1, menuscale + 1, 0, c_white, 1, q.patternSpr, spr_playerPatColors, spr_playerPal, q.palette)
+}
+
+pal_swap_set(pal_mainmenu_room, roomPaletteIndex, false)
 draw_sprite_ext(TVsprite, TVindex, 768, 288, menuscale + 1, menuscale + 1, 0, c_white, 1)
 draw_sprite_ext(spr_mainmenu_shelf, 0, 0, 0, menuscale + 1, menuscale + 1, 0, c_white, 1)
 shader_reset()
@@ -12,26 +25,34 @@ for (var i = 0; i < array_length(saveFiles); i++)
 	draw_sprite_ext(spr_mainmenu_movies, q.movie.index, q.movie.x, q.movie.y, q.movie.scale + menuscale, q.movie.scale + menuscale, 0, moviefadeC, q.movie.alpha)
 	shader_reset()
 	draw_set_alpha(1)
-}
-for (var i = 0; i < array_length(saveFiles); i++)
-{
+	
 	if scene != 2
 	{
-		var q = saveFiles[i]
-		draw_set_alpha(q.faceAlpha * hudAlpha)
-		draw_sprite(spr_mainmenu_tomatoface, q.faceIndex, 100, 440)
+		var _xx = q.movie.x + 63
+		var _yy = q.movie.y + 83
+		
+		draw_set_alpha(q.statusAlpha * hudAlpha)
+		draw_sprite(spr_tapestatus, 0, _xx, _yy)
+		draw_set_halign(fa_left)
+		draw_set_font(global.percentageFont)
+		draw_text(_xx - 12, _yy, $"{round(q.completion)}%")
 		draw_set_alpha(1)
 	}
 }
 
-draw_set_alpha(hudAlpha)
-if TVsprite != spr_mainmenu_tvStatic
+for (var i = 0; i < array_length(saveFiles); i++)
 {
-	draw_sprite(spr_tapestatus, 0, 732, 267)
-	draw_set_halign(fa_center)
-	draw_set_font(global.percentageFont)
-	draw_text(732, 267, $"{round(percentageReal)}%")
+	var q = saveFiles[i]
+	if scene != 2
+	{
+		draw_set_alpha(q.faceAlpha * hudAlpha)
+		draw_sprite(spr_mainmenu_tomatoface, q.faceIndex, q.movie.x + 63 - 42, q.movie.y + 83 + 24)
+		draw_set_alpha(1)
+	}
 }
+
+
+draw_set_alpha(hudAlpha)
 draw_set_halign(fa_center)
 draw_sprite(spr_controls, 0, 843, 77)
 draw_sprite(spr_quitgame, 0, 0, 0)

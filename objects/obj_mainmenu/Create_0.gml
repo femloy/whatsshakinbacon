@@ -11,6 +11,12 @@ createSave = function(_save) constructor
 {
 	file = _save
 	savePath = working_directory + $"/saves/save{_save + 1}.ini"
+	
+	ini_open(savePath)
+	palette = ini_read_real("Game", "Palette", 1)
+	patternSpr = asset_get_index(ini_read_string("Game", "Pattern", "spr_playerPat_threads"))
+	ini_close()
+	
 	movie = {}
 	movie.x = 341
 	movie.y = 253
@@ -43,10 +49,8 @@ createSave = function(_save) constructor
 	ini_open(savePath)
 	created = ini_read_real("General", "created", false)
 	var _completionNum = 0
-	var _levels = ["forest", "shell", "beach"]
-	var _countTotems = (ini_read_real("General", "Totem0", false) == true) + (ini_read_real("General", "Totem1", false) == true) + (ini_read_real("General", "Totem2", false) == true)
-	_completionNum += _countTotems
-	var _finalNum = (array_length(_levels) * 5) + 3
+	var _levels = ["forest"]
+	var _finalNum = (array_length(_levels) * 5)
 	for (var i = 0; i < array_length(_levels); i++)
 	{
 		var _n = 0
@@ -78,17 +82,16 @@ createSave = function(_save) constructor
 	completion = (_completionNum / _finalNum) * 100
 	faceIndex = (round(completion) / 100) * (sprite_get_number(spr_mainmenu_tomatoface) - 1)
 	faceAlpha = 0
+	statusAlpha = 0
 }
 selectedFile = -1
 selectedMenu = 0
 array_push(saveFiles, new createSave(0))
 array_push(saveFiles, new createSave(1))
 array_push(saveFiles, new createSave(2))
-array_push(saveFiles, new createSave(3))
 hudAlpha = 0
-percentageReal = 0
-percentage = 0
 music = FMODcreate_event("event:/Music/General/mainmenu")
+TVBackSprite = -4
 TVsprite = spr_mainmenu_tv
 TVindex = 0
 TVsnd = FMODcreate_event("event:/Sfx/UI/Mainmenu/static")

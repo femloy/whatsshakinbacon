@@ -3,7 +3,7 @@ if !variable_global_exists("input_map")
 if !variable_global_exists("key_map")
 	global.key_map = {}
 
-global.buttonSpr = spr_gamepadbuttons_style1
+global.buttonSpr = spr_gamepadbuttons_style2
 global.joystickSpr = spr_joystick_style1
 global.gamepad_axis_pressed = ds_map_create()
 var _axes = [gp_axisrh, gp_axisrv, gp_axislv, gp_axislh];

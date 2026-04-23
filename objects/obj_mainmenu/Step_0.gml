@@ -44,8 +44,10 @@ switch scene
 			ini_open(global.saveFile)
 			ini_write_real("General", "created", true)
 			ini_close()
-			TVsprite = spr_mainmenu_tv
+			TVsprite = spr_mainmenu_tv_empty
+			TVBackSprite = spr_mainmenu_tv1_pick
 			TVindex = 0
+			alarm[6] = 60 * 1
 			exit;
 		}
 		var move = key_right_pressed + key_left_pressed
@@ -55,26 +57,19 @@ switch scene
 			FMODevent_oneshot("event:/Sfx/UI/Pause/menumove")
 			//FMODevent_oneshot("event:/Sfx/UI/Mainmenu/changemovie")
 			TVsprite = spr_mainmenu_tvStatic
-			selectedFile = clamp(selectedFile, 0, 3)
+			TVBackSprite = -4
+			selectedFile = clamp(selectedFile, 0, 2)
 			if saveFiles[selectedFile].created == true
 				alarm[5] = 6
 			else
 				alarm[5] = -1
 			exit;
 		}
-		if TVsprite == spr_mainmenu_tv
-			TVindex = 0
-		else {
-			TVindex += 0.35
-		}
-		
-		percentageReal = q.completion
-		if TVsprite != spr_mainmenu_tvStatic
-			percentage = lerp(percentage, percentageReal, 0.25)
 		for (var i = 0; i < array_length(saveFiles); i++)
 		{
 			var q = saveFiles[i]
 			q.faceAlpha = approach(q.faceAlpha, (selectedFile == q.file) && q.created ? 1 : 0, 0.1)
+			q.statusAlpha = approach(q.statusAlpha, (selectedFile == q.file) && q.created ? 1 : 0, 0.1)
 			var _targetPos = q.movie.saveX + 80
 			if selectedFile != q.file
 				q.movie.state = 0
@@ -186,3 +181,8 @@ switch scene
 		break
 		
 }
+if TVsprite == spr_mainmenu_tv
+			TVindex = 0
+		else {
+			TVindex += 0.35
+		}
