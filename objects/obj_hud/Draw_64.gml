@@ -1,7 +1,7 @@
 if !global.option_hud
 	exit;
 
-if global.escape.party
+if global.escape.party && global.option_screen_effects
 {
 	discoAlpha = approach(discoAlpha, 0.05, 0.05 / 60 * 4)
 	var _color = discoColors[discoColor]
@@ -22,7 +22,7 @@ if (!ds_list_empty(collectVis))
 		var q = ds_list_find_value(collectVis, i)
 		with q
 		{
-			draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, 1)
+			draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, 0.7)
 		}
 	}
 }

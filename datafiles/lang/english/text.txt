@@ -4,6 +4,7 @@
   "pause_options":"OPTIONS",
   "pause_exit":"EXIT LEVEL",
   "pause_tasks":"FEATS",
+  "pause_menu":"MAIN MENU",
 
   "option_audio": "AUDIO",
   "option_audio_master": "MASTER",

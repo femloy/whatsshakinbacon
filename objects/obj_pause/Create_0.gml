@@ -1,7 +1,7 @@
-depth = obj_screensizer.depth + 200
+depth = obj_screensizer.depth + 800
 active = false
-graphBorderSize = 2
-graphBack = {alpha: 0, x: 0, y: 0}
+border_size = 2
+backdrop = {alpha: 0, x: 0, y: 0}
 screenSprite = -4
 pauseMusic = FMODcreate_event("event:/Music/General/pause")
 vinylSND = FMODcreate_event("event:/Sfx/vinyl")
@@ -52,7 +52,7 @@ function doPause()
 	fmod_studio_event_instance_set_paused(vinylSND, false)
 	fmod_studio_system_set_parameter_by_name("musicfade", 0, false)
 	FMODevent_oneshot("event:/Sfx/General/Cutscene/recordstop")
-	graphBack.alpha = 0
+	backdrop.alpha = 0
 	selected = 0
 	switch playeractiveState
 	{
@@ -66,6 +66,36 @@ function doPause()
 			tipText = ""
 			break
 	}
+	
+	options = []
+	var _resume =
+	{ option: "pause_resume", event: 5 }
+	var _restart =
+	{ option: "pause_restart", event: 1 }
+	var _option =
+	{ option: "pause_options", event: 4 }
+	var _tasks =
+	{ option: "pause_tasks", event: 3 }
+	var _exitlevel =
+	{ option: global.level == noone ? "pause_menu" : "pause_exit", event: 2 }
+	_resume.offsetX = -SCREEN_WIDTH
+	_option.offsetX = -SCREEN_WIDTH
+	_restart.offsetX = -SCREEN_WIDTH
+	_tasks.offsetX = -SCREEN_WIDTH
+	_exitlevel.offsetX = -SCREEN_WIDTH
+
+	_resume.icon = new addPause_icon(0)
+	_option.icon = new addPause_icon(1)
+	_restart.icon = new addPause_icon(2)
+	_tasks.icon = new addPause_icon(8)
+	_exitlevel.icon = new addPause_icon(3)
+	array_push(options, _resume)
+	array_push(options, _option)
+	if global.level != noone
+		array_push(options, _restart)
+	if global.level != noone
+		array_push(options, _tasks)
+	array_push(options, _exitlevel)
 }
 
 function doUnpause()
@@ -84,100 +114,15 @@ function doUnpause()
 }
 
 var _resume =
-{ option: "pause_resume", func: function() { 
-with obj_pause
-{
-	doUnpause()
-} } }
+{ option: "pause_resume", event: 5 }
 var _restart =
-{ option: "pause_restart", func: function() {
-with obj_pause
-{
-	if global.resetRoom != noone
-	{
-		if instance_exists(obj_rank_transition)
-			instance_destroy(obj_rank_transition)
-		if instance_exists(obj_secret_transition)
-			instance_destroy(obj_secret_transition)
-		if instance_exists(obj_backtohub)
-			instance_destroy(obj_backtohub)
-		doUnpause()
-		FMODstopAll()
-		with obj_music
-		{
-			stop_music()
-			if FMODevent_isplaying(escapeInst)
-				fmod_studio_event_instance_stop(escapeInst, FMOD_STUDIO_STOP_MODE.IMMEDIATE)
-		}
-		with obj_player
-		{
-			generalReset()
-			door = "A"
-			movespeed = 0
-			vsp = 0
-			hsp = 0
-			state = states.enterdoor
-		}
-		room_goto(global.resetRoom)
-	}
-
-}
-} }
+{ option: "pause_restart", event: 1 }
 var _option =
-{ option: "pause_options", func: function() { 
-	FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
-	instance_create(0, 0, obj_option)
-	} }
+{ option: "pause_options", event: 4 }
 var _tasks =
-{ option: "pause_tasks", func: function() { 
-	FMODevent_oneshot("event:/Sfx/UI/Pause/menuselect")
-	instance_create(0, 0, obj_feats)
-	} }
+{ option: "pause_tasks", event: 3 }
 var _exitlevel =
-{ option: "pause_exit", func: function() 
-{
-	with obj_pause
-	{
-		doUnpause()
-		FMODstopAll()
-		if instance_exists(obj_backtohub)
-			instance_destroy(obj_backtohub)
-		if instance_exists(obj_rank_transition)
-			instance_destroy(obj_rank_transition)
-		if instance_exists(obj_secret_transition)
-			instance_destroy(obj_secret_transition)
-		with obj_player
-		{
-			if global.level == noone
-			{
-				with obj_music
-					stop_music()
-				generalReset()
-				movespeed = 0
-				vsp = 0
-				hsp = 0
-				state = -4
-				door = "A"
-				room_goto(Mainmenu)
-			}
-			else 
-			{
-				with obj_music
-					stop_music()
-				generalReset()
-				movespeed = 0
-				vsp = 0
-				hsp = 0
-				state = -4
-				door = "NONE"
-				room_goto(backtohubRoom)
-				instance_create(x, y, obj_backtohub)
-				global.level = noone
-				global.resetRoom = noone
-			}
-		}
-	}
-} }
+{ option: "pause_exit", event: 2 }
 _resume.offsetX = -SCREEN_WIDTH
 _option.offsetX = -SCREEN_WIDTH
 _restart.offsetX = -SCREEN_WIDTH

@@ -108,6 +108,7 @@ if buffer == 0
 						var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 						ds_map_find_value(global.input_map, _str).key_input_array = global.key_map[$ q.key]
 						changingBind = false
+						changeDetec = true
 					}
 			}
 		}
@@ -144,6 +145,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_face2)
@@ -153,6 +155,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_face3)
@@ -162,6 +165,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_shoulderlb)
@@ -171,6 +175,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_shoulderrb)
@@ -180,6 +185,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_shoulderl)
@@ -189,6 +195,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_shoulderr)
@@ -198,6 +205,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_face4)
@@ -207,6 +215,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_padu)
@@ -216,6 +225,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_padd)
@@ -225,6 +235,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_padl)
@@ -234,6 +245,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_padr)
@@ -243,6 +255,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_stickl)
@@ -252,6 +265,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_stickr)
@@ -261,6 +275,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_start)
@@ -270,6 +285,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_button_check_pressed(global.player_gamepad_current, gp_select)
@@ -279,6 +295,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axislh) < -0.5
@@ -288,6 +305,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axislh) > (0.5)
@@ -297,6 +315,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axislv) < -0.5
@@ -306,6 +325,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axislv) > (0.5)
@@ -315,6 +335,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrh) < -0.5
@@ -324,6 +345,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrh) > (0.5)
@@ -333,6 +355,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrv) < -0.5
@@ -342,6 +365,7 @@ if buffer == 0
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 				else if gamepad_axis_value(global.player_gamepad_current, gp_axisrv) > (0.5)
@@ -352,6 +376,7 @@ if buffer == 0
 					ds_map_find_value(global.input_map, _str).pad_input_array = global.key_map[$ q.key]
 					
 					changingBind = false
+					changeDetec = true
 					q.func()
 				}
 			}

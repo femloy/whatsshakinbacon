@@ -69,7 +69,7 @@ switch m.anchor
 					draw_set_halign(fa_left)
 					draw_text_oyh(xx, yy + m.ypad * i, lang_get_phrase(q.name))
 					draw_set_halign(fa_right)
-					draw_sprite(spr_slider, 0, SCREEN_WIDTH - xx - 150, yy + m.ypad * i)
+					draw_sprite_ext(spr_slider, 0, SCREEN_WIDTH - xx - 150, yy + m.ypad * i, 1, 1, 0, _col, 1)
 					draw_sprite(currentmenu != 1 ? spr_slidericon2 : spr_slidericon, q.moving, SCREEN_WIDTH - xx - 150 + (200 * (q.val / 100)), yy + m.ypad * i + 12)
 					break
 			}
@@ -105,9 +105,10 @@ switch m.anchor
 						var xx = SCREEN_WIDTH / 2 - 16
 						var yy = 16 + (m.ypad) - keyscroll 
 						draw_set_color(_col)
-						keyscroll = lerp(keyscroll, m.ypad * (selected - 1), 0.035) 
+						var _sel = max(selected, 1)
+						keyscroll = lerp(keyscroll, (_sel - 1) * 50, 0.01) 
 						if !is_string(q.iconIndex)
-							draw_sprite_ext(spr_controlicons, q.iconIndex, xx, yy + m.ypad * i, 1, 1, 0, _col, 1)
+							draw_sprite_ext(spr_controlicons, q.iconIndex, xx, yy + m.ypad * i - 16, 1, 1, 0, _col, 1)
 						else {
 							draw_set_font(global.bigfont)
 							draw_set_halign(fa_left)
@@ -121,34 +122,34 @@ switch m.anchor
 								switch global.key_map[$ q.key][p]
 								{
 									case vk_left:
-										draw_sprite(spr_tutorialkeyspecial, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_down:
-										draw_sprite(spr_tutorialkeyspecial, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_up:
-										draw_sprite(spr_tutorialkeyspecial, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_right:
-										draw_sprite(spr_tutorialkeyspecial, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_space:
-										draw_sprite(spr_tutorialkeyspecial, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_control:
-										draw_sprite(spr_tutorialkeyspecial, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_escape:
-										draw_sprite(spr_tutorialkeyspecial, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkeyspecial, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case vk_shift:
-										draw_sprite(spr_tutorialkeyspecial, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2) break
+										draw_sprite(spr_tutorialkeyspecial, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16) break
 									default:
-										draw_sprite(spr_tutorialkey, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(spr_tutorialkey, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										draw_set_color(c_black)
 										draw_set_font(global.npcfont)
 										draw_set_halign(fa_left)
-										draw_text(SCREEN_WIDTH - 64 - (42 * p), yy + m.ypad * i - 6, chr(global.key_map[$ q.key][p]))
+										draw_text(SCREEN_WIDTH - 64 - (42 * p), yy + m.ypad * i - 6 - 16, chr(global.key_map[$ q.key][p]))
 									break
 								}
 							}
@@ -157,76 +158,76 @@ switch m.anchor
 								switch global.key_map[$ q.key][p]
 								{
 									case gp_face1:
-										draw_sprite(global.buttonSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_face2:
-										draw_sprite(global.buttonSpr, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_face3:
-										draw_sprite(global.buttonSpr, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_face4:
-										draw_sprite(global.buttonSpr, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_shoulderl:
-										draw_sprite(global.buttonSpr, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_shoulderr:
-										draw_sprite(global.buttonSpr, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_shoulderrb:
-										draw_sprite(global.buttonSpr, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_shoulderlb:
-										draw_sprite(global.buttonSpr, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_stickl:
-										draw_sprite(global.buttonSpr, 8, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 8, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_stickr:
-										draw_sprite(global.buttonSpr, 9, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 9, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_padu:
-										draw_sprite(global.buttonSpr, 10, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 10, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_padr:
-										draw_sprite(global.buttonSpr, 11, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 11, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_padd:
-										draw_sprite(global.buttonSpr, 12, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 12, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_padl:
-										draw_sprite(global.buttonSpr, 13, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 13, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_start:
-										draw_sprite(global.buttonSpr, 14, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 14, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case gp_select:
-										draw_sprite(global.buttonSpr, 15, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.buttonSpr, 15, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickL_left":
-										draw_sprite(global.joystickSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 0, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickL_right":
-										draw_sprite(global.joystickSpr, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 1, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickL_up":
-										draw_sprite(global.joystickSpr, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 2, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickL_down":
-										draw_sprite(global.joystickSpr, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 3, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickR_left":
-										draw_sprite(global.joystickSpr, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 4, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickR_right":
-										draw_sprite(global.joystickSpr, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 5, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickR_up":
-										draw_sprite(global.joystickSpr, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 6, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 									case "joystickR_down":
-										draw_sprite(global.joystickSpr, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2)
+										draw_sprite(global.joystickSpr, 7, SCREEN_WIDTH - 64 - (42 * p) - 8, yy + m.ypad * i + 2 - 16)
 										break
 								}
 							}

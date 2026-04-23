@@ -15,7 +15,10 @@ function create_particleStatic(_sprite, _x, _y, _xscale, _depth = 1)
 		grav: 0,
 		image_speed: 0.35,
 	}
-	ds_list_add(obj_particleSystem.particles, par)
+	var _system = obj_particleSystem
+	if _depth <= -1
+		_system = obj_particleSystem_close
+	ds_list_add(_system.particles, par)
 	return par;
 }
 

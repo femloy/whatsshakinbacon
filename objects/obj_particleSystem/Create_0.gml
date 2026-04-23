@@ -1,2 +1,2 @@
 particles = ds_list_create()
-depth = 0
+depth = 40

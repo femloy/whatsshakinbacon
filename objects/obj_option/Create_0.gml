@@ -56,6 +56,8 @@ fmod_studio_event_instance_set_paused(screamSnd, true);
 
 #region Functions
 
+changeDetec = false
+
 addPause_icon = function(_index) constructor
 {
 	index = _index
@@ -459,6 +461,7 @@ var controlsKeyMain = create_menu(option.controlsKeyMain, option.left, 40, funct
 	add_option_press(controlsKeyMain, "option_controls_bindings", function()
 	{
 		goto_menu(option.controlsKey)
+		changeDetec = false
 	})
 	add_option_ext(controlsKeyMain, option.multi, "option_controls_controller_dir_superjump", function()
 	{
@@ -489,6 +492,7 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, funct
 	add_option_press(controlsPadMain, "option_controls_bindings", function()
 	{
 		goto_menu(option.controlsPad)
+		changeDetec = false
 	})
 	add_option_press(controlsPadMain, "option_controls_deadzones", function()
 	{
@@ -497,24 +501,33 @@ var controlsPadMain = create_menu(option.controlsPadMain, option.left, 40, funct
 
 var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 	{
-		var q = json_stringify(global.key_map, true)
-		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, q);
-		file_text_close(_file);
-		var p = loadString(working_directory + "input.dat")
 		goto_menu(option.controlsKeyMain)
+		if changeDetec
+		{
+			var q = json_stringify(global.key_map, true)
+			var _file = file_text_open_write(working_directory + "input.dat");
+			file_text_write_string(_file, q);
+			file_text_close(_file);
+			var p = loadString(working_directory + "input.dat")
+			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
+			_s.depth = depth - 1
+		}
 	})
 
 	add_option_press(controlsKey, "option_back", function()
 	{
 		goto_menu(option.controlsKeyMain)
-		var q = json_stringify(global.key_map, true)
-		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, q);
-		file_text_close(_file);
-		var p = loadString(working_directory + "input.dat")
-		var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
-		_s.depth = depth - 1
+		if changeDetec
+		{
+			var q = json_stringify(global.key_map, true)
+			var _file = file_text_open_write(working_directory + "input.dat");
+			file_text_write_string(_file, q);
+			file_text_close(_file);
+			var p = loadString(working_directory + "input.dat")
+			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
+			_s.depth = depth - 1
+			obj_savesystem.saveiconTimer = 60
+		}
 	})
 	add_option_key(controlsKey, 0, function(){
 		}, "up_key")
@@ -556,24 +569,34 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 
 var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 	{
-		var q = json_stringify(global.key_map, true)
-		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, q);
-		file_text_close(_file);
-		var p = loadString(working_directory + "input.dat")
 		goto_menu(option.controlsPadMain)
+		if changeDetec
+		{
+			var q = json_stringify(global.key_map, true)
+			var _file = file_text_open_write(working_directory + "input.dat");
+			file_text_write_string(_file, q);
+			file_text_close(_file);
+			var p = loadString(working_directory + "input.dat")
+			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
+			_s.depth = depth - 1
+			obj_savesystem.saveiconTimer = 60
+		}
 	})
 
 	add_option_press(controlsPad, "option_back", function()
 	{
 		goto_menu(option.controlsPadMain)
-		var q = json_stringify(global.key_map, true)
-		var _file = file_text_open_write(working_directory + "input.dat");
-		file_text_write_string(_file, q);
-		file_text_close(_file);
-		var p = loadString(working_directory + "input.dat")
-		var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
-		_s.depth = depth - 1
+		if changeDetec
+		{
+			var q = json_stringify(global.key_map, true)
+			var _file = file_text_open_write(working_directory + "input.dat");
+			file_text_write_string(_file, q);
+			file_text_close(_file);
+			var p = loadString(working_directory + "input.dat")
+			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
+			_s.depth = depth - 1
+			obj_savesystem.saveiconTimer = 60
+		}
 	})
 	add_option_key(controlsPad, 0, function(){
 		}, "up_pad")

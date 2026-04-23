@@ -9,10 +9,10 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		shader_set_uniform_f(amplitudeUniform, amp)
 		draw_sprite(screenSprite, 0, 0, 0)
 		shader_reset()
-		draw_set_alpha(graphBack.alpha)
-		draw_set_color(#ffb0db)
-		draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false)
-		draw_set_color(c_white)
+		draw_set_alpha(backdrop.alpha)
+		draw_sprite_tiled(spr_pause_bg, 0, backdrop.x, backdrop.y)
+		backdrop.x -= 0.1
+		backdrop.y -= 0.1
 		draw_set_alpha(1)
 	}
 	for (var i = 0; i < array_length(backgroundhearts); i++)
@@ -23,7 +23,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		draw_set_alpha(1)
 	}
 	var xx = SCREEN_WIDTH / 2;
-	var yy = SCREEN_HEIGHT / 2 - (70 * ((array_length(options) - 1) / 2))
+	var yy = SCREEN_HEIGHT / 2 - (52 * (array_length(options) - 1) / 2)
 	for (var i = 0; i < array_length(options); i++) 
 	{
 		var q = options[i]
@@ -35,18 +35,19 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		}
 		if (is_struct(q))
 		{
-			draw_sprite(spr_pause_letter, selected != i, xx + q.offsetX, yy + (70 * i))
 			draw_set_font(global.bigfont)
-			draw_set_color(selected == i ? c_white : #b871a6)
+			draw_set_colour(c_black)
+			draw_set_color(selected == i ? c_white : c_gray)
 			draw_set_halign(fa_center)
-			draw_text_oyh(xx + q.offsetX + (sprite_get_width(spr_pauseicons) / 4 * q.icon.alpha), yy + (70 * i), lang_get_phrase(q.option))
+			draw_text_oyh(xx + q.offsetX, yy, lang_get_phrase(q.option))
 			draw_set_alpha(q.icon.alpha)
-			draw_sprite(spr_pauseicons, q.icon.index, floor(xx + irandom_range(-1, 1) - (string_width(lang_get_phrase(q.option)) / 2) - 50) + q.offsetX + 42, floor(yy + (70 * i) + irandom_range(-1, 1)))
+			draw_sprite(spr_pauseicons, q.icon.index, floor(xx + irandom_range(-1, 1) - (string_width(lang_get_phrase(q.option)) / 2) - 80) + q.offsetX + 42, floor(yy + irandom_range(-1, 1)))
 			draw_set_alpha(1)
 			q.icon.alpha = approach(q.icon.alpha, selected == i, 0.1)
+			yy += 52
 		}
 	}
-	draw_sprite_ext(spr_pauseBorder, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, graphBorderSize, graphBorderSize, 0, c_white, 1)
+	draw_sprite_ext(spr_pauseBorder, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, border_size, border_size, 0, c_white, 1)
 	for (var i = 0; i < array_length(secrets); i++)
 	{
 		var q = secrets[i]
@@ -59,7 +60,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		}
 		if active
 		{
-			if graphBorderSize == 1
+			if border_size == 1
 			{
 				var _isSecret = global.secretCount > q.index
 				if q.secret != _isSecret
@@ -71,7 +72,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		}
 		q.scale = approach(q.scale, 1, 0.1)
 		if global.level != noone
-			draw_sprite_ext(q.secret ? spr_pauseHeart_full : spr_pauseHeart_empty, q.index, _XX, _YY, q.scale, q.scale, 0, c_white, graphBack.alpha / 0.4)
+			draw_sprite_ext(q.secret ? spr_pauseHeart_full : spr_pauseHeart_empty, q.index, _XX, _YY, q.scale, q.scale, 0, c_white, backdrop.alpha / 0.4)
 	}
 	if global.level != noone
 	{
@@ -80,7 +81,7 @@ if !instance_exists(obj_option) && !instance_exists(obj_feats)
 		draw_set_alpha(1)
 	}
 	treasureAlpha = approach(treasureAlpha, active, 0.1)
-	graphBorderSize = lerp(graphBorderSize, active ? 1 : 2, 0.3)
+	border_size = lerp(border_size, active ? 1 : 2, 0.3)
 	if active
 	{
 		if tipText != ""

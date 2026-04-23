@@ -28,25 +28,18 @@ for (var i = 0; i < array_length(saveFiles); i++)
 	
 	if scene != 2
 	{
+		draw_set_alpha(q.faceAlpha * hudAlpha)
+		draw_sprite(spr_mainmenu_tomatoface, q.faceIndex, q.movie.x + 63 - 42, q.movie.y + 83 + 24)
+		draw_set_alpha(1)
+		
 		var _xx = q.movie.x + 63
 		var _yy = q.movie.y + 83
 		
 		draw_set_alpha(q.statusAlpha * hudAlpha)
-		draw_sprite(spr_tapestatus, 0, _xx, _yy)
+		draw_sprite(spr_tapestatus, 0, _xx, _yy - 10)
 		draw_set_halign(fa_left)
 		draw_set_font(global.percentageFont)
 		draw_text(_xx - 12, _yy, $"{round(q.completion)}%")
-		draw_set_alpha(1)
-	}
-}
-
-for (var i = 0; i < array_length(saveFiles); i++)
-{
-	var q = saveFiles[i]
-	if scene != 2
-	{
-		draw_set_alpha(q.faceAlpha * hudAlpha)
-		draw_sprite(spr_mainmenu_tomatoface, q.faceIndex, q.movie.x + 63 - 42, q.movie.y + 83 + 24)
 		draw_set_alpha(1)
 	}
 }
@@ -57,11 +50,11 @@ draw_set_halign(fa_center)
 draw_sprite(spr_controls, 0, 843, 77)
 draw_sprite(spr_quitgame, 0, 0, 0)
 draw_set_halign(fa_left)
-draw_text_oyh(843 - 64, -45, "[S]")
-draw_text_oyh(75, -5, "[G]")
+draw_text_oyh(843 - 64 - 24, 16, "[S]")
+draw_text_oyh(75, 32, "[G]")
 draw_set_font(global.creditsfont)
 draw_sprite(spr_deletefile, 0, 832, 448)
-draw_text_oyh(768, 448, "[T]")
+draw_text_oyh(768 + 3, 448 - 6, "[T]")
 draw_set_font(global.smallfont)
 draw_set_color(c_white)
 draw_set_halign(fa_right)

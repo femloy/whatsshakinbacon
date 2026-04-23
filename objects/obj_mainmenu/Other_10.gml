@@ -1,5 +1,6 @@
 var _rm = hotel_receptionentrance
 var _dr = "A"
+var q = saveFiles[selectedFile]
 with obj_player 
 {
 	generalReset()
@@ -9,6 +10,8 @@ with obj_player
 	vsp = 0
 	hsp = 0
 	state = states.enterdoor
+	palette_index = q.palette
+	global.patternSpr = q.patternSpr
 }
 
 ini_open(global.saveFile)
@@ -16,7 +19,6 @@ ini_open(global.saveFile)
 global.fun = irandom_range(0, 100)
 global.cutscenes = {}
 global.cutscenes.miltonIntro = ini_read_real("Cutscenes", "miltonIntro", false)
-obj_player.palette_index = ini_read_real("Game", "Palette", 1)
 
 ini_close()
 
