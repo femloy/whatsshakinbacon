@@ -34,9 +34,6 @@
 		<relationship name="banks">
 			<destination>{1fad9061-0bdc-4a75-99a3-1ff914dc0e63}</destination>
 		</relationship>
-		<relationship name="defaultEvent">
-			<destination>{b11b1aa3-5b39-4d73-871d-773c42de127c}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixer" id="{63afe070-a2eb-48f8-9905-6b0c23b9debe}">
 		<relationship name="masterBus">
@@ -82,6 +79,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6a6a0599-9e8c-4502-91ac-98309210e8db}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{639667fc-31dd-45b9-8c02-59c5664a6320}</destination>
 		</relationship>

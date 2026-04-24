@@ -5,7 +5,7 @@
 			<value>switch</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{10863812-c9e5-44ee-bc6c-16afc103ef23}</destination>
@@ -33,9 +33,6 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{1fad9061-0bdc-4a75-99a3-1ff914dc0e63}</destination>
-		</relationship>
-		<relationship name="defaultEvent">
-			<destination>{6fe99dbd-a047-4ce2-8afd-5b67594fb5a4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{92681abf-502e-46bc-8773-b30549bc2ed3}">
@@ -80,6 +77,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e604813e-d427-45d9-a510-8526c5da6af3}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{a5b8833b-b827-4531-b54a-dc9c802651a7}</destination>
 		</relationship>

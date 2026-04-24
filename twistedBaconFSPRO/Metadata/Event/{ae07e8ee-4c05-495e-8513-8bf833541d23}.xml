@@ -5,7 +5,7 @@
 			<value>turnon</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{82f64dc6-8a84-4b52-bfe5-4479059251d4}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f6c77dd7-5745-4370-9283-21d863f151ba}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{4063bc31-aa99-40e6-982a-09464efa1cec}</destination>
 		</relationship>

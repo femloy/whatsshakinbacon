@@ -1,6 +1,6 @@
-blackAlpha = 1
-fadeout = false
-obj_player.state = -4
+logo_xs = 0
+logo_ys = 0
+logo_alpha = 1
 scene = 0
-showFmod = false
-showHeart = true
+timer = 30
+spd = 0

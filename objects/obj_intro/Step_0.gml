@@ -1,34 +1,45 @@
-get_menu_input()
-if fadeout == false
-{
-	blackAlpha = approach(blackAlpha, 0, 0.01)
-}
-else if fadeout == true
-{
-	blackAlpha = approach(blackAlpha, 1, 0.01)
-}
 switch scene
 {
 	case 0:
-		if blackAlpha == 0 && alarm[1] <= 0 && !fadeout
+		timer = max(timer - 1, 0)
+		if timer == 0
 		{
-			alarm[1] = 60 * 2
+			logo_xs += 0.2
+			logo_ys += 0.15
 		}
-		if fadeout && blackAlpha == 1 || key_jump_pressed
+		if logo_xs > 1
 		{
-			showFmod = true
-			showHeart = false
-			scene = 1
-			fadeout = false
-			blackAlpha = 1
+			FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+			FMODevent_oneshot("event:/Sfx/Player/yay", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+			scene++
+			timer = 60 * 2
 		}
 		break
 	case 1:
-		if blackAlpha == 0 && alarm[1] <= 0 && !fadeout
+		logo_xs = lerp(logo_xs, 1, 0.15)
+		logo_ys = lerp(logo_ys, 1, 0.15)
+		timer = max(timer - 1, 0)
+		if timer == 0
 		{
-			alarm[1] = 60 * 2
+			FMODevent_oneshot("event:/Sfx/UI/slideClose")
+			scene = 2
+			spd = 0
 		}
-		if fadeout && blackAlpha == 1 || key_jump_pressed
+	break
+	case 2:
+		spd += 0.005
+		logo_xs = max(logo_xs - spd, 0)
+		logo_ys = max(logo_ys - spd, 0)
+		logo_alpha = max(logo_alpha - spd, 0)
+		if logo_alpha == 0
+		{
+			scene = 3
+			timer = 30
+		}
+	break
+	case 3:
+		timer--
+		if timer < 0
 		{
 			instance_destroy()
 			instance_create(x, y, obj_intro_video)

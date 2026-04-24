@@ -5,7 +5,7 @@
 			<value>menuselect</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9e142e7a-b144-46bc-9e5a-07ed5fc54ffb}</destination>
@@ -78,6 +78,9 @@
 	<object class="EventMixerMaster" id="{6b74ecb8-c8a7-4adc-9f63-f2add67438a1}">
 		<property name="volume">
 			<value>6</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{4e37ceee-bbed-40d6-8976-1a53c9db3599}</destination>

@@ -5,7 +5,7 @@
 			<value>titlecard</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1a1e4206-f0e0-49c2-848d-9cba8f57409a}</destination>
@@ -87,6 +87,9 @@
 	<object class="EventMixerMaster" id="{02617d24-fa38-493f-a8d7-694afe1fea51}">
 		<property name="volume">
 			<value>3</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{1bf05402-25d8-43ba-a424-40b2c6b51fd4}</destination>

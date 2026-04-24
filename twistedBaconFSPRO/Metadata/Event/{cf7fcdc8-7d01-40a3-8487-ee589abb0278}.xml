@@ -5,7 +5,7 @@
 			<value>step</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9e142e7a-b144-46bc-9e5a-07ed5fc54ffb}</destination>
@@ -74,6 +74,9 @@
 	<object class="EventMixerMaster" id="{4cb535c8-66cf-4f86-9212-38922708b60b}">
 		<property name="volume">
 			<value>1.5</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{09cf73f6-1b3e-4c51-b559-fd8428f9e844}</destination>

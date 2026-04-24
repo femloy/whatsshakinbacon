@@ -5,7 +5,7 @@
 			<value>prankfail</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2223ebbc-0626-4f9b-a4eb-be73791d772f}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f7e16ad0-b8e9-44ba-91b5-ad4f593b04e1}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{6d8d45fb-3e3a-48b3-afe2-0c2112b98742}</destination>
 		</relationship>

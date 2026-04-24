@@ -5,7 +5,7 @@
 			<value>transition</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{10863812-c9e5-44ee-bc6c-16afc103ef23}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1d7b9b92-8302-436f-9604-f2d4415c15be}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{9d656f86-da8b-48f8-a59d-f6fcad56a869}</destination>
 		</relationship>

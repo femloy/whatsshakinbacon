@@ -5,7 +5,7 @@
 			<value>menumove</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9e142e7a-b144-46bc-9e5a-07ed5fc54ffb}</destination>
@@ -33,9 +33,6 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{1fad9061-0bdc-4a75-99a3-1ff914dc0e63}</destination>
-		</relationship>
-		<relationship name="defaultEvent">
-			<destination>{3ea49d8d-20d8-45cd-a978-dde82f533944}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{6983f2f3-ba2a-4968-8140-539427b8f956}">
@@ -79,6 +76,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b12dabd9-b191-4a1a-9bb1-a8da31db1319}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{49562089-f1cb-4f30-bdd6-b8384c22ed47}</destination>
 		</relationship>

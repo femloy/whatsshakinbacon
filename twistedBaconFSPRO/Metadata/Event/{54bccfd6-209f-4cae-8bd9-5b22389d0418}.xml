@@ -5,7 +5,7 @@
 			<value>flick</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2223ebbc-0626-4f9b-a4eb-be73791d772f}</destination>
@@ -78,6 +78,9 @@
 	<object class="EventMixerMaster" id="{48e9fe17-76d3-4a36-88c5-7cefb36447e7}">
 		<property name="volume">
 			<value>-6.5</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{0149c477-2fcb-4f2b-9de8-94cc28aac381}</destination>

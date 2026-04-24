@@ -88,6 +88,9 @@
 		<property name="volume">
 			<value>-2</value>
 		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{c11b3a65-82e6-40bf-8d8c-09fbdc0643c8}</destination>
 		</relationship>

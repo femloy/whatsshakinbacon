@@ -5,7 +5,7 @@
 			<value>toppinget</value>
 		</property>
 		<property name="outputFormat">
-			<value>7</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b65847ef-56d9-4776-a551-bea10eb80386}</destination>
@@ -88,7 +88,7 @@
 			<value>8</value>
 		</property>
 		<property name="overridingInputFormat">
-			<value>7</value>
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{8690958d-5911-4d33-a3b3-51257b7585d1}</destination>

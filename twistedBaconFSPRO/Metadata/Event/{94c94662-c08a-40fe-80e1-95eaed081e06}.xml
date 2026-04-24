@@ -5,7 +5,7 @@
 			<value>rankup</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{02c6c033-02e0-4879-a296-5ba5c19cca61}</destination>
@@ -93,6 +93,9 @@
 	<object class="EventMixerMaster" id="{c6c6c8e8-0a77-42c4-b0b3-ee7526aece19}">
 		<property name="volume">
 			<value>10</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{fb568c04-a9c0-496c-871b-a294536b25e5}</destination>

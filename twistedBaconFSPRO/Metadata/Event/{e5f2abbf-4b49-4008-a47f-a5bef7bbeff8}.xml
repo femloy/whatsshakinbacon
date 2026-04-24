@@ -5,7 +5,7 @@
 			<value>mangrovesecret</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1a1e4206-f0e0-49c2-848d-9cba8f57409a}</destination>
@@ -83,6 +83,9 @@
 	<object class="EventMixerMaster" id="{29eaf0e1-a07b-49cd-8093-de65f7cc4013}">
 		<property name="volume">
 			<value>3</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{fd6d7b4a-9a11-4357-a9b6-8be78dbfcd5b}</destination>

@@ -5,7 +5,7 @@
 			<value>rankdown</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{02c6c033-02e0-4879-a296-5ba5c19cca61}</destination>
@@ -93,6 +93,9 @@
 	<object class="EventMixerMaster" id="{2c8613ec-6b14-4414-9c9b-aea56efd0fbd}">
 		<property name="volume">
 			<value>10</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{714c9005-59e0-44a4-825a-980247df0d93}</destination>

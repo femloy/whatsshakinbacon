@@ -5,7 +5,7 @@
 			<value>vinyl</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cdf3d385-636c-45ed-9644-8744fa163570}</destination>
@@ -77,6 +77,9 @@
 	<object class="EventMixerMaster" id="{5691d5fb-0407-4807-878a-e5e881984e46}">
 		<property name="volume">
 			<value>-17.5</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d3d2abd1-d5f1-41ac-b0a8-4a136998db22}</destination>

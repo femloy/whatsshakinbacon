@@ -36,7 +36,7 @@ switch m.anchor
 			if is_struct(q.icon)
 			{
 				draw_set_alpha(q.icon.alpha)
-				draw_sprite(spr_pauseicons, q.icon.index, floor(xx + irandom_range(-1, 1) - (string_width(lang_get_phrase(q.name)) / 2) - 50), floor(yy + m.ypad * i + irandom_range(-1, 1)))
+				draw_sprite(spr_pauseicons, q.icon.index, floor(xx + irandom_range(-1, 1) + (string_width(lang_get_phrase(q.name)) / 2) + 50), floor(yy + m.ypad * i + irandom_range(-1, 1)))
 				draw_set_alpha(1)
 				q.icon.alpha = approach(q.icon.alpha, selected == i, 0.1)
 			}

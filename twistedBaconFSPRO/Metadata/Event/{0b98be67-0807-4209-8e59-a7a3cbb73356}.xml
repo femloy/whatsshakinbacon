@@ -5,7 +5,7 @@
 			<value>pause</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cc221a80-b5f2-4c79-8fff-81a9dddcbc94}</destination>
@@ -78,6 +78,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b9645828-4d06-4b86-be6d-bac4f966e842}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{2e875804-a510-441c-a67e-6dcade7e48df}</destination>
 		</relationship>
@@ -135,10 +138,10 @@
 	</object>
 	<object class="LoopRegion" id="{26a6b98b-21c7-4440-a783-67a5a40fa71b}">
 		<property name="position">
-			<value>0.029607225920017299</value>
+			<value>14.328354166666667</value>
 		</property>
 		<property name="length">
-			<value>128.92562194074665</value>
+			<value>114.62687500000001</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{c5d13b55-9084-4a05-8d14-764fa51d60e6}</destination>

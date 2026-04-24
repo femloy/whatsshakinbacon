@@ -5,7 +5,7 @@
 			<value>comboend</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2223ebbc-0626-4f9b-a4eb-be73791d772f}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9ad5f3d3-e15c-4713-bc23-7cdb0c9cbfb4}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{5c4e92da-9ab1-43d8-a863-764420e93b5b}</destination>
 		</relationship>

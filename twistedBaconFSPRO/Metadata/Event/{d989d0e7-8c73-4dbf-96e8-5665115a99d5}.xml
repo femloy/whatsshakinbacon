@@ -5,7 +5,7 @@
 			<value>selectmovie</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{82f64dc6-8a84-4b52-bfe5-4479059251d4}</destination>
@@ -76,6 +76,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0fdf0236-58ab-4ae9-91c7-f491695e1515}">
+		<property name="overridingInputFormat">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{43b76fde-6922-491c-b687-d74a920cc929}</destination>
 		</relationship>
