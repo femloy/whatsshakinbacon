@@ -20,7 +20,7 @@
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"4a6774a7-82b3-4633-9454-8f1cab630129","blendMode":0,"displayName":"default","isLocked":false,"name":"4a6774a7-82b3-4633-9454-8f1cab630129","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4a6774a7-82b3-4633-9454-8f1cab630129","blendMode":0,"displayName":"default","isLocked":false,"name":"4a6774a7-82b3-4633-9454-8f1cab630129","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_gameframe_caption",
   "nineSlice":{

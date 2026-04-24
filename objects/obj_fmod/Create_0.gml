@@ -54,3 +54,10 @@ for (var i = 0; i < array_length(banks); i++)
 	array_push(loadedBanks, fmod_studio_system_load_bank_file(b, FMOD_STUDIO_LOAD_BANK.NORMAL))
 	show_debug_message($"Loaded {b}!")
 }
+
+ini_open(working_directory + "options.ini")
+global.MasterVolume = ini_read_real("General", "Master", 1)
+global.MusicVolume = ini_read_real("General", "Music", 1)
+global.SfxVolume = ini_read_real("General", "Sfx", 0.8)
+global.AmbianceVolume = ini_read_real("General", "Ambiance", 1)
+ini_close()

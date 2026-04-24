@@ -2,7 +2,7 @@ get_input()
 if key_jump_pressed
 {
 	instance_destroy()
-	instance_create(x, y, obj_intro)
+	instance_create(x, y, obj_intro_video)
 }
 if image_xscale < 1
 {

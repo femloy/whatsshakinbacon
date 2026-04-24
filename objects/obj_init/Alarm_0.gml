@@ -15,5 +15,6 @@ if array_length(textures) > 0
 } 
 else
 {
-	room_goto(initObject)
+	instance_destroy()
+	obj_intro.scene = 0
 }

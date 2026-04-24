@@ -4,11 +4,6 @@ switch scene
 		timer = max(timer - 1, 0)
 		if timer == 0
 		{
-			logo_xs += 0.2
-			logo_ys += 0.15
-		}
-		if logo_xs > 1
-		{
 			FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 			FMODevent_oneshot("event:/Sfx/Player/yay", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 			scene++
@@ -16,8 +11,10 @@ switch scene
 		}
 		break
 	case 1:
-		logo_xs = lerp(logo_xs, 1, 0.15)
-		logo_ys = lerp(logo_ys, 1, 0.15)
+		logo_xs = easeOutElastic(easeVal2)
+		logo_ys = easeOutElastic(easeVal)
+		easeVal = min(easeVal + 1 / 60, 1)
+		easeVal2 = min(easeVal2 + 1 / 40, 1)
 		timer = max(timer - 1, 0)
 		if timer == 0
 		{
@@ -41,8 +38,7 @@ switch scene
 		timer--
 		if timer < 0
 		{
-			instance_destroy()
-			instance_create(x, y, obj_intro_video)
+			room_goto(initObject)
 		}
 		break
 }

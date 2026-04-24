@@ -6,6 +6,7 @@ gameframe_caption_font = global.creditsfontsmall
 gameframe_caption_icon = spr_ico
 gameframe_caption_text_align = fa_left
 gameframe_blend = c_white
+gameframe_alpha = 0
 mouse_in_window = false
 gameframe_visible_time = 60
 mouseX = mouse_x
