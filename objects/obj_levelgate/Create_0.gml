@@ -28,3 +28,4 @@ scoreViewer = -4
 create_uparrow()
 createdToppins = false
 jingle = "event:/Music/W1/Monolith Mangrove/titlecard"
+tcard = "spr_titlecardMonolith"

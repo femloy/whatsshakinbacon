@@ -9,9 +9,18 @@ function pattern_draw(_sprite, _index, _x, _y, _xscale, _yscale, _rot, _col, _al
 		if _xscale == 0 || _yscale == 0
 			exit;
 		// fall back if theres really nothing to be drawn
-		var _surf = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite))
+		if !variable_instance_exists(self, "playerPatternSurface")
+			playerPatternSurface = -4
+		if surface_exists(playerPatternSurface)
+		{
+			if surface_get_width(playerPatternSurface) != sprite_get_width(_sprite) || surface_get_height(playerPatternSurface) != sprite_get_height(_sprite)
+				surface_resize(playerPatternSurface, sprite_get_width(_sprite), sprite_get_height(_sprite))
+		}
 		
-		surface_set_target(_surf);
+		if !surface_exists(playerPatternSurface)
+			playerPatternSurface = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite))
+		
+		surface_set_target(playerPatternSurface);
 			draw_clear_alpha(c_black, 0);
 			shader_reset()
 			shader_set(shd_pattern) // shader so the only thing that gets outputted is the color u want the pattern to draw on
@@ -31,7 +40,6 @@ function pattern_draw(_sprite, _index, _x, _y, _xscale, _yscale, _rot, _col, _al
 			reset_blendmmode()
 		surface_reset_target()
 		
-		draw_surface_ext(_surf, _x - sprite_get_xoffset(_sprite) * _xscale, _y - sprite_get_yoffset(_sprite) * _yscale, _xscale, _yscale, 0, _col, _alpha)
-		surface_free(_surf)
+		draw_surface_ext(playerPatternSurface, _x - sprite_get_xoffset(_sprite) * _xscale, _y - sprite_get_yoffset(_sprite) * _yscale, _xscale, _yscale, 0, _col, _alpha)
 	}
 }

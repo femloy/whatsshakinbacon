@@ -4,3 +4,4 @@ create_gate_layer(spr_gate_shellBG, 2, 0, 0, 0.35, 0)
 create_gate_layer(spr_gate_shellBG, 1, 0, 0, 0.25, 0)
 create_gate_layer(spr_gate_shellBG, 0, 0, 0, 0.15, 0)
 jingle = "event:/Music/W1/Rock Bottom/titlecard"
+tcard = "spr_titlecardRockBottom"

@@ -68,23 +68,23 @@ enum characters
 }
 
 global.characters = {}
-
+global.playerPaletteSurface = -4
 function character_get_color(_palette, _index)
 {
 	var col = {
 		main: #FFFFFF,
 		secon: #FFFFFF,
 	}
-	var _temp_surface = surface_create(sprite_get_width(_palette), sprite_get_height(_palette))
+	if !surface_exists(global.playerPaletteSurface)
+		global.playerPaletteSurface = surface_create(sprite_get_width(_palette), sprite_get_height(_palette))
 	
-	surface_set_target(_temp_surface)
+	surface_set_target(global.playerPaletteSurface)
 	draw_clear_alpha(c_black, 0)
 	draw_sprite(_palette, 0, 0, 0)
 	surface_reset_target()
 	
-	col.main = surface_getpixel(_temp_surface, _index, 2)
-	col.secon = surface_getpixel(_temp_surface, _index, 5)
-	surface_free(_temp_surface)
+	col.main = surface_getpixel(global.playerPaletteSurface, _index, 2)
+	col.secon = surface_getpixel(global.playerPaletteSurface, _index, 5)
 	
 	return col
 }

@@ -1,5 +1,6 @@
-titlecardSprite = lang_get_asset("spr_titlecardMonolith1")
-titlecardName = {sprite: lang_get_asset("spr_titlecardMonolith2"), x: 0, y: 0, alpha: 0, fadeIn: false}
+tcard = "spr_titlecardMonolith"
+titlecardSprite = lang_get_asset($"{tcard}1")
+titlecardName = {sprite: lang_get_asset($"{tcard}2"), x: 0, y: 0, alpha: 0, fadeIn: false}
 fadeAlpha = 0
 fadeIn = true
 scene = 0

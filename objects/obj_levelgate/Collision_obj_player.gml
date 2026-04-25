@@ -22,6 +22,7 @@ if other.grounded && other.key_up && other.state == states.normal
 }
 var _jingle = jingle
 var _group = texture_group
+var _tcard = tcard
 with other
 {
 	if image_index == image_number - 1 && sprite_index == spr_player_entergate && !instance_exists(obj_fadeout)
@@ -44,8 +45,11 @@ with other
 				var _title = instance_create(0, 0, obj_titlecard)
 				with _title
 				{
+					tcard = _tcard
 					jingle = _jingle
 					group = _group
+					titlecardSprite = lang_get_asset($"{tcard}1")
+					titlecardName = {sprite: lang_get_asset($"{tcard}2"), x: 0, y: 0, alpha: 0, fadeIn: false}
 				}
 			}
 		}

@@ -46,6 +46,3 @@ reset_blendmmode()
 surface_reset_target()
 
 draw_surface(surf, x, y)
-
-surface_free(surf)
-surface_free(clip)

@@ -49,4 +49,14 @@
     "yorigin":0.0,
     "path":"art/spr_titlecardMonolith2.png"
   },
+"spr_titlecardRockBottom1":{
+    "xorigin":0.0,
+    "yorigin":0.0,
+    "path":"art/spr_titlecardRockBottom1.png"
+  },
+  "spr_titlecardRockBottom2":{
+    "xorigin":0.0,
+    "yorigin":0.0,
+    "path":"art/spr_titlecardRockBottom2.png"
+  },
 }

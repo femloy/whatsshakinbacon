@@ -4,7 +4,7 @@ switch scene
 		timer = max(timer - 1, 0)
 		if timer == 0
 		{
-			FMODevent_oneshot("event:/Sfx/General/Collects/bigcollect", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+			FMODevent_oneshot("event:/Sfx/General/Collects/collect", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 			FMODevent_oneshot("event:/Sfx/Player/yay", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 			scene++
 			timer = 60 * 2
