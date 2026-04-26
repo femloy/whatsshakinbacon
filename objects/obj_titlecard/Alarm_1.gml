@@ -1,5 +1,5 @@
 scene = 2
-circleSize = SCREEN_WIDTH
+circleSize = 9
 circleSizeSpeed = 0
 fadeAlpha = 1
 FMODevent_oneshot("event:/Sfx/UI/slideClose")

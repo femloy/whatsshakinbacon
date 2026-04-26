@@ -26,37 +26,10 @@ if scene == 0 || scene == 1
 if scene == 2
 {
 	circleSize = approach(circleSize, 0, circleSizeSpeed)
-	circleSizeSpeed += 1
+	circleSizeSpeed += 1 / 35
 	if circleSize == 0
 	{
 		scene = 3
 		alarm[2] = 45
-	}
-}
-if scene == 4
-{
-	circleSize = approach(circleSize, SCREEN_WIDTH, circleSizeSpeed)
-	circleSizeSpeed += 1
-	if circleSize == SCREEN_WIDTH
-	{
-		scene = 5
-		alarm[3] = 25
-	}
-	
-}
-if scene == 6
-{
-	ratingAlpha = approach(ratingAlpha, 1, 0.1)
-	if ratingAlpha == 1 && alarm[3] <= 0
-	{
-		alarm[3] = 60 * 3
-	}
-}
-if scene == 7
-{
-	ratingAlpha = approach(ratingAlpha, 0, 0.01)
-	if ratingAlpha == 0
-	{
-		instance_destroy()
 	}
 }

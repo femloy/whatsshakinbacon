@@ -20,16 +20,12 @@ function scr_player_machturn()
 	if animation_end() && sprite_index == spr_player_mach2turn
 	{
 		sprite_index = spr_player_mach2turnfall
-		squashX = 1.3
-		squashY = 0.8
 		if !grounded
 			FMODevent_oneshot("event:/Sfx/Player/gasp", x, y)
 	}
 	if animation_end() && sprite_index == spr_player_mach3turn
 	{
 		sprite_index = spr_player_mach3turnfall
-		squashX = 1.3
-		squashY = 0.8
 		if !grounded
 			FMODevent_oneshot("event:/Sfx/Player/gasp", x, y)
 	}

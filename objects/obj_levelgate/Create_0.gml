@@ -29,3 +29,5 @@ create_uparrow()
 createdToppins = false
 jingle = "event:/Music/W1/Monolith Mangrove/titlecard"
 tcard = "spr_titlecardMonolith"
+_surf = -4
+_clip = -4

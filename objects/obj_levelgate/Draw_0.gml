@@ -2,14 +2,14 @@ var x1 = sprite_get_xoffset(sprite_index)
 var y1 = sprite_get_yoffset(sprite_index)
 draw_sprite(sprite_index, 1, x, y)
 var _bgyoffset = sprite_get_yoffset(spr_gate_waybackBG) + sprite_get_height(sprite_index)
-var _surf = -4
-var _clip = -4
+
 
 if bgalpha > 0
 {
 	if (!surface_exists(_surf))
 		_surf = surface_create(sprite_get_width(sprite_index), sprite_get_height(sprite_index))
 	surface_set_target(_surf)
+	draw_clear_alpha(c_black, 0)
 	
 	if (!ds_list_empty(gateinfo))
 	{
@@ -51,7 +51,5 @@ if bgalpha > 0
 	draw_set_alpha(bgalpha)
 	draw_surface(_surf, x - x1, y - y1)
 	draw_set_alpha(1)
-	surface_free(_surf)
-	surface_free(_clip)
 }
 draw_self()

@@ -6,7 +6,8 @@ draw_set_color(c_black)
 draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false)
 draw_set_color(c_white)
 gpu_set_blendmode(bm_subtract)
-draw_circle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, circleSize, false)
+var _s = circleSize / 9
+draw_sprite_ext(spr_transition_mildred, 0, SCREEN_WIDTH / 2 + (96 * _s), SCREEN_HEIGHT / 2 - (270 * _s), circleSize, circleSize, 0, c_white, 1)
 reset_blendmmode()
 surface_reset_target()
 

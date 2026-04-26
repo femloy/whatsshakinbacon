@@ -172,6 +172,7 @@ function scr_player_normal()
 	}
 	if key_down && grounded || place_meeting(x, y - 1, obj_solid)
 	{
+		buffers.breakdanceheld = 0
 		image_speed = 0.35
 		image_index = 0
 		sprite_index = spr_player_crouchstart

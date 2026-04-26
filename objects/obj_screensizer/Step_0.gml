@@ -23,7 +23,8 @@ if gameframe_alpha > 0
 else {
 	gameframe_default_cursor = cr_none
 }
-
+if !window_has_focus()
+	gameframe_alpha = 0
 if gameframe_visible_time > 0
 {
 	gameframe_visible_time--

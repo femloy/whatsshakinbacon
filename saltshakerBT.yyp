@@ -1161,6 +1161,7 @@
     {"id":{"name":"spr_toppinrank","path":"sprites/spr_toppinrank/spr_toppinrank.yy",},},
     {"id":{"name":"spr_totems","path":"sprites/spr_totems/spr_totems.yy",},},
     {"id":{"name":"spr_transition_heart","path":"sprites/spr_transition_heart/spr_transition_heart.yy",},},
+    {"id":{"name":"spr_transition_mildred","path":"sprites/spr_transition_mildred/spr_transition_mildred.yy",},},
     {"id":{"name":"spr_trash","path":"sprites/spr_trash/spr_trash.yy",},},
     {"id":{"name":"spr_treasure_pause","path":"sprites/spr_treasure_pause/spr_treasure_pause.yy",},},
     {"id":{"name":"spr_treasure","path":"sprites/spr_treasure/spr_treasure.yy",},},

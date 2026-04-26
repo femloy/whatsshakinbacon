@@ -937,6 +937,7 @@
     {"name":"spr_tinytaunteffect","order":21,"path":"sprites/spr_tinytaunteffect/spr_tinytaunteffect.yy",},
     {"name":"spr_toppinrank","order":2,"path":"sprites/spr_toppinrank/spr_toppinrank.yy",},
     {"name":"spr_transition_heart","order":38,"path":"sprites/spr_transition_heart/spr_transition_heart.yy",},
+    {"name":"spr_transition_mildred","order":35,"path":"sprites/spr_transition_mildred/spr_transition_mildred.yy",},
     {"name":"spr_trash","order":7,"path":"sprites/spr_trash/spr_trash.yy",},
     {"name":"spr_treasure_pause","order":7,"path":"sprites/spr_treasure_pause/spr_treasure_pause.yy",},
     {"name":"spr_treasure","order":53,"path":"sprites/spr_treasure/spr_treasure.yy",},

@@ -1,8 +1,8 @@
 if scene == 0
 {
-	circleSize = approach(circleSize, SCREEN_WIDTH, circleSizeSpeed)
-	circleSizeSpeed += 1
-	if circleSize == SCREEN_WIDTH
+	circleSize = approach(circleSize, 9, circleSizeSpeed)
+	circleSizeSpeed += 1 / 45
+	if circleSize == 9
 	{
 		scene = 1
 		alarm[0] = 25
