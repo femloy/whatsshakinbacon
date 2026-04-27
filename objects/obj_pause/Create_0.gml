@@ -93,7 +93,7 @@ function doPause()
 	array_push(options, _option)
 	if global.level != noone
 		array_push(options, _restart)
-	if global.level != noone
+	if global.level != noone && global.level != "tutorial"
 		array_push(options, _tasks)
 	array_push(options, _exitlevel)
 }
