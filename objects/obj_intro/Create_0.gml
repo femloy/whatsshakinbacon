@@ -4,6 +4,7 @@ logo_alpha = 1
 scene = -1
 timer = 30
 spd = 0
+
 easeOutElastic = function(x) {
     var _c4 = (2 * pi) / 3;
     
