@@ -1,6 +1,6 @@
 function scr_savelevel()
 {
-	ini_open(global.saveFile)
+	ini_open_from_string(obj_savesystem.ini_str)
 
 	var _rankString = "D"
 	if global.collect >= global.Crank
@@ -26,8 +26,8 @@ function scr_savelevel()
 		ini_write_real(global.level, "Secrets", global.secretCount)
 	}
 	
-	obj_savesystem.saveiconTimer = 30
-	ini_close()
+	obj_savesystem.ini_str = ini_close()
+	async_save_game()
 }
 
 function add_party_time(time_in_seconds, _freeze)
@@ -108,25 +108,6 @@ function scr_cutoff()
 		instance_create(x + sprite_width, y + (_y * 32) + 32, obj_cutoff, {image_angle: 90})
 		instance_create(x, y + (_y * 32), obj_cutoff, {image_angle: -90})
 	}
-}
-
-function save_to_ini(_section, _key, _val, _ini = working_directory + "options.ini") 
-{
-	ini_open(_ini)
-	if is_string(_val)
-	{
-		if ini_read_string(_section, _key, _val) == _val
-			return false;
-		ini_write_string(_section, _key, _val)
-	}
-	else
-	{
-		if ini_read_real(_section, _key, _val) == _val
-			return false;
-		ini_write_real(_section, _key, _val)
-	}
-	ini_close()
-	return true;
 }
 
 function create_smalltext(_text, _x = x, _y = y)

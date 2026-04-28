@@ -55,7 +55,7 @@ for (var i = 0; i < array_length(banks); i++)
 	show_debug_message($"Loaded {b}!")
 }
 
-ini_open(working_directory + "options.ini")
+ini_open(working_directory + "saveData.ini")
 global.MasterVolume = ini_read_real("General", "Master", 1)
 global.MusicVolume = ini_read_real("General", "Music", 1)
 global.SfxVolume = ini_read_real("General", "Sfx", 0.8)

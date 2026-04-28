@@ -70,8 +70,11 @@ function scr_player_tumble()
 			exit;
 		}
 		
-		if key_down_pressed && !grounded && vsp < 14
+		if downBuffer > 0 && !grounded && vsp < 14
+		{
 			vsp = 14
+			downBuffer = false
+		}
 		if sprite_index == spr_milton_dive
 		{
 			if key_grab_pressed

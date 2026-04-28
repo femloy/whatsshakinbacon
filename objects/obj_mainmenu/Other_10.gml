@@ -14,13 +14,7 @@ with obj_player
 	global.patternSpr = q.patternSpr
 }
 
-ini_open(global.saveFile)
-
-global.fun = irandom_range(0, 100)
-global.cutscenes = {}
-global.cutscenes.miltonIntro = ini_read_real("Cutscenes", "miltonIntro", false)
-
-ini_close()
+async_load_game()
 
 global.level = noone
 global.resetRoom = _rm

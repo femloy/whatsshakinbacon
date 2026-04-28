@@ -24,7 +24,6 @@ if place_meeting(x, y, obj_player)
 			ini_write_real("Game", "Palette", obj_player.palette_index)
 			ini_write_string("Game", "Pattern", sprite_get_name(global.patternSpr))
 			ini_close()
-			obj_savesystem.saveiconTimer = 60
 		}
 	}
 }

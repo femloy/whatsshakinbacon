@@ -543,6 +543,7 @@
     {"id":{"name":"scr_playerT","path":"scripts/scr_playerT/scr_playerT.yy",},},
     {"id":{"name":"scr_retro_pal_swapper_utilities","path":"scripts/scr_retro_pal_swapper_utilities/scr_retro_pal_swapper_utilities.yy",},},
     {"id":{"name":"scr_retro_pal_swapper","path":"scripts/scr_retro_pal_swapper/scr_retro_pal_swapper.yy",},},
+    {"id":{"name":"scr_savesystem","path":"scripts/scr_savesystem/scr_savesystem.yy",},},
     {"id":{"name":"scr_shell_commands","path":"scripts/scr_shell_commands/scr_shell_commands.yy",},},
     {"id":{"name":"scr_utility","path":"scripts/scr_utility/scr_utility.yy",},},
     {"id":{"name":"state_player_coconut","path":"scripts/state_player_coconut/state_player_coconut.yy",},},

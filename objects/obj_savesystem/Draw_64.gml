@@ -1,6 +1,5 @@
-if saveiconAlpha > 0
+if show_icon
 {
-	draw_set_alpha(saveiconAlpha)
-	draw_sprite(spr_littlesaltdance, saveiconIndex, SCREEN_WIDTH - 74, SCREEN_HEIGHT - 74)
-	draw_set_alpha(1)
+	var _a = clamp(icon_alpha, 0, 1)
+	draw_sprite_ext(spr_littlesaltdance, icon_index, SCREEN_WIDTH - 74, SCREEN_HEIGHT - 74, 1, 1, 0, c_white, _a)
 }

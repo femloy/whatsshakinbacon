@@ -175,7 +175,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 	var AUDIO = create_menu(option.audio, option.left, 40, function()
 	{
 		goto_menu(option.main)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "Music", global.MusicVolume)
 		ini_write_real("General", "Sfx", global.SfxVolume)
@@ -183,13 +183,13 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 		ini_write_real("General", "Ambiance", global.AmbianceVolume)
 		ini_write_real("General", "UnfocusMute", global.unfocus_mute)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(AUDIO, "option_back", function()
 	{
 		goto_menu(option.main)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "Music", global.MusicVolume)
 		ini_write_real("General", "Sfx", global.SfxVolume)
@@ -197,7 +197,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 		ini_write_real("General", "Ambiance", global.AmbianceVolume)
 		ini_write_real("General", "UnfocusMute", global.unfocus_mute)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 	
 	add_option_ext(AUDIO, option.slider, "option_audio_master", function()
@@ -253,27 +253,27 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 	var VIDEO = create_menu(option.video, option.left, 40, function()
 	{
 		goto_menu(option.main)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("Visual", "showHud", global.option_hud)
 		ini_write_real("General", "Vsync", global.vsync)
 		ini_write_real("General", "Windowsize", global.windowSize)
 		ini_write_real("General", "texFilter", global.texFilter)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(VIDEO, "option_back", function()
 	{
 		goto_menu(option.main)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("Visual", "showHud", global.option_hud)
 		ini_write_real("General", "Vsync", global.vsync)
 		ini_write_real("General", "Windowsize", global.windowSize)
 		ini_write_real("General", "texFilter", global.texFilter)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(VIDEO, "option_video_window_mode", function()
@@ -337,7 +337,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 	var GAME = create_menu(option.game, option.left, 40, function()
 	{
 		goto_menu(option.main)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "speedrunTimer", global.option_speedrun_timer)
 		ini_write_real("General", "timerType", global.option_timer_type)
@@ -345,14 +345,14 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 		ini_write_real("General", "screenshake", global.option_screenshake)
 		ini_write_real("General", "rumble", global.option_rumble)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(GAME, "option_back", function()
 	{
 		goto_menu(option.main)
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "speedrunTimer", global.option_speedrun_timer)
 		ini_write_real("General", "timerType", global.option_timer_type)
@@ -360,7 +360,7 @@ add_option_key = function(_id, _iconIndex, _function, _key = "left_key")
 		ini_write_real("General", "screenshake", global.option_screenshake)
 		ini_write_real("General", "rumble", global.option_rumble)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 		
 	})
 
@@ -441,23 +441,23 @@ var controlsKeyMain = create_menu(option.controlsKeyMain, option.left, 40, funct
 	{
 		goto_menu(option.controlsMain)
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "dirSuper", global.dirSuper)
 		ini_write_real("General", "dirGround", global.dirGround)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(controlsKeyMain, "option_back", function()
 	{
 		goto_menu(option.controlsMain)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("General", "dirSuper", global.dirSuper)
 		ini_write_real("General", "dirGround", global.dirGround)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 	add_option_press(controlsKeyMain, "option_controls_bindings", function()
 	{
@@ -527,7 +527,6 @@ var controlsKey = create_menu(option.controlsKey, option.keys, 48, function()
 			var p = loadString(working_directory + "input.dat")
 			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
 			_s.depth = depth - 1
-			obj_savesystem.saveiconTimer = 60
 		}
 	})
 	add_option_key(controlsKey, 0, function(){
@@ -580,7 +579,6 @@ var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 			var p = loadString(working_directory + "input.dat")
 			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
 			_s.depth = depth - 1
-			obj_savesystem.saveiconTimer = 60
 		}
 	})
 
@@ -596,7 +594,6 @@ var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 			var p = loadString(working_directory + "input.dat")
 			var _s = scr_transfotip(lang_get_phrase("option_controls_config_save_tip"))
 			_s.depth = depth - 1
-			obj_savesystem.saveiconTimer = 60
 		}
 	})
 	add_option_key(controlsPad, 0, function(){
@@ -639,25 +636,25 @@ var controlsPad = create_menu(option.controlsPad, option.keys, 48, function()
 var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, function()
 	{
 		goto_menu(option.controlsPadMain)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("Deadzones", "horiz", global.gamepad_deadzones.horizontal)
 		ini_write_real("Deadzones", "verti", global.gamepad_deadzones.vertical)
 		ini_write_real("Deadzones", "press", global.gamepad_deadzones.press)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_press(DEADZONES, "option_back", function()
 	{
 		goto_menu(option.controlsPadMain)
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		
 		ini_write_real("Deadzones", "horiz", global.gamepad_deadzones.horizontal)
 		ini_write_real("Deadzones", "verti", global.gamepad_deadzones.vertical)
 		ini_write_real("Deadzones", "press", global.gamepad_deadzones.press)
 		
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 	add_option_ext(DEADZONES, option.slider, "option_controls_controller_deadzone_horiz", function()
@@ -694,9 +691,9 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 	{
 		goto_menu(option.video)
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 	add_option_press(windowMode, "option_video_window_mode_windowed", function()
 	{
@@ -710,9 +707,9 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 		window_set_size(res[global.windowSize][0], res[global.windowSize][1])
 		window_center()
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 	add_option_press(windowMode, "option_video_window_mode_fullscreen", function()
 	{
@@ -723,9 +720,9 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 		
 		global.Fullscreen = 1
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 	add_option_press(windowMode, "option_video_window_mode_borderless", function()
 	{
@@ -738,9 +735,9 @@ var DEADZONES = create_menu(option.controlsPadDeadzones, option.left, 40, functi
 		
 		global.Fullscreen = 2
 		
-		ini_open(working_directory + "options.ini")
+		ini_open_from_string(obj_savesystem.ini_str_options)
 		ini_write_real("General", "Fullscreen", global.Fullscreen)
-		ini_close()
+		obj_savesystem.ini_str_options = ini_close()
 	})
 
 array_push(menus, AUDIO) // 1

@@ -13,8 +13,9 @@ function scr_player_buzzsaw()
 		buffers.afterimageBlur = 3
 		create_buzzsawAfterimage(sprite_index, image_index, x, y, xscale)
 	}
-	if key_down_pressed
+	if downBuffer > 0
 	{
+		downBuffer = false
 		if vsp < 10
 			vsp = 10
 		sprite_index = spr_player_buzzsawFastFall

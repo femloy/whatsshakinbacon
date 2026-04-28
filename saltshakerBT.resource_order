@@ -401,6 +401,7 @@
     {"name":"scr_player_uppercut","order":17,"path":"scripts/scr_player_uppercut/scr_player_uppercut.yy",},
     {"name":"scr_retro_pal_swapper_utilities","order":3,"path":"scripts/scr_retro_pal_swapper_utilities/scr_retro_pal_swapper_utilities.yy",},
     {"name":"scr_retro_pal_swapper","order":2,"path":"scripts/scr_retro_pal_swapper/scr_retro_pal_swapper.yy",},
+    {"name":"scr_savesystem","order":18,"path":"scripts/scr_savesystem/scr_savesystem.yy",},
     {"name":"scr_shell_commands","order":11,"path":"scripts/scr_shell_commands/scr_shell_commands.yy",},
     {"name":"scr_utility","order":5,"path":"scripts/scr_utility/scr_utility.yy",},
     {"name":"state_player_coconut","order":27,"path":"scripts/state_player_coconut/state_player_coconut.yy",},

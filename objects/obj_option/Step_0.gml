@@ -113,6 +113,10 @@ if buffer == 0
 						changingBind = false
 						changeDetec = true
 					}
+					else
+					{
+						FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/notset")
+					}
 			}
 		}
 	}

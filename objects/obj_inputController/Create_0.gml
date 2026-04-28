@@ -13,7 +13,7 @@ for (var i = 0; i < array_length(_axes); i++)
 }
 
 global.gamepad_deadzones = {}
-ini_open(working_directory + "options.ini")
+ini_open(working_directory + "saveData.ini")
 struct_set(global.gamepad_deadzones, "horizontal", ini_read_real("Deadzones", "horiz", 0.1))
 struct_set(global.gamepad_deadzones, "vertical", ini_read_real("Deadzones", "verti", 0.2))
 struct_set(global.gamepad_deadzones, "press", ini_read_real("Deadzones", "press", 0.4))

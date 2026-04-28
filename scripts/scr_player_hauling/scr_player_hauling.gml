@@ -157,8 +157,9 @@ function scr_player_hauling()
 		exit;
 	}
 	
-	if key_down_pressed && !grounded
+	if downBuffer > 0 && !grounded
 	{
+		downBuffer = false
 		vsp = -6
 		sprite_index = spr_player_piledriver
 		image_index = 0
