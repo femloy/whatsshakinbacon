@@ -753,3 +753,4 @@ array_push(menus, controlsPadMain) // 7
 array_push(menus, controlsPad) // 8
 array_push(menus, DEADZONES) // 9
 array_push(menus, windowMode) // 10
+bindTimerText = 0

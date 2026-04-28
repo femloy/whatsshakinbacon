@@ -248,8 +248,13 @@ if changingBind
 	draw_set_font(global.bigfont)
 	draw_set_halign(fa_center)
 	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "PRESS ANY KEY")
-	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + string_height("ABCDEFG"), $"GOING BACK IN... {ceil(changingBindTimer / 60)}")
+	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + string_height("ABCDEFG"), $"GOING BACK IN... {bindTimerText}")
 	changingBindTimer--
+	if bindTimerText != ceil(changingBindTimer / 60)
+	{
+		bindTimerText = ceil(changingBindTimer / 60)
+		FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/tick")
+	}
 	if changingBindTimer <= 0 {
 		FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/notset")
 		changingBind = false

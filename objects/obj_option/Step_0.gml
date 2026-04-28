@@ -80,6 +80,7 @@ if buffer == 0
 				{
 					changingBind = true
 					changingBindTimer = 60 * 3
+					bindTimerText = 3
 					FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/select")
 				}
 				else if key_taunt_pressed
