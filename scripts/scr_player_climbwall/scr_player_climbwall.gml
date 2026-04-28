@@ -115,18 +115,15 @@ function scr_player_climbwall()
 		image_index = 0
 	}
 	
-	if key_down_pressed && character == characters.mildred
+	if downBuffer > 0 && character == characters.mildred
 	{
-		freefallsmash = 20
-		vsp = 10
-		movespeed = hsp
-		state = states.groundpound
-		create_particleStatic(spr_cloudeffect, x, y, 1, 1)
-		buffers.crazyothereffect = 0
-		sprite_index = spr_player_wallpoundstart
+		downBuffer = 0
+		vsp = -6
+		sprite_index = spr_player_groundpoundstart
 		image_index = 0
-		squashX = 1.3
-		squashY = 0.8
+		state = states.groundpound
+		movespeed = hsp
+		freefalling = 0
 	}
 	
 	if (place_meeting(x, y - 1, obj_solid) || (place_meeting(x, y - 1, obj_platform) && sign(instance_place(x, y - 1, obj_platform).image_yscale) < 0)) && !place_meeting(x, y - 1, obj_destructibles)

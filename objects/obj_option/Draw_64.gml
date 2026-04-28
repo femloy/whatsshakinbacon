@@ -251,6 +251,7 @@ if changingBind
 	draw_text_oyh(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + string_height("ABCDEFG"), $"GOING BACK IN... {ceil(changingBindTimer / 60)}")
 	changingBindTimer--
 	if changingBindTimer <= 0 {
+		FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/notset")
 		changingBind = false
 		exit;
 	}

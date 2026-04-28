@@ -432,6 +432,7 @@ var controlsMain = create_menu(option.controlsMain, option.left, 40, function()
 	add_option_press(controlsMain, "option_controls_reset_config", function()
 	{
 		input_start(true)
+		FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/reset")
 		var _s = scr_transfotip(lang_get_phrase("option_controls_config_reset_tip"))
 		_s.depth = depth - 1
 	})

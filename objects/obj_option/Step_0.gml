@@ -70,6 +70,7 @@ if buffer == 0
 		if keyboard_check_pressed(vk_f1) && changingBind == false
 		{
 			input_start(true)
+			FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/reset")
 		}
 		if q.type == option.key
 		{
@@ -79,11 +80,12 @@ if buffer == 0
 				{
 					changingBind = true
 					changingBindTimer = 60 * 3
+					FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/select")
 				}
 				else if key_taunt_pressed
 				{
 					array_delete(global.key_map[$ q.key], array_length(global.key_map[$ q.key]) - 1, 1)
-					
+					FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/clearbind")
 					var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 					ds_map_find_value(global.input_map, _str).key_input_array = global.key_map[$ q.key]
 				}
@@ -104,7 +106,7 @@ if buffer == 0
 						keyboard_key == vk_control)
 					{
 						array_push(global.key_map[$ q.key], keyboard_key)
-						
+						FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/set")
 						var _str = string_delete(q.key, string_length(q.key) - 3, 4)
 						ds_map_find_value(global.input_map, _str).key_input_array = global.key_map[$ q.key]
 						changingBind = false
@@ -118,6 +120,7 @@ if buffer == 0
 		if keyboard_check_pressed(vk_f1) && changingBind == false
 		{
 			input_start(true)
+			FMODevent_oneshot("event:/Sfx/UI/Pause/Controls/reset")
 		}
 		if q.type == option.key
 		{
