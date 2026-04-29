@@ -42,6 +42,8 @@ if (!ds_list_empty(afterimages))
 						{
 							with other
 							{
+								if variable_instance_exists(self, "playerPatternSurface")
+									surface_free(playerPatternSurface)
 								q = undefined
 								ds_list_delete(afterimages, i)
 								i--

@@ -135,8 +135,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"effectGroup",
+    "path":"texturegroups/effectGroup",
   },
   "type":0,
   "VTile":false,
