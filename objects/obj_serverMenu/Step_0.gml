@@ -30,7 +30,8 @@ else
 			draw_set_font(global.bigfont)
 			textInput = keyboard_string
 		} 
-
+		if keyboard_check(vk_control) && keyboard_check_pressed(ord("v"))
+			textInput = clipboard_get_text()
 		if (keyboard_check_pressed(vk_enter) || key_jump_pressed)
 		{
 			if menu == 1

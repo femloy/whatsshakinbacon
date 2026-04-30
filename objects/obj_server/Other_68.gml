@@ -62,7 +62,7 @@ if (ds_map_find_value(async_load, "type") == network_type_data) {
 				}
 				if !_found
 				{
-					_objPl = instance_create(0, 0, 0, obj_onlinePlayer)
+					_objPl = instance_create(0, 0, obj_onlinePlayer)
 					_objPl.onlineID = q.onlineID
 				}
 				with _objPl
