@@ -328,8 +328,12 @@ function generalReset()
 	global.key = false
 	global.prankenemy_killed = false
 	global.prankenemy_cankill = true
-	global.tauntcount = 0
+	global.taunt_count = 0
+	global.has_paint = false
+	global.painting_count = 0
+	global.painting_max = 0
 	global.damage_count = 0
+	global.can_enter_bus = false
 	obj_player.door = "A"
 	obj_player.visible = true
 	obj_player.hallway = false
@@ -648,9 +652,9 @@ function doTaunt()
 		
 		if place_meeting(x, y, obj_exitgate) && global.escape.active && global.level != "tutorial"
 		{
-			if global.tauntcount < 10
+			if global.taunt_count < 10
 			{
-				global.tauntcount++
+				global.taunt_count++
 				create_collect(spr_taunteffect, x, y)
 				global.collect += 25
 				create_smalltext(25)

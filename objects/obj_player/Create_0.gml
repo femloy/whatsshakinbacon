@@ -152,9 +152,13 @@ if !variable_global_exists("saveroom")
 	global.prankenemy_killed = false
 	global.prankenemy_cankill = true
 	global.detective = false
-	global.tauntcount = 0
+	global.taunt_count = 0
 	global.waybackIntro = false
 	global.damage_count = 0
+	global.has_paint = false
+	global.painting_count = 0
+	global.painting_max = 0
+	global.can_enter_bus = false
 }
 
 jumpstop = false

@@ -22,7 +22,7 @@ var _struct = {
 	flash: obj_player.flash,
 	state: obj_player.state,
 	depth: obj_player.depth,
-	spr_palette: obj_player.spr_palette,
+	spr_palette: obj_player.sprites.player_pal,
 	spr_pattern: global.patternSpr,
 	palIndex: obj_player.palette_index,
 	name: global.username,

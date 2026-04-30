@@ -87,7 +87,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{ac15a3d4-e22c-401c-b2f9-6aa20fc6f23d}">
 		<property name="volume">
-			<value>-2.5</value>
+			<value>1.5</value>
 		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
@@ -228,10 +228,10 @@
 	</object>
 	<object class="LoopRegion" id="{ef580042-219e-4231-8a91-caf3d2d627e5}">
 		<property name="position">
-			<value>3.31000960591133</value>
+			<value>3.875</value>
 		</property>
 		<property name="length">
-			<value>2.93999039408867</value>
+			<value>2.9375</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{a9724a2b-5f68-40a0-84b4-37cf6bfe6fc8}</destination>

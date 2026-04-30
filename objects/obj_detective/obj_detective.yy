@@ -10,8 +10,8 @@
   "name":"obj_detective",
   "overriddenProperties":[],
   "parent":{
-    "name":"Magician Mason",
-    "path":"folders/Objects/Followers/Magician Mason.yy",
+    "name":"Followers",
+    "path":"folders/Objects/Followers.yy",
   },
   "parentObjectId":{
     "name":"par_potable",

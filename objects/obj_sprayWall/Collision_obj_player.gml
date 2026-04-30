@@ -1,4 +1,4 @@
-if other.state == states.taunt
+if global.has_paint
 {
 	if active
 		exit;
@@ -7,4 +7,5 @@ if other.state == states.taunt
 	image_blend = c_white
 	FMODevent_oneshot("event:/Sfx/General/Level/Shell City/spray", x, y)
 	global.combo.timer = 60
+	global.painting_count++
 }

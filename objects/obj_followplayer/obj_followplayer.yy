@@ -10,8 +10,8 @@
   "name":"obj_followplayer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Some Guy???",
-    "path":"folders/Objects/Followers/Some Guy???.yy",
+    "name":"Followers",
+    "path":"folders/Objects/Followers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

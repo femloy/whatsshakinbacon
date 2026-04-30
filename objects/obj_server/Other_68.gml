@@ -108,7 +108,7 @@ if (ds_map_find_value(async_load, "type") == network_type_data) {
 				network_destroy(global.client)
 				show_message("Server has closed!")
 				obj_player.targetRoom = "A"
-				room_goto(serverMenuShit)
+				room_goto(MainmenuShit)
 				instance_destroy()
 				with obj_onlinePlayer
 					instance_destroy()

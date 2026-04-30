@@ -14,6 +14,9 @@ switch room
 	case city_3:
 		_text = "beware of drugs"
 		break
+	case city_4:
+		_text = "desert bus"
+		break
 }
 if _text != "" && ds_list_find_index(global.saveroom, $"roomname: {room_get_name(room)}") == -1
 {

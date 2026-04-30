@@ -23,8 +23,10 @@ if place_meeting(x, y, obj_player)
 		if !array_contains(_cantSlip, state)
 		{
 			state = states.slip
-			movespeed = 12
-			vsp = -15
+			movespeed += 2
+			if movespeed > 14
+				movespeed = 14
+			vsp = -11
 			sprite_index = spr_player_slipsyrup
 			image_index = 0
 			FMODevent_oneshot("event:/Sfx/Player/slip", x, y)
