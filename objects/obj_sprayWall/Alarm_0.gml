@@ -1,10 +1,6 @@
-global.collect += 5
-global.combo.timer = 60
-points -= 5
-var _sprite = asset_get_index($"spr_collect{irandom_range(1, 5)}")
-create_collect(_sprite, x, y)
+global.collect += 10
+points = max(points - 10, 0)
+create_collect(asset_get_index($"spr_collect{irandom_range(1, 5)}"), x, y)
 FMODevent_oneshot("event:/Sfx/General/Collects/collect", x, y)
 if points > 0
-	alarm[0] = 4
-else
-	alarm[1] = 25
+	alarm[0] = 5

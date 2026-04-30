@@ -1,0 +1,10 @@
+if other.state == states.taunt
+{
+	if active
+		exit;
+	active = true
+	alarm[0] = 5
+	image_blend = c_white
+	FMODevent_oneshot("event:/Sfx/General/Level/Shell City/spray", x, y)
+	global.combo.timer = 60
+}

@@ -5,7 +5,7 @@
 			<value>Shell City</value>
 		</property>
 		<relationship name="folder">
-			<destination>{cd709e18-5f90-4f9b-88de-70e936179f16}</destination>
+			<destination>{19301d63-b376-4bcf-b498-b5aa6fb0b27e}</destination>
 		</relationship>
 	</object>
 </objects>

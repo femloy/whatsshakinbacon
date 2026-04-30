@@ -13,7 +13,7 @@ function scr_collision()
 	grounded = false
 	var o_x = x, o_y = y
 	if vsp < 20
-		vsp += !place_meeting(x, y, obj_water) ? grav : grav / 1.5
+		vsp +=  grav
 	var finalHsp = hsp
 	var finalVsp = vsp
 	
