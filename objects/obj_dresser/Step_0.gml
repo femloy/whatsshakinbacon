@@ -20,10 +20,10 @@ if place_meeting(x, y, obj_player)
 			palette_index = other.palettes[other.selected].index
 			global.patternSpr = other.palettes[other.selected].sprite
 			FMODevent_oneshot("event:/Sfx/General/dresser", x, y)
-			ini_open(global.saveFile)
+			ini_open_from_string(obj_savesystem.ini_str)
 			ini_write_real("Game", "Palette", obj_player.palette_index)
 			ini_write_string("Game", "Pattern", sprite_get_name(global.patternSpr))
-			ini_close()
+			obj_savesystem.ini_str = ini_close()
 		}
 	}
 }

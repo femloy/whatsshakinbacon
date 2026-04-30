@@ -445,6 +445,7 @@
     {"id":{"name":"city_2","path":"rooms/city_2/city_2.yy",},},
     {"id":{"name":"city_3","path":"rooms/city_3/city_3.yy",},},
     {"id":{"name":"city_4","path":"rooms/city_4/city_4.yy",},},
+    {"id":{"name":"city_5","path":"rooms/city_5/city_5.yy",},},
     {"id":{"name":"credits_room","path":"rooms/credits_room/credits_room.yy",},},
     {"id":{"name":"hotel_1","path":"rooms/hotel_1/hotel_1.yy",},},
     {"id":{"name":"hotel_final_1","path":"rooms/hotel_final_1/hotel_final_1.yy",},},
@@ -983,6 +984,7 @@
     {"id":{"name":"spr_player_move","path":"sprites/spr_player_move/spr_player_move.yy",},},
     {"id":{"name":"spr_player_parry1","path":"sprites/spr_player_parry1/spr_player_parry1.yy",},},
     {"id":{"name":"spr_player_parry2","path":"sprites/spr_player_parry2/spr_player_parry2.yy",},},
+    {"id":{"name":"spr_player_parry3","path":"sprites/spr_player_parry3/spr_player_parry3.yy",},},
     {"id":{"name":"spr_player_piledriver","path":"sprites/spr_player_piledriver/spr_player_piledriver.yy",},},
     {"id":{"name":"spr_player_piledriverend","path":"sprites/spr_player_piledriverend/spr_player_piledriverend.yy",},},
     {"id":{"name":"spr_player_piledrivergetup","path":"sprites/spr_player_piledrivergetup/spr_player_piledrivergetup.yy",},},
@@ -1301,6 +1303,7 @@
     {"roomId":{"name":"city_1","path":"rooms/city_1/city_1.yy",},},
     {"roomId":{"name":"city_3","path":"rooms/city_3/city_3.yy",},},
     {"roomId":{"name":"city_4","path":"rooms/city_4/city_4.yy",},},
+    {"roomId":{"name":"city_5","path":"rooms/city_5/city_5.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
