@@ -70,7 +70,7 @@ if (!ds_list_empty(afterimages))
 				shader_reset()
 			if _drawPattern
 			{
-				pattern_draw(sprite_index, image_index, x, y, image_xscale, 1, 0, _blend, image_alpha * alpha, global.patternSpr, obj_player.sprites.palette_colors, obj_player.sprites.player_pal, obj_player.palette_index)
+				//pattern_draw(sprite_index, image_index, x, y, image_xscale, 1, 0, _blend, image_alpha * alpha, global.patternSpr, obj_player.sprites.palette_colors, obj_player.sprites.player_pal, obj_player.palette_index)
 			}
 			reset_blendmmode()
 		}

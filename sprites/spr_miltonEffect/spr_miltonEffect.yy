@@ -89,8 +89,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"playerGroup",
-    "path":"texturegroups/playerGroup",
+    "name":"effectGroup",
+    "path":"texturegroups/effectGroup",
   },
   "type":0,
   "VTile":false,

@@ -1,8 +1,9 @@
 draw_flush()
+draw_texture_flush()
 lang_init()
 
 textures = []
-textures_to_load = ["playerGroup", "hudGroupp"];
+textures_to_load = ["playerGroup", "hudGroup","enemyGroup", "effectGroup"];
 
 for (var i = 0; i < array_length(textures_to_load); i++) {
 	var _tex = texturegroup_get_textures(textures_to_load[i])
