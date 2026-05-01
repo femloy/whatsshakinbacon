@@ -94,7 +94,7 @@ if (ds_map_find_value(async_load, "type") == network_type_data) {
 					exit;
 				
 				var names = struct_get_names(v)
-				var instance = instance_create(q.x, q.y, q.depth, q.obj)
+				var instance = instance_create(q.x, q.y, q.obj)
 				instance.onlineID = q.onlineID
 				
 				for (var i = 0; i < array_length(names); i++)
