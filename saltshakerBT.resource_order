@@ -307,6 +307,7 @@
     {"name":"city_4","order":5,"path":"rooms/city_4/city_4.yy",},
     {"name":"city_4b","order":3,"path":"rooms/city_4b/city_4b.yy",},
     {"name":"city_5","order":4,"path":"rooms/city_5/city_5.yy",},
+    {"name":"city_secret1","order":6,"path":"rooms/city_secret1/city_secret1.yy",},
     {"name":"credits_room","order":13,"path":"rooms/credits_room/credits_room.yy",},
     {"name":"hotel_1","order":6,"path":"rooms/hotel_1/hotel_1.yy",},
     {"name":"hotel_final_1","order":1,"path":"rooms/hotel_final_1/hotel_final_1.yy",},

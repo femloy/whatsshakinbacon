@@ -63,7 +63,7 @@ ds_map_add(musicDetails, wayback_1, new add_music("event:/Music/W1/Monolith Mang
     fmod_studio_event_instance_set_parameter_by_name(musicInst, "state", _s)
 }))
 
-ds_map_add(musicDetails, city_1, new add_music("event:/Music/W1/Rock Bottom/city", -4, -4))
+ds_map_add(musicDetails, city_1, new add_music("event:/Music/W1/Rock Bottom/city", "event:/Music/W1/Rock Bottom/citysecret", -4))
 
 beat = 0
 bar = 0

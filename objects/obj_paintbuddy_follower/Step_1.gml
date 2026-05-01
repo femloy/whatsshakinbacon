@@ -14,4 +14,5 @@ if global.painting_count >= global.painting_max
 {
 	instance_destroy()
 	global.can_enter_bus = true
+	FMODevent_oneshot("event:/Sfx/General/Level/Shell City/busNotif")
 }

@@ -193,6 +193,7 @@
     {"name":"inst_56B09A8F","path":"rooms/city_4b/city_4b.yy",},
     {"name":"inst_1B0295B0","path":"rooms/city_4b/city_4b.yy",},
     {"name":"inst_5F17A51F","path":"rooms/city_4b/city_4b.yy",},
+    {"name":"inst_1ABB253A","path":"rooms/city_4b/city_4b.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -390,6 +391,9 @@
         {"$GMRInstance":"v4","%Name":"inst_56B09A8F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56B09A8F","objectId":{"name":"obj_destroyable_donut2","path":"objects/obj_destroyable_donut2/obj_destroyable_donut2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3872.0,"y":640.0,},
         {"$GMRInstance":"v4","%Name":"inst_1B0295B0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B0295B0","objectId":{"name":"obj_destroyable_donut2","path":"objects/obj_destroyable_donut2/obj_destroyable_donut2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3872.0,"y":608.0,},
         {"$GMRInstance":"v4","%Name":"inst_5F17A51F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5F17A51F","objectId":{"name":"obj_destroyable1","path":"objects/obj_destroyable1/obj_destroyable1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3904.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1ABB253A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1ABB253A","objectId":{"name":"obj_secret_heart","path":"objects/obj_secret_heart/obj_secret_heart.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_secret_heart","path":"objects/obj_secret_heart/obj_secret_heart.yy",},"propertyId":{"name":"targetRoom","path":"objects/obj_secret_heart/obj_secret_heart.yy",},"resource":{"name":"city_secret1","path":"rooms/city_secret1/city_secret1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"city_secret1",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":8320.0,"y":768.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4289896078,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

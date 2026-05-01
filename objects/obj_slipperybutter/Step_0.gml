@@ -19,17 +19,19 @@ if place_meeting(x, y, obj_player)
 	var _cantSlip = [states.skateboard, states.skateboardhitwall, states.skateboardintro, states.skateboardmove, states.skateboardramp, states.skateboardwall, states.skateboardaim]
 	with obj_player
 	{
-		instance_destroy(other)
 		if !array_contains(_cantSlip, state)
 		{
 			state = states.slip
 			movespeed += 2
 			if movespeed > 14
 				movespeed = 14
+			if other.movespeed != noone
+				movespeed = other.movespeed
 			vsp = -11
 			sprite_index = spr_player_slipsyrup
 			image_index = 0
 			FMODevent_oneshot("event:/Sfx/Player/slip", x, y)
 		}
+		instance_destroy(other)
 	}
 }

@@ -23,5 +23,10 @@ else
 			sprite_index = spr_player_lookdoor
 			image_index = 0
 		}
+		if obj_player.state == states.enterdoor && !instance_exists(obj_fadeout)
+		{
+			FMODevent_oneshot("event:/Sfx/General/Level/Progression/door")
+			instance_create(x, y, obj_fadeout)
+		}
 	}
 }
