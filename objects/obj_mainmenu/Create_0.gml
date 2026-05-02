@@ -10,7 +10,7 @@ fade_alpha = 1
 createSave = function(_save) constructor
 {
 	file = _save
-	savePath = working_directory + $"/saves/save{_save + 1}.ini"
+	savePath = $"/saves/saveDate_{_save + 1}.ini"
 	
 	ini_open(savePath)
 	palette = ini_read_real("Game", "Palette", 1)

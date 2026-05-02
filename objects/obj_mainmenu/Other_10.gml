@@ -16,6 +16,10 @@ with obj_player
 obj_savesystem.ini_str = global.saveFile
 async_load_game()
 
+ini_open_from_string(obj_savesystem.ini_str)
+ini_write_real("General", "created", true)
+obj_savesystem.ini_str = ini_close()
+
 global.level = noone
 global.resetRoom = _rm
 if !instance_exists(obj_fadeout)

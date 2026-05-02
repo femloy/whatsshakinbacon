@@ -41,9 +41,6 @@ switch scene
 			scene = 1
 			alarm[2] = 120
 			fmod_studio_event_instance_stop(music, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT)
-			ini_open(global.saveFile)
-			ini_write_real("General", "created", true)
-			ini_close()
 			TVsprite = spr_mainmenu_tv_empty
 			TVBackSprite = spr_mainmenu_tv1_pick
 			TVindex = 0

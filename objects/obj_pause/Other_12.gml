@@ -1,5 +1,6 @@
 doUnpause()
 		FMODstopAll()
+		async_save_game()
 		if instance_exists(obj_backtohub)
 			instance_destroy(obj_backtohub)
 		if instance_exists(obj_rank_transition)

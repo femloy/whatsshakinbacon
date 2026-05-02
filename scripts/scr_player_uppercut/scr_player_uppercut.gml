@@ -1,13 +1,12 @@
 function scr_player_uppercut(){
 	get_input()
-	var move = key_right + key_left
+	var move = sprite_index == spr_player_mach_uppercut ? xscale : key_right + key_left
 	hsp = approach(hsp, movespeed * move, 0.4)
 	if sprite_index != spr_player_mach_uppercut
 	{
 		if move != 0
 		{
-			if abs(hsp) < 4
-				movespeed = 4
+			movespeed = 4
 		}
 	}
 	image_speed = 0.4
