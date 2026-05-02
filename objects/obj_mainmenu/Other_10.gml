@@ -13,7 +13,7 @@ with obj_player
 	palette_index = q.palette
 	global.patternSpr = q.patternSpr
 }
-
+obj_savesystem.ini_str = global.saveFile
 async_load_game()
 
 global.level = noone

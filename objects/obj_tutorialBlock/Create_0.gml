@@ -1,6 +1,6 @@
 event_inherited();
 
-ini_open(global.saveFile)
+ini_open_from_string(obj_savesystem.ini_str)
 
 if ini_read_string("tutorial", "Rank", "NONE") != "NONE"
 {
@@ -15,4 +15,4 @@ if ini_read_string("tutorial", "Rank", "NONE") != "NONE"
 	}
 }
 
-ini_close()
+obj_savesystem.ini_str = ini_close()

@@ -155,9 +155,8 @@ function scr_player_mach3()
 			exit
 		}
 	}
-	if downBuffer > 0
+	if key_down
 	{
-		downBuffer = false
 		if !grounded
 		{
 			FMODevent_oneshot("event:/Sfx/Player/dive", x, y)
