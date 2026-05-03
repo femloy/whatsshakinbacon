@@ -1,6 +1,8 @@
 # Fidelity Hotel
 
 source code for the game
+<img width="283" height="222" alt="image" src="https://github.com/user-attachments/assets/f81a96c0-5aec-46ae-a1e0-e07a02ec4c8d" />
+
 
 # SNORKLEBERRY!
 
